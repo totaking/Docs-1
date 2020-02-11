@@ -7,7 +7,4 @@
 <li><a href="#/zh-cn/galaxyRally/">拉力赛</a></li>
 <ul>
 
-* 语言
-  * [中文](zh-cn/)
-  * [English](en-us/)
 
