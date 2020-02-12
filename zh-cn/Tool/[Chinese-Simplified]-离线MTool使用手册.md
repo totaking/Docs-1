@@ -318,7 +318,7 @@ chmod +x validator_conf.sh && ./validator_conf.sh
 > - 提示 `validator conf success` 并最后打印出的validator_config.json内容正常时，表示脚本执行成功，未执行成功时，请通过我们的官方客户联系方式反馈具体问题。
 
 
-## 4 基本操作流程
+## 4.基本操作流程
 
 Windows和Ubuntu下MTool的命令及目录有所区别：
 
@@ -431,9 +431,9 @@ success: 1, failure: 0
 
 注：提示success并返回transaction hash表示签名交易发送成功，否则发送签名交易失败。
 
-##  5  MTool操作详解
+##  5 MTool操作详解
 
-此章节主要描述在**在线机器**上生成csv格式的交易待签名文件的相关命令（除了查询操作），生成的csv文件会保存在`$MTOOLDIR/transaction_details`目录下。完整的发送离线签名交易流程可参考[4 基本操作流程](#4-基本操作流程)。
+此章节主要描述在**在线机器**上生成csv格式的交易待签名文件的相关命令（除了查询操作），生成的csv文件会保存在`$MTOOLDIR/transaction_details`目录下。完整的发送离线签名交易流程可参考[4.基本操作流程](#4.基本操作流程)。
 
 另外Windows和Ubuntu下MTool的命令及目录有所区别：
 
