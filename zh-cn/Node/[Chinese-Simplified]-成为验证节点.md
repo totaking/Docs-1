@@ -1,6 +1,5 @@
-## PlatON验证节点介绍
+## 成为PlatON验证节点
 
-本教程适用于专用网络。 
 
 先决条件教程： 
 
@@ -42,10 +41,10 @@ PlatON 是实行民主治理的区块链项目，验证节点由所有 Energon �
 ### 3 成为验证节点操作步骤
 
 ####  3.1 安装节点
-[见文档]
+[见文档](./[Chinese-Simplified]-安装部署节点.md)
 
 ####  3.2 安装mtool
- [见文档]
+ [见文档](../Tool/[Chinese-Simplified]-在线MTool使用手册.md)
 
 #### 3.3. 创建钱包
 PlatON中，参与验证节点进行出块要创建两个钱包。
@@ -99,7 +98,9 @@ PlatON中，参与验证节点进行出块要创建两个钱包。
 
 操作步骤如下：
 
-**step1.** 浏览器复制链接 <https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/validator_conf.bat> 或者 <http://47.91.153.183/opensource/scripts/validator_conf.bat> 下载脚本
+**step1.** 浏览器复制链接  
+
+ [下载脚本validator_conf.bat]( <https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/validator_conf.bat>)
 
 **step2.** 鼠标右键点击 validator_conf.bat， 选择以管理员身份运行
 
