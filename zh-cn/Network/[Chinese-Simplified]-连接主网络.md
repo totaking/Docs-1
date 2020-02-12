@@ -1,58 +1,26 @@
-> 本文档将说明怎么将本地`PlatON`节点和测试网络链接。
+> 主网络
 
-贝莱世界测试网络现已开放，按照以下步骤可将本地节点连接到测试网络。
+主网是正式上线的、独立运转的区块链网络，网络上的交易行为被社区全员认可。
+
+`PlatON`节点默认运行在主网，本文档将说明怎么将本地`PlatON`节点和测试网络链接。
 
 设置前确保本地已经按照[PlatON安装指南](/zh-cn/basics/[Chinese-Simplified]-安装指南.md)安装好PlatON节点。
 
 本文假设Ubuntu环境下工作目录为 `~/platon-node` ，Windows环境下工作目录为 `D:\platon-node`。注意后续均在工作目录下进行。
 
-## 创建账号
 
-通过`Platon`命令，可创建账户:
-
-- Windows命令行
-
-```
-D:\platon-node> mkdir data
-D:\platon-node> platon.exe --datadir .\data account new
-Your new account is locked with a password. Please give a password. Do not forget this password.
-Passphrase:
-Repeat passphrase:
-Address: {550ae58b051a8e942f858ef22019c1c622292f7e}
-```
-
-- Linux命令行：
-
-```
-$ mkdir -p data
-$ ./platon --datadir ./data account new
-Your new account is locked with a password. Please give a password. Do not forget this password.
-Passphrase:
-Repeat passphrase:
-Address: {550ae58b051a8e942f858ef22019c1c622292f7e}
-```
-
-输出结果为生成的账户地址。
-
-## 申请测试Energon
-
-使用第一步生成的账户地址在[PlatON官网](https://developer.platon.network/#/energon?lang=zh)申请测试Energon。
-
-***注意：测试Energon没有任何价值，仅限于体验测试网络功能。如仅仅只是连接测试网络，无需申请！***
-
-
-## 启动本地节点并连接测试网络
+## 启动本地节点并连接主网络
  
 - Windows命令行
 
 ```
-D:\platon-node> platon.exe --identity platon --datadir .\data --port 16789 --testnet --rpcport 6789 --rpcapi "db,eth,net,web3,admin,personal" --rpc --debug --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full" --gcmode "archive" 
+D:\platon-node> platon.exe --identity platon --datadir .\data --port 16789 --main --rpcport 6789 --rpcapi "db,eth,net,web3,admin,personal" --rpc --debug --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full" --gcmode "archive" 
 ```
 
 - Linux命令行
 
 ```
-$ ./platon --identity platon --datadir ./data --port 16789 --testnet --rpcport 6789 --rpcapi "db,eth,net,web3,admin,personal" --rpc --debug --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full" --gcmode "archive" 
+$ ./platon --identity platon --datadir ./data --port 16789 --main --rpcport 6789 --rpcapi "db,eth,net,web3,admin,personal" --rpc --debug --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full" --gcmode "archive" 
 ```
 
 ***提示：***
@@ -65,7 +33,7 @@ $ ./platon --identity platon --datadir ./data --port 16789 --testnet --rpcport 6
 | --rpcport    | 指定rpc协议通信端口      |
 | --rpcapi     | 指定节点开放的rpcapi名称 |
 | --rpc        | 指定http-rpc通讯方式     |
-| --testnet    | 连接到测试网络          |
+| --main       | 连接到主网络，不指定默认为连接主网络   |
 
 更多参数意义通过`platon --help`命令查看。
 
@@ -86,7 +54,7 @@ $ ./platon attach http://localhost:6789
 ```
 
 
-2.查看节点列表是否添加测试网络
+2.查看节点列表是否添加主网络
 
 ```
 > admin.peers
@@ -114,4 +82,4 @@ $ ./platon attach http://localhost:6789
 ]
 ```
 
-节点列表中出现一系列测试网络节点，则表示连接成功！
+节点列表中出现一系列主网络节点，则表示连接成功！
