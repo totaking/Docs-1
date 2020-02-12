@@ -279,7 +279,7 @@ $mtool-client account balance -a $address --config $MTOOLDIR/validator/validator
 ```bash
 $mtool-client staking --amount 1000000 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
-提示：”please input keystore password:“ 输入质押钱包的密码，然后回车，如果显示如下信息则代表质押成功：
+提示：**please input keystore password:** 输入质押钱包的密码，然后回车，如果显示如下信息则代表质押成功：
 
 ```bash
 operation finished

@@ -21,7 +21,7 @@
 
 步骤如下：
 
-- **step1. **浏览器复制链接 <https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/mtool_install.bat> 或者 <http://47.91.153.183/opensource/scripts/mtool_install.bat> 下载脚本。
+- **step1.** 浏览器复制链接 <https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/mtool_install.bat> 或者 <http://47.91.153.183/opensource/scripts/mtool_install.bat> 下载脚本。
 
 - **step2.** 鼠标右键点击 mtool_install.bat， 选择以管理员身份运行
 
@@ -364,7 +364,7 @@ File generated on transaction_details/transaction_detail_20191108114241.csv
 
 - 拷贝待签名文件到**离线机器**
 
-  通过存储介质把**在线机器**下的待签名文件$MTOOLDIR/transaction_details/transaction_detail_20191108114241.csv拷贝到**离线机器**。
+  通过存储介质把**在线机器**下的待签名文件`$MTOOLDIR/transaction_details/transaction_detail_20191108114241.csv`拷贝到**离线机器**。
 
 ### 4.2 离线签名交易
 
@@ -376,7 +376,7 @@ File generated on transaction_details/transaction_detail_20191108114241.csv
 $mtool-client offlinesign --filelocation $MTOOLDIR/transaction_details/transaction_detail_20191108114241.csv
 ```
 
-注：$MTOOLDIR/transaction_details/transaction_detail_20191108114241.csv为上一步骤生成的待签名文件，修改为实际的待签名文件。
+注：`$MTOOLDIR/transaction_details/transaction_detail_20191108114241.csv`为上一步骤生成的待签名文件，修改为实际的待签名文件。
 
 输入对应冷钱包密码并返回签完名的文件，文件内容如下：
 
@@ -433,7 +433,7 @@ success: 1, failure: 0
 
 ##  5  MTool操作详解
 
-此章节主要描述在**在线机器**上生成csv格式的交易待签名文件的相关命令（除了查询操作），生成的csv文件会保存在$MTOOLDIR/transaction_details目录下。完整的发送离线签名交易流程可参考[4 基本操作流程](#4-基本操作流程)。
+此章节主要描述在**在线机器**上生成csv格式的交易待签名文件的相关命令（除了查询操作），生成的csv文件会保存在`$MTOOLDIR/transaction_details`目录下。完整的发送离线签名交易流程可参考[4 基本操作流程](#4-基本操作流程)。
 
 另外Windows和Ubuntu下MTool的命令及目录有所区别：
 
