@@ -7,7 +7,7 @@
 - MTool可支持Ubuntu 18.04和Windows 10，本文档分别描述Windows和Ubuntu环境下的安装和使用。
 - MTool需要通过RPC接口连接到验证节点。
 - 为保证节点安全，建议节点RPC端口通过Nginx代理访问，Nginx使用Https和用户认证加强安全防护。
-- MTool对质押等交易提供两种签名方式：在线签名和离线签名。此文档描述在线签名操作，离线签名请参考[离线MTool使用手册.md](./[Chinese-Simplified]-离线MTool使用手册.md)。
+- MTool对质押等交易提供两种签名方式：在线签名和离线签名。此文档描述在线签名操作，离线签名请参考[离线MTool使用手册.md](zh-cn/Tool/[Chinese-Simplified]-离线MTool使用手册.md)。
 
 ## 2 安装在线MTool
 
@@ -97,7 +97,7 @@ chmod +x mtool_install.sh && ./mtool_install.sh
 > - 提示 `Install mtool succeed.` 时，表示 MTool 安装成功，未安装成功时，请通过我们的官方客户联系方式反馈具体问题。
 > - 安装完成之后，需要**`重启终端`**，让新添加的环境变量生效。
 
-相关配置请参考文档[PlatON节点安装部署手册.md](../Node/[Chinese-Simplified]-安装部署节点.md)。
+相关配置请参考文档[PlatON节点安装部署手册.md](zh-cn/Node/[Chinese-Simplified]-安装部署节点.md)。
 
 ## 3 配置在线MTool
 
