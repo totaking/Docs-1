@@ -115,13 +115,13 @@ Address: {550ae58b051a8e942f858ef22019c1c622292f7e}
 - Windows命令行
 
 ```
-D:\platon-node> platon.exe --identity platon --datadir .\data --port 16789 --testnet --rpcport 6789 --rpcapi "db,eth,net,web3,admin,personal" --rpc --debug --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full" --gcmode "archive" 
+D:\platon-node> platon.exe --identity platon --datadir .\data --port 16789 --testnet --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --debug --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full" --gcmode "archive" 
 ```
 
 - Linux命令行
 
 ```
-$ ./platon --identity platon --datadir ./data --port 16789 --testnet --rpcport 6789 --rpcapi "db,eth,net,web3,admin,personal" --rpc --debug --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full" --gcmode "archive" 
+$ ./platon --identity platon --datadir ./data --port 16789 --testnet --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --debug --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full" --gcmode "archive" 
 ```
 
 ***提示：***
@@ -162,21 +162,27 @@ $ ./platon attach http://localhost:6789
 ```
 > admin.peers
 [{
-    caps: ["eth/62", "eth/63"],
-    id: "23aa343260d06e04107d1cd9a7d12c54cc238719a1523ffe42640210c913218b5940d41511c5adb716da38844a85cdab8b7db0600d242e24168d7df10aebd324",
-    name: "PlatONnetwork/V0.6_testsn/v0.6.0-stable-0f651de0/linux-amd64/go1.11",
+    caps: ["cbft/1", "platon/62", "platon/63"],
+    id: "0dd4e447cf23f4bfc94b1568bae626bf4894ce2e9d5ca474e3cc73ec7e9d4de550fffc1e2fc64cca25d42aecf6169cf8f8c0f4fe6adb847c33dc6ceb6f001bd1",
+    name: "PlatONnetwork/platon/v0.8.0-unstable-c5fc6b19/linux-amd64/go1.11.11",
     network: {
-      consensus: false,
-      inbound: false,
-      localAddress: "192.168.18.181:51828",
-      remoteAddress: "54.252.202.130:16789",
+      consensus: true,
+      inbound: true,
+      localAddress: "127.0.0.1:16789",
+      remoteAddress: "127.0.0.1:47706",
       static: false,
       trusted: false
     },
     protocols: {
-      eth: {
-        head: "0x104fe03d2b2f0b783e808ea7fcd52566d7cde9f36c4a06e950795e0459db5551",
-        number: 74822,
+      cbft: {
+        commitBn: 0,
+        highestQCBn: 0,
+        lockedBn: 0,
+        protocolVersion: 1
+      },
+      platon: {
+        head: "0x88a4fe315ce13b3010abf4ab5d120f25a21ac2ccae8ec563ad259e47e24b24bc",
+        number: 0,
         version: 63
       }
     }
