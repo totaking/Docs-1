@@ -1,6 +1,4 @@
-> 主网络
-
-主网是正式上线的、独立运行的区块链网络，网络上的交易行为被社区全员认可。
+> 主网是正式上线的、独立运行的区块链网络，网络上的交易行为被社区全员认可。
 
 `PlatON`节点默认运行在主网，本章节将说明如何让本地节点加入到主网络。
 
@@ -11,7 +9,7 @@
 
 ## 生成节点ID、节点公私钥和节点bls公私钥
 
-1.运行公私钥对生成工具`keytool`生成节点ID和节点公私钥
+**1.运行公私钥对生成工具`keytool`生成节点ID和节点公私钥**
 
 - Windows命令行：
 
@@ -34,7 +32,7 @@ PublicKey :  9dffb94030feaefcbf24bc2e7911827b5ed8b481bf5bd6d86e2f7ceed242fdebed9
 
 PublicKey是我们需要的 ***节点ID***， PrivateKey是对应的 ***节点私钥*** 。
 
-2.运行公私钥对生成工具`keytool`生成节点bls公私钥
+**2.运行公私钥对生成工具`keytool`生成节点bls公私钥**
 
 - Windows命令行：
 
@@ -55,7 +53,7 @@ PublicKey :  3213a99d1bc4fd4db7297af41ef2bfe456e43ad9a77246c5b584f8a0f772b64d800
 
 PublicKey是我们需要的 ***节点bls公钥***， PrivateKey是对应的 ***节点bls私钥*** 。
 
-3.生成节点私钥文件nodekey，节点bls私钥文件blskey
+**3.生成节点私钥文件nodekey，节点bls私钥文件blskey**
 
 注意echo命令行参数为节点私钥、bls私钥，需要替换成第1步生成的 ***节点私钥*** 和第2步生成的 ***节点bls私钥*** 。
 
@@ -110,7 +108,7 @@ $ ./platon --identity platon --datadir ./data --port 16789 --main --rpcport 6789
 
 ## 查看是否添加成功
 
-1.通过`http`方式进入`platon`控制台
+**1.通过`http`方式进入`platon`控制台**
 
 - Windows命令行
 
@@ -125,7 +123,7 @@ $ ./platon attach http://localhost:6789
 ```
 
 
-2.查看节点列表是否添加主网络
+**2.查看节点列表是否添加主网络**
 
 ```
 > admin.peers
