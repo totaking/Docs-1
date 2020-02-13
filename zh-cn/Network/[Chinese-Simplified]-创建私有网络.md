@@ -104,77 +104,77 @@ Address: {566c274db7ac6d38da2b075b4ae41f4a5c481d21}
 
 ```
 {
-    "config": {
-        "chainId": 299,
-        "eip155Block": 1,
+	"config": {
+		"chainId": 299,
+		"eip155Block": 1,
 		"VMInterpreter": "evm",
-        "cbft": {
+		"cbft": {
 			"initialNodes": [{
 				"node": "enode://your-node-pubkey@127.0.0.1:16789",
 				"blsPubKey": "your-node-blspubkey"
 			}],
-            "amount": 10,
-            "period": 20000,
-            "validatorMode": "ppos"
-        },
-        "genesisVersion": 2048
-    },
-    "economicModel":{
-        "common":{
-            "maxEpochMinutes":360,
-            "maxConsensusVals":25,
-            "additionalCycleTime":525960
-        },
-        "staking":{
-            "stakeThreshold": 1000000000000000000000000,
-            "operatingThreshold": 10000000000000000000,
-            "maxValidators": 101,
-            "unStakeFreezeDuration": 28
-        },
-        "slashing":{
-           "slashFractionDuplicateSign": 10,
-           "duplicateSignReportReward": 50,
-           "maxEvidenceAge":27,
-           "slashBlocksReward":0
-        },
-         "gov": {
-            "versionProposalVoteDurationSeconds": 1209600‬,
-            "versionProposalSupportRate": 0.667,
-            "textProposalVoteDurationSeconds": 1209600‬,
-            "textProposalVoteRate": 0.5,
-            "textProposalSupportRate": 0.667,          
-            "cancelProposalVoteRate": 0.50,
-            "cancelProposalSupportRate": 0.667,
-            "paramProposalVoteDurationSeconds": 1209600‬,
-            "paramProposalVoteRate": 0.50,
-            "paramProposalSupportRate": 0.667      
-        },
-        "reward":{
-            "newBlockRate": 50,
-            "platonFoundationYear": 10 
-        },
-        "innerAcc":{
-            "platonFundAccount": "0xBE0af016941Acaf08Bf5f4ad185155Df6B7388ce",
-            "platonFundBalance": 0,
-            "cdfAccount": "0x08b2320Ef2482f0a5ad9411CCB1a748BcE7c2823",
-            "cdfBalance": 331811981000000000000000000
-        }
-    },
-    "nonce": "0x0376e56dffd12ab53bb149bda4e0cbce2b6aabe4cccc0df0b5a39e12977a2fcd23",
-    "timestamp": "0x5bc94a8a",
-    "extraData": "0xd782070186706c61746f6e86676f312e3131856c696e757800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-    "gasLimit": "4712388",
-    "alloc": {
-        "1000000000000000000000000000000000000003": {
-            "balance": "200000000000000000000000000"
-        },
-        "your-account-address": {
+			"amount": 10,
+			"period": 20000,
+			"validatorMode": "ppos"
+		},
+		"genesisVersion": 2048
+	},
+	"economicModel": {
+		"common": {
+			"maxEpochMinutes": 360,
+			"maxConsensusVals": 25,
+			"additionalCycleTime": 525960
+		},
+		"staking": {
+			"stakeThreshold": 1000000000000000000000000,
+			"operatingThreshold": 10000000000000000000,
+			"maxValidators": 101,
+			"unStakeFreezeDuration": 28
+		},
+		"slashing": {
+			"slashFractionDuplicateSign": 10,
+			"duplicateSignReportReward": 50,
+			"maxEvidenceAge": 27,
+			"slashBlocksReward": 0
+		},
+		"gov": {
+			"versionProposalVoteDurationSeconds": 1209600,
+			"versionProposalSupportRate": 0.667,
+			"textProposalVoteDurationSeconds": 1209600,
+			"textProposalVoteRate": 0.5,
+			"textProposalSupportRate": 0.667,
+			"cancelProposalVoteRate": 0.50,
+			"cancelProposalSupportRate": 0.667,
+			"paramProposalVoteDurationSeconds": 1209600,
+			"paramProposalVoteRate": 0.50,
+			"paramProposalSupportRate": 0.667
+		},
+		"reward": {
+			"newBlockRate": 50,
+			"platonFoundationYear": 10
+		},
+		"innerAcc": {
+			"platonFundAccount": "0xBE0af016941Acaf08Bf5f4ad185155Df6B7388ce",
+			"platonFundBalance": 0,
+			"cdfAccount": "0x08b2320Ef2482f0a5ad9411CCB1a748BcE7c2823",
+			"cdfBalance": 331811981000000000000000000
+		}
+	},
+	"nonce": "0x0376e56dffd12ab53bb149bda4e0cbce2b6aabe4cccc0df0b5a39e12977a2fcd23",
+	"timestamp": "0x5bc94a8a",
+	"extraData": "0xd782070186706c61746f6e86676f312e3131856c696e757800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	"gasLimit": "4712388",
+	"alloc": {
+		"1000000000000000000000000000000000000003": {
+			"balance": "200000000000000000000000000"
+		},
+		"your-account-address": {
 		  "balance": "999000000000000000000"
 		}
-    },
-    "number": "0x0",
-    "gasUsed": "0x0",
-    "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000"
+	},
+	"number": "0x0",
+	"gasUsed": "0x0",
+	"parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000"
 }
 ```
 
