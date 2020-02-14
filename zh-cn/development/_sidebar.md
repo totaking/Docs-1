@@ -1,5 +1,6 @@
 - 开发
 
-	- [SDK](/zh-cn/Development/[Chinese-Simplified]-SDKs.md)
-	- [智能合约开发](/zh-cn/Development/[Chinese-Simplified]-智能合约开发.md)
-
+	- SDK
+		- [Java SDK](/zh-cn/Development/Java-SDK-zh.md)
+		- [JS SDK](/zh-cn/Development/JS-SDK-zh.md)
+	- 智能合约开发
