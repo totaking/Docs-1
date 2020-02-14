@@ -12,7 +12,7 @@
 ## 2. 创建钱包
 
 <div>
-<div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton2.png" width="500" /></div> <div><br>1. 点击【创建钱包】。<br>2. 设置钱包名称，设置钱包密码。<br>3. 点击【创建钱包】按钮则可创建钱包。<br>4. 钱包创建成功后可以点击【钱包备份】开始备份，或者点击【跳过】后续进行备份。<br><br><b>注意</b><br>1. 钱包密码是您操作此钱包的凭证，服务器不会存储您的钱包密码，请务必牢记。<br>2.强烈建议您在创建钱包时即时备份。
+<div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton2.png" width="500" /></div> <div><br>1. 点击【创建钱包】。<br>2. 设置符合规则的钱包名称和钱包密码。<br>3. 点击【创建钱包】按钮则可创建钱包。<br>4. 钱包创建成功后可以点击【钱包备份】开始备份，或者点击【跳过】后续进行备份。<br><br><b>注意</b><br>1. 钱包密码是您操作此钱包的凭证，服务器不会存储您的钱包密码，请务必牢记。<br>2.强烈建议您在创建钱包时即时备份。
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -61,7 +61,7 @@
 <div style="margin-top:40px;"></div>
 ## 5. 钱包查看
 <div>
-<div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton12.png" width="300"/></div> <div><br>1. 点击【钱包】模块，可以看到所有钱包。<br>2. ①显示所有钱包的LAT总和。<br>3. ②点击不同钱包可切换钱包。<br>4. ③当前显示钱包的LAT余额，如果有锁仓余额，则会显示锁仓金额。<br>5. ④如果钱包暂未备份，则可点击【备份】按钮进行备份。<br>6. ⑤显示当前钱包的所有交易记录。<br>7. ⑥可转账LAT至其他账户。<br>8. ⑦展示当前账户地址及地址二维码，可供转入LAT。<br>9. ⑧点击【+】可创建或者导入钱包，点击扫一扫可扫描。
+<div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton12.png" width="300"/></div> <div><br>1. 点击【钱包】模块，可以看到所有钱包。<br>2. ①显示所有钱包的LAT总和。<br>3. ②点击不同钱包可切换钱包。<br>4. ③当前显示钱包的LAT余额，如果有锁仓余额，则会显示锁仓金额。<br>5. ④如果钱包暂未备份，则可点击【备份】按钮进行备份。<br>6. ⑤显示当前钱包的所有交易记录。<br>7. ⑥可转账LAT至其他账户。<br>8. ⑦展示当前账户地址及地址二维码，可供转入LAT。<br>9. ⑧点击【+】可创建或者导入钱包，点击扫一扫可扫描二维码。
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -95,7 +95,7 @@
 
 ### 9.1 验证节点列表
 <div>
-<div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton42.jpg" width="300"/></div> <div><br>1. 点击【委托-验证节点】，可查看PlatON网络中的验证节点。<br>2. 节点默认是按照排名进行排序，可支持接收委托量、委托者数、预计委托年化收益类排名。<br>3. 活跃中节点：指当前结算周期参与共识选举并并有机会生产区块获得出块奖励的验证节点。<br>4. 候选中节点：指当前结算周期不参与共识选举的验证节点。
+<div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/atonrank.jpg" width="300"/></div> <div><br>1. 点击【委托-验证节点】，可查看PlatON网络中的验证节点。<br>2. 节点默认是按照排名进行排序，可支持接受委托量、委托者数、预计委托年化收益类排名。<br>3. 活跃中节点：指当前结算周期参与共识选举并并有机会生产区块获得出块奖励的验证节点。<br>4. 候选中节点：指当前结算周期不参与共识选举的验证节点。
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
