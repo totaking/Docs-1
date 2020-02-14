@@ -4,3 +4,4 @@
 		- [Java SDK](/zh-cn/Development/[Chinese-Simplified]-Java-SDK.md)
 		- [JS SDK](/zh-cn/Development/[Chinese-Simplified]-JS-SDK.md)
 	- 智能合约开发
+		- [JS SDK](/zh-cn/Development/[Chinese-Simplified]-wasm.md)
