@@ -4,10 +4,13 @@
 
 ## 1. ATON下载
 
-<div><br>1. 在Google Play、APP Store搜索ATON。<br>2. 点击下载即可体验（待上架）。
+<div><br>请从官方渠道下，Google Play、APP Store待上架，敬请期待！
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
+
+
+
 ## 2. 创建钱包
 
 <div>
