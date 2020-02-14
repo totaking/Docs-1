@@ -1,3 +1,5 @@
+# JS SDK开发指南
+
 ## Web3.js 调用接口 
 
 通过 web3.js 提供的web3对象与底层链进行交互。底层实现上，它通过 RPC 调用与本地节点通信。web3.js可以与任何暴露了RPC接口的PlatON节点连接。
@@ -3320,7 +3322,7 @@ web3.utils.toVon(number [, unit])
 
 *  `number` - String|Number|BN: 金额 
 *  `unit` - String，可选，默认值为`ether`
- 
+
 
 返回值：
 
@@ -3661,6 +3663,7 @@ let setting = ppos.getSetting();
 * method String 方法名
 * params Array 调用rpc接口需要的参数，如果调用此rpc端口不需要参数，则此参数可以省略。
   
+
 出参
 * reply rpc调用返回的结果
 
@@ -3684,6 +3687,7 @@ let reply = await ppos.rpc('platon_getBalance', ["0x714de266a0effa39fcaca1442b92
 入参说明：
 * intStr String 字符串十进制大整数。
   
+
 出参
 * buffer Buffer 一个缓存区。
 
@@ -3702,6 +3706,7 @@ let buffer = ppos.bigNumBuf('1000000000000000000000000000000000000000000');
 入参说明：
 * hexStr String 一个十六进制的字符串。
   
+
 出参
 * buffer Buffer 一个缓存区。
 
@@ -3723,6 +3728,7 @@ let buffer = ppos.hexStrBuf(nodeId);
 入参说明：
 * params Object | Array 调用参数。
   
+
 出参
 * reply Object call调用的返回的结果。注意，我已将将返回的结果转为了Object对象。
   * Code Number 调用返回码，0表示调用结果正常。
@@ -4345,7 +4351,7 @@ reply = await ppos.send(params, other);
 
 ### 内置合约错误码说明
 | 错误码    | 说明            |
-| ------- | --------------- | 
+| ------- | --------------- |
 |301000  | Wrong bls public key|
 |301001  | Wrong bls public key proof|
 |301002  | The Description length is wrong|
