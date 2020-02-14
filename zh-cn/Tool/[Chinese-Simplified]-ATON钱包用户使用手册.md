@@ -95,7 +95,7 @@
 
 ### 9.1 验证节点列表
 <div>
-<div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/atonrank.jpg" width="300"/></div> <div><br>1. 点击【委托-验证节点】，可查看PlatON网络中的验证节点。<br>2. 节点默认是按照排名进行排序，可支持接受委托量、委托者数、预计委托年化收益类排名。<br>3. 活跃中节点：指当前结算周期参与共识选举并并有机会生产区块获得出块奖励的验证节点。<br>4. 候选中节点：指当前结算周期不参与共识选举的验证节点。
+<div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/atonrank.jpg" width="300"/></div> <div><br>1. 点击【委托-验证节点】，可查看PlatON网络中的验证节点。<br>2. 节点默认是按照排名进行排序，可支持接受委托量、委托者数、预计委托年化收益类排名。<br>3. 活跃中节点：指当前结算周期参与共识选举并有机会生产区块获得出块奖励的验证节点。<br>4. 候选中节点：指当前结算周期不参与共识选举的验证节点。
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
