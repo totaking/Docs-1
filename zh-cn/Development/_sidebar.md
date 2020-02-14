@@ -1,6 +1,3 @@
 - 开发
-	- SDK
-		- [Java SDK](/zh-cn/Development/[Chinese-Simplified]-Java-SDK.md)
-		- [JS SDK](/zh-cn/Development/[Chinese-Simplified]-JS-SDK.md)
-	- 智能合约开发
-		- [WASM](/zh-cn/Development/[Chinese-Simplified]-wasm.md)
+	- [Java SDK](/zh-cn/Development/[Chinese-Simplified]-Java-SDK.md)
+	- [JS SDK](/zh-cn/Development/[Chinese-Simplified]-JS-SDK.md)
