@@ -114,7 +114,7 @@ PlatON网络在运行期间为保证网络能够不断迭代完善，需要所�
 cd $node_dir/data && platon attach ipc:platon.ipc -exec platon.blockNumber
 ```
 
-该命令返回当前区块高度，可用于判断是否在提案投票期的范围内，链接地址参考：[2.1 关注社区治理相关的公告](#_2.1-关注社区治理相关的公告)，例如社区发布的投票期为[533681, 619980]，如果当前区块高度为600000，则在投票期范围内；如果当前区块高度大于619980，则表示过了投票期。只有当处于投票期范围内时则进行如下升级提案的投票操作。
+该命令返回当前区块高度，可用于判断是否在提案投票期的范围内，链接地址参考：[2.1 关注社区治理相关的公告](#_21-关注社区治理相关的公告)，例如社区发布的投票期为[533681, 619980]，如果当前区块高度为600000，则在投票期范围内；如果当前区块高度大于619980，则表示过了投票期。只有当处于投票期范围内时则进行如下升级提案的投票操作。
 
 #### 3.2.2 升级提案投票
 
@@ -124,7 +124,7 @@ cd $node_dir/data && platon attach ipc:platon.ipc -exec platon.blockNumber
   $mtool-client vote_versionproposal --proposalid $proposalid --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
   ```
 
-  **注：**$proposalid为社区公告提供的升级提案的ProposalID，详情请参考：[2.1 关注社区治理相关的公告](#_2.1-关注社区治理相关的公告)。如果投票交易发送成功会返回**投票交易hash**。如：
+  **注：**$proposalid为社区公告提供的升级提案的ProposalID，详情请参考：[2.1 关注社区治理相关的公告](#_21-关注社区治理相关的公告)。如果投票交易发送成功会返回**投票交易hash**。如：
 
   ```bash
   operation finished
@@ -252,7 +252,7 @@ cd $node_dir/data && platon attach ipc:platon.ipc -exec platon.blockNumber
   chmod u+x verify_votResult.sh && chmod u+x ppos_tool && ./verify_votResult.sh 0x85083f1d4f3e5e1aeafbd29df1db9764c25216e94fa0b446caa36f89ffa8f26f
   ```
   
-  > 其中0x85083f1d4f3e5e1aeafbd29df1db9764c25216e94fa0b446caa36f89ffa8f26f为**升级提案的ProposalID**，请根据实际公告中的提案ID进行替换，链接地址参考：[2.1 关注社区治理相关的公告](#_2.1-关注社区治理相关的公告)。
+  > 其中0x85083f1d4f3e5e1aeafbd29df1db9764c25216e94fa0b446caa36f89ffa8f26f为**升级提案的ProposalID**，请根据实际公告中的提案ID进行替换，链接地址参考：[2.1 关注社区治理相关的公告](#_21-关注社区治理相关的公告)。
   
   执行结果如下表示升级成功：
   
