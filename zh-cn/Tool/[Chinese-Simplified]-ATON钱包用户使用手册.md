@@ -1,4 +1,4 @@
-# ATON钱包用户使用手册
+# ATON钱包使用手册
 
 
 
@@ -8,7 +8,6 @@
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
-
 
 ## 2. 创建钱包
 
