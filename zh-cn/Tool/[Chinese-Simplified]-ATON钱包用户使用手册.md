@@ -8,7 +8,6 @@
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
-
 ## 2. 创建钱包
 
 <div>
@@ -59,7 +58,6 @@
 
 ### 4.3 导入观察钱包详见13章节
 <div style="margin-top:40px;"></div>
-
 ## 5. 钱包查看
 <div>
 <div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton12.png" width="300"/></div> <div><br>1. 点击【钱包】模块，可以看到所有钱包。<br>2. ①显示所有钱包的LAT总和。<br>3. ②点击不同钱包可切换钱包。<br>4. ③当前显示钱包的LAT余额，如果有锁仓余额，则会显示锁仓金额。<br>5. ④如果钱包暂未备份，则可点击【备份】按钮进行备份。<br>6. ⑤显示当前钱包的所有交易记录。<br>7. ⑥可转账LAT至其他账户。<br>8. ⑦展示当前账户地址及地址二维码，可供转入LAT。<br>9. ⑧点击【+】可创建或者导入钱包，点击扫一扫可扫描。
