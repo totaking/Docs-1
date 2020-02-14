@@ -14,7 +14,7 @@
 
 PlatScan当前支持NewBaleyword拉力赛活动网络，后续将支持主网及其他测试网。 您可以在搜索框内输入区块高度/地址/区块hash/交易hash/节点名称查询具体需要浏览的信息。也可以点击导航菜单-首页/区块/交易/验证节点/治理提案浏览PlatON Network区块链更多信息。
 
-![image-20200211115542500](./PlatScan浏览器用户手册.assets/image-20200211115542500.png)
+<img src="./PlatScan浏览器用户手册.assets/image-20200211115542500.png" alt="image-20200211115542500" style="zoom:67%;" align="left" />
 
 
 
@@ -24,7 +24,7 @@ PlatScan当前支持NewBaleyword拉力赛活动网络，后续将支持主网及
 
 同时展示了PlatON Network的基本情况，包括链的运行状态，交易数据，流通及质押信息，区块列表，当前参与共识的验证节点等。方便您快速了解PlatON Network。
 
-![](PlatScan%E6%B5%8F%E8%A7%88%E5%99%A8%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C.assets/wps1.png)
+<img src="PlatScan%E6%B5%8F%E8%A7%88%E5%99%A8%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C.assets/wps1.png" style="zoom:67%;" />
 
 ![](PlatScan%E6%B5%8F%E8%A7%88%E5%99%A8%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C.assets/wps2.png)
 
