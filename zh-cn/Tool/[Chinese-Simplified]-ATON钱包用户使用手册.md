@@ -57,7 +57,7 @@
 <div style="margin-top:40px;"></div>
 </div>
 
-### 4.3 导入观察钱包详见13章节
+### 4.3 导入观察钱包详见[13章节](#_13. 设置观察钱包与冷钱包)
 <div style="margin-top:40px;"></div>
 ## 5. 钱包查看
 <div>
