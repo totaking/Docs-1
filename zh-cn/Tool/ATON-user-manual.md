@@ -4,11 +4,10 @@
 
 ## 1. ATON Download
 
-<div> <br> 1. Search  ATON in Google Play and APP Store. <br> 2. Click to download and experience (coming soon).
+<div> <br> Please download ATON from the official channel, Google Play, APP Store will be on the shelves, so stay tuned!
 </div>
 <div style = "clear: both"> </div>
 <div style = "margin-top: 40px;"> </div>
-
 ## 2. Create a wallet
 
 <div>
