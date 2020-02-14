@@ -113,7 +113,7 @@
 ## 10. 委托
 
 <div>
-<div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton45.jpg" width="300" /></div><div><br>1. 可点击【委托-验证节点】，选择某个节点进行委托。如果已委托过，可点击【委托-我的委托-委托节点详情】，选择某个节点继续进行委托。<br>2. 进入页面，选择需要委托的钱包。<br>3. 如果钱包有锁仓金额，可点击委托钱包余额选项栏进行切换，使用锁仓金额进行委托（注意钱包余额需足够支付委托交易手续费）。<br>4. 输入委托的金额，每次委托不得小于10LAT。<br>5. 输入正确的密码即可完成委托。<br>6. 已委托过的节点，可再次进行委托，无次数限制。<br><br><b>注意</b><br>1. 节点关联的钱包地址，不可参与委托。<br>2.委托的LAT在下个结算周期才开始生效。
+<div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton45.jpg" width="300" /></div><div><br>1. 可点击【委托-验证节点】，选择某个节点进行委托。如果已委托过，可点击【委托-我的委托-委托节点详情】，选择某个节点继续进行委托。<br>2. 进入页面，选择需要委托的钱包。<br>3. 如果钱包有锁仓金额，可点击委托钱包余额选项栏进行切换，使用锁仓金额进行委托（注意钱包余额需足够支付委托交易手续费）。<br>4. 输入委托的金额，每次委托不得小于10LAT。<br>5. 输入正确的密码即可完成委托。<br>6. 已委托过的节点，可再次进行委托，无次数限制。<br><br><b>注意</b><br>1. 委托人将LAT委托给节点，当委托的节点产生收益时，委托人将会获得基于节点配置的委托奖励比例分享的节点。<br>2. 收益节点关联的钱包地址，不可参与委托。<br>3. 委托的LAT在下个结算周期才开始生效。
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -122,7 +122,7 @@
 ## 11. 我的委托
 
 <div>
-<div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton40.jpg" width="250"/><img src="zh-cn/Tool/ATON-manual-cn.assets/aton46.jpg" width="250"/></div> <div><br>1. 点击【委托-我的委托】可查看当前客户端钱包总的委托金额、待领取奖励和累计奖励。<br>2.可点击某个具体钱包查看总委托金额、累计奖励金额和待领取奖励，也可进行赎回和赎回委托操作。<br>3. 点击【领取】可领取该钱包的所有奖励。<br>
+<div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton40.jpg" width="250"/><img src="zh-cn/Tool/ATON-manual-cn.assets/aton46.jpg" width="250"/></div> <div><br>1. 点击【委托-我的委托】可查看当前客户端钱包总的委托金额、待领取奖励和累计奖励。<br>2.可点击某个具体钱包查看总委托金额、累计奖励金额和待领取奖励，也可进行赎回和赎回委托操作。<br>3. 点击【领取】可领取该钱包的所有待领取奖励，输入正确的钱包密码，交易完成奖励即可到账。<br>
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -133,7 +133,7 @@
 ## 12.赎回
 
 <div>
-<div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton47.jpg" width="300"/></div><div><br>1. 点击【委托-我的委托-详情-赎回委托】可进行赎回。<br>2. 输入想要赎回的数量，数量需大于等于10LAT，输入正确的密码即可完成赎回委托操作。<br>3. 可点击【已委托】下拉框选择不同类别的委托进行赎回。<br><br><b>注意</b><br>1. 赎回委托，将立即到账。<br>2. 操作全部赎回时，将自动领取委托奖励。
+<div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton47.jpg" width="300"/></div><div><br>1. 点击【委托-我的委托-详情-赎回委托】可进行赎回。<br>2. 可点击【已委托】下拉框选择不同类别的委托进行赎回。<br>3. 输入想要赎回的数量，数量需大于等于10LAT，输入正确的密码即可完成赎回委托操作。<br><br><b>注意</b><br>1. 赎回委托，将立即到账。<br>2. 操作全部赎回时，将自动领取委托奖励。
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
