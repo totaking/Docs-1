@@ -8,8 +8,8 @@
 </div>
 <div style = "clear: both"> </div>
 <div style = "margin-top: 40px;"> </div>
-## 2. Create a wallet
 
+## 2. Create Wallet
 <div>
 <div style = "float: left;"> <img src = "ATON-user-manual.assets/aton2.png "width =" 500 "/> </div> <div> <br> 1. Click [Create Wallet]. <br> 2. Set the wallet name, and set the wallet password. <br> 3. Click the [Create Wallet] button to create a wallet. <br> 4. After the wallet is successfully created, you can click [Start to Backup] to start the backup, or click [Skip] to perform backup later. <br> <br> <b> Note </b> <br> 1. Password is your credentials to operate the wallet.  PlatON does not store your password, make sure you keep it in mind.<br> 2. We strongly recommend you to back up your wallet after creating it.
 </div>
