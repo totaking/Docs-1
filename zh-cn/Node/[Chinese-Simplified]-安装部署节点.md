@@ -3,12 +3,10 @@
 `PlatON`支持以下不同的安装方式和不同的运行环境，请根据以下链接找到对应平台以及对应安装源的安装指南：
 
 - 源码编译安装
-  - [Ubuntu安装](#Ubuntu源码编译安装)
-  - [Windows安装](#Windows安装)
+  - [Ubuntu安装](#_Ubuntu源码编译安装)
+  - [Windows安装](#_Windows源码编译安装)
 - PPA方式安装
-  - [Ubuntu安装](#Ubuntu安装)
-
-<a name="Ubuntu源码编译安装"></a>
+  - [Ubuntu安装](#_Ubuntu PPA源安装)
 
 #### Ubuntu源码编译安装
 
@@ -37,8 +35,6 @@ $ make all
 编译完成之后在`PlatON-Go/build/bin`目录下会生成`platon`等一系列可执行文件，可根据需求将可执行文件拷贝到自己工作目录运行即可。
 
 
-
-<a name="Windows安装"></a>
 
 #### Windows源码编译安装
 
@@ -106,8 +102,6 @@ Windows编译环境需要符合以下条件：
 > 注意：重复编译会覆盖之前生成的可执行文件。
 
 
-
-<a name="Ubuntu安装"></a>
 
 #### Ubuntu PPA源安装
 
