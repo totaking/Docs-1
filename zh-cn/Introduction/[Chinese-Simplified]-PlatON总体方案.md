@@ -1,7 +1,5 @@
 ## PlatON总体方案
 
-[TOC]
-
 ### 1. PlatON方案概述
 
 #### 1.1 WEB3计算基础设施
@@ -67,7 +65,7 @@ PlatON中，Layer1共识网络在以太坊的技术框架上进行修改，核�
 
 - 密码算法：沿用从比特币时代开始使用的SHA256Hash算法、ECDSA签名算法外，PlatON还使用BLS用作共识的聚合签名，VRF做PPoS的验证人随机选取，ZKP和HE做隐私保护方案。
 - P2P网络：PlatON不用主流区块链项目常用的libp2p和devp2p库，实现RFC标准RFC6940的RELOAD（REsource LOcation And Discovery）定义的P2P协议，以及RFC7374的ReDiR（Recursive Distributed Rendezvous）定义的服务发现机制。
-- 账户模型和数据存储：沿用以太坊的账户模型，状态数据保持在帕特里夏树。PPoS相关的数据由于数据量较大，存放在帕特里夏树性能较差，不保存在帕特里夏树，而是单独保存在另外一个不存储历史状态的SNAPDB中。
+- 账户模型和数据存储：沿用以太坊的账户模型，状态数据保存在帕特里夏树。PPoS相关的数据由于数据量较大，存放在帕特里夏树性能较差，不保存在帕特里夏树，而是单独保存在另外一个不存储历史状态的SNAPDB中。
 - 共识机制：使用BFT风格的PoS共识机制。PPoS为带VRF的DPoS机制，VRF引入的随机性，可内生地抑制矿池规模扩张，这对PlatON的去中心化和安全非常重要。另外PlatON的BFT是一种基于部分同步假设情形下的并行拜占庭协议CBFT(Concurrent Byzantine Fault Tolerance)，CBFT参考了PBFT, Tendermint，Hotstaff等共识协议，通过pipeline的方式并行完成批量区块的生成和确认，从而提高共识效率。
 - 智能合约：同时支持EVM和WASM引擎，根据具体交易自动选择对应的虚机执行合约，支持Solidity,C++，Java，Python等主流编程语言。基于LLVM实现WASM编译器，并基于Truffer修改相应的命令行IDE，以及图形化IDE，同时支持隐私合约和可验证合约。
 - DAPP SDK：在以太坊的WEB3（支持Javascript，Java，Python，Swift语言）和JSON RPC的基础上根据PlatON的功能进行修改。另外需要增加更高效的GRPC接口。
