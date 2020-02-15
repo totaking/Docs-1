@@ -97,7 +97,7 @@ contract CrowdFunding {
     /**
      * 检测众筹目标是否已经达到
      */
-    function checkGoalReached() public afterDeadline {
+    function checkGoalReached() public afterDeadline payable{
         if (amountRaised >= fundingGoal){
             //达成众筹目标
             fundingGoalReached = true;
