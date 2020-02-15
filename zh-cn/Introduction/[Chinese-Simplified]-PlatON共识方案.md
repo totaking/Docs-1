@@ -1,4 +1,4 @@
-# CBFT(Concurrent Byzantine Fault Tolerance)共识协议方案
+# PlatON共识方案
 
 ##  摘要
 
