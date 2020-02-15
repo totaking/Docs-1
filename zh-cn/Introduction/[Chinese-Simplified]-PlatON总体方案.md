@@ -351,7 +351,7 @@ WASM合约的执行按照调用的WASM指令进行GAS计费，不同WASM指令GA
 
 ###### 3.6.2.2 隐私合约执行流程
 
-<img src="PlatON%E6%80%BB%E4%BD%93%E6%96%B9%E6%A1%88.assets/%E9%9A%90%E7%A7%81%E5%90%88%E7%BA%A6%E6%B5%81%E7%A8%8B.png" alt="隐私合约流程" style="zoom:80%;" />
+![隐私合约流程](PlatON%E6%80%BB%E4%BD%93%E6%96%B9%E6%A1%88.assets/%E9%9A%90%E7%A7%81%E5%90%88%E7%BA%A6%E6%B5%81%E7%A8%8B.png)
 
 ##### 3.6.3 可验证合约（VC Contract）
 
