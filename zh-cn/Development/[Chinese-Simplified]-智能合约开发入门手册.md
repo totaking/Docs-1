@@ -257,7 +257,7 @@ truffle(development)>helloWorld.methods.getName().call(null,function(error,resul
 
 > 答:  1.确认编译的合约文件中的版本号与truffle-config.js中指定的版本号是否一致。
 >           2.可能语法有误（如下所示），可以根据命令行提示修复后再进行编译
->               Error: CompileError: /home/juzix/hudenian/solidityDoc/contracts/HelloWorld.sol 7:22TypeError:Data location must be "memory" for parameter in function, but none was given.
+>               Error: CompileError: /home/juzix/hudenian/solidityDoc/contracts/HelloWorld.sol7 22 TypeError:Data location must be "memory" for parameter in function, but none was given.
 >               function setName(string  _name) public returns(string memory){
 >                                                  ^-----------^ 
 >               Compilation failed. See above.at Object.compile (/home/juzix/platon-truffle/build/webpack:/packages/workflow-compile/legacy/index.js72:1)
