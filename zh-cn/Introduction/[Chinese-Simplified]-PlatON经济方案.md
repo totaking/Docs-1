@@ -208,7 +208,7 @@ PlatON采取在小规模的备选节点中随机选取节点参与BFT共识，�
 
 角色关系示意图如下，**为方便后续描述，备选节点候选人包含备选节点和验证节点。备选节点包含验证节点。**
 
-<img src="PlatON%E7%BB%8F%E6%B5%8E%E6%96%B9%E6%A1%88.assets/%E8%A7%92%E8%89%B2%E8%AF%B4%E6%98%8E.png" alt="角色说明" style="zoom:80%;" > </img>
+![角色说明](PlatON%E7%BB%8F%E6%B5%8E%E6%96%B9%E6%A1%88.assets/%E8%A7%92%E8%89%B2%E8%AF%B4%E6%98%8E.png)
 
 
 
