@@ -6,7 +6,7 @@
   - [Ubuntu安装](#_Ubuntu源码编译安装)
   - [Windows安装](#_Windows源码编译安装)
 - PPA方式安装
-  - [Ubuntu安装](#_Ubuntu PPA源安装)
+  - [Ubuntu安装](#_Ubuntu下PPA源安装)
 
 #### Ubuntu源码编译安装
 
@@ -103,7 +103,7 @@ Windows编译环境需要符合以下条件：
 
 
 
-#### Ubuntu PPA源安装
+#### Ubuntu下PPA源安装
 
 添加`PPA`源，然后安装`PlatON`客户端，注意，在ubuntu18.04和ubuntu16.04上的安装方式有些差别：
 
