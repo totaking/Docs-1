@@ -3,10 +3,10 @@
 `PlatON`支持以下不同的安装方式和不同的运行环境，请根据以下链接找到对应平台以及对应安装源的安装指南：
 
 - 源码编译安装
-  - [Ubuntu安装](#_Ubuntu源码编译安装)
-  - [Windows安装](#_Windows源码编译安装)
+  - [Ubuntu安装](#Ubuntu源码编译安装)
+  - [Windows安装](#Windows源码编译安装)
 - PPA方式安装
-  - [Ubuntu安装](#_Ubuntu下PPA源安装)
+  - [Ubuntu安装](#Ubuntu下PPA源安装)
 
 #### Ubuntu源码编译安装
 
