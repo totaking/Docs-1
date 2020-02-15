@@ -19,34 +19,13 @@
 
 步骤如下：
 
-**step1.** 左下角 windows 田字标识，右键，单击**windows powershell（管理员）**，在powershell 界面输入以下命令。
+- 下载MTool安装包
 
-```bash
-$env:chocolateyUseWindowsCompression = 'true'
-Set-ExecutionPolicy -ExecutionPolicy Bypass
-iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
-```
+  在在线机器上，复制链接<https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/mtool/mtool-setup/X.X.X.X/mtool-setup.exe>或者 <http://47.91.153.183/mtool/mtool-setup/X.X.X.X/mtool-setup.exe> 到浏览器下载MTool安装包。其中X.X.X.X为MTool版本号，实际版本号需要从公告上获取。
 
-提示：
+- 安装MTool
 
-```plain
-执行策略更改
-执行策略可帮助你防止执行不信任的脚本。更改执行策略可能会产生安全风险，如 https:/go.microsoft.com/fwlink/?LinkID=135170 中的 about_Execution_Policies 帮助主题所述。是否要更改执行策略?
-[Y] 是(Y)  [A] 全是(A)  [N] 否(N)  [L] 全否(L)  [S] 暂停(S)  [?] 帮助 (默认值为“N”):
-```
-
-请输入：y，并按回车键结束。
-
-**step2.** 浏览器复制链接 <https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/mtool_install.bat> 或者 <http://47.91.153.183/opensource/scripts/mtool_install.bat> 下载脚本。
-
-**step3.** 鼠标右键点击 mtool_install.bat， 选择以管理员身份运行
-
-> 注意
->
-> - 提示 `Please enter the version number of MTool:` 时，请输入安装MTool的版本号，具体参考公告发布的MTool的版本号。
->
-> - 提示 `install MTool success` 时，表示 MTool 安装成功，未安装成功时，请通过我们的官方客户联系方式反馈具体问题。
-> - 提示 `请按任意键继续. . .` 时，请输入回车键关闭当前 cmd 窗口。
+  双击mtool-setup.exe进行安装。用户自行选择安装目录，弹出界面显示**Completing the mtool Setup Wizard**信息表示安装成功，点击**Finish**即可。
 
 ### 2.2  Ubuntu下安装MTool
 
