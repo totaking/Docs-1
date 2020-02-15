@@ -6,7 +6,7 @@
 
 ## 操作步聚
 
-**step1.** 使用创建一个新的工作目录如example
+**step1.** 创建一个新的工作目录如example
 ```bash
 juzix@juzix:~$ mkdir example
 juzix@juzix:~$ cd example/
