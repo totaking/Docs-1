@@ -104,77 +104,77 @@ Address: {566c274db7ac6d38da2b075b4ae41f4a5c481d21}
 
 ```
 {
-    "config": {
-        "chainId": 299,
-        "eip155Block": 1,
+	"config": {
+		"chainId": 299,
+		"eip155Block": 1,
 		"VMInterpreter": "evm",
-        "cbft": {
+		"cbft": {
 			"initialNodes": [{
 				"node": "enode://your-node-pubkey@127.0.0.1:16789",
 				"blsPubKey": "your-node-blspubkey"
 			}],
-            "amount": 10,
-            "period": 20000,
-            "validatorMode": "ppos"
-        },
-        "genesisVersion": 2048
-    },
-    "economicModel":{
-        "common":{
-            "maxEpochMinutes":360,
-            "maxConsensusVals":25,
-            "additionalCycleTime":525960
-        },
-        "staking":{
-            "stakeThreshold": 1000000000000000000000000,
-            "operatingThreshold": 10000000000000000000,
-            "maxValidators": 101,
-            "unStakeFreezeDuration": 28
-        },
-        "slashing":{
-           "slashFractionDuplicateSign": 10,
-           "duplicateSignReportReward": 50,
-           "maxEvidenceAge":27,
-           "slashBlocksReward":0
-        },
-         "gov": {
-            "versionProposalVoteDurationSeconds": 1209600‬,
-            "versionProposalSupportRate": 0.667,
-            "textProposalVoteDurationSeconds": 1209600‬,
-            "textProposalVoteRate": 0.5,
-            "textProposalSupportRate": 0.667,          
-            "cancelProposalVoteRate": 0.50,
-            "cancelProposalSupportRate": 0.667,
-            "paramProposalVoteDurationSeconds": 1209600‬,
-            "paramProposalVoteRate": 0.50,
-            "paramProposalSupportRate": 0.667      
-        },
-        "reward":{
-            "newBlockRate": 50,
-            "platonFoundationYear": 10 
-        },
-        "innerAcc":{
-            "platonFundAccount": "0xBE0af016941Acaf08Bf5f4ad185155Df6B7388ce",
-            "platonFundBalance": 0,
-            "cdfAccount": "0x08b2320Ef2482f0a5ad9411CCB1a748BcE7c2823",
-            "cdfBalance": 331811981000000000000000000
-        }
-    },
-    "nonce": "0x0376e56dffd12ab53bb149bda4e0cbce2b6aabe4cccc0df0b5a39e12977a2fcd23",
-    "timestamp": "0x5bc94a8a",
-    "extraData": "0xd782070186706c61746f6e86676f312e3131856c696e757800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-    "gasLimit": "4712388",
-    "alloc": {
-        "1000000000000000000000000000000000000003": {
-            "balance": "200000000000000000000000000"
-        },
-        "your-account-address": {
-		  "balance": "999000000000000000000"
+			"amount": 10,
+			"period": 20000,
+			"validatorMode": "ppos"
 		},
-    },
-    "number": "0x0",
-    "gasUsed": "0x0",
-    "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000"
+		"genesisVersion": 2048
+	},
+	"economicModel": {
+		"common": {
+			"maxEpochMinutes": 360,
+			"maxConsensusVals": 25,
+			"additionalCycleTime": 525960
+		},
+		"staking": {
+			"stakeThreshold": 1000000000000000000000000,
+			"operatingThreshold": 10000000000000000000,
+			"maxValidators": 101,
+			"unStakeFreezeDuration": 28
+		},
+		"slashing": {
+			"slashFractionDuplicateSign": 10,
+			"duplicateSignReportReward": 50,
+			"maxEvidenceAge": 27,
+			"slashBlocksReward": 0
+		},
+		"gov": {
+			"versionProposalVoteDurationSeconds": 1209600,
+			"versionProposalSupportRate": 0.667,
+			"textProposalVoteDurationSeconds": 1209600,
+			"textProposalVoteRate": 0.5,
+			"textProposalSupportRate": 0.667,
+			"cancelProposalVoteRate": 0.50,
+			"cancelProposalSupportRate": 0.667,
+			"paramProposalVoteDurationSeconds": 1209600,
+			"paramProposalVoteRate": 0.50,
+			"paramProposalSupportRate": 0.667
+		},
+		"reward": {
+			"newBlockRate": 50,
+			"platonFoundationYear": 10
+		},
+		"innerAcc": {
+			"platonFundAccount": "0xBE0af016941Acaf08Bf5f4ad185155Df6B7388ce",
+			"platonFundBalance": 0,
+			"cdfAccount": "0x08b2320Ef2482f0a5ad9411CCB1a748BcE7c2823",
+			"cdfBalance": 331811981000000000000000000
+		}
+	},
+	"nonce": "0x0376e56dffd12ab53bb149bda4e0cbce2b6aabe4cccc0df0b5a39e12977a2fcd23",
+	"timestamp": "0x5bc94a8a",
+	"extraData": "0xd782070186706c61746f6e86676f312e3131856c696e757800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+	"gasLimit": "4712388",
+	"alloc": {
+		"1000000000000000000000000000000000000003": {
+			"balance": "200000000000000000000000000"
+		},
+		"your-account-address": {
+		  "balance": "999000000000000000000"
+		}
+	},
+	"number": "0x0",
+	"gasUsed": "0x0",
+	"parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000"
 }
 ```
 
@@ -203,13 +203,13 @@ Successfully wrote genesis state
 - Windows命令行：
 
 ```
-D:\platon-node> platon.exe --identity "platon" --datadir .\data --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,eth,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data/nodekey --cbft.blskey ./data/blskey
+D:\platon-node> platon.exe --identity "platon" --datadir .\data --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data/nodekey --cbft.blskey ./data/blskey
 ```
 
 - Ubuntu命令行：
 
 ```
-$ ./platon --identity "platon" --datadir ./data --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,eth,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data/nodekey --cbft.blskey ./data/blskey
+$ ./platon --identity "platon" --datadir ./data --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data/nodekey --cbft.blskey ./data/blskey
 ```
 
 ***提示：***
@@ -236,7 +236,7 @@ $ ./platon --identity "platon" --datadir ./data --port 16789 --rpcaddr 0.0.0.0 -
 Ubuntu下以nohup方式启动程序：
 
 ```
-$ nohup ./platon --identity "platon" --datadir ./data --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,eth,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data/nodekey --cbft.blskey ./data/blskey &
+$ nohup ./platon --identity "platon" --datadir ./data --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data/nodekey --cbft.blskey ./data/blskey &
 ```
 当shell中提示nohup成功后再按下一次回车，确保不会因为误关闭终端引起的进程退出。
 
@@ -254,7 +254,7 @@ $ nohup ./platon --identity "platon" --datadir ./data --port 16789 --rpcaddr 0.0
 
 - 节点必须知道对方的存在
 
-- IPC-RPC服务器要么禁止，要么唯一禁用
+- IPC-RPC服务器要么禁止，要么唯一
 
 
 **1.在platon-node目录下创建目录data0和data1，作为两个节点的数据目录。分别生成两个节点的coinbase账户。**
@@ -432,14 +432,14 @@ $ cat ./data1/blskey
 
 ```
 D:\platon-node> platon.exe --datadir .\data0 init platon.json
-D:\platon-node> platon.exe --identity "platon" --datadir .\data0 --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,eth,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data0/nodekey --cbft.blskey ./data0/blskey
+D:\platon-node> platon.exe --identity "platon" --datadir .\data0 --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data0/nodekey --cbft.blskey ./data0/blskey
 ```
 
 - Ubuntu命令行：
 
 ```
 $ ./platon --datadir ./data0 init platon.json
-$ ./platon --identity "platon" --datadir ./data0 --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,eth,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data0/nodekey --cbft.blskey ./data0/blskey
+$ ./platon --identity "platon" --datadir ./data0 --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data0/nodekey --cbft.blskey ./data0/blskey
 ```
 
 **7.为节点1初始化创世块信息，拉起节点1**
@@ -448,7 +448,7 @@ $ ./platon --identity "platon" --datadir ./data0 --port 16789 --rpcaddr 0.0.0.0 
 
 ```
 D:\platon-node> platon.exe --datadir .\data1 init platon.json
-D:\platon-node> platon.exe --identity "platon" --datadir .\data1 --port 16790 --rpcaddr 0.0.0.0 --rpcport 6790 --rpcapi "db,eth,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data1/nodekey --cbft.blskey ./data1/blskey
+D:\platon-node> platon.exe --identity "platon" --datadir .\data1 --port 16790 --rpcaddr 0.0.0.0 --rpcport 6790 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data1/nodekey --cbft.blskey ./data1/blskey
 ```
 在Windows下除第一个节点外，其他节点都需要使用--ipcdisable启动。
 
@@ -456,7 +456,7 @@ D:\platon-node> platon.exe --identity "platon" --datadir .\data1 --port 16790 --
 
 ```
 $ ./platon --datadir ./data1 init platon.json
-$ ./platon --identity "platon" --datadir ./data1 --port 16790 --rpcaddr 0.0.0.0 --rpcport 6790 --rpcapi "db,eth,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data1/nodekey --cbft.blskey ./data1/blskey
+$ ./platon --identity "platon" --datadir ./data1 --port 16790 --rpcaddr 0.0.0.0 --rpcport 6790 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data1/nodekey --cbft.blskey ./data1/blskey
 ```
 
 **8.当两个节点都提示共识成功，区块插入到链，则集群环境启动成功。**
