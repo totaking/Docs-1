@@ -58,14 +58,14 @@ PlatON中，参与验证节点进行出块要创建两个钱包。
 
 - MTool目录
 
-  - Windows：%MTOOLDIR%
+  - Windows：`%MTOOLDIR%`
 
-  - Ubuntu：$MTOOLDIR
+  - Ubuntu：`$MTOOLDIR`
 
 >  说明：
 >
->   - MTool命令用变量$mtool-client代替；
->   - MTool目录用变量$MTOOLDIR代替；
+>   - MTool命令用变量`$mtool-client`代替；
+>   - MTool目录用变量`$MTOOLDIR`代替；
 >
 >  **`用户根据自己安装的系统进行选择。`**
 
@@ -92,31 +92,40 @@ PlatON中，参与验证节点进行出块要创建两个钱包。
 
 #### 3.4  配置验证节点信息
 
-根据用户在Windows或Ubuntu上安装的MTool，选择对应系统上的验证节点信息配置：
+根据用户在Ubuntu上安装的MTool，选择对应系统上的验证节点信息配置：
 
-##### 3.4.1  Windows下配置验证节点信息
 
-操作步骤如下：
+##### 3.4.1  Ubuntu下配置验证节点信息
 
-**step1.** 浏览器复制链接  
+### 3.4.1.1 配置 nginx
 
- [下载脚本validator_conf.bat]( <https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/validator_conf.bat>)
+安全考虑，不建议节点 rpc 端口对外直接开放。可以考虑使用 Nginx 进行反向代理，并通过用户鉴权和 HTTPS 加强 Nginx 端口的安全性。如果用户在安装PlatON做了节点数据目录的修改，nginx_conf.sh脚本也需要修改成相同的节点数据目录。 Nginx 配置步骤如下：
 
-**step2.** 鼠标右键点击 validator_conf.bat， 选择以管理员身份运行
+**step1.** 下载 nginx_conf.sh
+
+``` bash
+wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/nginx_conf.sh
+```
+
+或者
+
+``` bash
+wget http://47.91.153.183/opensource/scripts/nginx_conf.sh
+```
+
+**step2.** 执行脚本
+
+``` bash
+chmod +x nginx_conf.sh && ./nginx_conf.sh
+```
 
 > 注意
 >
-> - 提示 `Please enter the platon node IP address:` 时，请输入 PlatON 节点服务器 ip 地址。
-> - 提示 `Please enter the platon chain id:` 时，请输入链ID。
-> - 提示 `Enter your name:` 时，请输入配置 nginx 时输入的用户名。
-> - 提示 `Enter your password:` 时，请输入配置 nginx 时输入的密码。
-> - 提示 `Enter your platon node name:` 时，请输入 PlatON 节点的名称。
-> - 提示 `Enter your platon node description:` 时，请输入 PlatON 节点描述。
-> - 提示 `validator conf success` 时，表示脚本执行成功，未执行成功时，请通过我们的官方客户联系方式反馈具体问题。
-> - 提示 `请按任意键继续. . .` 时，请输入回车键关闭当前 cmd 窗口。
-> - 请到 `C:/tools/mtool/current/validator` 目录下，查看 validator_config.json 内容，是否有异常。
+> - 提示 `[sudo] password for` 时，输入当前账户密码。
+> - 提示 `Enter your name:` 时，输入用户名，提示 `Enter your password:` 时，输入密码。务必牢记用户名和密码，后续MTool 配置验证节点信息时需要填写。
+> - 提示 `ngnix conf succeed` 时，表示配置 nginx 成功，未配置成功时，请通过我们的客户联系方式反馈具体问题。
 
-##### 3.4.2  Ubuntu下配置验证节点信息
+### 3.4.1.2 配置节点
 
 操作步骤如下：
 
