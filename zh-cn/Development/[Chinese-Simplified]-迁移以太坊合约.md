@@ -2,26 +2,26 @@
 
 ## 简介 
 
-​      如果您希望将以太坊的智能合约迁移到platon上，可以通过platon-truffle开发工具来进行。首先确保您正确安装了platon-truffle,只需按照以下步骤操作即可。
+​      如果您希望将以太坊的智能合约迁移到PlatON上，可以通过platon-truffle开发工具来进行。首先确保您正确安装了platon-truffle,只需按照以下步骤操作即可。
 
 ## 操作步聚
 
 **step1.** 创建一个新的工作目录如example
 ```bash
-juzix@juzix:~$ mkdir example
-juzix@juzix:~$ cd example/
-juzix@juzix:~/example$
+guest@guest:~$ mkdir example
+guest@guest:~$ cd example/
+guest@guest:~/example$
 ```
 **step2.** truffle init 创建一个truffle工程
 ```bash
-juzix@juzix:~/example$ truffle init
+guest@guest:~/example$ truffle init
 ```
 **step3.** 将以太坊合约文件如ERC200513Token.sol放至example/contracts目录下
 ```bash
-juzix@juzix:~/example/contracts$ ls
+guest@guest:~/example/contracts$ ls
 ERC200513Token.sol  Migrations.sol
 ```
-**注意事项：** platon智能合约中的货币单位为lat和von。要成功将您的以太坊智能合约迁移至platon，请将以太币面额更改为platon面额。请记住，1ether-> 1lat  1wei->1von。
+**注意事项：** PlatON智能合约中的货币单位为lat和von。要成功将您的以太坊智能合约迁移至PlatON，请将以太币面额更改为PlatON面额。同时注意以太/LAT市场汇率。
 
 **step4.** 修改truffle-config.js中的编译版本号及链相关配制
 ```bash
@@ -51,7 +51,7 @@ module.exports = {
 truffle compile
 编译成功输出如下信息：
 ```
->juzix@juzix:~/example$ truffle compile
+>guest@guest:~/example$ truffle compile
 >
 >Compiling your contracts...
 > Compiling ./contracts/ERC200513Token.sol
@@ -61,7 +61,7 @@ truffle compile
 
 >Warning: This is a pre-release compiler version, please do not use it in production.
 
-> Artifacts written to /home/juzix/example/build/contracts
+> Artifacts written to /home/guest/example/build/contracts
 > Compiled successfully using:
 >
 >   - solc: 0.5.13-develop.2020.1.2+commit.9ff23752.mod.Emscripten.clang
@@ -69,7 +69,7 @@ truffle compile
 
 **step6.** 进入example/migrations 添加合约部署配制文件2_initial_ERC200513Token.js
 ```bash
-juzix@juzix:~/example/migrations$ ls
+guest@guest:~/example/migrations$ ls
 1_initial_migration.js  2_initial_ERC200513Token.js
 内容如下：
 ```
@@ -86,7 +86,7 @@ juzix@juzix:~/example/migrations$ ls
 执行truffle migratte
 输出结果如下，表示迁移成功
 ```
->juzix@juzix:~/example$ truffle migrate
+>guest@guest:~/example$ truffle migrate
 >
 >Compiling your contracts...
 >
