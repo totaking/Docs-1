@@ -104,7 +104,7 @@ Compiling your contracts...
      account:             0xF644CfC3b0Dc588116D6621211a82C1Ef9c62E9e
      balance:             90000000.826385379994114416
      gas used:            638876
-     gas price:           50.000000004 VON
+     gas price:           50.000000004 gVON
      value sent:          0 LAT
      total cost:          0.031943800002555504 LAT
     

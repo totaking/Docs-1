@@ -183,7 +183,7 @@ Block gas limit: 0x5f5e100
     account:             0xF644CfC3b0Dc588116D6621211a82C1Ef9c62E9e
     balance:             90000000.867724449997417956
     gas used:            149247
-    gas price:           50.000000004 VON
+    gas price:           50.000000004 gVON
     value sent:          0 LAT
     total cost:          0.007462350000596988 LAT
 
