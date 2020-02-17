@@ -1,6 +1,3 @@
-- SDK
-	- [Java SDK开发指南](/zh-cn/Development/[Chinese-Simplified]-Java-SDK.md)
-	- [JS SDK开发指南](/zh-cn/Development/[Chinese-Simplified]-JS-SDK.md)
 - 智能合约开发
 	- [合约开发入门手册](/zh-cn/Development/[Chinese-Simplified]-智能合约开发入门手册.md)
 	- [合约迁移](/zh-cn/Development/[Chinese-Simplified]-迁移以太坊合约.md)
@@ -8,3 +5,6 @@
 	- [合约开发成本](/zh-cn/Development/[Chinese-Simplified]-合约开发成本.md)
 	- [最佳实践](/zh-cn/Development/[Chinese-Simplified]-最佳实践.md)
 	- [合约安全开发指南](/zh-cn/Development/[Chinese-Simplified]-合约安全开发指南)
+- SDK
+	- [Java SDK开发指南](/zh-cn/Development/[Chinese-Simplified]-Java-SDK.md)
+	- [JS SDK开发指南](/zh-cn/Development/[Chinese-Simplified]-JS-SDK.md)
