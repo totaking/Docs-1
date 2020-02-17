@@ -1,93 +1,20 @@
-> 主网是正式上线的、独立运行的区块链网络，网络上的交易行为被社区全员认可。
+## 主网
 
-`PlatON`节点默认运行在主网，本章节将说明如何让本地节点加入到主网络。
+主网是正式上线的、独立运行的区块链公有网络，网络上的交易行为被世界认可。
 
-设置前确保本地已经按照[PlatON安装指南](/zh-cn/basics/[Chinese-Simplified]-安装指南.md)安装好PlatON环境。
+### 准备
 
-本文假设Ubuntu环境下工作目录为 `~/platon-node` ，Windows环境下工作目录为 `D:\platon-node`。注意后续均在工作目录下进行。
+在加入PlatON主网前请确保服务器本地具备以下条件：
 
+1. 已经按照[PlatON安装指南](/zh-cn/Node/[Chinese-Simplified]-安装节点.md)安装好PlatON环境。
+2. 已经按照[节点秘钥](/zh-cn/Network/[Chinese-Simplified]-环境准备.md?id=节点秘钥)章节在'~/platon-node/data'目录下生成了节点私钥和节点BLS私钥。
 
-## 生成节点ID、节点公私钥和节点bls公私钥
+### 加入主网
 
-**1.运行公私钥对生成工具`keytool`生成节点ID和节点公私钥**
-
-- Windows命令行：
-
-```
-D:\platon-node> keytool.exe genkeypair
-Address   :  0xA9051ACCa5d9a7592056D07659f3F607923173ad
-PrivateKey:  1abd1200759d4693f4510fbcf7d5caad743b11b5886dc229da6c0747061fca36
-PublicKey :  8917c748513c23db46d23f531cc083d2f6001b4cc2396eb8412d73a3e4450ffc5f5235757abf9873de469498d8cf45f5bb42c215da79d59940e17fcb22dfc127
-```
-
-- Ubuntu命令行：
+执行以下命令即可加入PlatON主网：
 
 ```
-$ chmod u+x keytool
-$ ./keytool genkeypair
-Address   :  0x95F06fC7569480544496e26a3189Ab1A78Ee9EdE
-PrivateKey:  929ecf7473affebc19aeefdac2e0f2d467258bbf3acd15f3813c839bce85841d
-PublicKey :  9dffb94030feaefcbf24bc2e7911827b5ed8b481bf5bd6d86e2f7ceed242fdebed9f612f0eee6ba7bc2434f93fdde651e99a60766bef6f63e80e6974a0e0450d
-```
-
-PublicKey是我们需要的 ***节点ID***， PrivateKey是对应的 ***节点私钥*** 。
-
-**2.运行公私钥对生成工具`keytool`生成节点bls公私钥**
-
-- Windows命令行：
-
-```
-D:\platon-node> keytool.exe genblskeypair
-PrivateKey:  35c09aee82a98338f730277582ff669e68ca5fc20693e4c461ac254e17aebf06
-PublicKey :  319aba31213ce8935b1f2758d9ebf7b01ec97dc857e8a5f6418e59f9914f1e59b49911446bc8c5383173d7c696a1d204c946ef54bafed9cdd0d1d3c3c12becca7b73f97afd9e30c1814b403d97d5f7f93c65332771491d94ca018e2e256b2314
-```
-
-- Ubuntu命令行：
-
-```
-$ chmod u+x keytool
-$ ./keytool genblskeypair
-PrivateKey:  3efd76151a22b272d0aa41da8c413ad310588279aaa7a3becc8419d94c0f3014
-PublicKey :  3213a99d1bc4fd4db7297af41ef2bfe456e43ad9a77246c5b584f8a0f772b64d800054e1f9a8ffda4e3b9812c6629109d763e07d8497727a5a4f68fcd3b4f5d6b0b99892bf6f2d974de506246dd377067b4f74d8bd7ef11136bc57b56ebf4c81
-```
-
-PublicKey是我们需要的 ***节点bls公钥***， PrivateKey是对应的 ***节点bls私钥*** 。
-
-**3.生成节点私钥文件nodekey，节点bls私钥文件blskey**
-
-注意echo命令行参数为节点私钥、bls私钥，需要替换成第1步生成的 ***节点私钥*** 和第2步生成的 ***节点bls私钥*** 。
-
-- Windows命令行：
-
-```
-D:\platon-node> echo 1abd1200759d4693f4510fbcf7d5caad743b11b5886dc229da6c0747061fca36 > .\data\nodekey
-D:\platon-node> type .\data\nodekey
-D:\platon-node> echo 35c09aee82a98338f730277582ff669e68ca5fc20693e4c461ac254e17aebf06 > .\data\blskey
-D:\platon-node> type .\data\blskey
-```
-
-- Ubuntu命令行：
-
-```
-$ echo "929ecf7473affebc19aeefdac2e0f2d467258bbf3acd15f3813c839bce85841d" > ./data/nodekey
-$ cat ./data/nodekey
-$ echo "3efd76151a22b272d0aa41da8c413ad310588279aaa7a3becc8419d94c0f3014" > ./data/blskey
-$ cat ./data/blskey
-```
-
-
-## 启动本地节点并连接主网络
- 
-- Windows命令行
-
-```
-D:\platon-node> platon.exe --identity platon --datadir .\data --port 16789 --main --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --debug --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full" --gcmode "archive" 
-```
-
-- Linux命令行
-
-```
-$ ./platon --identity platon --datadir ./data --port 16789 --main --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --debug --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full" --gcmode "archive" 
+$ ./platon --identity platon --datadir ./data --port 16789 --main --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/nodeblskey --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full"
 ```
 
 ***提示：***
@@ -106,7 +33,7 @@ $ ./platon --identity platon --datadir ./data --port 16789 --main --rpcport 6789
 
 更多参数意义通过`platon --help`命令查看。
 
-## 查看是否添加成功
+### 查看是否添加成功
 
 **1.通过`http`方式进入`platon`控制台**
 
