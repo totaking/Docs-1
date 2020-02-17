@@ -95,7 +95,7 @@
 
 ##### 2.3.1 **回滚备份节点备份的数据**
 
-如果节点自己备份了数据，备份文件的格式为：data_backup_YYYY_MM_DD_num.tar.gz，其中num为备份时的区块高度。从自己备份的文件中选择区块高度不高于10000且最接近于10000的文件用于回滚。其中备份节点的操作参考[PlatON节点安装部署手册.md](zh-cn/Tool/[Chinese-Simplified]-PlatON节点安装部署手册.md)的**3.数据备份**章节。
+如果节点自己备份了数据，备份文件的格式为：data_backup_YYYY_MM_DD_num.tar.gz，其中num为备份时的区块高度。从自己备份的文件中选择区块高度不高于10000且最接近于10000的文件用于回滚。
 
 * **筛选备份文件**
 
@@ -142,7 +142,7 @@ tar -xzvf data_backup_2019_11_05_10000.tar.gz
 #### 2.4 重启节点
 
 ```shell
-cd $node_dir && nohup platon --identity "platon" --rallynet --datadir ./data --port 16789 --rpc --rpcaddr 127.0.0.1 --maxpeers 25 --rpcport 6789 --rpcapi "platon,debug,personal,admin,net,web3" --nodekey "./data/nodekey" --cbft.blskey ./data/blskey &
+cd $node_dir && nohup platon --identity "platon"  --datadir ./data --port 16789 --rpc --rpcaddr 127.0.0.1 --maxpeers 25 --rpcport 6789 --rpcapi "platon,debug,personal,admin,net,web3" --nodekey "./data/nodekey" --cbft.blskey ./data/blskey &
 ```
 
 #### 2.5 验证回滚情况

@@ -21,16 +21,13 @@
 
 步骤如下：
 
-- **step1.** 浏览器复制链接 <https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/mtool_install.bat> 或者 <http://47.91.153.183/opensource/scripts/mtool_install.bat> 下载脚本。
+- 下载MTool安装包
 
-- **step2.** 鼠标右键点击 mtool_install.bat， 选择以管理员身份运行
+  在在线机器上，复制链接<https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/mtool/mtool-setup/X.X.X.X/mtool-setup.exe>或者 <http://47.91.153.183/mtool/mtool-setup/X.X.X.X/mtool-setup.exe> 到浏览器下载MTool安装包。其中X.X.X.X为MTool版本号，实际版本号需要从公告上获取。
 
-> 注意
->
-> - 提示 `Please enter the version number of MTool:` 时，请输入安装MTool的版本号，具体参考公告发布的MTool的版本号。
->
-> - 提示 `install MTool success` 时，表示 MTool 安装成功，未安装成功时，请通过我们的官方客户联系方式反馈具体问题。
-> - 提示 `请按任意键继续. . .` 时，请输入回车键关闭当前 cmd 窗口。
+- 安装MTool
+
+  双击mtool-setup.exe进行安装。用户自行选择安装目录，弹出界面显示**Completing the mtool Setup Wizard**信息表示安装成功，点击**Finish**即可。
 
 #### 2.1.2  Ubuntu下安装在线MTool
 
