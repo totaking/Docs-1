@@ -65,7 +65,7 @@ function getName() public view returns(string memory)
 
 **step1.** 使用platon-truffle初始化项目
 
-```bash
+```
 在安装有platon-truffle的服务器上面先初始化一个工程。
 mkdir HelloWorld
 cd HelloWorld
@@ -186,14 +186,14 @@ truffle init
 ## 6 调用HelloWorld合约
 
 **step1.**  构建合约对象
-```bash
+```
 juzix@juzix:~/HelloWorld$ truffle console
 truffle(development)> var abi = [{"constant":false,"inputs":[{"internalType":"string","name":"_name","type":"string"}],"name":"setName","outputs":[{"internalType
 truffle(development)> var helloWorld = new web3.eth.Contract(abi,'0x9A5015F9A3728ff64f401b9B93E98078BdD48FD1');  
 ```
 
 **step2.**  调用合约
-```bash
+```
 truffle(development)>helloWorld.methods.setName("hello world").send({from:'0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e'}).on('transactionHash',function(hash){}).on('confirmation', function(confirmationNumber, receipt){}).on('receipt', function(receipt){ console.log(receipt);}).on('error', console.error);
 交易回执如下:
 ```
@@ -230,7 +230,7 @@ truffle(development)>helloWorld.methods.setName("hello world").send({from:'0xf64
 
 
 **step3.**  查询合约
-```bash
+```
 truffle(development)>helloWorld.methods.getName().call(null,function(error,result){console.log("name is:" + result);})  
 查询结果如下：
 ```
