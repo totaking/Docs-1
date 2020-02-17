@@ -7,24 +7,24 @@
 ## 操作步聚
 
 **step1.** 创建一个新的工作目录如example
-```bash
+```
 guest@guest:~$ mkdir example
 guest@guest:~$ cd example/
 guest@guest:~/example$
 ```
 **step2.** truffle init 创建一个truffle工程
-```bash
+```
 guest@guest:~/example$ truffle init
 ```
 **step3.** 将以太坊合约文件如ERC200513Token.sol放至example/contracts目录下
-```bash
+```
 guest@guest:~/example/contracts$ ls
 ERC200513Token.sol  Migrations.sol
 ```
 **注意事项：** PlatON智能合约中的货币单位为lat和von。要成功将您的以太坊智能合约迁移至PlatON，请将以太币面额更改为PlatON面额。同时注意以太/LAT市场汇率。
 
 **step4.** 修改truffle-config.js中的编译版本号及链相关配制
-```bash
+```
 module.exports = {
   networks: {
      development: {
@@ -47,7 +47,7 @@ module.exports = {
 ```
 
 **step5.** 执行编译 truffle compile
-```bash
+```
 truffle compile
 编译成功输出如下信息：
 
@@ -69,7 +69,7 @@ truffle compile
 
 
 **step6.** 进入example/migrations 添加合约部署配制文件2_initial_ERC200513Token.js
-```bash
+```
 guest@guest:~/example/migrations$ ls
 1_initial_migration.js  2_initial_ERC200513Token.js
 内容如下：
@@ -84,7 +84,7 @@ guest@guest:~/example/migrations$ ls
 
 **step7.** 执行truffle migrate 部署合约
 
-```bash
+```
 执行truffle migratte
 输出结果如下，表示迁移成功
 
