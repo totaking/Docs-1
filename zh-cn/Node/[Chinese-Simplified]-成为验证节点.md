@@ -41,7 +41,7 @@ PlatON 是实行民主治理的区块链项目，验证节点由所有 Energon �
 ##  成为验证节点操作步骤
 
 ###  1 安装节点
-[见文档](zh-cn/Tool/[Chinese-Simplified]-安装部署节点.md)
+[见文档](zh-cn/Tool/[Chinese-Simplified]-安装节点.md)
 
 ###  2 安装mtool
  [见文档](zh-cn/Tool/[Chinese-Simplified]-在线MTool使用手册.md)
