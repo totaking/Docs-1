@@ -97,7 +97,7 @@ PlatON中，参与验证节点进行出块要创建两个钱包。
 
 ##### 3.4.1  Ubuntu下配置验证节点信息
 
-### 3.4.1.1 配置 nginx
+##### 3.4.1.1 配置 nginx
 
 安全考虑，不建议节点 rpc 端口对外直接开放。可以考虑使用 Nginx 进行反向代理，并通过用户鉴权和 HTTPS 加强 Nginx 端口的安全性。如果用户在安装PlatON做了节点数据目录的修改，nginx_conf.sh脚本也需要修改成相同的节点数据目录。 Nginx 配置步骤如下：
 
@@ -125,7 +125,7 @@ chmod +x nginx_conf.sh && ./nginx_conf.sh
 > - 提示 `Enter your name:` 时，输入用户名，提示 `Enter your password:` 时，输入密码。务必牢记用户名和密码，后续MTool 配置验证节点信息时需要填写。
 > - 提示 `ngnix conf succeed` 时，表示配置 nginx 成功，未配置成功时，请通过我们的客户联系方式反馈具体问题。
 
-### 3.4.1.2 配置节点
+##### 3.4.1.2 配置节点
 
 操作步骤如下：
 
