@@ -1,6 +1,102 @@
-> 主网是正式上线的、独立运行的区块链网络，网络上的交易行为被社区全员认可。
+## 主网
 
-`PlatON`节点默认运行在主网，本章节将说明如何让本地节点加入到主网络。
+主网是正式上线的、独立运行的区块链公有网络，网络上的交易行为被世界认可。
+
+### 准备
+
+在加入PlatON主网前请确保服务器本地具备以下条件：
+
+1. 已经按照[PlatON安装指南](/zh-cn/Node/[Chinese-Simplified]-安装节点.md)安装好PlatON环境。
+2. 已经按照[节点秘钥](/zh-cn/Network/[Chinese-Simplified]-环境准备.md?id=节点秘钥)章节在'~/platon-node/data'目录下生成了节点私钥和节点BLS私钥。
+
+### 加入主网
+
+执行以下命令即可加入PlatON主网：
+
+```
+$ ./platon --identity platon --datadir ./data --port 16789 --main --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/nodeblskey --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full"
+```
+
+***提示：***
+
+| 选项         | 描述                     |
+|:------------ |:------------------------ |
+| --identity   | 指定网络名称             |
+| --datadir    | 指定data目录路径         |
+| --rpcaddr    | 指定rpc服务器地址        |
+| --rpcport    | 指定rpc协议通信端口      |
+| --rpcapi     | 指定节点开放的rpcapi名称 |
+| --rpc        | 指定http-rpc通讯方式     |
+| --nodekey    | 指定节点私钥文件         |
+| --cbft.blskey| 指定节点bls私钥文件      |
+| --main       | 指定连接到主网络，可选，不指定默认运行主网络   |
+
+更多参数意义通过`platon --help`命令查看。
+
+### 查看是否添加成功
+
+**1.通过`http`方式进入`platon`控制台**
+
+- Windows命令行
+
+```
+D:\platon-node> platon.exe attach http://localhost:6789
+```
+
+- Linux命令行：
+
+```
+$ ./platon attach http://localhost:6789
+```
+
+
+**2.查看节点列表是否添加主网络**
+
+```
+> admin.peers
+[{
+    caps: ["cbft/1", "platon/62", "platon/63"],
+    id: "0dd4e447cf23f4bfc94b1568bae626bf4894ce2e9d5ca474e3cc73ec7e9d4de550fffc1e2fc64cca25d42aecf6169cf8f8c0f4fe6adb847c33dc6ceb6f001bd1",
+    name: "PlatONnetwork/platon/v0.8.0-unstable-c5fc6b19/linux-amd64/go1.11.11",
+    network: {
+      consensus: true,
+      inbound: true,
+      localAddress: "127.0.0.1:16789",
+      remoteAddress: "127.0.0.1:47706",
+      static: false,
+      trusted: false
+    },
+    protocols: {
+      cbft: {
+        commitBn: 0,
+        highestQCBn: 0,
+        lockedBn: 0,
+        protocolVersion: 1
+      },
+      platon: {
+        head: "0x88a4fe315ce13b3010abf4ab5d120f25a21ac2ccae8ec563ad259e47e24b24bc",
+        number: 0,
+        version: 63
+      }
+    }
+},
+...
+]
+```
+
+节点列表中出现一系列主网络节点，则表示连接成功！
+
+
+
+
+
+
+
+
+
+> 贝莱世界测试网络现已开放，用户可以加入测试网络进行开发、调试和测试节点。
+
+本章节将说明如何让本地节点加入到测试网络。
 
 设置前确保本地已经按照[PlatON安装指南](/zh-cn/basics/[Chinese-Simplified]-安装指南.md)安装好PlatON环境。
 
@@ -75,19 +171,53 @@ $ echo "3efd76151a22b272d0aa41da8c413ad310588279aaa7a3becc8419d94c0f3014" > ./da
 $ cat ./data/blskey
 ```
 
+## 创建钱包账户
 
-## 启动本地节点并连接主网络
+通过`Platon`命令，可创建账户:
+
+- Windows命令行
+
+```
+D:\platon-node> mkdir data
+D:\platon-node> platon.exe --datadir .\data account new
+Your new account is locked with a password. Please give a password. Do not forget this password.
+Passphrase:
+Repeat passphrase:
+Address: {550ae58b051a8e942f858ef22019c1c622292f7e}
+```
+
+- Linux命令行：
+
+```
+$ mkdir -p data
+$ ./platon --datadir ./data account new
+Your new account is locked with a password. Please give a password. Do not forget this password.
+Passphrase:
+Repeat passphrase:
+Address: {550ae58b051a8e942f858ef22019c1c622292f7e}
+```
+
+输出结果为生成的账户地址。
+
+## 申请测试Energon
+
+使用第一步生成的账户地址在[PlatON官网](https://developer.platon.network/#/energon?lang=zh)申请测试Energon。
+
+***注意：测试Energon没有任何价值，仅限于体验测试网络功能。如仅仅只是连接测试网络，无需申请！***
+
+
+## 启动本地节点并连接测试网络
  
 - Windows命令行
 
 ```
-D:\platon-node> platon.exe --identity platon --datadir .\data --port 16789 --main --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --debug --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full" --gcmode "archive" 
+D:\platon-node> platon.exe --identity platon --datadir .\data --port 16789 --testnet --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --debug --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full" --gcmode "archive" 
 ```
 
 - Linux命令行
 
 ```
-$ ./platon --identity platon --datadir ./data --port 16789 --main --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --debug --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full" --gcmode "archive" 
+$ ./platon --identity platon --datadir ./data --port 16789 --testnet --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --debug --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full" --gcmode "archive" 
 ```
 
 ***提示：***
@@ -102,7 +232,7 @@ $ ./platon --identity platon --datadir ./data --port 16789 --main --rpcport 6789
 | --rpc        | 指定http-rpc通讯方式     |
 | --nodekey    | 指定节点私钥文件         |
 | --cbft.blskey| 指定节点bls私钥文件      |
-| --main       | 指定连接到主网络，可选，不指定默认运行主网络   |
+| --testnet    | 指定连接到测试网络          |
 
 更多参数意义通过`platon --help`命令查看。
 
@@ -123,7 +253,7 @@ $ ./platon attach http://localhost:6789
 ```
 
 
-**2.查看节点列表是否添加主网络**
+**2.查看节点列表是否添加测试网络**
 
 ```
 > admin.peers
@@ -157,4 +287,4 @@ $ ./platon attach http://localhost:6789
 ]
 ```
 
-节点列表中出现一系列主网络节点，则表示连接成功！
+节点列表中出现一系列测试网络节点，则表示连接成功！

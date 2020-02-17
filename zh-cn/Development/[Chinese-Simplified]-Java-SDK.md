@@ -1,4 +1,4 @@
-# Java SDK开发指南
+﻿# Java SDK开发指南
 
 ## 入门
 
@@ -21,7 +21,7 @@
 <dependency>
 	<groupId>com.platon.client</groupId>
 	<artifactId>core</artifactId>
-	<version>0.7.5.1</version>
+	<version>0.8.0.0</version>
 </dependency>
 ```
 
@@ -70,7 +70,7 @@ StakingContract contract = StakingContract.load(web3j, credentials, chainId);
 * **入参**
 
   - String：nodeId   节点id,16进制格式
-  - BigInteger：amount   质押的von，默认质押金额大于等于1000000LAT，根据治理参数调整
+  - BigInteger：amount   质押的VON，默认质押金额大于等于1000000LAT，根据治理参数调整
   - StakingAmountType：stakingAmountType   枚举,FREE_AMOUNT_TYPE表示使用账户自由金额,RESTRICTING_AMOUNT_TYPE表示使用锁仓金额做质押
   - String：benifitAddress   收益账户,用于接受出块奖励和质押奖励的收益账户
   - String：nodeName   被质押节点的名称
@@ -257,17 +257,17 @@ CallResponse<Node> baseRespons
 
   - BigInteger：ProgramVersion  被质押节点的PlatON进程的真实版本号(获取版本号的接口由治理提供)
 
-  - BigInteger：Released   发起质押账户的自由金额的锁定期质押的von
+  - BigInteger：Released   发起质押账户的自由金额的锁定期质押的VON
 
-  - BigInteger：ReleasedHes   发起质押账户的自由金额的犹豫期质押的von
+  - BigInteger：ReleasedHes   发起质押账户的自由金额的犹豫期质押的VON
 
-  - BigInteger：RestrictingPlan   发起质押账户的锁仓金额的锁定期质押的von
+  - BigInteger：RestrictingPlan   发起质押账户的锁仓金额的锁定期质押的VON
 
-  - BigInteger：RestrictingPlanHes   发起质押账户的锁仓金额的犹豫期质押的von
+  - BigInteger：RestrictingPlanHes   发起质押账户的锁仓金额的犹豫期质押的VON
 
-  - BigInteger：Shares   当前候选人总共质押加被委托的von数目
+  - BigInteger：Shares   当前候选人总共质押加被委托的VON数目
 
-  - String：StakingAddress   发起质押时使用的账户(撤销质押时，von会被退回该账户或者该账户的锁仓信息中)
+  - String：StakingAddress   发起质押时使用的账户(撤销质押时，VON会被退回该账户或者该账户的锁仓信息中)
 
   - BigInteger：StakingBlockNum    发起质押时的区块高度
 
@@ -275,7 +275,7 @@ CallResponse<Node> baseRespons
 
   - BigInteger：StakingTxIndex   发起质押时的交易索引
 
-  - BigInteger：Status   候选人的状态，0: 节点可用，1: 节点不可用 ，2:节点出块率低但没有达到移除条件的，4:节点的von不足最低质押门槛(只有倒数第三bit为1)，8:节点被举报双签，16:节点出块率低且达到移除条件(倒数第五位bit为1); 32: 节点主动发起撤销
+  - BigInteger：Status   候选人的状态，0: 节点可用，1: 节点不可用 ，2:节点出块率低但没有达到移除条件的，4:节点的VON不足最低质押门槛(只有倒数第三bit为1)，8:节点被举报双签，16:节点出块率低且达到移除条件(倒数第五位bit为1); 32: 节点主动发起撤销
 
   - BigInteger：ValidatorTerm   验证人的任期
 
@@ -387,7 +387,7 @@ DelegateContract delegateContract = DelegateContract.load(web3j, credentials, ch
 
   - String：nodeId   节点id，16进制格式，0x开头
   - StakingAmountType：stakingAmountType  枚举,FREE_AMOUNT_TYPE表示使用账户自由金额,RESTRICTING_AMOUNT_TYPE表示使用锁仓金额做质押
-  - BigInteger：amount   委托的金额(按照最小单位算，1LAT = 10**18 von)
+  - BigInteger：amount   委托的金额(按照最小单位算，1LAT = 10**18 VON)
 
 * **返回值**
 
@@ -467,11 +467,11 @@ CallResponse<Delegation>
   - String：NodeId   验证人的节点Id
   - BigInteger：StakingBlockNum    发起质押时的区块高度
   - BigInteger：DelegateEpoch   最近一次对该候选人发起的委托时的结算周期
-  - BigInteger：Released   发起委托账户的自由金额的锁定期委托的von
-  - BigInteger：ReleasedHes   发起委托账户的自由金额的犹豫期委托的von
-  - BigInteger：RestrictingPlan   发起委托账户的锁仓金额的锁定期委托的von
-  - BigInteger：RestrictingPlanHes   发起委托账户的锁仓金额的犹豫期质押的von
-  - BigInteger：Reduction   处于撤销计划中的von
+  - BigInteger：Released   发起委托账户的自由金额的锁定期委托的VON
+  - BigInteger：ReleasedHes   发起委托账户的自由金额的犹豫期委托的VON
+  - BigInteger：RestrictingPlan   发起委托账户的锁仓金额的锁定期委托的VON
+  - BigInteger：RestrictingPlanHes   发起委托账户的锁仓金额的犹豫期质押的VON
+  - BigInteger：Reduction   处于撤销计划中的VON
 
 * **Java SDK合约使用**
 
@@ -491,7 +491,7 @@ CallResponse<Delegation> baseResponse = delegateContract.getDelegateInfo(nodeId,
 
   - String：nodeId   节点id，16进制格式，0x开头
   - BigInteger：stakingBlockNum   委托节点的质押块高，代表着某个node的某次质押的唯一标示
-  - BigInteger：stakingAmount     减持的委托金额(按照最小单位算，1LAT = 10**18 von)
+  - BigInteger：stakingAmount     减持的委托金额(按照最小单位算，1LAT = 10**18 VON)
 
 * **返回值**
 
@@ -562,17 +562,17 @@ CallResponse<List<Node>> baseResponse
 
   - BigInteger：ProgramVersion  被质押节点的PlatON进程的真实版本号(获取版本号的接口由治理提供)
 
-  - BigInteger：Released   发起质押账户的自由金额的锁定期质押的von
+  - BigInteger：Released   发起质押账户的自由金额的锁定期质押的VON
 
-  - BigInteger：ReleasedHes   发起质押账户的自由金额的犹豫期质押的von
+  - BigInteger：ReleasedHes   发起质押账户的自由金额的犹豫期质押的VON
 
-  - BigInteger：RestrictingPlan   发起质押账户的锁仓金额的锁定期质押的von
+  - BigInteger：RestrictingPlan   发起质押账户的锁仓金额的锁定期质押的VON
 
-  - BigInteger：RestrictingPlanHes   发起质押账户的锁仓金额的犹豫期质押的von
+  - BigInteger：RestrictingPlanHes   发起质押账户的锁仓金额的犹豫期质押的VON
 
-  - BigInteger：Shares   当前候选人总共质押加被委托的von数目
+  - BigInteger：Shares   当前候选人总共质押加被委托的VON数目
 
-  - String：StakingAddress   发起质押时使用的账户(撤销质押时，von会被退回该账户或者该账户的锁仓信息中)
+  - String：StakingAddress   发起质押时使用的账户(撤销质押时，VON会被退回该账户或者该账户的锁仓信息中)
 
   - BigInteger：StakingBlockNum    发起质押时的区块高度
 
@@ -582,7 +582,7 @@ CallResponse<List<Node>> baseResponse
 
   - BigInteger：Status   候选人的状态，0: 节点可用，1: 节点不可用 ，2:节点出块率低但没有达到移除条件的，          
 
-    4:节点的von不足最低质押门槛(只有倒数第三bit为1)，8:节点被举报双签，16:节点出块率低且达到移除条件(倒数第五位bit为1); 32: 节点主动发起撤销
+    4:节点的VON不足最低质押门槛(只有倒数第三bit为1)，8:节点被举报双签，16:节点出块率低且达到移除条件(倒数第五位bit为1); 32: 节点主动发起撤销
 
   - BigInteger：ValidatorTerm   验证人的任期
 
@@ -624,17 +624,17 @@ CallResponse<List<Node>> baseResponse
 
   - BigInteger：ProgramVersion  被质押节点的PlatON进程的真实版本号(获取版本号的接口由治理提供)
 
-  - BigInteger：Released   发起质押账户的自由金额的锁定期质押的von
+  - BigInteger：Released   发起质押账户的自由金额的锁定期质押的VON
 
-  - BigInteger：ReleasedHes   发起质押账户的自由金额的犹豫期质押的von
+  - BigInteger：ReleasedHes   发起质押账户的自由金额的犹豫期质押的VON
 
-  - BigInteger：RestrictingPlan   发起质押账户的锁仓金额的锁定期质押的von
+  - BigInteger：RestrictingPlan   发起质押账户的锁仓金额的锁定期质押的VON
 
-  - BigInteger：RestrictingPlanHes   发起质押账户的锁仓金额的犹豫期质押的von
+  - BigInteger：RestrictingPlanHes   发起质押账户的锁仓金额的犹豫期质押的VON
 
-  - BigInteger：Shares   当前候选人总共质押加被委托的von数目
+  - BigInteger：Shares   当前候选人总共质押加被委托的VON数目
 
-  - String：StakingAddress   发起质押时使用的账户(撤销质押时，von会被退回该账户或者该账户的锁仓信息中)
+  - String：StakingAddress   发起质押时使用的账户(撤销质押时，VON会被退回该账户或者该账户的锁仓信息中)
 
   - BigInteger：StakingBlockNum    发起质押时的区块高度
 
@@ -642,7 +642,7 @@ CallResponse<List<Node>> baseResponse
 
   - BigInteger：StakingTxIndex   发起质押时的交易索引
 
-  - BigInteger：Status   候选人的状态，0: 节点可用，1: 节点不可用 ，2:节点出块率低但没有达到移除条件的，4:节点的von不足最低质押门槛(只有倒数第三bit为1)，8:节点被举报双签，16:节点出块率低且达到移除条件(倒数第五位bit为1); 32: 节点主动发起撤销
+  - BigInteger：Status   候选人的状态，0: 节点可用，1: 节点不可用 ，2:节点出块率低但没有达到移除条件的，4:节点的VON不足最低质押门槛(只有倒数第三bit为1)，8:节点被举报双签，16:节点出块率低且达到移除条件(倒数第五位bit为1); 32: 节点主动发起撤销
 
   - BigInteger：ValidatorTerm   验证人的任期
 
@@ -685,17 +685,17 @@ CallResponse<List<Node>> baseResponse
 
   - BigInteger：ProgramVersion  被质押节点的PlatON进程的真实版本号(获取版本号的接口由治理提供)
 
-  - BigInteger：Released   发起质押账户的自由金额的锁定期质押的von
+  - BigInteger：Released   发起质押账户的自由金额的锁定期质押的VON
 
-  - BigInteger：ReleasedHes   发起质押账户的自由金额的犹豫期质押的von
+  - BigInteger：ReleasedHes   发起质押账户的自由金额的犹豫期质押的VON
 
-  - BigInteger：RestrictingPlan   发起质押账户的锁仓金额的锁定期质押的von
+  - BigInteger：RestrictingPlan   发起质押账户的锁仓金额的锁定期质押的VON
 
-  - BigInteger：RestrictingPlanHes   发起质押账户的锁仓金额的犹豫期质押的von
+  - BigInteger：RestrictingPlanHes   发起质押账户的锁仓金额的犹豫期质押的VON
 
-  - BigInteger：Shares   当前候选人总共质押加被委托的von数目
+  - BigInteger：Shares   当前候选人总共质押加被委托的VON数目
 
-  - String：StakingAddress   发起质押时使用的账户(撤销质押时，von会被退回该账户或者该账户的锁仓信息中)
+  - String：StakingAddress   发起质押时使用的账户(撤销质押时，VON会被退回该账户或者该账户的锁仓信息中)
 
   - BigInteger：StakingBlockNum    发起质押时的区块高度
 
@@ -705,7 +705,7 @@ CallResponse<List<Node>> baseResponse
 
   - BigInteger：Status   候选人的状态，0: 节点可用，1: 节点不可用 ，2:节点出块率低但没有达到移除条件的，          
 
-    4:节点的von不足最低质押门槛(只有倒数第三bit为1)，8:节点被举报双签，16:节点出块率低且达到移除条件(倒数第五位bit为1); 32: 节点主动发起撤销
+    4:节点的VON不足最低质押门槛(只有倒数第三bit为1)，8:节点被举报双签，16:节点出块率低且达到移除条件(倒数第五位bit为1); 32: 节点主动发起撤销
 
   - BigInteger：ValidatorTerm   验证人的任期
 
@@ -2342,4 +2342,187 @@ DebugEconomicConfig属性中的String即为对应存储数据
 Web3j platonWeb3j = Web3j.build(new HttpService("http://127.0.0.1:6789"));
 Request<?, DebugEconomicConfig> req = currentValidWeb3j.getEconomicConfig();
 String debugEconomicConfig = req.send().getEconomicConfigStr();
+```
+
+## Solidity智能合约
+
+将Solidity智能合约部署到区块链上时，必须先将其编译成字节码的格式，然后将其作为交易的一部分发送。Java SDK 将帮你生成Solidity智能合约对应的Java包装类，可以方便的部署Solidity智能合约以及调用Solidity智能合约中的交易方法、事件和常量方法。
+
+### 编译solidity源代码
+
+* 通过`solc`编译器编译solidity源代码([solc下载](https://github.com/PlatONnetwork/solidity/releases))：
+
+```shell
+$ solc <contract>.sol --bin --abi --optimize -o <output-dir>/
+```
+
+`bin`，输出包含十六进制编码的solidity二进制文件以提供交易请求。
+`abi`，输出一个solidity的应用程序二进制接口（`ABI`）文件，它详细描述了所有可公开访问的合约方法及其相关参数。`abi`文件也用于生成solidity智能合约对应的Java包装类。
+
+* 使用`platon-truffle`编译solidity源代码([platon-truffle开发工具安装参考](https://github.com/PlatONnetwork/platon-truffle/tree/feature/evm)|[platon-truffle开发工具使用手册](https://platon-truffle.readthedocs.io/en/v0.1.0/index.html))：
+
+> **step1.** 使用platon-truffle初始化项目
+
+```
+在安装有platon-truffle的服务器上面先初始化一个工程。
+mkdir HelloWorld
+cd HelloWorld
+truffle init
+提示如下表示成功：
+
+  ✔ Preparing to download
+  ✔ Downloading
+  ✔ Cleaning up temporary files
+  ✔ Setting up box
+
+  Unbox successful. Sweet!
+
+  Commands:
+
+    Compile:        truffle compile
+    Migrate:        truffle migrate
+    Test contracts: truffle test
+```
+
+> **step2.** 将HelloWorld.sol放入HelloWorld/contracts目录下
+
+```
+guest@guest:~/HelloWorld/contracts$ ls
+HelloWorld.sol  Migrations.sol
+```
+
+> **step3.** 修改truffle-config.js文件，将编译器版本修改成“^0.5.13”
+
+```
+compilers: {
+    solc: {
+       version: "^0.5.13",    // Fetch exact version from solc-bin (default: truffle's version)
+      // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
+      // settings: {          // See the solidity docs for advice about optimization and evmVersion
+      //  optimizer: {
+      //    enabled: false,
+      //    runs: 200
+      //  },
+      //  evmVersion: "byzantium"
+       }
+    }
+}
+```
+
+> **step4.** 执行truffle compile编译合约
+
+```
+guest@guest:~/HelloWorld$ truffle compile
+
+Compiling your contracts...
+
+ Compiling ./contracts/HelloWorld.sol
+ Compiling ./contracts/Migrations.sol
+
+ compilation warnings encountered:
+
+Warning: This is a pre-release compiler version, please do not use it in production.
+
+ Artifacts written to /home/guest/hudenian/HelloWorld/build/contracts
+ Compiled successfully using:
+    solc: 0.5.13-develop.2020.1.2+commit.9ff23752.mod.Emscripten.clang
+```
+
+### Solidity智能合约Java包装类
+
+Java SDK支持从`abi`文件中自动生成Solidity智能合约对应的Java包装类。
+
+* 通过命令行工具生成Java包装类：
+
+```shell
+$ platon-web3j solidity generate [--javaTypes|--solidityTypes] /path/to/<smart-contract>.bin /path/to/<smart-contract>.abi -o /path/to/src/main/java -p com.your.organisation.name
+```
+
+* 直接调用Java SDK中的工具类生成Java包装类：
+
+```java
+String args[] = {"generate", "/path/to/<smart-contract>.bin", "/path/to/<smart-contract>.abi", "-o", "/path/to/src/main/java", "-p" , "com.your.organisation.name"};
+org.web3j.codegen.SolidityFunctionWrapperGenerator.run(args);
+```
+
+其中`bin`和`abi`文件是编译solidity源代码以后生成的。
+
+Solidity智能合约对应的Java包装类支持的主要功能：
+- 构建与部署
+- 确定合约有效性
+- 调用交易和事件
+- 调用常量方法
+
+#### 构建与部署智能合约
+
+智能合约的构建和部署使用包装类中的deploy方法：
+
+```java
+YourSmartContract contract = YourSmartContract.deploy(
+        <web3j>, <transactionManager>, contractGasProvider,
+        [<initialValue>,] <param1>, ..., <paramN>).send();
+```
+
+这个方法将在区块链上部署智能合约。部署成功以后，它将会返回一个智能合约的包装类实例，包含智能合约的地址。
+
+如果你的智能合约在构造上接受LAT转账，则需要初始化参数值<initialValue>。
+
+通过智能合约的地址也可以创建智能合约对应的Java包装类的实例：
+
+```java
+YourSmartContract contract = YourSmartContract.load(
+        "0x<address>|<ensName>", web3j, transactionManager, contractGasProvider);
+```
+
+#### 智能合约有效性
+
+使用此方法，可以验证智能合约的有效性。只有在合约地址中部署的字节码与智能合约封装包中的字节码匹配时才会返回`true`。
+
+```java
+contract.isValid();  // returns false if the contract bytecode does not match what's deployed
+                     // at the provided address
+```
+
+#### 交易管理器
+Java SDK提供了一个交易管理器`TransactionManager`来控制你连接到PlatON客户端的方式。默认采用`RawTransactionManager`。
+`RawTransactionManager`需要指定链ID。防止一个链的交易被重新广播到另一个链上：
+
+```java
+TransactionManager transactionManager = new RawTransactionManager(web3j, credentials, 100L);
+```
+
+你可以通过以下请求来获得链ID：
+
+```java
+web3j.netVersion().send().getNetVersion();
+```
+
+除了`RawTransactionManager`之外，Java SDK还提供了一个客户端交易管理器`ClientTransactionManager`，它将你的交易签名工作交给你正在连接的PlatON客户端。
+此外，还有一个`ReadonlyTransactionManager`，用于只从智能合约中查询数据，而不与它进行交易。
+
+#### 调用交易和事件
+对于所有交易的方法，只返回与交易关联的交易收据。
+
+```java
+TransactionReceipt transactionReceipt = contract.someMethod(<param1>, ...).send();
+```
+
+通过交易收据，可以提取索引和非索引的事件参数。
+
+```java
+List<SomeEventResponse> events = contract.getSomeEvents(transactionReceipt);
+```
+
+或者，你可以使用可观察的过滤器Observable filter，监听与智能合约相关联的事件：
+
+```java
+contract.someEventObservable(startBlock, endBlock).subscribe(event -> ...);
+```
+
+#### 调用常量方法
+
+常量方法只做查询，而不改变智能合约的状态。
+
+```java
+Type result = contract.someMethod(<param1>, ...).send();
 ```

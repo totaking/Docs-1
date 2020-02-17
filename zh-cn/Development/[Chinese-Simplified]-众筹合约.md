@@ -1,6 +1,6 @@
 # 众筹合约
 
-## 1 简介
+## 简介
 
 ​        在下面的例子中，我们将使用合约进行一次众筹。合约创建者发起众筹，并初始化众筹的代币数量及众筹持续的时间。如果在指定时间内众筹完成则此次众筹成功。并关闭众筹开关，根据一个固定兑换比率得到的一定数量的token会被铸造出来，并且会被计入在买方名下。否则众筹失败，把众筹的金额返还给投资者。
 
@@ -9,7 +9,7 @@
 - 众筹者
 - 投资者
 
-## 2  众筹的流程
+## 众筹的流程
 
 - 1.创建众筹合约指受益人
 - 2.部署合约初始化众筹代币数量及持续时间
@@ -19,7 +19,7 @@
 -  如果众筹时间已到，众筹代币数量已完成，给投资者按比例分配token。众筹成功
 -  如果众筹时间已到，众筹代币数量未完成，返还投资者代币。众筹失败
 
-## 3 众筹合约
+## 众筹合约
 
 ```
 pragma solidity ^0.5.13;
@@ -37,7 +37,7 @@ contract CrowdFunding {
     
     mapping(address => uint256) public tokenMap; //保存众筹者所拥有的代币数量
 
-    //记录已接收的lat通知
+    //记录已接收的LAT通知
     event GoalReached(address _beneficiaryAddress, uint _amountRaised);
 
     //转帐通知
@@ -179,7 +179,7 @@ Compiling your contracts...
      account:             0xF644CfC3b0Dc588116D6621211a82C1Ef9c62E9e
      balance:             90000000.806077629992489796
      gas used:            379154
-     gas price:           50.000000004 VON
+     gas price:           50.000000004 gVON
      value sent:          0 LAT
      total cost:          0.018957700001516616 LAT
  

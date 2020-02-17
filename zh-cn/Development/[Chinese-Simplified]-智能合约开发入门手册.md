@@ -1,18 +1,18 @@
 # 智能合约开发入门手册
 
-## 1 简介
+## 简介
 
 合约，就是一段程序，并且是一段能在区块链上运行的程序。把合约部署到区块链网络后，用户就能通过platon-truffle来调用这个合约，完成业务逻辑。本教程主要是指导用户在PlatON上创建，编译，部署和与HelloWorld智能合约交互。PlatON提供了platon-truffle来辅助用户与链进行交互。如果您想使用更加丰富的API可以参考[Java SDK开发指南](/zh-cn/Development/[Chinese-Simplified]-Java-SDK.md) 或者 [JS SDK开发指南](/zh-cn/Development/[Chinese-Simplified]-JS-SDK.md)
 
 - solidity智能合约语法请参考[Solidity官方文档](https://solidity.readthedocs.io/en/develop/)
 - platon-truffle开发工具[源码地址](https://github.com/PlatONnetwork/platon-truffle.git)
 
-## 2 platon-truffle开发工具介绍
+## platon-truffle开发工具介绍
 - platon-truffle开发工具[安装参考](https://github.com/PlatONnetwork/platon-truffle/tree/feature/evm)
 - platon-truffle开发工具[使用手册](https://platon-truffle.readthedocs.io/en/v0.1.0/index.html)
 
 
-## 3  创建HelloWorld合约
+## 创建HelloWorld合约
 
 ```
 pragma solidity ^0.5.13;
@@ -61,7 +61,7 @@ function getName() public view returns(string memory)
 
 ```
 
-## 4 编译HelloWorld合约 
+## 编译HelloWorld合约 
 
 **step1.** 使用platon-truffle初始化项目
 
@@ -130,7 +130,7 @@ Warning: This is a pre-release compiler version, please do not use it in product
     solc: 0.5.13-develop.2020.1.2+commit.9ff23752.mod.Emscripten.clang
 ```
 
-## 5 部署HelloWorld合约
+## 部署HelloWorld合约
 
 **step1.** 在HelloWorld/migrations/下添加部署HelloWorld合约辅助脚本2_initial_helloword.js，内容如下所示：
 
@@ -194,7 +194,7 @@ Block gas limit: 0x5f5e100
     Total cost:     0.007462350000596988 LAT
 ```
 
-## 6 调用HelloWorld合约
+## 调用HelloWorld合约
 
 **step1.**  构建合约对象
 
@@ -249,7 +249,7 @@ truffle(development)>helloWorld.methods.getName().call(null,function(error,resul
  'hello world'
 ```
 
-## 7 FAQ 
+## FAQ 
 
 > 问: platon-truffle有哪些命令如何使用？
 
@@ -291,8 +291,8 @@ truffle(development)>helloWorld.methods.getName().call(null,function(error,resul
 
 
 >2_initial_A.js文件配制如下：
-> const A = artifacts.require("A");
->   
+> 
+> const A = artifacts.require("A");  
 > module.exports = function(deployer) {
 >   deployer.deploy(ERC200513Token,100,'PLA','PLAT');//需要传入对应构造函数参数
 > };
