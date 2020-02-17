@@ -2,7 +2,7 @@
 
 ## 1 简介
 
-​        在下面的例子中，我们将使用合约进行一次众筹。合约创建者发起众筹，并初始化众筹的代币数量及众筹持序的时间。如果在指定时间内众筹完成则此次众筹成功。并关闭众筹开头，根据一个固定兑换比率得到的一定数量的token会被铸造出来，并且会被计入在买方名下。否则众筹失败，把众筹的金额返还给投资者。
+​        在下面的例子中，我们将使用合约进行一次众筹。合约创建者发起众筹，并初始化众筹的代币数量及众筹持续的时间。如果在指定时间内众筹完成则此次众筹成功。并关闭众筹开关，根据一个固定兑换比率得到的一定数量的token会被铸造出来，并且会被计入在买方名下。否则众筹失败，把众筹的金额返还给投资者。
 
 在合约中设置了两个角色
 
@@ -15,9 +15,9 @@
 - 2.部署合约初始化众筹代币数量及持续时间
 - 3.投资者进行投资
 - 4.判断众筹是否结束
--  如果众筹时间未到，众筹代币数量已完成，关闭众筹开头。给投资者按比例分配token。众筹成功
+-  如果众筹时间未到，众筹代币数量已完成，关闭众筹开关。给投资者按比例分配token。众筹成功
 -  如果众筹时间已到，众筹代币数量已完成，给投资者按比例分配token。众筹成功
--  如果众筹时间已到，众筹代币数量未完成，反还投资者代币。众筹失败
+-  如果众筹时间已到，众筹代币数量未完成，返还投资者代币。众筹失败
 
 ## 3 众筹合约
 
@@ -26,8 +26,8 @@ pragma solidity ^0.5.13;
 
 contract CrowdFunding {
     address payable public beneficiaryAddress = address(0x0); //受益人地址，设置为合约创建者
-    uint256 public fundingGoal = 100 lat;  //众筹目标，单位是lat
-    uint256 public amountRaised = 0; //已筹集金额数量， 单位是von
+    uint256 public fundingGoal = 100 LAT;  //众筹目标，单位是LAT
+    uint256 public amountRaised = 0; //已筹集金额数量， 单位是VON
     uint256 public deadline; //截止时间
     uint256 public price;  //代币价格
     bool public fundingGoalReached = false;  //达成众筹目标
@@ -52,7 +52,7 @@ contract CrowdFunding {
     /**
      * 初始化构造函数
      *
-     * @param _fundingGoalInlats 众筹lat币总量
+     * @param _fundingGoalInlats 众筹LAT币总量
      * @param _durationInMinutes 众筹截止,单位是分钟
      */
     constructor (
@@ -60,9 +60,9 @@ contract CrowdFunding {
         uint _durationInMinutes
     )public {
 	    beneficiaryAddress = msg.sender;
-        fundingGoal = _fundingGoalInlats * 1 lat;
+        fundingGoal = _fundingGoalInlats * 1 LAT;
         deadline = now + _durationInMinutes * 1 minutes;
-        price = 500 finney; //1个lat币可以买 2 个代币
+        price = 500 finney; //1个LAT币可以买 2 个代币
     }
 
 
@@ -145,56 +145,64 @@ contract CrowdFunding {
 
 **编译众筹合约：**
 
->juzix@juzix:~/example$ truffle compile
->
->Compiling your contracts...
-===========================
-> Compiling ./contracts/CrowdFunding.sol
->
-    > compilation warnings encountered:
->
->Warning: This is a pre-release compiler version, please do not use it in production.
->
-> Artifacts written to /home/juzix/example/build/contracts
-> Compiled successfully using:
->    solc: 0.5.13-develop.2020.1.2+commit.9ff23752.mod.Emscripten.clang
+```
+guest@guest:~/example$ truffle compile
+
+Compiling your contracts...
+
+ Compiling ./contracts/CrowdFunding.sol
+
+ compilation warnings encountered:
+
+Warning: This is a pre-release compiler version, please do not use it in production.
+
+ Artifacts written to /home/guest/example/build/contracts
+ Compiled successfully using:
+    solc: 0.5.13-develop.2020.1.2+commit.9ff23752.mod.Emscripten.clang
+```
 
 **部署众筹合约：**
->juzix@juzix:~/example$ truffle migrate
->
->Compiling your contracts...
-> Everything is up to date, there is nothing to compile.
-> 3_initial_CrowdFunding.js
-> 
->    Deploying 'CrowdFunding'
->     transaction hash:    0x3a6419cd4169d7cfb430a1fc5632239ac4a01845827f20df9b3229a334c5488b
->     Blocks: 0            Seconds: 0
->     contract address:    0x02D04C6fD2b0C07c43AA1a329D667f1F1Fc7a907
->     block number:        280532
->     block timestamp:     1581751224032
->     account:             0xF644CfC3b0Dc588116D6621211a82C1Ef9c62E9e
->     balance:             90000000.806077629992489796
->     gas used:            379154
->     gas price:           50.000000004 gwei
->     value sent:          0 ETH
->     total cost:          0.018957700001516616 ETH
-> 
-> 
->     Saving migration to chain.
->     Saving artifacts
->     Total cost:     0.018957700001516616 ETH
-> 
-> 
-> Summary
->  Total deployments:   1
->  Final cost:          0.018957700001516616 ETH
+
+```
+guest@guest:~/example$ truffle migrate
+
+Compiling your contracts...
+ Everything is up to date, there is nothing to compile.
+ 3_initial_CrowdFunding.js
+ 
+    Deploying 'CrowdFunding'
+     transaction hash:    0x3a6419cd4169d7cfb430a1fc5632239ac4a01845827f20df9b3229a334c5488b
+     Blocks: 0            Seconds: 0
+     contract address:    0x02D04C6fD2b0C07c43AA1a329D667f1F1Fc7a907
+     block number:        280532
+     block timestamp:     1581751224032
+     account:             0xF644CfC3b0Dc588116D6621211a82C1Ef9c62E9e
+     balance:             90000000.806077629992489796
+     gas used:            379154
+     gas price:           50.000000004 VON
+     value sent:          0 LAT
+     total cost:          0.018957700001516616 LAT
+ 
+ 
+     Saving migration to chain.
+     Saving artifacts
+     Total cost:     0.018957700001516616 LAT
+ 
+ 
+ Summary
+  Total deployments:   1
+  Final cost:          0.018957700001516616 LAT
+```
 
 
 **众筹者查询众筹情况：**
-> truffle(development)> crowdFunding.methods.amountRaised().call(null,function(error,result){console.log("result:" + result);})
-> result:0
+```
+truffle(development)>crowdFunding.methods.amountRaised().call(null,function(error,result){console.log("result:" + result);})
+result:0
+```
 
 
 **众筹者判断众筹是否成功：**
-> truffle(development)> crowdFunding.methods.safeWithdrawal().send({from:'0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e'}).on('data', function(event){ console.log(event);}).on('error', console.error); 
-
+```
+truffle(development)>crowdFunding.methods.safeWithdrawal().send({from:'0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e'}).on('data', function(event){ console.log(event);}).on('error', console.error); 
+```
