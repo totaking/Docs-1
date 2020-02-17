@@ -90,15 +90,7 @@
 ```
 
 
-**6.根据创世配置文件初始化创世信息**
-
-- Windows命令行：
-
-```
-D:\platon-node> platon.exe --datadir .\data init platon.json
-```
-
-- Ubuntu命令行：
+**2.根据创世配置文件初始化创世信息**
 
 ```
 $ ./platon --datadir ./data init platon.json
@@ -109,35 +101,13 @@ $ ./platon --datadir ./data init platon.json
 Successfully wrote genesis state
 ```
 
-**7.启动节点**
-
-- Windows命令行：
-
-```
-D:\platon-node> platon.exe --identity "platon" --datadir .\data --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data/nodekey --cbft.blskey ./data/blskey
-```
-
-- Ubuntu命令行：
+**3.启动节点**
 
 ```
 $ ./platon --identity "platon" --datadir ./data --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data/nodekey --cbft.blskey ./data/blskey
 ```
-
-***提示：***
-
-| 选项 | 描述 |
-| :------------ | :------------ |
-| --identity | 指定网络名称 |
-| --datadir  | 指定data目录路径 |
-| --rpcaddr  | 指定rpc服务器地址 |
-| --rpcport  | 指定rpc协议通信端口 |
-| --rpcapi   | 指定节点开放的rpcapi名称 |
-| --rpc      | 指定http-rpc通讯方式 |
-| --nodiscover | 不开启节点发现功能 |
-| --nodekey    | 指定节点私钥文件         |
-| --cbft.blskey| 指定节点bls私钥文件      |
-
 此时在标准输出中出现 blockNumber 增长的日志记录，**表示共识成功，链成功启动，并成功出块**。
+注意一定要指定'--datadir' 否则节点将默认初始化主网并连接到主网络。
 
 至此我们就搭建好了一个拥有单节点的 PlatON 私有网络。网络名称为 `platon`， 网络 `ID` 为`100`，你可以在你的私有 `PlatON` 网络中像在公网一样的单节点中执行任何操作。
 
