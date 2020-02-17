@@ -26,8 +26,8 @@ pragma solidity ^0.5.13;
 
 contract CrowdFunding {
     address payable public beneficiaryAddress = address(0x0); //受益人地址，设置为合约创建者
-    uint256 public fundingGoal = 100 lat;  //众筹目标，单位是lat
-    uint256 public amountRaised = 0; //已筹集金额数量， 单位是von
+    uint256 public fundingGoal = 100 LAT;  //众筹目标，单位是LAT
+    uint256 public amountRaised = 0; //已筹集金额数量， 单位是VON
     uint256 public deadline; //截止时间
     uint256 public price;  //代币价格
     bool public fundingGoalReached = false;  //达成众筹目标
@@ -52,7 +52,7 @@ contract CrowdFunding {
     /**
      * 初始化构造函数
      *
-     * @param _fundingGoalInlats 众筹lat币总量
+     * @param _fundingGoalInlats 众筹LAT币总量
      * @param _durationInMinutes 众筹截止,单位是分钟
      */
     constructor (
@@ -60,9 +60,9 @@ contract CrowdFunding {
         uint _durationInMinutes
     )public {
 	    beneficiaryAddress = msg.sender;
-        fundingGoal = _fundingGoalInlats * 1 lat;
+        fundingGoal = _fundingGoalInlats * 1 LAT;
         deadline = now + _durationInMinutes * 1 minutes;
-        price = 500 finney; //1个lat币可以买 2 个代币
+        price = 500 finney; //1个LAT币可以买 2 个代币
     }
 
 
@@ -145,7 +145,7 @@ contract CrowdFunding {
 
 **编译众筹合约：**
 
->juzix@juzix:~/example$ truffle compile
+>guest@guest:~/example$ truffle compile
 >
 >Compiling your contracts...
 >
@@ -155,12 +155,12 @@ contract CrowdFunding {
 >
 >Warning: This is a pre-release compiler version, please do not use it in production.
 >
-> Artifacts written to /home/juzix/example/build/contracts
+> Artifacts written to /home/guest/example/build/contracts
 > Compiled successfully using:
 >    solc: 0.5.13-develop.2020.1.2+commit.9ff23752.mod.Emscripten.clang
 
 **部署众筹合约：**
->juzix@juzix:~/example$ truffle migrate
+>guest@guest:~/example$ truffle migrate
 >
 >Compiling your contracts...
 > Everything is up to date, there is nothing to compile.
@@ -175,19 +175,19 @@ contract CrowdFunding {
 >     account:             0xF644CfC3b0Dc588116D6621211a82C1Ef9c62E9e
 >     balance:             90000000.806077629992489796
 >     gas used:            379154
->     gas price:           50.000000004 gwei
->     value sent:          0 ETH
->     total cost:          0.018957700001516616 ETH
+>     gas price:           50.000000004 VON
+>     value sent:          0 LAT
+>     total cost:          0.018957700001516616 LAT
 > 
 > 
 >     Saving migration to chain.
 >     Saving artifacts
->     Total cost:     0.018957700001516616 ETH
+>     Total cost:     0.018957700001516616 LAT
 > 
 > 
 > Summary
 >  Total deployments:   1
->  Final cost:          0.018957700001516616 ETH
+>  Final cost:          0.018957700001516616 LAT
 
 
 **众筹者查询众筹情况：**
