@@ -145,56 +145,64 @@ contract CrowdFunding {
 
 **编译众筹合约：**
 
->guest@guest:~/example$ truffle compile
->
->Compiling your contracts...
->
-> Compiling ./contracts/CrowdFunding.sol
->
-> compilation warnings encountered:
->
->Warning: This is a pre-release compiler version, please do not use it in production.
->
-> Artifacts written to /home/guest/example/build/contracts
-> Compiled successfully using:
->    solc: 0.5.13-develop.2020.1.2+commit.9ff23752.mod.Emscripten.clang
+```
+guest@guest:~/example$ truffle compile
+
+Compiling your contracts...
+
+ Compiling ./contracts/CrowdFunding.sol
+
+ compilation warnings encountered:
+
+Warning: This is a pre-release compiler version, please do not use it in production.
+
+ Artifacts written to /home/guest/example/build/contracts
+ Compiled successfully using:
+    solc: 0.5.13-develop.2020.1.2+commit.9ff23752.mod.Emscripten.clang
+```
 
 **部署众筹合约：**
->guest@guest:~/example$ truffle migrate
->
->Compiling your contracts...
-> Everything is up to date, there is nothing to compile.
-> 3_initial_CrowdFunding.js
-> 
->    Deploying 'CrowdFunding'
->     transaction hash:    0x3a6419cd4169d7cfb430a1fc5632239ac4a01845827f20df9b3229a334c5488b
->     Blocks: 0            Seconds: 0
->     contract address:    0x02D04C6fD2b0C07c43AA1a329D667f1F1Fc7a907
->     block number:        280532
->     block timestamp:     1581751224032
->     account:             0xF644CfC3b0Dc588116D6621211a82C1Ef9c62E9e
->     balance:             90000000.806077629992489796
->     gas used:            379154
->     gas price:           50.000000004 VON
->     value sent:          0 LAT
->     total cost:          0.018957700001516616 LAT
-> 
-> 
->     Saving migration to chain.
->     Saving artifacts
->     Total cost:     0.018957700001516616 LAT
-> 
-> 
-> Summary
->  Total deployments:   1
->  Final cost:          0.018957700001516616 LAT
+
+```
+guest@guest:~/example$ truffle migrate
+
+Compiling your contracts...
+ Everything is up to date, there is nothing to compile.
+ 3_initial_CrowdFunding.js
+ 
+    Deploying 'CrowdFunding'
+     transaction hash:    0x3a6419cd4169d7cfb430a1fc5632239ac4a01845827f20df9b3229a334c5488b
+     Blocks: 0            Seconds: 0
+     contract address:    0x02D04C6fD2b0C07c43AA1a329D667f1F1Fc7a907
+     block number:        280532
+     block timestamp:     1581751224032
+     account:             0xF644CfC3b0Dc588116D6621211a82C1Ef9c62E9e
+     balance:             90000000.806077629992489796
+     gas used:            379154
+     gas price:           50.000000004 VON
+     value sent:          0 LAT
+     total cost:          0.018957700001516616 LAT
+ 
+ 
+     Saving migration to chain.
+     Saving artifacts
+     Total cost:     0.018957700001516616 LAT
+ 
+ 
+ Summary
+  Total deployments:   1
+  Final cost:          0.018957700001516616 LAT
+```
 
 
 **众筹者查询众筹情况：**
-> truffle(development)> crowdFunding.methods.amountRaised().call(null,function(error,result){console.log("result:" + result);})
-> result:0
+```
+truffle(development)>crowdFunding.methods.amountRaised().call(null,function(error,result){console.log("result:" + result);})
+result:0
+```
 
 
 **众筹者判断众筹是否成功：**
-> truffle(development)> crowdFunding.methods.safeWithdrawal().send({from:'0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e'}).on('data', function(event){ console.log(event);}).on('error', console.error); 
-
+```
+truffle(development)>crowdFunding.methods.safeWithdrawal().send({from:'0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e'}).on('data', function(event){ console.log(event);}).on('error', console.error); 
+```
