@@ -68,13 +68,13 @@ function getName() public view returns(string memory)
 ## 编译HelloWorld合约 
 
 **step1.** 为platon-truffle项目创建新目录
-```bash
+```
 mkdir HelloWorld
 cd HelloWorld
 ```
 
 **step2.** 使用platon-truffle初始化一个空工程
-```bash
+```
 truffle init
 ```
 在操作完成之后，就有这样的一个项目结构：
@@ -85,7 +85,7 @@ truffle init
 - truffle-config.js: platon-truffle 配置文件
 
 **step3.** 将之前编写好的HelloWorld合约放至HelloWorld/contracts/目录下
-```bash
+```
 cd HelloWorld/contracts/
 ls
 HelloWorld.sol
@@ -108,7 +108,7 @@ truffle-config.js 修改部分内容如下：
 
 **step5.** 编译合约
 
-```bash
+```
 truffle compile
 ```
 在操作完成之后，就有这样的一个目录结构：
@@ -120,7 +120,7 @@ truffle compile
 ## 部署HelloWorld合约
 
 **step1.** 添加部署脚本文件
-```bash
+```
 cd migrations/
 touch 2_initial_helloword.js
 ```
@@ -132,7 +132,7 @@ touch 2_initial_helloword.js
 
 **step2.** 修改truffle-config.js中链的配制信息
 
-```bash
+```
 vim truffle-config.js
 ```
 将truffle-config.js中的区块链相关配制修改成您真实连接的链配制
@@ -150,7 +150,7 @@ vim truffle-config.js
 
 **step3.**  部署合约
 
-```bash
+```
 cd HelloWorld
 truffle migrate
 ```
