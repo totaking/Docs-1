@@ -1,61 +1,61 @@
 # 离线MTool使用手册 
 
-## 1 简介
+## 简介
 
 为了便于节点进行质押，委托以及治理等相关的操作，PlatON提供了MTool来辅助用户。
 
 - MTool可支持Ubuntu 18.04和Windows 10，本文档分别描述Windows和Ubuntu环境下的安装和使用
-- MTool需要通过RPC接口连接到验证节点，验证节点的安装部署可参考[PlatON节点安装部署手册.md](zh-cn/Node/[Chinese-Simplified]-安装节点.md)
+- MTool需要通过RPC接口连接到验证节点，验证节点的安装部署可参考[成为验证节点.md](zh-cn/Node/[Chinese-Simplified]-成为验证节点.md)
 - 为保证节点安全，建议节点RPC端口通过Nginx代理访问，Nginx使用Https和用户认证加强安全防护
 - MTool对质押等交易提供两种签名方式：在线签名和离线签名。此文档描述离线签名操作，在线签名请参考[在线MTool使用手册.md](zh-cn/Tool/[Chinese-Simplified]-在线MTool使用手册.md)
 
-## 2 安装MTool
+## 安装MTool
 
-### 2.1 在线MTool
+### 在线MTool
 
 如果已经安装在线MTool，可以忽略此步骤。
 
 另外，本文档分别介绍Windows和Ubuntu环境下的MTool操作，用户可根据自己的资源进行选择；如果下载脚本失败，请设置DNS 服务器为8.8.8.8。
 
-#### 2.1.1  Windows下安装在线MTool
+#### Windows下安装在线MTool
 
 步骤如下：
 
 - 下载MTool安装包
 
-  在在线机器上，复制链接<https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/mtool/mtool-setup/X.X.X.X/mtool-setup.exe>或者 <http://47.91.153.183/mtool/mtool-setup/X.X.X.X/mtool-setup.exe> 到浏览器下载MTool安装包。其中X.X.X.X为MTool版本号，实际版本号需要从公告上获取。
+  在在线机器上，复制链接<https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/mtool/mtool-setup/0.8.0.0/mtool-setup.exe>或者 <http://47.91.153.183/mtool/mtool-setup/0.8.0.0/mtool-setup.exe> 到浏览器下载MTool安装包。其中
 
 - 安装MTool
 
-  双击mtool-setup.exe进行安装。用户自行选择安装目录，弹出界面显示**Completing the mtool Setup Wizard**信息表示安装成功，点击**Finish**即可。
+  双击mtool-setup.exe进行安装。默认安装目录为 C:\tools , 建议不要更改此安装目录。弹出界面显示**Completing the mtool Setup Wizard**信息表示安装成功，点击**Finish**即可。
 
-#### 2.1.2  Ubuntu下安装在线MTool
+
+
+#### Ubuntu下安装在线MTool
 
 步骤如下：
 
 **step1.** 下载mtool工具包：(实际mtool版本的链接地址需从公告获取)
 
 ``` bash
-wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/mtool/X.X.X.X/mtool-all.zip
+wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/mtool/0.8.0.0/mtool-client.zip
 ```
 
 或者
 
 ``` bash
-wget http://47.91.153.183/mtool/X.X.X.X/mtool-all.zip
+wget http://47.91.153.183/mtool/0.8.0.0/mtool-client.zip
 ```
-
-> 其中X.X.X.X为mtool的版本号，实际版本号需从公告获取。
 
 **step2.** 解压mtool工具包
 
 ``` bash
-unzip mtool-all.zip && cd mtool-all
+unzip mtool-client.zip && cd mtool-client
 ```
 
 **step3.** 下载脚本
 
-**注意：脚本下载到mtool_all目录下，否则脚本无法找到新版本mtool的路径；**
+**注意：脚本下载到mtool-client目录下，否则脚本无法找到新版本mtool的路径；**
 
 ``` bash
 wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/mtool_install.sh
@@ -75,30 +75,30 @@ chmod +x mtool_install.sh && ./mtool_install.sh
 
 > 注意：
 >
-> - 提示 `Install mtool succeed.` 时，表示 MTool 安装成功，未安装成功时，请通过我们的官方客户联系方式反馈具体问题。
+> - 提示 `Install mtool succeed.` 时，表示 MTool 安装成功，未安装成功时，请通过我们的官方客服联系方式反馈具体问题。
 > - 安装完成之后，需要**`重启终端`**，让新添加的环境变量生效。
 
-### 2.2 离线MTool
+### 离线MTool
 
 安全考虑，离线MTool应该安装在离线机器（不连接任何网络和WIFI）上。
 
 另外，本文档分别介绍Windows和Ubuntu环境下的MTool操作，用户可根据自己的资源进行选择；
 
-#### 2.2.1  Windows下安装离线MTool
+#### Windows下安装离线MTool
 
 步骤如下：
 
 - 下载MTool安装包
 
-  在有网络的机器上，复制链接<https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/mtool/mtool-setup/X.X.X.X/mtool-setup.exe>或者 <http://47.91.153.183/mtool/mtool-setup/X.X.X.X/mtool-setup.exe> 到浏览器下载MTool安装包。其中X.X.X.X为MTool版本号，实际版本号需要从公告上获取。
+  在有网络的机器上，复制链接<https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/mtool/mtool-setup/0.8.0.0/mtool-setup.exe>或者 <http://47.91.153.183/mtool/mtool-setup/0.8.0.0/mtool-setup.exe> 到浏览器下载MTool安装包。其中
 
 - 通过安全存储介质（移动U盘或者移动硬盘）将安装文件mtool-setup.exe转到**离线机器**下
 
 - 在**离线机器**上安装MTool
 
-  双击mtool-setup.exe进行安装。用户自行选择安装目录，弹出界面显示**Completing the mtool Setup Wizard**信息表示安装成功，点击**Finish**即可。
+  双击mtool-setup.exe进行安装。默认安装目录为 C:\tools , 建议不要更改此安装目录。弹出界面显示**Completing the mtool Setup Wizard**信息表示安装成功，点击**Finish**即可。
   
-#### 2.2.2  Ubuntu下安装离线MTool
+#### Ubuntu下安装离线MTool
 
 步骤如下：
 
@@ -107,16 +107,14 @@ chmod +x mtool_install.sh && ./mtool_install.sh
   在有网络的机器上，下载mtool安装包，执行命令(实际mtool版本的链接地址需从公告获取)：
 
 ``` bash
-wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/mtool/X.X.X.X/mtool-all.zip
+wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/mtool/0.8.0.0/mtool-client.zip
 ```
 
 或者
 
 ``` bash
-wget http://47.91.153.183/mtool/X.X.X.X/mtool-all.zip
+wget http://47.91.153.183/mtool/0.8.0.0/mtool-client.zip
 ```
-
-> 其中X.X.X.X为MTool的版本号，实际版本号需从公告获取。
 
 - 在**离线机器**上执行命令：
 
@@ -155,7 +153,7 @@ wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/install
 wget http://47.91.153.183/opensource/scripts/install_off_line_mtool.sh
 ```
 
-- 通过安全存储介质（移动U盘或者移动硬盘）将压缩文件mtool-all.zip和install_off_line_mtool.sh脚本转到**离线机器**下，如果需要安装jdk，把jdk-8u221-linux-x64.tar.gz和mtool-all.zip，install_off_line_mtool.sh脚本放在同一个目录下。
+- 通过安全存储介质（移动U盘或者移动硬盘）将压缩文件mtool-client.zip和install_off_line_mtool.sh脚本转到**离线机器**下，如果需要安装jdk，把jdk-8u221-linux-x64.tar.gz和mtool-client.zip，install_off_line_mtool.sh脚本放在同一个目录下。
 - 在**离线机器**上安装MTool，执行命令：
 
 如果需要安装jdk，解压jdk-8u221-linux-x64.tar.gz，否则跳过此命令：
@@ -167,16 +165,16 @@ tar -xzvf jdk-8u221-linux-x64.tar.gz
 执行安装步骤：
 
 ``` bash
-unzip mtool-all.zip && chmod +x install_off_line_mtool.sh && ./install_off_line_mtool.sh
+unzip mtool-client.zip && chmod +x install_off_line_mtool.sh && ./install_off_line_mtool.sh
 ```
 
 > 注意：
 >
 > - 离线机器上需要提前安装unzip。
-> - 提示 `Install off line mtool succeed.` 时，表示离线MTool 安装成功，未安装成功时，请通过我们的官方客户联系方式反馈具体问题。
+> - 提示 `Install off line mtool succeed.` 时，表示离线MTool 安装成功，未安装成功时，请通过我们的官方客服联系方式反馈具体问题。
 > - 安装完成之后，需要**`重启终端`**，让新添加的环境变量生效。
 
-## 3 配置
+## 配置
 
 Windows和Ubuntu下MTool的命令及目录有所区别：
 
@@ -198,15 +196,15 @@ Windows和Ubuntu下MTool的命令及目录有所区别：
 >
 >  **`用户根据自己安装的系统进行选择。`**
 
-### 3.1 钱包配置
+### 钱包配置
 
-#### 3.1.1 基本概念
+#### 基本概念
 
 * 冷钱包：存储在离线机器上的钱包，不能暴露在互联网
 * 观察钱包：包含冷钱包地址的钱包，无法做交易，只能查看数据
 * 热钱包：暴露在互联网的钱包
 
-#### 3.1.2 创建冷钱包
+#### 创建冷钱包
 
 如果用户没有钱包，在**离线机器**上执行命令生成质押钱包和收益钱包；如果已经有钱包，可通过存储介质将钱包文件拷贝到离线MTool的解压包的**keystore**目录下，跳过本步骤。
 
@@ -222,7 +220,7 @@ $mtool-client account new staking
 $mtool-client account new reward
 ```
 
-#### 3.1.3 生成观察钱包
+#### 生成观察钱包
 
 - 生成质押观察钱包
 
@@ -259,13 +257,13 @@ wallet created at: keystore/reward_observed.json
 
 - 将生成的观察钱包文件reward_observed.json拷贝到**在线机器**的**keystore**目录下。
 
-### 3.2 连接到验证节点
+### 连接到验证节点
 
 如果已经配置验证节点信息，忽略此步骤。
 
 根据用户在Windows或Ubuntu上安装的MTool，选择对应系统上的验证节点信息配置，在**`在线机器`**上执行以下步骤生成验证节点配置信息：
 
-#### 3.2.1  Windows下配置验证节点信息
+#### Windows下配置验证节点信息
 
 **`在线机器`**是Windows操作系统的操作步骤如下：
 
@@ -279,10 +277,10 @@ wallet created at: keystore/reward_observed.json
 > - 提示 `Enter your password:` 时，请输入配置 nginx 时输入的密码。
 > - 提示 `Enter your platon node name:` 时，请输入 PlatON 节点的名称。
 > - 提示 `Enter your platon node description:` 时，请输入 PlatON 节点描述。
-> - 提示 `validator conf success` 时，表示脚本执行成功，未执行成功时，请通过我们的官方客户联系方式反馈具体问题。
+> - 提示 `validator conf success` 时，表示脚本执行成功，未执行成功时，请通过我们的官方客服联系方式反馈具体问题。
 > - 提示 `请按任意键继续. . .` 时，请输入回车键关闭当前 cmd 窗口。
 
-#### 3.2.2  Ubuntu下配置验证节点信息
+#### Ubuntu下配置验证节点信息
 
 **`在线机器`**是Ubuntu操作系统的操作步骤如下：
 
@@ -312,10 +310,10 @@ chmod +x validator_conf.sh && ./validator_conf.sh
 > - 提示 `Enter your password:` 时，请输入配置 nginx 时输入的密码。
 > - 提示 `Enter your platon node name:` 时，请输入 PlatON 节点的名称。
 > - 提示 `Enter your platon node description:` 时，请输入 PlatON 节点描述。
-> - 提示 `validator conf success` 并最后打印出的validator_config.json内容正常时，表示脚本执行成功，未执行成功时，请通过我们的官方客户联系方式反馈具体问题。
+> - 提示 `validator conf success` 并最后打印出的validator_config.json内容正常时，表示脚本执行成功，未执行成功时，请通过我们的官方客服联系方式反馈具体问题。
 
 
-## 4 基本操作流程
+## 基本操作流程
 
 Windows和Ubuntu下MTool的命令及目录有所区别：
 
@@ -337,7 +335,7 @@ Windows和Ubuntu下MTool的命令及目录有所区别：
 >
 >  **`用户根据自己安装的系统进行选择。`**
 
-### 4.1  生成交易数据
+### 生成交易数据
 
 - 生成待签名文件
 
@@ -363,7 +361,7 @@ File generated on transaction_details/transaction_detail_20191108114241.csv
 
   通过存储介质把**在线机器**下的待签名文件`$MTOOLDIR/transaction_details/transaction_detail_20191108114241.csv`拷贝到**离线机器**。
 
-### 4.2 离线签名交易
+### 离线签名交易
 
 - 生成交易签名文件
 
@@ -404,7 +402,7 @@ success: 1, failure: 0
 
 通过存储介质把**离线机器**上的**`已签名文件`** transaction_signature_20191108114625.csv 拷贝到**在线机器**。
 
-###  4.3 发送签名交易
+###  发送签名交易
 
 - 在**在线机器**执行交易上链命令完成质押操作
 
@@ -428,9 +426,9 @@ success: 1, failure: 0
 
 注：提示success并返回transaction hash表示签名交易发送成功，否则发送签名交易失败。
 
-##  5 MTool操作详解
+##  MTool操作详解
 
-此章节主要描述在**在线机器**上生成csv格式的交易待签名文件的相关命令（除了查询操作），生成的csv文件会保存在`$MTOOLDIR/transaction_details`目录下。完整的发送离线签名交易流程可参考[4 基本操作流程](#_4-基本操作流程)。
+此章节主要描述在**在线机器**上生成csv格式的交易待签名文件的相关命令（除了查询操作），生成的csv文件会保存在`$MTOOLDIR/transaction_details`目录下。完整的发送离线签名交易流程可参考[基本操作流程](#_基本操作流程)。
 
 另外Windows和Ubuntu下MTool的命令及目录有所区别：
 
@@ -452,7 +450,7 @@ success: 1, failure: 0
 >
 >  **`用户根据自己安装的系统进行选择。`**
 
-### 5.1 普通转账操作
+### 普通转账操作
 
 - 执行命令
 
@@ -468,7 +466,7 @@ $mtool-client tx transfer --address $MTOOLDIR/keystore/staking_observed.json --a
 >
 >recipient：接收地址
 
-### 5.2 查看钱包列表
+### 查看钱包列表
 
 - 执行命令
 
@@ -476,7 +474,7 @@ $mtool-client tx transfer --address $MTOOLDIR/keystore/staking_observed.json --a
 $mtool-client account list
 ```
 
-### 5.3 根据钱包名称查询余额
+### 根据钱包名称查询余额
 
 - 执行命令
 
@@ -486,9 +484,9 @@ $mtool-client account balance $keystorename --config $MTOOLDIR/validator/validat
 
 - 变量说明
 
->$keystorename：钱包名称
+>$keystorename：钱包文件名称
 
-### 5.4 根据地址查询余额
+### 根据地址查询余额
 
 - 执行命令
 
@@ -500,7 +498,7 @@ $mtool-client account balance -a $address --config $MTOOLDIR/validator/validator
 
 > a：钱包地址
 
-### 5.5 发起质押操作
+### 发起质押操作
 
 ​		如果共识节点部署完成，并且已经同步区块成功，您就可以使用MTool进行质押操作。质押资金申请完成后，确保质押账户余额足够，根据用户情况替换{质押金额}，质押最低门槛为100万LAT。
 
@@ -517,7 +515,7 @@ $mtool-client staking --amount 1000000 --address $MTOOLDIR/keystore/staking_obse
 >
 > restrictedamount: 不少于1000000lat-质押门槛，小数点不超过8位（使用锁仓余额质押）
 
-### 5.6 修改验证人信息操作 
+### 修改验证人信息操作 
 
 - 执行命令
 
@@ -541,7 +539,7 @@ $mtool-client update_validator --name VerifierName --url "www.platon.com" --iden
 >
 > a：执行命令时，同时更新版本验证人配置文件
 
-### 5.7 解质押操作
+### 解质押操作
 
 - 执行命令
 
@@ -553,7 +551,7 @@ $mtool-client unstaking --address $MTOOLDIR/keystore/staking_observed.json --con
 
 > 无
 
-### 5.8 增加质押操作
+### 增加质押操作
 
 - 执行命令
 
@@ -567,7 +565,7 @@ $mtool-client increasestaking --amount 5000000 --address $MTOOLDIR/keystore/stak
 >
 > restrictedamount： 用账户锁仓余额来增加质押量，不少于10质押门槛，小数点不超过8位（使用锁仓余额增加质押）
 
-### 5.9 提交文本提案操作
+### 提交文本提案操作
 
 - 执行命令
 
@@ -579,7 +577,7 @@ $mtool-client submit_textproposal --pid_id 100 --address $MTOOLDIR/keystore/stak
 
 > pid_id：GitHub ID
 
-### 5.10 提交升级提案操作
+### 提交升级提案操作
 
 - 执行命令
 
@@ -595,7 +593,7 @@ $mtool-client submit_versionproposal --newversion 1.0.0 --end_voting_rounds 10 -
 >
 > pid_id：GitHub ID
 
-### 5.11 提交取消提案操作
+### 提交取消提案操作
 
 - 执行命令
 
@@ -611,7 +609,7 @@ $mtool-client submit_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514
 >
 > pid_id：GitHub ID
 
-### 5.12 文本提案投票操作
+### 文本提案投票操作
 
 - 执行命令
 
@@ -625,7 +623,7 @@ $mtool-client vote_textproposal --proposalid 0x444c3df404bc1ce4d869166623514b370
 >
 > opinion：投票选项，yes、no、abstain-三选一
 
-### 5.13 升级提案投票操作
+### 升级提案投票操作
 
 - 执行命令
 
@@ -637,7 +635,7 @@ $mtool-client vote_versionproposal --proposalid 0x444c3df404bc1ce4d869166623514b
 
 > proposalid：升级提案ID，即发起提案交易的hash，66字符，字母数字组成
 
-### 5.14 取消提案投票操作
+### 取消提案投票操作
 
 - 执行命令
 
@@ -651,7 +649,7 @@ $mtool-client vote_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b3
 >
 > opinion：投票选项，yes、no、abstain-三选一
 
-### 5.15 版本声明操作
+### 版本声明操作
 
 - 执行命令
 
@@ -663,12 +661,12 @@ $mtool-client declare_version --address $MTOOLDIR/keystore/staking_observed.json
 
 > 无
 
-### 5.16 查看帮助
+### 查看帮助
 
 - 执行命令
 
 ```bash
-$mtool-client help
+$mtool-client -h
 ```
 
 - 参数说明
