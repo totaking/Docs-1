@@ -2,9 +2,9 @@
 
 ## 1 简介
 
-合约，就是一段程序，并且是一段能在区块链上运行的程序。把合约部署到区块链网络后，用户就能通过platon-truffle来调用这个合约，完成业务逻辑。本教程主要是指导用户在PlatON上创建，编译，部署和与HelloWorld智能合约交互。PlatON提供了platon-truffle来辅助用户与链进行交互。如果您想使用更加丰富的API可以参考[Java SDK开发指南](https://luo-dahui.github.io/Docs/#/zh-cn/Development/[Chinese-Simplified]-Java-SDK) 或者 [JS SDK开发指南](https://luo-dahui.github.io/Docs/#/zh-cn/Development/[Chinese-Simplified]-JS-SDK)
+合约，就是一段程序，并且是一段能在区块链上运行的程序。把合约部署到区块链网络后，用户就能通过platon-truffle来调用这个合约，完成业务逻辑。本教程主要是指导用户在PlatON上创建，编译，部署和与HelloWorld智能合约交互。PlatON提供了platon-truffle来辅助用户与链进行交互。如果您想使用更加丰富的API可以参考[Java SDK开发指南](/zh-cn/Development/[Chinese-Simplified]-Java-SDK.md) 或者 [JS SDK开发指南](/zh-cn/Development/[Chinese-Simplified]-JS-SDK.md)
 
-- solidity智能合约语法请参考[Solidity官方文档](https://solidity.readthedocs.io/en/develop/)。
+- solidity智能合约语法请参考[Solidity官方文档](https://solidity.readthedocs.io/en/develop/)
 - platon-truffle开发工具[源码地址](https://github.com/PlatONnetwork/platon-truffle.git)
 
 ## 2 platon-truffle开发工具介绍
@@ -200,7 +200,7 @@ Block gas limit: 0x5f5e100
 
 ```
 guest@guest:~/HelloWorld$ truffle console
-truffle(development)> var abi = [{"constant":false,"inputs":[{"internalType":"string","name":"_name","type":"string"}],"name":"setName","outputs":[{"internalType
+truffle(development)> var abi = [{"constant":false,"inputs":[{"internalType":"string","name":"_name","type":"string"}],"name":"setName","outputs":[{"internalType":"string","name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"}]'; 
 truffle(development)> var helloWorld = new web3.eth.Contract(abi,'0x9A5015F9A3728ff64f401b9B93E98078BdD48FD1');  
 ```
 
