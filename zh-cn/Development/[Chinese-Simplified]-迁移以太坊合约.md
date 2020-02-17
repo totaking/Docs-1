@@ -21,7 +21,7 @@ guest@guest:~/example$ truffle init
 guest@guest:~/example/contracts$ ls
 ERC200513Token.sol  Migrations.sol
 ```
-**注意事项：** PlatON智能合约中的货币单位为lat和von。要成功将您的以太坊智能合约迁移至PlatON，请将以太币面额更改为PlatON面额。同时注意以太/LAT市场汇率。
+**注意事项：** PlatON智能合约中的货币单位为LAT和VON。要成功将您的以太坊智能合约迁移至PlatON，请将以太币面额更改为PlatON面额。同时注意以太/LAT市场汇率。
 
 **step4.** 修改truffle-config.js中的编译版本号及链相关配制
 ```
