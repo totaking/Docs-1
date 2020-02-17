@@ -129,7 +129,7 @@ cd $node_dir/data && tar -xzvf data_backup_2019_11_05_9900.tar.gz
 cd $node_dir/data && wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/backup/data_backup_2019_11_05_10000.tar.gz
 ```
 
-> 注：$node_dir为实际节点数据目录，下载地址需修改为公告中实际的备份文件下载地址。
+> 注：`$node_dir`为实际节点数据目录，下载地址需修改为公告中实际的备份文件下载地址。
 
 * **回滚数据**
 
