@@ -2,14 +2,14 @@
 
 ## 1 简介
 
-​      合约，就是一段程序，并且是一段能在区块链上运行得程序。把合约部署到区块链后，用户就能通过platon-truffle来调用这个合约，完成业务逻辑。本教程主要是指导用户在PlatON上创建，编译，部署和与HelloWorld智能合约交互。PlatON提供了platon-truffle来辅助用户与链进行交互。
+合约，就是一段程序，并且是一段能在区块链上运行的程序。把合约部署到区块链网络后，用户就能通过platon-truffle来调用这个合约，完成业务逻辑。本教程主要是指导用户在PlatON上创建，编译，部署和与HelloWorld智能合约交互。PlatON提供了platon-truffle来辅助用户与链进行交互。
 
-- solidity智能合约语法请参考[Solidity官方文档]('https://solidity.readthedocs.io/en/develop/')。
-- platon-truffle开发工具[源码地址]('https://github.com/PlatONnetwork/platon-truffle.git')
+- solidity智能合约语法请参考[Solidity官方文档](https://solidity.readthedocs.io/en/develop/)。
+- platon-truffle开发工具[源码地址](https://github.com/PlatONnetwork/platon-truffle.git)
 
 ## 2 platon-truffle开发工具介绍
-- platon-truffle开发工具[安装参考]('https://github.com/PlatONnetwork/platon-truffle/tree/feature/evm')
-- platon-truffle开发工具[使用手册]('https://platon-truffle.readthedocs.io/en/v0.1.0/index.html')
+- platon-truffle开发工具[安装参考](https://github.com/PlatONnetwork/platon-truffle/tree/feature/evm)
+- platon-truffle开发工具[使用手册](https://platon-truffle.readthedocs.io/en/v0.1.0/index.html)
 
 
 ## 3  创建HelloWorld合约
@@ -242,14 +242,14 @@ truffle(development)>helloWorld.methods.getName().call(null,function(error,resul
 
 > 问: platon-truffle有哪些命令如何使用？
 
-> 答: platon-truffle开发使用手册[参考这里]('https://platon-truffle.readthedocs.io/en/v0.1.0/index.html')
+> 答: platon-truffle开发使用手册[参考这里](https://platon-truffle.readthedocs.io/en/v0.1.0/index.html)
 
 
 
 
 > 问: 合约为什么语法校验通不过？
 
-> 答: solidity合约0.4.x版本与0.5.x版本有重大变更，具体语法[参考这里]('https://solidity.readthedocs.io/en/develop/')
+> 答: solidity合约0.4.x版本与0.5.x版本有重大变更，具体语法[参考这里](https://solidity.readthedocs.io/en/develop/)
 
 
 
