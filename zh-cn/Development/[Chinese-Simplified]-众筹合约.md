@@ -37,7 +37,7 @@ contract CrowdFunding {
     
     mapping(address => uint256) public tokenMap; //保存众筹者所拥有的代币数量
 
-    //记录已接收的lat通知
+    //记录已接收的LAT通知
     event GoalReached(address _beneficiaryAddress, uint _amountRaised);
 
     //转帐通知
@@ -179,7 +179,7 @@ Compiling your contracts...
      account:             0xF644CfC3b0Dc588116D6621211a82C1Ef9c62E9e
      balance:             90000000.806077629992489796
      gas used:            379154
-     gas price:           50.000000004 VON
+     gas price:           50.000000004 gVON
      value sent:          0 LAT
      total cost:          0.018957700001516616 LAT
  
