@@ -6,9 +6,10 @@
 
 ## 节点数据备份
 链上数据建议及时备份，提供备份操作如下:
-如果下载脚本失败，请设置DNS 服务器为8.8.8.8。
 
 - 下载数据备份脚本
+
+如果下载脚本失败，请设置DNS 服务器为8.8.8.8。
 
   ```bash
   wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/node_back.sh
@@ -39,6 +40,7 @@
 根据从社区公告获得的升级版本号（假设为 0.10.0），进行部署安装。步骤如下：
 
 - 下载脚本
+如果下载脚本失败，请设置DNS 服务器为8.8.8.8。
 
   ```bash
   wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/update_platon.sh
