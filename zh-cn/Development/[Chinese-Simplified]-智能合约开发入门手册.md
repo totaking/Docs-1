@@ -200,7 +200,7 @@ Block gas limit: 0x5f5e100
 
 ```
 guest@guest:~/HelloWorld$ truffle console
-truffle(development)> var abi = [{"constant":false,"inputs":[{"internalType":"string","name":"_name","type":"string"}],"name":"setName","outputs":[{"internalType
+truffle(development)> var abi = [{"constant":false,"inputs":[{"internalType":"string","name":"_name","type":"string"}],"name":"setName","outputs":[{"internalType":"string","name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"}]'; 
 truffle(development)> var helloWorld = new web3.eth.Contract(abi,'0x9A5015F9A3728ff64f401b9B93E98078BdD48FD1');  
 ```
 
