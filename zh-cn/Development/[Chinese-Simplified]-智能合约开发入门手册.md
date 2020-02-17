@@ -2,7 +2,7 @@
 
 ## 1 简介
 
-合约，就是一段程序，并且是一段能在区块链上运行的程序。把合约部署到区块链网络后，用户就能通过platon-truffle来调用这个合约，完成业务逻辑。本教程主要是指导用户在PlatON上创建，编译，部署和与HelloWorld智能合约交互。PlatON提供了platon-truffle来辅助用户与链进行交互。
+合约，就是一段程序，并且是一段能在区块链上运行的程序。把合约部署到区块链网络后，用户就能通过platon-truffle来调用这个合约，完成业务逻辑。本教程主要是指导用户在PlatON上创建，编译，部署和与HelloWorld智能合约交互。PlatON提供了platon-truffle来辅助用户与链进行交互。如果您想使用更加丰富的API可以参考[Java SDK开发指南](https://luo-dahui.github.io/Docs/#/zh-cn/Development/[Chinese-Simplified]-Java-SDK) 或者 [JS SDK开发指南](https://luo-dahui.github.io/Docs/#/zh-cn/Development/[Chinese-Simplified]-JS-SDK)
 
 - solidity智能合约语法请参考[Solidity官方文档](https://solidity.readthedocs.io/en/develop/)。
 - platon-truffle开发工具[源码地址](https://github.com/PlatONnetwork/platon-truffle.git)
@@ -65,7 +65,7 @@ function getName() public view returns(string memory)
 
 **step1.** 使用platon-truffle初始化项目
 
-```bash
+```
 在安装有platon-truffle的服务器上面先初始化一个工程。
 mkdir HelloWorld
 cd HelloWorld
@@ -88,7 +88,7 @@ truffle init
 
 **step2.** 将HelloWorld.sol放入HelloWorld/contracts目录下
 
->  @juzix:~/HelloWorld/contracts$ ls
+>  @guest:~/HelloWorld/contracts$ ls
 >  HelloWorld.sol  Migrations.sol
 
 **step3.** 修改truffle-config.js文件，将编译器版本修改成“^0.5.13”
@@ -109,7 +109,7 @@ truffle init
 
 **step4.** 执行truffle compile编译合约
 
-> juzix@juzix:~/HelloWorld$ truffle compile
+> guest@guest:~/HelloWorld$ truffle compile
 > 
 > Compiling your contracts...
 > 
@@ -120,7 +120,7 @@ truffle init
 > 
 > Warning: This is a pre-release compiler version, please do not use it in production.
 > 
->  Artifacts written to /home/juzix/hudenian/HelloWorld/build/contracts
+>  Artifacts written to /home/guest/hudenian/HelloWorld/build/contracts
 >  Compiled successfully using:
 >     solc: 0.5.13-develop.2020.1.2+commit.9ff23752.mod.Emscripten.clang
 
@@ -150,7 +150,7 @@ truffle init
 
 **step3.**  执行truffle migrate 部署合约
 
-> juzix@juzix:~/HelloWorld$ truffle migrate
+> guest@guest:~/HelloWorld$ truffle migrate
 > 
 > Compiling your contracts...
 > 
@@ -173,27 +173,27 @@ truffle init
 >     account:             0xF644CfC3b0Dc588116D6621211a82C1Ef9c62E9e
 >     balance:             90000000.867724449997417956
 >     gas used:            149247
->     gas price:           50.000000004 gwei
->     value sent:          0 ETH
->     total cost:          0.007462350000596988 ETH
+>     gas price:           50.000000004 VON
+>     value sent:          0 LAT
+>     total cost:          0.007462350000596988 LAT
 > 
 > 
 >     Saving migration to chain.
 >     Saving artifacts
 >    
->     Total cost:     0.007462350000596988 ETH
+>     Total cost:     0.007462350000596988 LAT
 
 ## 6 调用HelloWorld合约
 
 **step1.**  构建合约对象
-```bash
-juzix@juzix:~/HelloWorld$ truffle console
+```
+guest@guest:~/HelloWorld$ truffle console
 truffle(development)> var abi = [{"constant":false,"inputs":[{"internalType":"string","name":"_name","type":"string"}],"name":"setName","outputs":[{"internalType
 truffle(development)> var helloWorld = new web3.eth.Contract(abi,'0x9A5015F9A3728ff64f401b9B93E98078BdD48FD1');  
 ```
 
 **step2.**  调用合约
-```bash
+```
 truffle(development)>helloWorld.methods.setName("hello world").send({from:'0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e'}).on('transactionHash',function(hash){}).on('confirmation', function(confirmationNumber, receipt){}).on('receipt', function(receipt){ console.log(receipt);}).on('error', console.error);
 交易回执如下:
 ```
@@ -230,7 +230,7 @@ truffle(development)>helloWorld.methods.setName("hello world").send({from:'0xf64
 
 
 **step3.**  查询合约
-```bash
+```
 truffle(development)>helloWorld.methods.getName().call(null,function(error,result){console.log("name is:" + result);})  
 查询结果如下：
 ```
@@ -257,10 +257,10 @@ truffle(development)>helloWorld.methods.getName().call(null,function(error,resul
 
 > 答:  1.确认编译的合约文件中的版本号与truffle-config.js中指定的版本号是否一致。
 >           2.可能语法有误（如下所示），可以根据命令行提示修复后再进行编译
->               Error: CompileError: /home/juzix/hudenian/solidityDoc/contracts/HelloWorld.sol7 22 TypeError:Data location must be "memory" for parameter in function, but none was given.
+>               Error: CompileError: /home/guest/hudenian/solidityDoc/contracts/HelloWorld.sol7 22 TypeError:Data location must be "memory" for parameter in function, but none was given.
 >               function setName(string  _name) public returns(string memory){
 >                                                  ^-----------^ 
->               Compilation failed. See above.at Object.compile (/home/juzix/platon-truffle/build/webpack:/packages/workflow-compile/legacy/index.js72:1)
+>               Compilation failed. See above.at Object.compile (/home/guest/platon-truffle/build/webpack:/packages/workflow-compile/legacy/index.js72:1)
 >               at process._tickCallback (internal/process/next_tick.js68:7)
 
 
