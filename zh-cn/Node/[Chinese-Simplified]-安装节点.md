@@ -21,13 +21,13 @@ Ubuntu编译环境要求：
 - go语言开发包：`go(1.7+)`
 - cmake:`3.0+`
 
-#### 获取源码
+##### 获取源码
 
 ```
 $ git clone https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 ```
 
-#### 编译
+##### 编译
 
 ```bash
 $ cd PlatON-Go
@@ -67,7 +67,7 @@ Windows编译环境需要符合以下条件：
 >
 > 例如：安装cmake之后，在CMD命令行中键入cmake，如果提示找不到该命令，则需要在path中添加cmake安装的路径
 
-#### 获取源码
+##### 获取源码
 
 在当前`%GOPATH%`目录下创建`src/github.com/PlatONnetwork/`和`bin`目录，在`PlatONnetwork`目录下克隆`PlatON-GO`的源码:
 
@@ -76,7 +76,7 @@ Windows编译环境需要符合以下条件：
 > git clone https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 ```
 
-#### 编译
+##### 编译
 
 > 注意:以下编译命令均需在`Git-bash`环境运行， 且步骤1中编译环境都已经成功安装！
 
