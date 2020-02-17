@@ -291,8 +291,8 @@ truffle(development)>helloWorld.methods.getName().call(null,function(error,resul
 
 
 >2_initial_A.js文件配制如下：
-> const A = artifacts.require("A");
->   
+> 
+> const A = artifacts.require("A");  
 > module.exports = function(deployer) {
 >   deployer.deploy(ERC200513Token,100,'PLA','PLAT');//需要传入对应构造函数参数
 > };
