@@ -272,6 +272,7 @@ truffle console
 
 调用合约命令说明：
 - `crowdFunding` 是我们之前构建的合约对象
-- `methods.safeWithdrawal` 是我们众筹合约中的一个方法，用于收回资金
+- `methods` 固定语法，指定将获取合约中的方法
+- `safeWithdrawal` 是我们众筹合约中的一个方法，用于收回资金
 - `from` 调用者的合约地址 
 - `on` 是监听合约处理结果事件，失败输出错误日志

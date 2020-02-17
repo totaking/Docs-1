@@ -183,7 +183,7 @@ truffle migrate
 ```javascript
 cd HelloWorld
 truffle console
-var abi = [{"constant":false,"inputs":[{"internalType":"string","name":"_name","type":"string"}],"name":"setName","outputs":[{"internalType":"string","name":"","type":"string"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getName","outputs":[{"internalType":"string","name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"}];
+var abi = [...]; //可以从build/contracts/HelloWorld.json文件中获取到
 var contractAddr = '0x9A5015F9A3728ff64f401b9B93E98078BdD48FD1';
 var helloWorld = new web3.eth.Contract(abi,contractAddr); 
 ```
@@ -191,7 +191,7 @@ var helloWorld = new web3.eth.Contract(abi,contractAddr);
 说明： 
 - `abi` 就是合约提供给外部调用时的接口，每个合约对应的abi在编译后的合约文件中，如：build/contracts/HelloWorld.json中可以找到
 - `contractAddr` 在我们部署合约成功后可以获取到
-- `helloWorld` 就是我们构建出来与链上合约交互的对象，根据可以根据自己合约名称定义
+- `helloWorld` 就是我们构建出来与链上合约交互的对象，可以根据自己合约名称定义
 
 
 **step2.**  调用合约函数
@@ -205,7 +205,8 @@ var helloWorld = new web3.eth.Contract(abi,contractAddr);
 ```
 调用合约命令说明：
 - `helloWorld` 是我们之前构建的合约对象
-- `methods.setName` 是我们HelloWorld合约中的一个方法，有一个String类型的入参，此处我们入参为`hello world`
+- `methods` 固定语法
+- `setName` 是我们HelloWorld合约中的一个方法，有一个String类型的入参，此处我们入参为`hello world`
 - `from` 调用者的合约地址 
 - `on` 是监听合约处理结果事件，此处如果成功我们将打印出回执，失败输出错误日志
 
@@ -235,7 +236,8 @@ var helloWorld = new web3.eth.Contract(abi,contractAddr);
 ```
 查询合约命令说明：
 - `helloWorld` 是我们之前构建的合约对象
-- `methods.getName` 是我们HelloWorld合约中的一个方法，该方法没有入参，故入参为空
+- `methods` 指定将获取合约中的方法
+- `getName` 是我们HelloWorld合约中的一个方法，该方法没有入参，故入参为空
 - `call` 指明是查询方法
 - `function` 是一个回调函数，将处理调用后的结果，此处我们通过console.log打印出执行结果
 
@@ -258,12 +260,7 @@ var helloWorld = new web3.eth.Contract(abi,contractAddr);
 > 问:  platon-truffle执行truffle compile 失败?
 
 > 答:  1.确认编译的合约文件中的版本号与truffle-config.js中指定的版本号是否一致。
->           2.可能语法有误（如下所示），可以根据命令行提示修复后再进行编译
->               Error: CompileError: /home/guest/hudenian/solidityDoc/contracts/HelloWorld.sol7 22 TypeError:Data location must be "memory" for parameter in function, but none was given.
->               function setName(string  _name) public returns(string memory){
->                                                  ^-----------^ 
->               Compilation failed. See above.at Object.compile (/home/guest/platon-truffle/build/webpack:/packages/workflow-compile/legacy/index.js72:1)
->               at process._tickCallback (internal/process/next_tick.js68:7)
+>      2.可能语法有误（如下所示），可以根据命令行提示修复后再进行编译
 
 
 
