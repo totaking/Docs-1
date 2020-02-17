@@ -1,106 +1,17 @@
+
+
 如果你不方便连接到外部网络，也可以选择搭建自己的私有网络。
 
-`PlatON`支持单节点模式和集群模式运行私有网络。
+`PlatON`支持单节点模式和集群模式运行私有网络， 同样，搭建私有网络前请确保服务器本地具备以下条件：
 
-设置前确保本地已经按照[PlatON安装指南](/zh-cn/basics/[Chinese-Simplified]-安装指南.md)安装好PlatON环境。
-
-本文假设Ubuntu环境下工作目录为 `~/platon-node` ，Windows环境下工作目录为 `D:\platon-node`。注意后续均在工作目录下进行。
+1. 已经按照[PlatON安装指南](/zh-cn/Node/[Chinese-Simplified]-安装节点.md)安装好PlatON环境。
+2. 已经按照[节点秘钥](/zh-cn/Network/[Chinese-Simplified]-环境准备.md?id=节点秘钥)章节在'~/platon-node/data'目录下生成了节点私钥和节点BLS私钥。
 
 ## 单节点环境
 
-**1.运行公私钥对生成工具`keytool`生成节点ID和节点公私钥**
+**1.生成创世块配置文件`platon.json`**
 
-- Windows命令行：
-
-```
-D:\platon-node> keytool.exe genkeypair
-Address   :  0xA9051ACCa5d9a7592056D07659f3F607923173ad
-PrivateKey:  1abd1200759d4693f4510fbcf7d5caad743b11b5886dc229da6c0747061fca36
-PublicKey :  8917c748513c23db46d23f531cc083d2f6001b4cc2396eb8412d73a3e4450ffc5f5235757abf9873de469498d8cf45f5bb42c215da79d59940e17fcb22dfc127
-```
-
-- Ubuntu命令行：
-
-```
-$ chmod u+x keytool
-$ ./keytool genkeypair
-Address   :  0x95F06fC7569480544496e26a3189Ab1A78Ee9EdE
-PrivateKey:  929ecf7473affebc19aeefdac2e0f2d467258bbf3acd15f3813c839bce85841d
-PublicKey :  9dffb94030feaefcbf24bc2e7911827b5ed8b481bf5bd6d86e2f7ceed242fdebed9f612f0eee6ba7bc2434f93fdde651e99a60766bef6f63e80e6974a0e0450d
-```
-
-PublicKey是我们需要的 ***节点ID***， PrivateKey是对应的 ***节点私钥*** 。
-
-**2.运行公私钥对生成工具`keytool`生成节点bls公私钥**
-
-- Windows命令行：
-
-```
-D:\platon-node> keytool.exe genblskeypair
-PrivateKey:  35c09aee82a98338f730277582ff669e68ca5fc20693e4c461ac254e17aebf06
-PublicKey :  319aba31213ce8935b1f2758d9ebf7b01ec97dc857e8a5f6418e59f9914f1e59b49911446bc8c5383173d7c696a1d204c946ef54bafed9cdd0d1d3c3c12becca7b73f97afd9e30c1814b403d97d5f7f93c65332771491d94ca018e2e256b2314
-```
-
-- Ubuntu命令行：
-
-```
-$ chmod u+x keytool
-$ ./keytool genblskeypair
-PrivateKey:  3efd76151a22b272d0aa41da8c413ad310588279aaa7a3becc8419d94c0f3014
-PublicKey :  3213a99d1bc4fd4db7297af41ef2bfe456e43ad9a77246c5b584f8a0f772b64d800054e1f9a8ffda4e3b9812c6629109d763e07d8497727a5a4f68fcd3b4f5d6b0b99892bf6f2d974de506246dd377067b4f74d8bd7ef11136bc57b56ebf4c81
-```
-
-PublicKey是我们需要的 ***节点bls公钥***， PrivateKey是对应的 ***节点bls私钥*** 。
-
-**3.生成节点私钥文件nodekey，节点bls私钥文件blskey**
-
-注意echo命令行参数为节点私钥、bls私钥，需要替换成第1步生成的 ***节点私钥*** 和第2步生成的 ***节点bls私钥*** 。
-
-- Windows命令行：
-
-```
-D:\platon-node> echo 1abd1200759d4693f4510fbcf7d5caad743b11b5886dc229da6c0747061fca36 > .\data\nodekey
-D:\platon-node> type .\data\nodekey
-D:\platon-node> echo 35c09aee82a98338f730277582ff669e68ca5fc20693e4c461ac254e17aebf06 > .\data\blskey
-D:\platon-node> type .\data\blskey
-```
-
-- Ubuntu命令行：
-
-```
-$ echo "929ecf7473affebc19aeefdac2e0f2d467258bbf3acd15f3813c839bce85841d" > ./data/nodekey
-$ cat ./data/nodekey
-$ echo "3efd76151a22b272d0aa41da8c413ad310588279aaa7a3becc8419d94c0f3014" > ./data/blskey
-$ cat ./data/blskey
-```
-
-**4.生成coinbase账户，为方便测试，可以在创世区块为该账户预先分配一定的Energon**
-
-- Windows命令行：
-
-```
-D:\platon-node> platon.exe --datadir .\data account new
-Your new account is locked with a password. Please give a password. Do not forget this password.
-Passphrase:
-Repeat passphrase:
-Address: {566c274db7ac6d38da2b075b4ae41f4a5c481d21}
-```
-
-- Ubuntu命令行：
-
-```
-$ ./platon --datadir ./data account new
-Your new account is locked with a password. Please give a password. Do not forget this password.
-Passphrase:
-Repeat passphrase:
-Address: {566c274db7ac6d38da2b075b4ae41f4a5c481d21}
-```
-
-记下生成的**Address**
-
-**5.生成创世块配置文件`platon.json`**
-
-在工作目录下创建创世区块文件，拷贝以下内容，修改 `your-node-pubkey` 为第1步生成的 ***节点ID*** ，`your-node-blspubkey` 为第2步生成的 ***节点bls公钥*** ，使本地节点成为共识节点参与共识。修改 `your-account-address` 为第4步生成的 ***Address***。`platon.json`内容如下：
+在工作目录下创建创世区块文件，拷贝以下内容，修改 `your-node-pubkey` 为[之前](/zh-cn/Network/[Chinese-Simplified]-环境准备.md?id=节点公私钥)生成的 ***节点ID*** ，`your-node-blspubkey` 为[之前](/zh-cn/Network/[Chinese-Simplified]-环境准备.md?id=节点BLS公私钥)生成的 ***节点bls公钥*** ，使本地节点成为共识节点参与共识。修改 `your-account-address` 为[之前](/zh-cn/Network/[Chinese-Simplified]-环境准备.md?id=钱包文件)生成的 ***Address***。`platon.json`内容如下：
 
 ```
 {
