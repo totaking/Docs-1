@@ -5,7 +5,7 @@
 为了便于节点进行质押，委托以及治理等相关的操作，PlatON提供了MTool来辅助用户。
 
 - MTool可支持Ubuntu 18.04和Windows 10，本文档分别描述Windows和Ubuntu环境下的安装和使用
-- MTool需要通过RPC接口连接到验证节点，验证节点的安装部署可参考[PlatON节点安装部署手册.md](zh-cn/Node/[Chinese-Simplified]-安装部署节点.md)
+- MTool需要通过RPC接口连接到验证节点，验证节点的安装部署可参考[PlatON节点安装部署手册.md](zh-cn/Node/[Chinese-Simplified]-安装节点.md)
 - 为保证节点安全，建议节点RPC端口通过Nginx代理访问，Nginx使用Https和用户认证加强安全防护
 - MTool对质押等交易提供两种签名方式：在线签名和离线签名。此文档描述离线签名操作，在线签名请参考[在线MTool使用手册.md](zh-cn/Tool/[Chinese-Simplified]-在线MTool使用手册.md)
 

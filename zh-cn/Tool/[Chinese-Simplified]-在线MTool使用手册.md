@@ -76,7 +76,7 @@ chmod +x mtool_install.sh && ./mtool_install.sh
 > - 提示 `Install mtool succeed.` 时，表示 MTool 安装成功，未安装成功时，请通过我们的官方客户联系方式反馈具体问题。
 > - 安装完成之后，需要**`重启终端`**，让新添加的环境变量生效。
 
-相关配置请参考文档[PlatON节点安装部署手册.md](zh-cn/Node/[Chinese-Simplified]-安装部署节点.md)。
+相关配置请参考文档[PlatON节点安装部署手册.md](zh-cn/Node/[Chinese-Simplified]-安装节点.md)。
 
 ## 3 配置在线MTool
 
