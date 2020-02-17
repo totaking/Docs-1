@@ -39,7 +39,7 @@ module.exports = {
 
   compilers: {
     solc: {
-       version: "^0.5.12",    // Fetch exact version from solc-bin
+       version: "^0.5.13",    // Fetch exact version from solc-bin
        docker: false,        // Use "0.5.1" you've installed locally with docker
     }
   }
@@ -50,21 +50,22 @@ module.exports = {
 ```bash
 truffle compile
 编译成功输出如下信息：
+
+ guest@guest:~/example$ truffle compile
+ 
+ Compiling your contracts...
+  Compiling ./contracts/ERC200513Token.sol
+  Compiling ./contracts/Migrations.sol
+ 
+    compilation warnings encountered:
+ 
+ Warning: This is a pre-release compiler version, please do not use it in production.
+ 
+  Artifacts written to /home/guest/example/build/contracts
+  Compiled successfully using:
+ 
+    - solc: 0.5.13-develop.2020.1.2+commit.9ff23752.mod.Emscripten.clang
 ```
->guest@guest:~/example$ truffle compile
->
->Compiling your contracts...
-> Compiling ./contracts/ERC200513Token.sol
-> Compiling ./contracts/Migrations.sol
-
->   compilation warnings encountered:
-
->Warning: This is a pre-release compiler version, please do not use it in production.
-
-> Artifacts written to /home/guest/example/build/contracts
-> Compiled successfully using:
->
->   - solc: 0.5.13-develop.2020.1.2+commit.9ff23752.mod.Emscripten.clang
 
 
 **step6.** 进入example/migrations 添加合约部署配制文件2_initial_ERC200513Token.js
@@ -72,12 +73,13 @@ truffle compile
 guest@guest:~/example/migrations$ ls
 1_initial_migration.js  2_initial_ERC200513Token.js
 内容如下：
+
+ const ERC200513Token = artifacts.require("ERC200513Token");
+   
+ module.exports = function(deployer) {
+   deployer.deploy(ERC200513Token,100,'PLA','PLAT');
+ };
 ```
-> const ERC200513Token = artifacts.require("ERC200513Token");
->   
-> module.exports = function(deployer) {
->   deployer.deploy(ERC200513Token,100,'PLA','PLAT');
-> };
 
 
 **step7.** 执行truffle migrate 部署合约
@@ -85,38 +87,39 @@ guest@guest:~/example/migrations$ ls
 ```bash
 执行truffle migratte
 输出结果如下，表示迁移成功
-```
->guest@guest:~/example$ truffle migrate
->
->Compiling your contracts...
->
-> Everything is up to date, there is nothing to compile.
->2_initial_ERC200513Token.js
->
->   Deploying 'ERC200513Token'
->     transaction hash:    0xa1770aecf4cffb0e75a172e06e75a9e9cb2d36bf89291b57d504e8c054985e99
->     Blocks: 0            Seconds: 0
->     contract address:    0x5474608c5dee5039C95FEf3D7e48Fa793903Ce99
->     block number:        265657
->     block timestamp:     1581742216965
->     account:             0xF644CfC3b0Dc588116D6621211a82C1Ef9c62E9e
->     balance:             90000000.826385379994114416
->     gas used:            638876
->     gas price:           50.000000004 gwei
->     value sent:          0 ETH
->     total cost:          0.031943800002555504 ETH
->    
->    
->     Saving migration to chain.
->     Saving artifacts
->    
->     Total cost:     0.031943800002555504 ETH
->
->
->Summary
 
-> Total deployments:   2
-> Final cost:          0.037844150003027532 ETH
+guest@guest:~/example$ truffle migrate
+
+Compiling your contracts...
+
+ Everything is up to date, there is nothing to compile.
+2_initial_ERC200513Token.js
+
+   Deploying 'ERC200513Token'
+     transaction hash:    0xa1770aecf4cffb0e75a172e06e75a9e9cb2d36bf89291b57d504e8c054985e99
+     Blocks: 0            Seconds: 0
+     contract address:    0x5474608c5dee5039C95FEf3D7e48Fa793903Ce99
+     block number:        265657
+     block timestamp:     1581742216965
+     account:             0xF644CfC3b0Dc588116D6621211a82C1Ef9c62E9e
+     balance:             90000000.826385379994114416
+     gas used:            638876
+     gas price:           50.000000004 VON
+     value sent:          0 LAT
+     total cost:          0.031943800002555504 LAT
+    
+    
+     Saving migration to chain.
+     Saving artifacts
+    
+     Total cost:     0.031943800002555504 LAT
+
+
+Summary
+
+ Total deployments:   2
+ Final cost:          0.037844150003027532 LAT
+```
 
 
 

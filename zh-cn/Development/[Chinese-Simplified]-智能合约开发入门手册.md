@@ -71,121 +71,133 @@ mkdir HelloWorld
 cd HelloWorld
 truffle init
 提示如下表示成功：
-```
->  ✔ Preparing to download
->  ✔ Downloading
->  ✔ Cleaning up temporary files
->  ✔ Setting up box
->  
->  Unbox successful. Sweet!
->  
->  Commands:
->  
->    Compile:        truffle compile
->    Migrate:        truffle migrate
->    Test contracts: truffle test
 
+  ✔ Preparing to download
+  ✔ Downloading
+  ✔ Cleaning up temporary files
+  ✔ Setting up box
+  
+  Unbox successful. Sweet!
+  
+  Commands:
+  
+    Compile:        truffle compile
+    Migrate:        truffle migrate
+    Test contracts: truffle test
+```
 
 **step2.** 将HelloWorld.sol放入HelloWorld/contracts目录下
 
->  @guest:~/HelloWorld/contracts$ ls
->  HelloWorld.sol  Migrations.sol
+```
+guest@guest:~/HelloWorld/contracts$ ls
+HelloWorld.sol  Migrations.sol
+```
 
 **step3.** 修改truffle-config.js文件，将编译器版本修改成“^0.5.13”
 
->  compilers: {
->      solc: {
->         version: "^0.5.13",    // Fetch exact version from solc-bin (default: truffle's version)
->        // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
->        // settings: {          // See the solidity docs for advice about optimization and evmVersion
->        //  optimizer: {
->        //    enabled: false,
->        //    runs: 200
->        //  },
->        //  evmVersion: "byzantium"
->         }
->      }
->  }	
+```
+compilers: {
+    solc: {
+       version: "^0.5.13",    // Fetch exact version from solc-bin (default: truffle's version)
+      // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
+      // settings: {          // See the solidity docs for advice about optimization and evmVersion
+      //  optimizer: {
+      //    enabled: false,
+      //    runs: 200
+      //  },
+      //  evmVersion: "byzantium"
+       }
+    }
+}
+```
 
 **step4.** 执行truffle compile编译合约
 
-> guest@guest:~/HelloWorld$ truffle compile
-> 
-> Compiling your contracts...
-> 
->  Compiling ./contracts/HelloWorld.sol
->  Compiling ./contracts/Migrations.sol
-> 
->  compilation warnings encountered:
-> 
-> Warning: This is a pre-release compiler version, please do not use it in production.
-> 
->  Artifacts written to /home/guest/hudenian/HelloWorld/build/contracts
->  Compiled successfully using:
->     solc: 0.5.13-develop.2020.1.2+commit.9ff23752.mod.Emscripten.clang
+```
+guest@guest:~/HelloWorld$ truffle compile
+
+Compiling your contracts...
+
+ Compiling ./contracts/HelloWorld.sol
+ Compiling ./contracts/Migrations.sol
+
+ compilation warnings encountered:
+
+Warning: This is a pre-release compiler version, please do not use it in production.
+
+ Artifacts written to /home/guest/hudenian/HelloWorld/build/contracts
+ Compiled successfully using:
+    solc: 0.5.13-develop.2020.1.2+commit.9ff23752.mod.Emscripten.clang
+```
 
 ## 5 部署HelloWorld合约
 
 **step1.** 在HelloWorld/migrations/下添加部署HelloWorld合约辅助脚本2_initial_helloword.js，内容如下所示：
 
-> const HelloWorld = artifacts.require("HelloWorld"); 
-> module.exports = function(deployer) {
->   	deployer.deploy(HelloWorld);
-> };
+```
+const HelloWorld = artifacts.require("HelloWorld"); 
+module.exports = function(deployer) {
+  	deployer.deploy(HelloWorld);
+};
+```
 
 
 **step2.** 修改truffle-config.js中链的配制信息
 
-> networks: {
->      development: {
->       host: "10.1.1.6",     // 区块链所在服务器主机
->       port: 8806,            // 链端口号
->       network_id: "*",       // Any network (default: none)
->       from: "0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e", //部署合约账号的钱包地址
->       gas: 90000000,
->       gasPrice: 50000000004,
->      },
-> }
-
+```
+networks: {
+     development: {
+      host: "10.1.1.6",     // 区块链所在服务器主机
+      port: 8806,            // 链端口号
+      network_id: "*",       // Any network (default: none)
+      from: "0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e", //部署合约账号的钱包地址
+      gas: 90000000,
+      gasPrice: 50000000004,
+     },
+}
+```
 
 **step3.**  执行truffle migrate 部署合约
 
-> guest@guest:~/HelloWorld$ truffle migrate
-> 
-> Compiling your contracts...
-> 
->  Everything is up to date, there is nothing to compile.
-> 
-> Migrations dry-run (simulation)
-> 
-> Network name:    'development-fork'
-> Network id:      1
-> Block gas limit: 0x5f5e100
-> 2_initial_helloword.js
-> 
->    Deploying 'HelloWorld'
->    
->     transaction hash:    0x2bb5c7f6202225554a823db410fb16cf0c8328a51391f24fb9052a6a8f3033e3
->     Blocks: 0            Seconds: 0
->     contract address:    0x714E74eEc4b63D9DB72cbB5F78CDD5b5bb60F9dc
->     block number:        142522
->     block timestamp:     1581667696206
->     account:             0xF644CfC3b0Dc588116D6621211a82C1Ef9c62E9e
->     balance:             90000000.867724449997417956
->     gas used:            149247
->     gas price:           50.000000004 VON
->     value sent:          0 LAT
->     total cost:          0.007462350000596988 LAT
-> 
-> 
->     Saving migration to chain.
->     Saving artifacts
->    
->     Total cost:     0.007462350000596988 LAT
+```
+guest@guest:~/HelloWorld$ truffle migrate
+
+Compiling your contracts...
+
+ Everything is up to date, there is nothing to compile.
+
+Migrations dry-run (simulation)
+
+Network name:    'development-fork'
+Network id:      1
+Block gas limit: 0x5f5e100
+2_initial_helloword.js
+
+   Deploying 'HelloWorld'
+   
+    transaction hash:    0x2bb5c7f6202225554a823db410fb16cf0c8328a51391f24fb9052a6a8f3033e3
+    Blocks: 0            Seconds: 0
+    contract address:    0x714E74eEc4b63D9DB72cbB5F78CDD5b5bb60F9dc
+    block number:        142522
+    block timestamp:     1581667696206
+    account:             0xF644CfC3b0Dc588116D6621211a82C1Ef9c62E9e
+    balance:             90000000.867724449997417956
+    gas used:            149247
+    gas price:           50.000000004 VON
+    value sent:          0 LAT
+    total cost:          0.007462350000596988 LAT
+
+
+    Saving migration to chain.
+    Saving artifacts
+   
+    Total cost:     0.007462350000596988 LAT
+```
 
 ## 6 调用HelloWorld合约
 
 **step1.**  构建合约对象
+
 ```
 guest@guest:~/HelloWorld$ truffle console
 truffle(development)> var abi = [{"constant":false,"inputs":[{"internalType":"string","name":"_name","type":"string"}],"name":"setName","outputs":[{"internalType
@@ -196,47 +208,46 @@ truffle(development)> var helloWorld = new web3.eth.Contract(abi,'0x9A5015F9A372
 ```
 truffle(development)>helloWorld.methods.setName("hello world").send({from:'0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e'}).on('transactionHash',function(hash){}).on('confirmation', function(confirmationNumber, receipt){}).on('receipt', function(receipt){ console.log(receipt);}).on('error', console.error);
 交易回执如下:
-```
->{ blockHash:
->   '0x3ae287d1e745e30d0d6c95d5220cc7816cda955e7b2f013c6a531ed95028a794',
->  blockNumber: 159726,
->  contractAddress: null,
->  cumulativeGasUsed: 44820,
->  from: '0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e',
->  gasUsed: 44820,
->  logsBloom:
->   '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
->  status: true,
->  to: '0x9a5015f9a3728ff64f401b9b93e98078bdd48fd1',
->  transactionHash:
->   '0xb7a41f72d555d4a2d9f2954fbdc5bbbb4c5ce89c836f8704276419ed416b3866',
->  transactionIndex: 0,
->  events: {} }
->{ blockHash:
->   '0x3ae287d1e745e30d0d6c95d5220cc7816cda955e7b2f013c6a531ed95028a794',
->  blockNumber: 159726,
->  contractAddress: null,
->  cumulativeGasUsed: 44820,
->  from: '0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e',
->  gasUsed: 44820,
->  logsBloom:
->   '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
->  status: true,
->  to: '0x9a5015f9a3728ff64f401b9b93e98078bdd48fd1',
->  transactionHash:
->   '0xb7a41f72d555d4a2d9f2954fbdc5bbbb4c5ce89c836f8704276419ed416b3866',
->  transactionIndex: 0,
->  events: {} }
 
+{ blockHash:
+   '0x3ae287d1e745e30d0d6c95d5220cc7816cda955e7b2f013c6a531ed95028a794',
+  blockNumber: 159726,
+  contractAddress: null,
+  cumulativeGasUsed: 44820,
+  from: '0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e',
+  gasUsed: 44820,
+  logsBloom:
+  '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
+  status: true,
+  to: '0x9a5015f9a3728ff64f401b9b93e98078bdd48fd1',
+  transactionHash:
+   '0xb7a41f72d555d4a2d9f2954fbdc5bbbb4c5ce89c836f8704276419ed416b3866',
+  transactionIndex: 0,
+  events: {} }
+{ blockHash:
+   '0x3ae287d1e745e30d0d6c95d5220cc7816cda955e7b2f013c6a531ed95028a794',
+  blockNumber: 159726,
+  contractAddress: null,
+  cumulativeGasUsed: 44820,
+  from: '0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e',
+  gasUsed: 44820,
+  logsBloom:
+   '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
+  status: true,
+  to: '0x9a5015f9a3728ff64f401b9b93e98078bdd48fd1',
+  transactionHash:
+   '0xb7a41f72d555d4a2d9f2954fbdc5bbbb4c5ce89c836f8704276419ed416b3866',
+  transactionIndex: 0,
+  events: {} }
+```
 
 **step3.**  查询合约
 ```
 truffle(development)>helloWorld.methods.getName().call(null,function(error,result){console.log("name is:" + result);})  
 查询结果如下：
+ name is:
+ 'hello world'
 ```
-> name is:
-> 'hello world'
-
 
 ## 7 FAQ 
 
