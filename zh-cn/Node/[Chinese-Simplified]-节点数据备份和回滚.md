@@ -1,4 +1,3 @@
-# 节点数据备份和回滚指南
 
 ## 简介
 
@@ -70,12 +69,12 @@
   安装版本：platon0.10.0成功==========
   ```
   
-  >注：
+  > [!NOTE|style:flat|label:注意]
   >
   >不进行版本升级的情况：
   >
-  >- 指定升级的版本不存在
-  >- 指定升级的版本不高于已安装的版本
+  > - 指定升级的版本不存在
+  > - 指定升级的版本不高于已安装的版本
   >
   >未进行版本升级的节点使用以前的版本运行。
 
@@ -108,7 +107,9 @@
 ```bash
 cd $node_dir/data && ls -t | awk -F '[_.]' -v t=10000 'BEGIN {min=65535} {d=t-$6; if(d>=0 && min>d){min=d;minfile=$0;}} END {print minfile}'
 ```
-注：`$node_dir`为实际节点数据目录，**t=10000**中的10000为回滚的区块高度，以公告中的实际区块高度为准，参考：[回滚备份数据](#回滚备份数据)。此命令返回符合条件的备份文件名，如：data_backup_2019_11_05_9900.tar.gz。
+> [!NOTE|style:flat|label:注意]
+>
+>  `$node_dir`为实际节点数据目录，**t=10000**中的10000为回滚的区块高度，以公告中的实际区块高度为准，参考：[回滚备份数据](#回滚备份数据)。此命令返回符合条件的备份文件名，如：data_backup_2019_11_05_9900.tar.gz。
 
 * **拷贝备份文件**
 
@@ -120,8 +121,9 @@ cd $node_dir/data && ls -t | awk -F '[_.]' -v t=10000 'BEGIN {min=65535} {d=t-$6
 ```bash
 cd $node_dir/data && tar -xzvf data_backup_2019_11_05_9900.tar.gz
 ```
-
-注：$node_dir为实际节点数据目录，data_backup_2019_11_05_9900.tar.gz需修改为**筛选备份文件**命令返回的备份文件名。
+> [!NOTE|style:flat|label:注意]
+>
+> $node_dir为实际节点数据目录，data_backup_2019_11_05_9900.tar.gz需修改为**筛选备份文件**命令返回的备份文件名。
 
 #### 回滚社区下载的数据
 
@@ -132,8 +134,9 @@ cd $node_dir/data && tar -xzvf data_backup_2019_11_05_9900.tar.gz
 ```bash
 cd $node_dir/data && wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/backup/data_backup_2019_11_05_10000.tar.gz
 ```
-
-> 注：`$node_dir`为实际节点数据目录，下载地址需修改为公告中实际的备份文件下载地址。
+> [!NOTE|style:flat|label:注意]
+>
+> `$node_dir`为实际节点数据目录，下载地址需修改为公告中实际的备份文件下载地址。
 
 * **回滚数据**
 
@@ -141,7 +144,9 @@ cd $node_dir/data && wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opens
 tar -xzvf data_backup_2019_11_05_10000.tar.gz
 ```
 
-> 注：data_backup_2019_11_05_10000.tar.gz需修改为实际下载的备份文件名。
+> [!NOTE|style:flat|label:注意]
+>
+> data_backup_2019_11_05_10000.tar.gz需修改为实际下载的备份文件名。
 
 ### 重启节点
 

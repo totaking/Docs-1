@@ -1,5 +1,3 @@
-# 成为验证节点
-
 
 PlatON 是实行民主治理的区块链项目，验证节点由所有 Energon 持有者共同推选，以维护和发展 PlatON 网络。得票数最多的101名节点将成为备选节点，从中用 VRF 随机选出25个验证节点，参与管理整个 PlatON 网络。
 
@@ -62,7 +60,9 @@ remote前面符号的说明:
 节点在启动时需要节点公私钥与BLS公私钥，BLS公私钥在共识协议中将被使用。
 密钥生成方式参照:[密钥生成](zh-cn/Node/[Chinese-Simplified]-环境准备#节点秘钥),将生成的密钥转移到节点所在目录。
 
-> 注：如果没有预先生成密钥，节点在启动时自动在节点的data目录下生成。
+> [!NOTE|style:flat|label:注意]
+>
+>  如果没有预先生成密钥，节点在启动时自动在节点的data目录下生成。
 
 ### 启动节点加入网络
 根据用户自身需要，启动节点，选择加入公有网络，或者加入私有网络，操作见文档：
@@ -92,7 +92,7 @@ wget http://47.91.153.183/opensource/scripts/nginx_conf.sh
 chmod +x nginx_conf.sh && ./nginx_conf.sh
 ```
 
-> 注意
+> [!NOTE|style:flat|label:注意]
 >
 > - 提示 `[sudo] password for` 时，输入当前账户密码。
 > - 提示 `Enter your name:` 时，输入用户名，提示 `Enter your password:` 时，输入密码。务必牢记用户名和密码，后续MTool 配置验证节点信息时需要填写。
@@ -119,8 +119,9 @@ MTool对质押等交易提供两种签名方式：在线签名和离线签名。
 - [连接到验证节点](zh-cn/Tool/[Chinese-Simplified]-离线MTool使用手册#连接到验证节点)
 - [发起质押操作](zh-cn/Tool/[Chinese-Simplified]-离线MTool使用手册#发起质押操作)
 
-
-> 注：离线交易的签名须离线完成，操作流程参考[文档](zh-cn/Tool/[Chinese-Simplified]-离线MTool使用手册#基本操作流程)。
+> [!NOTE|style:flat|label:注意]
+>
+> 离线交易的签名须离线完成，操作流程参考[文档](zh-cn/Tool/[Chinese-Simplified]-离线MTool使用手册#基本操作流程)。
 > 利用节点工具 MTool 执行节点质押与委托等操作，对于有能力的开发者，可以在 Java SDK 和 Javascript SDK 基础上面开发自己的节点工具，SDK请参考文档。
 > -  [Java-SDK](zh-cn/Development/[Chinese-Simplified]-Java-SDK.md)
 > - [JavaScript-API](zh-cn/Development/[Chinese-Simplified]-JS-SDK.md)
