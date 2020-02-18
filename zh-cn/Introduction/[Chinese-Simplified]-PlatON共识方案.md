@@ -1,6 +1,4 @@
-# PlatON共识方案
-
-##  摘要
+## 概述
 
 我们提出了一种基于部分同步假设情形下的并行拜占庭容错协议CBFT(Concurrent Byzantine Fault Tolerance)，解决区块链共识效率的问题。本文分析了PBFT，Tendermint，Hotstuff等共识协议，CBFT综合了其优点，通过pipeline的方式完成区块生成和确认的并行，在一个视图窗口内可以出多个块，并可以在O(n^(2))内完成视图窗口切换，从而提高共识效率。
 
