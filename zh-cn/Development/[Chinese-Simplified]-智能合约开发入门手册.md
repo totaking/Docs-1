@@ -2,25 +2,27 @@
 
 ## 简介
 
-合约，就是一段程序，并且是一段能在区块链上运行的程序。把合约部署到区块链网络后，用户就能通过调用这个合约，完成业务逻辑。
+合约，就是一段程序，并且是一段能在区块链上运行的程序。智能合约有以下特性：
 
-Solidity语言是一种以太坊智能合约高级编程语言,其语法类似JavaScript的高级编程语言。Solidity语言被设计成以编译的方式生成以太坊虚拟机代码。使用它很容易创建以太坊智能合约。但作为一种真正意义上运行在互联网上的去中心化智能合约其又有以下特点：
+- 任何人都可以在区块链上开发智能合约，这些智能合约的代码是存在于区块链的账户中的，这类存有代码的账户叫合约账户。对应地，由密钥控制的账户可称为外部账户。
+- 合约账户不能自己启动运行自己的智能合约。要运行一个智能合约，需要由外部账户对合约账户发起交易，从而启动其中的代码的执行。
 
-- 以太坊底层是基于帐户，所以Solidity语言提供有一个特殊的Address类型。用于定位用户账号，定位智能合约，定位智能合约的代码。
+Solidity语言是一种面向合约的、为实现智能合约而创建的高级编程语言,其语法类似JavaScript的高级编程语言。被设计成以编译的方式生成以太坊虚拟机代码。使用它很容易创建智能合约。但作为一种真正意义上运行在互联网上的去中心化智能合约其又有以下特点：
+
+- PlatON底层是基于帐户，Solidity语言提供有一个特殊的Address类型。用于定位用户账号，定位智能合约，定位智能合约的代码。
 - 由于Solidity语言内嵌框架是支持支付的，并且提供了一些关键字，如payable，可以在Solidity语言层面直接支持支付，用起来十分简单。
 - 数据存储是使用网络上的区块链，数据的每一个状态都可以永久存储，所以Solidity语言在开发时需要确定变量是使用内存，还是区块链。
 - Solidity运行环境是在一个去中心化的网络上，特别强调以太坊智能合约或函数执行的调用方式。因为原来一个简单的函数调用变为了一个网络上的节点代码执行，完全是分布式的编程环境。
-- Solidity语言的异常机制也很不一样，一旦出现异常，所有的执行都将会被回撤，这主要是为了保证以太坊智能合约执行的原子性，以避免中间状态出现的数据不一致。
+- Solidity语言的异常机制也很不一样，一旦出现异常，所有的执行都将会被回撤，这主要是为了保证智能合约执行的原子性，以避免中间状态出现的数据不一致。
 
 
-本教程主要是指导用户在PlatON上创建，编译，部署简单的HelloWorld合约并与其交互。PlatON提供了platon-truffle来辅助用户与链进行交互。如果您想使用更加丰富的API可以参考[Java SDK开发指南](/zh-cn/Development/[Chinese-Simplified]-Java-SDK.md) 或者 [JS SDK开发指南](/zh-cn/Development/[Chinese-Simplified]-JS-SDK.md)
+本教程主要是指导用户在PlatON上使用solidity语言创建简单的HelloWorld智能合约，通过platon-truffle编译，部署，调用此合约。如果您想使用更加丰富的API可以参考[Java SDK开发指南](/zh-cn/Development/[Chinese-Simplified]-Java-SDK.md) 或者 [JS SDK开发指南](/zh-cn/Development/[Chinese-Simplified]-JS-SDK.md)
 
 - solidity智能合约语法请参考[Solidity官方文档](https://solidity.readthedocs.io/en/develop/)
-- solidity智能合约在线IDE[Remix](https://remix.ethereum.org/)
 
 ## platon-truffle开发工具介绍
 
-platon-truffle是一款能够在本地编译、部署、调用智能合约的工具，具体的安装及使用手册参见
+platon-truffle是PlatON提供的一款能够在本地编译、部署、调用智能合约的工具，具体的安装及使用手册参见
 
 - platon-truffle开发工具[安装参考](https://github.com/PlatONnetwork/platon-truffle/tree/feature/evm)
 - platon-truffle开发工具[使用手册](https://platon-truffle.readthedocs.io/en/v0.1.0/index.html)
