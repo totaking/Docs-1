@@ -9,7 +9,7 @@ PlatON目前有2个公有网络，一个是还未正式上线的、独立运行�
 在加入PlatON公有网络前请确保服务器本地具备以下条件：
 
 1. 已经按照[PlatON安装指南](/zh-cn/Node/[Chinese-Simplified]-安装节点.md)安装好PlatON环境。
-2. 已经按照[节点秘钥](/zh-cn/Network/[Chinese-Simplified]-环境准备.md#节点秘钥)章节在'~/platon-node/data'目录下生成了节点私钥和节点BLS私钥。
+2. 已经按照[节点秘钥](/zh-cn/Node/[Chinese-Simplified]-环境准备.md#节点秘钥)章节在'~/platon-node/data'目录下生成了节点私钥和节点BLS私钥。
 
 ## 加入主网
 
@@ -100,7 +100,7 @@ PlatON目前有2个公有网络，一个是还未正式上线的、独立运行�
 
 节点列表中出现一系列主网络节点并且块高在不断增长，则表示连接成功！
 
-使用[之前](/zh-cn/Network/[Chinese-Simplified]-环境准备.md#包文件)生成的账户地址在[PlatON官网](https://developer.platon.network/#/energon?lang=zh)申请测试Energon。
+使用[之前](/zh-cn/Node/[Chinese-Simplified]-环境准备.md#包文件)生成的账户地址在[PlatON官网](https://developer.platon.network/#/energon?lang=zh)申请测试Energon。
 
 ***注意：测试Energon没有任何价值，仅限于体验测试网络功能。如仅仅只是连接测试网络，无需申请！***
 
