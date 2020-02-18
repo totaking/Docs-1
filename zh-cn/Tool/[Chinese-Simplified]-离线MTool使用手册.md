@@ -537,7 +537,7 @@ $mtool-client update_validator --name VerifierName --url "www.platon.com" --iden
 >
 > introduction：简介，验证人简要介绍说明，不超过280字节，建议英文
 >
-> a：执行命令时，同时更新版本验证人配置文件
+> a：执行命令时，用配置文件里面的值作参数去修改验证人信息
 
 ### 解质押操作
 
@@ -640,7 +640,39 @@ $mtool-client vote_versionproposal --proposalid 0x444c3df404bc1ce4d869166623514b
 - 执行命令
 
 ```bash
-$mtool-client vote_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --address $MTOOLDIR/keystore/staking_observed.json –config $MTOOLDIR/validator/validator_config.json
+$mtool-client vote_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+```
+
+- 参数说明
+
+> proposalid：取消提案ID，即发起提案交易的hash，66字符，字母数字组成
+>
+> opinion：投票选项，yes、no、abstain-三选一
+
+###  提交参数提案操作
+
+- 执行命令
+
+```bash
+$mtool-client submit_paramproposal --pid_id 200 --module $module --paramname $paramname --paramvalue $paramvalue --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
+```
+
+- 参数说明
+
+> module：治理模块参数
+>
+> paramname：治理模块参数名，注意字母大小写
+>
+> paramvalue：治理模块参数值
+>
+> pid_id：GitHub ID
+
+###  参数提案投票操作
+
+- 执行命令
+
+``` bash
+$mtool-client  vote_paramproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
