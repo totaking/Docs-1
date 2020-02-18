@@ -56,17 +56,17 @@ PlatON网络在运行期间为保证网络能够不断迭代完善，需要所�
   wget http://47.91.153.183/opensource/scripts/update_platon.sh
   ```
 
-  **注意：如果在安装PlatON网络的节点时修改了节点数据存放的默认目录地址，则update_platon.sh脚本中的 node_dir=xxx 属性值需要改成修改后的节点数据目录地址。**
+  **注意：如果在安装PlatON网络的节点时修改了节点数据存放的默认目录地址，则需要将update_platon.sh脚本中的 node_dir=~/platon-node 属性值改成修改后的节点数据目录地址。**
 
 - 执行命令，更新节点版本
 
   ```bash
-  chmod u+x update_platon.sh && ./update_platon.sh X.X.X --xxxnet
+  chmod u+x update_platon.sh && ./update_platon.sh 0.9.0 --xxxnet
   ```
   
   **注：**
   
-  ​    X.X.X为指定需要升级的版本号（版本号可从社区发布的相关公告中或通过区块链浏览器从链上获取）；
+  ​    0.9.0为指定需要升级的版本号（版本号可从社区发布的相关公告中或通过区块链浏览器从链上获取）；
   
   ​    --xxxnet为指定某个网络，不填则默认为主网网络；
   
@@ -117,7 +117,7 @@ cd ~/platon-node/data && platon attach ipc:platon.ipc -exec platon.blockNumber
 
 #### 升级提案投票
 
-- 如果在投票期内，进行升级提案投票操作，否则跳过本节操作。
+- 如果在投票期内，则需要进行升级提案投票操作，否则跳过本节操作。
 
   ```bash
   mtool-client vote_versionproposal --proposalid 0xad330d8a5fddf3526a8622dab22454f8861fee968b6482eebbd360c8d15691c3 --keystore ~/MTool/keystore/staking.json --config ~/MTool/validator/validator_config.json
