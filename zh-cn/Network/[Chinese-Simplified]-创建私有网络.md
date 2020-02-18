@@ -195,49 +195,23 @@ echo {node1-nodeblskey} > ./data1/nodeblskey
 ……
 ```
 
-**4.为节点0初始化创世块信息，拉起节点0**
+**4.初始化和启动**
 
-- Windows命令行：
-
+分别为节点0和节点1初始化创世块信息
 ```
-D:\platon-node> platon.exe --datadir .\data0 init platon.json
-D:\platon-node> platon.exe --identity "platon" --datadir .\data0 --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data0/nodekey --cbft.blskey ./data0/blskey
+./platon --datadir ./data0 init platon.json && ./platon --datadir ./data1 init platon.json
 ```
 
-- Ubuntu命令行：
+初始化成功后，分别用nohup方式启动节点0和节点1
 
 ```
-$ ./platon --datadir ./data0 init platon.json
-$ ./platon --identity "platon" --datadir ./data0 --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data0/nodekey --cbft.blskey ./data0/blskey
-```
+nohup ./platon --identity "platon" --datadir ./data0 --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data0/nodekey --cbft.blskey ./data0/nodeblskey &
 
-**7.为节点1初始化创世块信息，拉起节点1**
-
-- Windows命令行：
+nohup ./platon --identity "platon" --datadir ./data1 --port 16790 --rpcaddr 0.0.0.0 --rpcport 6790 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data1/nodekey --cbft.blskey ./data1/nodeblskey &
 
 ```
-D:\platon-node> platon.exe --datadir .\data1 init platon.json
-D:\platon-node> platon.exe --identity "platon" --datadir .\data1 --port 16790 --rpcaddr 0.0.0.0 --rpcport 6790 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data1/nodekey --cbft.blskey ./data1/blskey
-```
-在Windows下除第一个节点外，其他节点都需要使用--ipcdisable启动。
 
-- Ubuntu命令行：
 
-```
-$ ./platon --datadir ./data1 init platon.json
-$ ./platon --identity "platon" --datadir ./data1 --port 16790 --rpcaddr 0.0.0.0 --rpcport 6790 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data1/nodekey --cbft.blskey ./data1/blskey
-```
+**5.检查**
 
-**8.当两个节点都提示共识成功，区块插入到链，则集群环境启动成功。**
-
-**9.不挂起运行**
-
-像单节点一样，为使程序在Linux平台上后台不挂起运行，可按如下方式来启动节点：
-
-```bash
-$ nohup ./platon ... --cbft.blskey ./data0/blskey >> node0.log 2>&1 &
-
-$ nohup ./platon ... --cbft.blskey ./data1/blskey >> node1.log 2>&1 &
-```
-
-每次 nohup 执行后同样需按下回车键。
+通过前面所述的方式进入任意一个节点platon控制台，查看节点是否和对端建立连接以及通过查看blockNumber是否在持续增长来判断集群是否已成功启动。
