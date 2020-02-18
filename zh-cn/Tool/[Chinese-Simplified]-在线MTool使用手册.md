@@ -51,7 +51,9 @@ unzip mtool-client.zip && cd mtool-client
 
 **step3.** 下载脚本
 
-**注意：脚本下载到mtool-client目录下，否则脚本无法找到新版本mtool的路径；**
+>[!NOTE|style:flat|label:注意]
+>
+>脚本下载到<font color=red>mtool-client</font> 目录下，否则脚本无法找到新版本mtool的路径；
 
 ``` bash
 wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/mtool_install.sh
@@ -69,10 +71,10 @@ wget http://47.91.153.183/opensource/scripts/mtool_install.sh
 chmod +x mtool_install.sh && ./mtool_install.sh
 ```
 
-> 注意：
+> [!NOTE|style:flat|label:注意]
 >
-> - 提示 `Install mtool succeed.` 时，表示 MTool 安装成功，未安装成功时，请通过我们的官方客服联系方式反馈具体问题。
-> - 安装完成之后，需要**`重启终端`**，让新添加的环境变量生效。
+> - 提示 <font color=red>Install mtool succeed.</font> 时，表示 MTool 安装成功，未安装成功时，请通过我们的官方客服联系方式反馈具体问题。
+> - 安装完成之后，需要<font color=red>重启终端</font>，让新添加的环境变量生效。
 
 ## 配置在线MTool
 
@@ -132,16 +134,16 @@ PlatON中，参与验证节点进行出块要创建两个钱包。如果已经�
 
 **step2.** 鼠标右键点击 validator_conf.bat， 选择以管理员身份运行
 
-> 注意
+> [!NOTE|style:flat|label:注意]
 >
-> - 提示 `Please enter the platon node IP address:` 时，请输入 PlatON 节点服务器 ip 地址。
-> - 提示 `Please enter the platon chain id:` 时，请输入链ID。
-> - 提示 `Enter your name:` 时，请输入配置 PlatON节点 nginx 时输入的用户名。
-> - 提示 `Enter your password:` 时，请输入配置 PlatON节点 nginx 时输入的密码。
-> - 提示 `Enter your platon node name:` 时，请输入 PlatON 节点的名称。
-> - 提示 `Enter your platon node description:` 时，请输入 PlatON 节点描述。
-> - 提示 `validator conf success` 时，表示脚本执行成功，未执行成功时，请通过我们的官方客服联系方式反馈具体问题。
-> - 提示 `请按任意键继续. . .` 时，请输入回车键关闭当前 cmd 窗口。
+> - 提示 <font color=red> Please enter the platon node IP address: </font>时，请输入 PlatON 节点服务器 ip 地址。
+> - 提示 <font color=red> Please enter the platon chain id: </font>时，请输入链ID。
+> - 提示 <font color=red> Enter your name: </font> 时，请输入配置 PlatON节点 nginx 时输入的用户名。
+> - 提示 <font color=red> Enter your password: </font>时，请输入配置 PlatON节点 nginx 时输入的密码。
+> - 提示<font color=red> Enter your platon node name:</font>时，请输入 PlatON 节点的名称。
+> - 提示<font color=red> Enter your platon node description:</font>时，请输入 PlatON 节点描述。
+> - 提示<font color=red> validator conf success</font>时，表示脚本执行成功，未执行成功时，请通过我们的官方客服联系方式反馈具体问题。
+> - 提示<font color=red> 请按任意键继续. . .</font> 时，请输入回车键关闭当前 cmd 窗口。
 
 #### Ubuntu下配置验证节点信息
 
@@ -165,15 +167,15 @@ wget http://47.91.153.183/opensource/scripts/validator_conf.sh
 chmod +x validator_conf.sh && ./validator_conf.sh
 ```
 
-> 注意
+> [!NOTE|style:flat|label:注意]
 >
-> - 提示 `Please enter the platon node IP address:` 时，请输入 PlatON 节点服务器 ip 地址。
-> - 提示 `Please enter the platon chain id:` 时，请输入链ID。
-> - 提示 `Enter your name:` 时，请输入配置 nginx 时输入的用户名。
-> - 提示 `Enter your password:` 时，请输入配置 nginx 时输入的密码。
-> - 提示 `Enter your platon node name:` 时，请输入 PlatON 节点的名称。
-> - 提示 `Enter your platon node description:` 时，请输入 PlatON 节点描述。
-> - 提示 `validator conf success` 并最后打印出的validator_config.json内容正常时，表示脚本执行成功，未执行成功时，请通过我们的官方客服联系方式反馈具体问题。
+> - 提示 <font color=red> Please enter the platon node IP address: </font>时，请输入 PlatON 节点服务器 ip 地址。
+> - 提示 <font color=red> Please enter the platon chain id: </font>时，请输入链ID。
+> - 提示 <font color=red> Enter your name: </font> 时，请输入配置 PlatON节点 nginx 时输入的用户名。
+> - 提示 <font color=red> Enter your password: </font>时，请输入配置 PlatON节点 nginx 时输入的密码。
+> - 提示<font color=red> Enter your platon node name:</font>时，请输入 PlatON 节点的名称。
+> - 提示<font color=red> Enter your platon node description:</font>时，请输入 PlatON 节点描述。
+> - 提示<font color=red> validator conf success</font>，并最后打印出的validator_config.json内容正常时，表示脚本执行成功，未执行成功时，请通过我们的官方客服联系方式反馈具体问题。
 
 ##  在线MTool操作详解
 
