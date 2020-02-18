@@ -90,7 +90,7 @@ git clone https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 
 ##### 编译
 
-> 注意:以下编译命令均需在`Git-bash`环境运行， 且步骤1中编译环境都已经成功安装！
+> 以下编译命令均需在`Git-bash`环境运行， 且步骤1中编译环境都已经成功安装！
 
 进入源码目录`PlatON-GO`：
 
@@ -104,17 +104,17 @@ cd PlatON-GO
 ./build/build_deps.sh
 ```
 
-在源码目录`PlatON-GO`下执行以下编译命令可生成`PlatON`、`ethkey`、`ctool`可执行文件，如下：
+在源码目录`PlatON-GO`下执行以下编译命令可生成`platon`、`keytool`、`ctool`可执行文件，如下：
 
 ```
 go run build/ci.go install ./cmd/platon
-go run build/ci.go install ./cmd/ethkey
+go run build/ci.go install ./cmd/keytool
 go run build/ci.go install ./cmd/ctool
 ```
 
-编译完成之后在`PlatON-Go/build/bin`目录下会生成`platon`、`ethkey`和`ctool`可执行文件，将此三个可执行文件拷贝到自己工作目录运行即可。
+编译完成之后在`PlatON-Go/build/bin`目录下会生成`platon`、`keytool`和`ctool`可执行文件，将此三个可执行文件拷贝到自己工作目录运行即可。
 
-> 注意：重复编译会覆盖之前生成的可执行文件。
+> 重复编译会覆盖之前生成的可执行文件。
 
 
 
