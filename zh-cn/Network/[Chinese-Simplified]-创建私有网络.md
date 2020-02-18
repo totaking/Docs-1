@@ -109,7 +109,11 @@ Successfully wrote genesis state
 ./platon --identity "platon" --datadir ./data --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data/nodekey --cbft.blskey ./data/blskey
 ```
 此时在标准输出中出现 blockNumber 增长的日志记录，**表示共识成功，链成功启动，并成功出块**。
-注意一定要指定'--datadir' 否则节点将默认初始化主网并连接到主网络。
+
+
+>[!NOTE|style:flat|label:注意]
+>
+>一定要指定<font color=red>--datadir</font>否则节点将默认初始化主网并连接到主网络。
 
 至此我们就搭建好了一个拥有单节点的 PlatON 私有网络。网络名称为 `platon`，您可以在你的私有 `PlatON` 网络中像在公网一样的单节点中执行任何操作。
 

@@ -105,5 +105,9 @@ PlatON目前有2个公有网络，一个是还未正式上线的、独立运行�
 
 使用[之前](/zh-cn/Node/[Chinese-Simplified]-环境准备.md#包文件)生成的账户地址在[PlatON官网](https://developer.platon.network/#/energon?lang=zh)申请测试Energon。
 
-***注意：测试Energon没有任何价值，仅限于体验测试网络功能。如仅仅只是连接测试网络，无需申请！***
+
+>[!NOTE|style:flat|label:注意]
+>
+>测试<font color=red>Energon</font>没有任何价值，仅限于体验测试网络功能。如仅仅只是连接测试网络，无需申请！
+
 
