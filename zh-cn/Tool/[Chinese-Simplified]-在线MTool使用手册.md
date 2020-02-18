@@ -127,7 +127,7 @@ PlatON中，参与验证节点进行出块要创建两个钱包。如果已经�
 >
 > - 提示 <font color=red> Please enter the platon node IP address: </font>时，请输入 PlatON 节点服务器 ip 地址。
 > - 提示 <font color=red> Please enter the platon chain id: </font>时，请输入链ID。
-> - 提示 <font color=red> Please enter the delegatedRewardRate(0~10000):</font>时，请输入比例分红,范围从0到10000。
+> - 提示 <font color=red> Please enter the delegatedRewardRate(0~10000):</font>时，请输入比例分红，范围从0到10000。
 > - 提示 <font color=red> Enter your name: </font> 时，请输入配置 PlatON节点 nginx 时输入的用户名。
 > - 提示 <font color=red> Enter your password: </font>时，请输入配置 PlatON节点 nginx 时输入的密码。
 > - 提示<font color=red> Enter your platon node name:</font>时，请输入 PlatON 节点的名称。
@@ -161,7 +161,7 @@ chmod +x validator_conf.sh && ./validator_conf.sh
 >
 > - 提示 <font color=red> Please enter the platon node IP address: </font>时，请输入 PlatON 节点服务器 ip 地址。
 > - 提示 <font color=red> Please enter the platon chain id: </font>时，请输入链ID。
-> - 提示 <font color=red> Please enter the delegatedRewardRate(0~10000):</font>时，请输入比例分红,范围从0到10000。
+> - 提示 <font color=red> Please enter the delegatedRewardRate(0~10000):</font>时，请输入比例分红，范围从0到10000。
 > - 提示 <font color=red> Enter your name: </font> 时，请输入配置 PlatON节点 nginx 时输入的用户名。
 > - 提示 <font color=red> Enter your password: </font>时，请输入配置 PlatON节点 nginx 时输入的密码。
 > - 提示<font color=red> Enter your platon node name:</font>时，请输入 PlatON 节点的名称。
