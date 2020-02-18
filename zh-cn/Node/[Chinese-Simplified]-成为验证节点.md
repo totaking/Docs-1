@@ -32,8 +32,13 @@ PlatON 是实行民主治理的区块链项目，验证节点由所有 Energon �
 
 ##  成为验证节点操作步骤
 
+须按顺序完成以下步骤
+
 ### 同步时间
 验证节点所在的服务器(服务器默认Ubuntu 18.04)需要保证时间的准确性，如何同步系统时间[见文档](zh-cn/Node/[Chinese-Simplified]-时钟同步.md)
+
+###  安装节点
+节点服务器须为Ubuntu 18.04，请按照[文档](zh-cn/Node/[Chinese-Simplified]-安装节点.md)中Ubuntu的部分进行操作
 
 ### 配置 nginx
 
@@ -63,9 +68,6 @@ chmod +x nginx_conf.sh && ./nginx_conf.sh
 > - 提示 `Enter your name:` 时，输入用户名，提示 `Enter your password:` 时，输入密码。务必牢记用户名和密码，后续MTool 配置验证节点信息时需要填写。
 > - 提示 `ngnix conf succeed` 时，表示配置 nginx 成功，未配置成功时，请通过我们的客户联系方式反馈具体问题。
 
-
-###  安装节点
-节点服务器须为Ubuntu 18.04，请按照[文档](zh-cn/Node/[Chinese-Simplified]-安装节点.md)中Ubuntu的部分进行操作
 
 ###  MTool
 为了便于节点进行质押，委托以及治理等相关的操作，PlatON提供了MTool来辅助用户。
