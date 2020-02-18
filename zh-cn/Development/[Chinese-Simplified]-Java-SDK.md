@@ -1,6 +1,6 @@
 ﻿# Java SDK开发指南
 
-## 入门
+## 开发库导入
 
 根据构建工具的不同，使用以下方式将相关依赖项添加到项目中：
 
@@ -39,19 +39,24 @@ repositories {
 compile "com.platon.client:core:0.7.5.1"
 ```
 
-## 使用API
+## 系统合约调用
 
-封装了一些API提供给开发者使用，包括以下两个部分：
-- 系统合约：包括经济模型和治理等相关的合约接口
-- 基础API：包括网络，交易，查询，节点信息，经济模型参数配置等相关的接口
+系统合约主要包含经济模型和治理相关的合约：
+* 质押合约
+* 委托合约
+* 节点合约
+* 治理合约
+* 举报合约
+* 锁仓合约
 
-### 系统合约 
+如上系统合约的介绍和使用，请参考如下合约接口说明。
 
-#### 质押相关接口
+
+### 质押相关接口
 
 > PlatON经济模型中质押合约相关的接口
 
-##### 加载质押合约
+#### 加载质押合约
 
 ```java
 //Java 8
@@ -61,9 +66,9 @@ Credentials credentials = WalletUtils.loadCredentials("password", "/path/to/wall
 StakingContract contract = StakingContract.load(web3j, credentials, chainId);
 ```
 
-##### 接口说明
+#### 接口说明
 
-###### **staking**
+##### **staking**
 
 > 节点候选人申请质押
 
@@ -121,7 +126,7 @@ PlatonSendTransaction platonSendTransaction = stakingContract.stakingReturnTrans
 TransactionResponse baseResponse = stakingContract.getTransactionResponse(platonSendTransaction).send();
 ```
 
-###### **unStaking**
+##### **unStaking**
 
 > 节点撤销质押(一次性发起全部撤销，多次到账)
 
@@ -149,7 +154,7 @@ PlatonSendTransaction platonSendTransaction = stakingContract.unStakingReturnTra
 TransactionResponse baseResponse = stakingContract.getTransactionResponse(platonSendTransaction).send();
 ```
 
-###### **updateStaking**
+##### **updateStaking**
 
 > 修改质押信息
 
@@ -194,7 +199,7 @@ PlatonSendTransaction platonSendTransaction = stakingContract.updateStakingInfoR
 TransactionResponse baseResponse = stakingContract.getTransactionResponse(platonSendTransaction).send();
 ```
 
-###### **addStaking**
+##### **addStaking**
 
 > 增持质押，增加已质押节点质押金
 
@@ -226,7 +231,7 @@ PlatonSendTransaction platonSendTransaction = stakingContract.addStakingReturnTr
 TransactionResponse baseResponse = stakingContract.getTransactionResponse(platonSendTransaction).send();
 ```
 
-###### **getStakingInfo**
+##### **getStakingInfo**
 
 > 查询当前节点的质押信息
 
@@ -288,7 +293,7 @@ String nodeId = "77fffc999d9f9403b65009f1eb27bae65774e2d8ea36f7b20a89f82642a5067
 CallResponse<Node> baseResponse = stakingContract.getStakingInfo(nodeId).send();
 ```
 
-###### **getPackageReward**
+##### **getPackageReward**
 
 > 查询当前结算周期的区块奖励
 
@@ -313,7 +318,7 @@ CallResponse<BigInteger> baseResponse
 CallResponse<BigInteger> response = stakingContract.getPackageReward().send();
 ```
 
-###### **getStakingReward**
+##### **getStakingReward**
 
 > 查询当前结算周期的质押奖励
 
@@ -338,7 +343,7 @@ CallResponse<BigInteger> baseResponse
 CallResponse<BigInteger> response = stakingContract.getStakingReward().send();
 ```
 
-###### **getAvgPackTime**
+##### **getAvgPackTime**
 
 > 查询打包区块的平均时间
 
@@ -363,11 +368,11 @@ CallResponse<BigInteger> baseResponse
 CallResponse<BigInteger> response = stakingContract.getAvgPackTime().send();
 ```
 
-#### 委托相关接口
+### 委托相关接口
 
 > PlatON经济模型中委托人相关的合约接口
 
-##### 加载委托合约
+#### 加载委托合约
 
 ```java
 //Java 8
@@ -377,9 +382,9 @@ Credentials credentials = WalletUtils.loadCredentials("password", "/path/to/wall
 DelegateContract delegateContract = DelegateContract.load(web3j, credentials, chainId);
 ```
 
-##### 接口说明
+#### 接口说明
 
-###### **delegate**
+##### **delegate**
 
 > 发起委托，委托已质押节点，委托给某个节点增加节点权重来获取收入 
 
@@ -411,7 +416,7 @@ PlatonSendTransaction platonSendTransaction = delegateContract.delegateReturnTra
 TransactionResponse baseResponse = delegateContract.getTransactionResponse(platonSendTransaction).send();
 ```
 
-###### **getRelatedListByDelAddr**
+##### **getRelatedListByDelAddr**
 
 > 查询当前账户地址所委托的节点的NodeID和质押Id
 
@@ -441,7 +446,7 @@ CallResponse<List<DelegationIdInfo>> baseRespons
 CallResponse<List<DelegationIdInfo>> baseResponse = delegateContract.getRelatedListByDelAddr(delegateCredentials.getAddress()).send();
 ```
 
-###### **getDelegateInfo**
+##### **getDelegateInfo**
 
 > 查询当前单个委托信息
 
@@ -483,7 +488,7 @@ BigInteger stakingBlockNum = new BigInteger("10888");
 CallResponse<Delegation> baseResponse = delegateContract.getDelegateInfo(nodeId, address, stakingBlockNum).send();
 ```
 
-###### **unDelegate**
+##### **unDelegate**
 
 > 减持/撤销委托(全部减持就是撤销)
 
@@ -515,11 +520,11 @@ PlatonSendTransaction platonSendTransaction = delegateContract.unDelegateReturnT
 TransactionResponse baseResponse = delegateContract.getTransactionResponse(platonSendTransaction).send();
 ```
 
-#### 节点相关合约
+### 节点相关合约
 
 > PlatON经济模型中委托人相关的合约接口
 
-##### 加载节点合约
+#### 加载节点合约
 
 ```java
 //Java 8
@@ -529,9 +534,9 @@ Credentials credentials = WalletUtils.loadCredentials("password", "/path/to/wall
 NodeContract contract = NodeContract.load(web3j, credentials, chainId);
 ```
 
-##### 接口说明
+#### 接口说明
 
-###### **getVerifierList**
+##### **getVerifierList**
 
 > 查询当前结算周期的验证人队列
 
@@ -594,7 +599,7 @@ CallResponse<List<Node>> baseResponse
 CallResponse<List<Node>> baseResponse = nodeContract.getVerifierList().send();
 ```
 
-###### **getValidatorList**
+##### **getValidatorList**
 > 查询当前共识周期的验证人列表
 
 * **入参**
@@ -654,7 +659,7 @@ CallResponse<List<Node>> baseResponse
 CallResponse<List<Node>> baseResponse = nodeContract.getValidatorList().send();
 ```
 
-###### **getCandidateList**
+##### **getCandidateList**
 
 > 查询所有实时的候选人列表
 
@@ -717,11 +722,11 @@ CallResponse<List<Node>> baseResponse
 CallResponse<List<Node>> baseResponse = nodeContract.getCandidateList().send();
 ```
 
-####  治理相关合约
+###  治理相关合约
 
 > PlatON治理相关的合约接口
 
-##### 加载治理合约
+#### 加载治理合约
 
 ```java
 //Java 8
@@ -731,9 +736,9 @@ Credentials credentials = WalletUtils.loadCredentials("password", "/path/to/wall
 ProposalContract contract = ProposalContract.load(web3j, credentials, chainId);
 ```
 
-##### 接口说明
+#### 接口说明
 
-###### **submitProposal**
+##### **submitProposal**
 
 > 提交提案
 
@@ -784,7 +789,7 @@ PlatonSendTransaction platonSendTransaction = proposalContract.submitProposalRet
 TransactionResponse baseResponse = proposalContract.getTransactionResponse(platonSendTransaction).send();
 ```
 
-###### **vote**
+##### **vote**
 
 > 给提案投票
 
@@ -818,7 +823,7 @@ PlatonSendTransaction platonSendTransaction = proposalContract.voteReturnTransac
 TransactionResponse baseResponse = proposalContract.getTransactionResponse(platonSendTransaction).send();
 ```
 
-###### **getProposal**
+##### **getProposal**
 
 >  查询提案
 
@@ -857,7 +862,7 @@ String proposalID = "";
 CallResponse<Proposal> baseResponse = proposalContract.getProposal(proposalID).send();
 ```
 
-###### **getTallyResult**
+##### **getTallyResult**
 
 > 查询提案结果
 
@@ -899,7 +904,7 @@ String proposalID ="";
 CallResponse<TallyResult> baseResponse = proposalContract.getTallyResult(proposalID).send();
 ```
 
-###### **getProposalList**
+##### **getProposalList**
 
 > 查询提案列表
 
@@ -936,7 +941,7 @@ CallResponse<List<Proposal>>
 CallResponse<List<Proposal>> baseResponse = proposalContract.getProposalList().send();
 ```
 
-###### **declareVersion**
+##### **declareVersion**
 
 > 版本声明
 
@@ -965,7 +970,7 @@ PlatonSendTransaction platonSendTransaction = proposalContract.declareVersionRet
 TransactionResponse baseResponse = proposalContract.getTransactionResponse(platonSendTransaction).send();
 ```
 
-###### **getActiveVersion**
+##### **getActiveVersion**
 
 > 查询节点的链生效版本
 
@@ -990,11 +995,11 @@ CallResponse<BigInteger> baseResponse = proposalContract.getActiveVersion().send
 ProposalUtils.versionInterToStr(baseResponse.getData());
 ```
 
-####  双签举报相关接口
+###  双签举报相关接口
 
 > PlatON举报惩罚相关的合约接口
 
-##### 加载举报合约
+#### 加载举报合约
 
 ```
 //Java 8
@@ -1004,9 +1009,9 @@ Credentials credentials = WalletUtils.loadCredentials("password", "/path/to/wall
 SlashContract contract = SlashContract.load(web3j, credentials, chainId);
 ```
 
-##### 接口说明
+#### 接口说明
 
-###### **reportDoubleSign**
+##### **reportDoubleSign**
 
 > 举报双签
 
@@ -1035,7 +1040,7 @@ PlatonSendTransaction platonSendTransaction = slashContract.reportDoubleSignRetu
 TransactionResponse baseResponse = slashContract.getTransactionResponse(platonSendTransaction).send();
 ```
 
-###### **checkDuplicateSign**
+##### **checkDuplicateSign**
 
 > 查询节点是否已被举报过多签
 
@@ -1062,11 +1067,11 @@ CallResponse
 CallResponse<String> baseResponse = slashContract.checkDoubleSign(DuplicateSignType.PREPARE_BLOCK, "0x4F8eb0B21eb8F16C80A9B7D728EA473b8676Cbb3", BigInteger.valueOf(500L)).send();
 ```
 
-####  锁仓相关接口
+###  锁仓相关接口
 
 > PlatON举报惩罚相关的合约接口
 
-##### 加载锁仓合约
+#### 加载锁仓合约
 
 ```java
 //Java 8
@@ -1076,9 +1081,9 @@ Credentials credentials = WalletUtils.loadCredentials("password", "/path/to/wall
 RestrictingPlanContract contract = RestrictingPlanContract.load(web3j, credentials, chainId);
 ```
 
-##### 接口说明
+#### 接口说明
 
-###### **createRestrictingPlan**
+##### **createRestrictingPlan**
 
 > 创建锁仓计划
 
@@ -1111,7 +1116,7 @@ PlatonSendTransaction platonSendTransaction = restrictingPlanContract.createRest
 TransactionResponse baseResponse = restrictingPlanContract.getTransactionResponse(platonSendTransaction).send();
 ```
 
-###### **getRestrictingInfo**
+##### **getRestrictingInfo**
 
 > 获取锁仓计划
 
@@ -1144,9 +1149,11 @@ CallResponse<RestrictingItem> baseResponse
 CallResponse<RestrictingItem> baseResponse = restrictingPlanContract.getRestrictingInfo(restrictingRecvCredentials.getAddress()).send();
 ```
 
-### 基础API
+## 基础API使用
 
-#### web3ClientVersion
+基础`API`包括网络，交易，查询，节点信息，经济模型参数配置等相关的接口，具体参考如下`API`使用说明。
+
+### web3ClientVersion
 
 > 返回当前客户端版本
 
@@ -1170,7 +1177,7 @@ Request <?, Web3ClientVersion> request = currentValidWeb3j.web3ClientVersion();
 String version = request.send().getWeb3ClientVersion();
 ```
 
-#### web3Sha3
+### web3Sha3
 
 > 返回给定数据的keccak-256（不是标准sha3-256）
 
@@ -1195,7 +1202,7 @@ Request <?, Web3Sha3> request = currentValidWeb3j.web3Sha3(date);
 String resDate = request.send().getWeb3ClientVersion();
 ```
 
-#### netVersion
+### netVersion
 
 > 返回当前网络ID
 
@@ -1219,7 +1226,7 @@ Request <?, NetVersion> request = currentValidWeb3j.netVersion();
 String version = request.send().getNetVersion();
 ```
 
-#### netListening
+### netListening
 
 > 如果客户端正在积极侦听网络连接，则返回true
 
@@ -1243,7 +1250,7 @@ Request <?, NetListening> request = currentValidWeb3j.netListening();
 boolean req = request.send().isListening();
 ```
 
-#### netPeerCount
+### netPeerCount
 
 > 返回当前连接到客户端的对等体的数量
 
@@ -1267,7 +1274,7 @@ Request <?, NetPeerCount> request = currentValidWeb3j.netPeerCount();
 BigInteger req = request.send().getQuantity();
 ```
 
-#### platonProtocolVersion
+### platonProtocolVersion
 
 > 返回当前platon协议版本
 
@@ -1291,7 +1298,7 @@ Request <?, PlatonProtocolVersion> request = currentValidWeb3j.platonProtocolVer
 String req = request.send().getProtocolVersion();
 ```
 
-#### platonSyncing
+### platonSyncing
 
 > 返回一个对象，其中包含有关同步状态的数据或false
 
@@ -1315,7 +1322,7 @@ Request <?, PlatonSyncing> request = currentValidWeb3j.platonSyncing();
 boolean req = request.send().isSyncing();
 ```
 
-#### platonGasPrice
+### platonGasPrice
 
 > 返回gas当前价格
 
@@ -1339,7 +1346,7 @@ Request <?, PlatonGasPrice> request = currentValidWeb3j.platonGasPrice();
 BigInteger req = request.send().getGasPrice();
 ```
 
-#### platonAccounts
+### platonAccounts
 
 > 返回客户端拥有的地址列表
 
@@ -1363,7 +1370,7 @@ Request <?, PlatonAccounts> request = currentValidWeb3j.platonAccounts();
 List<String> req = request.send().getAccounts();
 ```
 
-#### platonBlockNumber
+### platonBlockNumber
 
 > 返回当前最高块高
 
@@ -1387,7 +1394,7 @@ Request <?, PlatonBlockNumber> request = currentValidWeb3j.platonBlockNumber();
 BigInteger req = request.send().getBlockNumber();
 ```
 
-#### platonGetBalance
+### platonGetBalance
 
 > 返回查询地址余额
 
@@ -1416,7 +1423,7 @@ Request<?, PlatonGetBalance> request = web3j.platonGetBalance(address,DefaultBlo
 BigInteger req = request.send().getBalance();
 ```
 
-#### platonGetStorageAt
+### platonGetStorageAt
 
 > 从给定地址的存储位置返回值
 
@@ -1446,7 +1453,7 @@ Request <?, PlatonGetStorageAt> request = currentValidWeb3j.platonGetStorageAt(a
 String req = request.send().getData();
 ```
 
-#### platonGetBlockTransactionCountByHash
+### platonGetBlockTransactionCountByHash
 
 > 根据区块hash查询区块中交易个数
 
@@ -1470,7 +1477,7 @@ Request <?, PlatonGetBlockTransactionCountByHash> request = currentValidWeb3j.pl
 BigInteger req = request.send().getTransactionCount();
 ```
 
-#### platonGetTransactionCount
+### platonGetTransactionCount
 
 > 根据地址查询该地址发送的交易个数
 
@@ -1499,7 +1506,7 @@ Request <?, PlatonGetTransactionCount> request = currentValidWeb3j.platonGetTran
 BigInteger req = request.send().getTransactionCount();
 ```
 
-#### platonGetBlockTransactionCountByNumber
+### platonGetBlockTransactionCountByNumber
 
 > 根据区块块高，返回块高中的交易总数
 
@@ -1526,7 +1533,7 @@ Request <?, PlatonGetBlockTransactionCountByNumber> request = currentValidWeb3j.
 BigInteger req = request.send().getTransactionCount();
 ```
 
-#### platonGetCode
+### platonGetCode
 
 >  返回给定地址的代码
 
@@ -1555,7 +1562,7 @@ Request <?, PlatonGetCode> request = currentValidWeb3j.platonGetCode(address,Def
 String req = request.send().getCode();
 ```
 
-#### platonSign
+### platonSign
 
 >  数据签名
 
@@ -1583,7 +1590,7 @@ String req = request.send().getSignature();
 
 备注：地址必须提前先解锁
 
-#### platonSendTransaction
+### platonSendTransaction
 
 >  发送服务代签名交易
 
@@ -1616,7 +1623,7 @@ Request <?, PlatonSendTransaction> request = currentValidWeb3j.platonSendTransac
 String req = request.send().getTransactionHash();
 ```
 
-#### platonSendRawTransaction
+### platonSendRawTransaction
 
 >  发送交易
 
@@ -1640,7 +1647,7 @@ Request <?, PlatonSendTransaction> request = currentValidWeb3j.platonSendRawTran
 String req = request.send().getTransactionHash();
 ```
 
-#### platonCall
+### platonCall
 
 >   执行一个消息调用交易，消息调用交易直接在节点旳VM中执行而 不需要通过区块链的挖矿来执行 
 
@@ -1673,7 +1680,7 @@ Request <?, PlatonSendTransaction> request = currentValidWeb3j.platonCall(transa
 String req = request.send().getValue();
 ```
 
-#### platonEstimateGas
+### platonEstimateGas
 
 >   估算合约方法gas用量 
 
@@ -1706,7 +1713,7 @@ Request <?, PlatonEstimateGas> request = currentValidWeb3j.platonEstimateGas(tra
 BigInteger req = request.send().getAmountUsed();
 ```
 
-#### platonGetBlockByHash
+### platonGetBlockByHash
 
 >  根据区块hash查询区块信息
 
@@ -1734,7 +1741,7 @@ Request <?, PlatonBlock> request = currentValidWeb3j.platonGetBlockByHash(blockH
 Block req = request.send().getBlock();
 ```
 
-#### platonGetBlockByNumber
+### platonGetBlockByNumber
 
 >  根据区块高度查询区块信息
 
@@ -1764,7 +1771,7 @@ Request <?, PlatonBlock> request = currentValidWeb3j.platonGetBlockByNumber(Defa
 Block req = request.send().getBlock();
 ```
 
-#### platonGetTransactionByBlockHashAndIndex
+### platonGetTransactionByBlockHashAndIndex
 
 >  根据区块hash查询区块中指定序号的交易
 
@@ -1789,7 +1796,7 @@ Request <?, PlatonTransaction> request = currentValidWeb3j.platonGetTransactionB
 Optional<Transaction> req = request.send().getTransaction();
 ```
 
-#### platonGetTransactionByBlockNumberAndIndex
+### platonGetTransactionByBlockNumberAndIndex
 
 >  根据区块高度查询区块中指定序号的交易
 
@@ -1818,7 +1825,7 @@ Request <?, PlatonTransaction> request = currentValidWeb3j.platonGetTransactionB
 Optional<Transaction> req = request.send().getTransaction();
 ```
 
-#### platonGetTransactionReceipt
+### platonGetTransactionReceipt
 
 >  根据交易hash查询交易回执
 
@@ -1842,7 +1849,7 @@ Request <?, PlatonGetTransactionReceipt> request = currentValidWeb3j.platonGetTr
 Optional<TransactionReceipt> req = request.send().getTransactionReceipt();
 ```
 
-#### platonNewFilter
+### platonNewFilter
 
 >   创建一个过滤器，以便在客户端接收到匹配的whisper消息时进行通知 
 
@@ -1868,7 +1875,7 @@ Request <?, PlatonFilter> request = currentValidWeb3j.platonNewFilter(filter);
 BigInteger req = request.send().getFilterId();
 ```
 
-#### platonNewBlockFilter
+### platonNewBlockFilter
 
 >   在节点中创建一个过滤器，以便当新块生成时进行通知。要检查状态是否变化 
 
@@ -1892,7 +1899,7 @@ Request <?, PlatonFilter> request = currentValidWeb3j.platonNewBlockFilter();
 BigInteger req = request.send().getFilterId();
 ```
 
-#### platonNewPendingTransactionFilter
+### platonNewPendingTransactionFilter
 
 >    在节点中创建一个过滤器，以便当产生挂起交易时进行通知。 要检查状态是否发生变化 
 
@@ -1916,7 +1923,7 @@ Request <?, PlatonFilter> request = currentValidWeb3j.platonNewPendingTransactio
 BigInteger req = request.send().getFilterId();
 ```
 
-#### platonNewPendingTransactionFilter
+### platonNewPendingTransactionFilter
 
 >  写在具有指定编号的过滤器。当不在需要监听时，总是需要执行该调用  
 
@@ -1940,7 +1947,7 @@ Request <?, PlatonFilter> request = currentValidWeb3j.platonNewPendingTransactio
 BigInteger req = request.send().getFilterId();
 ```
 
-#### platonUninstallFilter
+### platonUninstallFilter
 
 >     写在具有指定编号的过滤器。当不在需要监听时，总是需要执行该调用 
 
@@ -1963,7 +1970,7 @@ Request <?, PlatonUninstallFilter> request = currentValidWeb3j.platonNewPendingT
 boolean req = request.send().isUninstalled();
 ```
 
-#### platonGetFilterChanges
+### platonGetFilterChanges
 
 >    轮询指定的过滤器，并返回自上次轮询之后新生成的日志数组 
 
@@ -1986,7 +1993,7 @@ Request <?, PlatonLog> request = currentValidWeb3j.platonGetFilterChanges(BigInt
 List<PlatonLog.LogResult> req = request.send().getLogs();
 ```
 
-#### platonGetFilterLogs
+### platonGetFilterLogs
 
 >     轮询指定的过滤器，并返回自上次轮询之后新生成的日志数组。
 
@@ -2009,7 +2016,7 @@ Request <?, PlatonLog> request = currentValidWeb3j.platonGetFilterLogs(BigIntege
 List<PlatonLog.LogResult> req = request.send().getLogs();
 ```
 
-#### platonGetLogs
+### platonGetLogs
 
 >    返回指定过滤器中的所有日志 
 
@@ -2035,7 +2042,7 @@ Request <?, PlatonLog> request = currentValidWeb3j.platonGetLogs(filter);
 List<LogResult> = request.send().getLogs();
 ```
 
-#### platonPendingTransactions
+### platonPendingTransactions
 >查询待处理交易
 
 * **参数**
@@ -2059,7 +2066,7 @@ EthPendingTransactions res = req.send();
 List<Transaction> transactions = res.getTransactions();
 ```
 
-#### dbPutString
+### dbPutString
 
 >   在本地数据库中存入字符串。
 
@@ -2087,7 +2094,7 @@ Request <?, DbPutString> request = currentValidWeb3j.dbPutString(databaseName,ke
 List<DbPutString> = request.send().valueStored();
 ```
 
-#### dbGetString
+### dbGetString
 
 >    从本地数据库读取字符串 
 
@@ -2113,7 +2120,7 @@ Request <?, DbGetString> request = currentValidWeb3j.dbGetString(databaseName,ke
 String req  = request.send().getStoredValue();
 ```
 
-#### dbPutHex
+### dbPutHex
 
 >     将二进制数据写入本地数据库 
 
@@ -2141,7 +2148,7 @@ Request <?, DbPutHex> request = currentValidWeb3j.dbPutHex(databaseName,keyName,
 boolean req  = request.send().valueStored();
 ```
 
-#### dbGetHex
+### dbGetHex
 
 >     从本地数据库中读取二进制数据  
 
@@ -2167,7 +2174,7 @@ Request <?, DbGetHex> request = currentValidWeb3j.dbGetHex(databaseName,keyName)
 String req  = request.send().getStoredValue();
 ```
 
-#### platonEvidences
+### platonEvidences
 
 >    返回双签举报数据
 
@@ -2268,7 +2275,7 @@ Request<?, PlatonEvidences> req = currentValidWeb3j.platonEvidences();
 Evidences evidences = req.send().getEvidences();
 ```
 
-#### getProgramVersion
+### getProgramVersion
 
 >    获取代码版本
 
@@ -2296,7 +2303,7 @@ ProgramVersion programVersion = req.send().getAdminProgramVersion();
     - BigInteger ： version ： 代码版本
     - String ： sign ： 代码版本签名
 
-#### getSchnorrNIZKProve
+### getSchnorrNIZKProve
 
 >    获取bls的证明
 
@@ -2320,7 +2327,7 @@ Request<?, AdminProgramVersion> req = currentValidWeb3j.getSchnorrNIZKProve();
 String res = req.send().getAdminSchnorrNIZKProve();
 ```
 
-#### getEconomicConfig
+### getEconomicConfig
 
 >    获取PlatON参数配置
 
@@ -2344,7 +2351,7 @@ Request<?, DebugEconomicConfig> req = currentValidWeb3j.getEconomicConfig();
 String debugEconomicConfig = req.send().getEconomicConfigStr();
 ```
 
-## Solidity智能合约
+## Solidity合约调用
 
 将Solidity智能合约部署到区块链上时，必须先将其编译成字节码的格式，然后将其作为交易的一部分发送。Java SDK 将帮你生成Solidity智能合约对应的Java包装类，可以方便的部署Solidity智能合约以及调用Solidity智能合约中的交易方法、事件和常量方法。
 
