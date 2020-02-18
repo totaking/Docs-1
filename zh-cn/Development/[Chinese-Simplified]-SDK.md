@@ -8,3 +8,11 @@ PlatON SDK 是应用程序访问PlatON网络的桥梁，包含与节点进行RPC
 | -------- | ------------------------------------------------------------ | ------------------------------------------------ |
 | Java SDK | [Java SDK开发指南](/zh-cn/Development/[Chinese-Simplified]-Java-SDK.md) | https://github.com/PlatONnetwork/client-sdk-java |
 | JS SDK   | [JS SDK开发指南](/zh-cn/Development/[Chinese-Simplified]-JS-SDK.md) | https://github.com/PlatONnetwork/client-sdk-js/  |
+
+两种语言的SDK都包含的主要功能：
+
+* 与PlatON节点进行RPC接口通信
+* 智能合约的部署和调用
+* PlatON经济模型接口
+* 加密签名接口
+* 钱包文件的管理
