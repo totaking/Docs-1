@@ -7,7 +7,7 @@
 - 任何人都可以在区块链上开发智能合约，这些智能合约的代码是存在于区块链的账户中的，这类存有代码的账户叫合约账户。对应地，由密钥控制的账户可称为外部账户。
 - 合约账户不能自己启动运行自己的智能合约。要运行一个智能合约，需要由外部账户对合约账户发起交易，从而启动其中的代码的执行。
 
-Solidity语言是一种面向合约的、为实现智能合约而创建的高级编程语言,其语法类似JavaScript的高级编程语言。被设计成以编译的方式生成以太坊虚拟机代码。使用它很容易创建智能合约。但作为一种真正意义上运行在互联网上的去中心化智能合约其又有以下特点：
+Solidity语言是一种面向合约的、为实现智能合约而创建的高级编程语言,其语法类似JavaScript的高级编程语言。被设计成以编译的方式生成虚拟机代码。使用它很容易创建智能合约。但作为一种真正意义上运行在互联网上的去中心化智能合约其又有以下特点：
 
 - PlatON底层是基于帐户，Solidity语言提供有一个特殊的Address类型。用于定位用户账号，定位智能合约，定位智能合约的代码。
 - 由于Solidity语言内嵌框架是支持支付的，并且提供了一些关键字，如payable，可以在Solidity语言层面直接支持支付，用起来十分简单。
@@ -19,6 +19,7 @@ Solidity语言是一种面向合约的、为实现智能合约而创建的高级
 本教程主要是指导用户在PlatON上使用solidity语言创建简单的HelloWorld智能合约，通过platon-truffle编译，部署，调用此合约。如果您想使用更加丰富的API可以参考[Java SDK开发指南](/zh-cn/Development/[Chinese-Simplified]-Java-SDK.md) 或者 [JS SDK开发指南](/zh-cn/Development/[Chinese-Simplified]-JS-SDK.md)
 
 - solidity智能合约语法请参考[Solidity官方文档](https://solidity.readthedocs.io/en/develop/)
+- 在开发合约前，如果需要搭建节点连接到PlatON网络或者创建私有网络请参考：[连接 PlatON 网络](/zh-cn/Network/)
 
 ## platon-truffle开发工具介绍
 
@@ -26,6 +27,7 @@ platon-truffle是PlatON提供的一款能够在本地编译、部署、调用智
 
 - platon-truffle开发工具[安装参考](https://github.com/PlatONnetwork/platon-truffle/tree/feature/evm)
 - platon-truffle开发工具[使用手册](https://platon-truffle.readthedocs.io/en/v0.1.0/index.html)
+
 
 ## 创建HelloWorld合约
 
