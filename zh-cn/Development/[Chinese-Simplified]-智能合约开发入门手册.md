@@ -1,13 +1,17 @@
 # 智能合约开发入门手册
 
-## 简介
+## 智能合约简介
 
-合约，就是一段程序，并且是一段能在区块链上运行的程序。把合约部署到区块链网络后，用户就能通过platon-truffle来调用这个合约，完成业务逻辑。本教程主要是指导用户在PlatON上创建，编译，部署和与HelloWorld智能合约交互。PlatON提供了platon-truffle来辅助用户与链进行交互。如果您想使用更加丰富的API可以参考[Java SDK开发指南](/zh-cn/Development/[Chinese-Simplified]-Java-SDK.md) 或者 [JS SDK开发指南](/zh-cn/Development/[Chinese-Simplified]-JS-SDK.md)
+合约，就是一段程序，并且是一段能在区块链上运行的程序。把合约部署到区块链网络后，用户就能通过platon-truffle来调用这个合约，完成业务逻辑。本教程主要是指导用户在PlatON上创建，编译，部署简单的HelloWorld合约并与其交互。PlatON提供了platon-truffle来辅助用户与链进行交互。如果您想使用更加丰富的API可以参考[Java SDK开发指南](/zh-cn/Development/[Chinese-Simplified]-Java-SDK.md) 或者 [JS SDK开发指南](/zh-cn/Development/[Chinese-Simplified]-JS-SDK.md)
 
 - solidity智能合约语法请参考[Solidity官方文档](https://solidity.readthedocs.io/en/develop/)
+- solidity智能合约在线IDE[Remix](https://remix.ethereum.org/)
 - platon-truffle开发工具[源码地址](https://github.com/PlatONnetwork/platon-truffle.git)
 
 ## platon-truffle开发工具介绍
+
+platon-truffle是一款能够在本地编译、部署、调用智能合约的工具，具体的安装及使用手册参见
+
 - platon-truffle开发工具[安装参考](https://github.com/PlatONnetwork/platon-truffle/tree/feature/evm)
 - platon-truffle开发工具[使用手册](https://platon-truffle.readthedocs.io/en/v0.1.0/index.html)
 
@@ -63,191 +67,251 @@ function getName() public view returns(string memory)
 
 ## 编译HelloWorld合约 
 
-**step1.** 使用platon-truffle初始化项目
+**step1.** 为HelloWorld项目创建新目录
 
+```bash
+mkdir HelloWorld && cd HelloWorld
 ```
-在安装有platon-truffle的服务器上面先初始化一个工程。
-mkdir HelloWorld
-cd HelloWorld
+- 以下命令如果没有特殊说明都在HelloWorld目录下进行
+
+  
+
+**step2.** 使用platon-truffle初始化一个工程
+
+```bash
 truffle init
-提示如下表示成功：
+```
+在操作完成之后，就有这样的一个项目结构：
 
-  ✔ Preparing to download
-  ✔ Downloading
-  ✔ Cleaning up temporary files
-  ✔ Setting up box
+- contracts/: Solidity合约目录
+
+- migrations/: 部署脚本文件目录
+
+- test/: 测试脚本目录
+
+- truffle-config.js: platon-truffle 配置文件
+
   
-  Unbox successful. Sweet!
+
+**step3.** 将之前编写好的HelloWorld合约放至HelloWorld/contracts/目录下
+```bash
+ls contracts/
+```
+- 将看到HelloWorld.sol 
+
   
-  Commands:
+
+**step4.** 修改platon-truffle 配置文件truffle-config.js，将编译器版本修改对应的solidity合约中的版本号
+
+```
+vim truffle-config.js
+```
+
+truffle-config.js 修改部分内容如下：
+
+- compilers: {
+
+- ​      solc: {
+
+- ​            version: "^0.5.13",    // 此版本号与HelloWorld.sol中声明的版本号保持一致
+
+- ​      }
+
+- }
+
   
-    Compile:        truffle compile
-    Migrate:        truffle migrate
-    Test contracts: truffle test
-```
 
-**step2.** 将HelloWorld.sol放入HelloWorld/contracts目录下
+
+**step5.** 编译合约
 
 ```
-guest@guest:~/HelloWorld/contracts$ ls
-HelloWorld.sol  Migrations.sol
+truffle compile
 ```
+在操作完成之后，生成如下目录结构：
 
-**step3.** 修改truffle-config.js文件，将编译器版本修改成“^0.5.13”
+- build/: Solidity合约编译后的目录
 
-```
-compilers: {
-    solc: {
-       version: "^0.5.13",    // Fetch exact version from solc-bin (default: truffle's version)
-      // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
-      // settings: {          // See the solidity docs for advice about optimization and evmVersion
-      //  optimizer: {
-      //    enabled: false,
-      //    runs: 200
-      //  },
-      //  evmVersion: "byzantium"
-       }
-    }
-}
-```
+- build/contracts/HelloWorld.json  HelloWorld.sol对应的编译文件
 
-**step4.** 执行truffle compile编译合约
+  
 
-```
-guest@guest:~/HelloWorld$ truffle compile
-
-Compiling your contracts...
-
- Compiling ./contracts/HelloWorld.sol
- Compiling ./contracts/Migrations.sol
-
- compilation warnings encountered:
-
-Warning: This is a pre-release compiler version, please do not use it in production.
-
- Artifacts written to /home/guest/hudenian/HelloWorld/build/contracts
- Compiled successfully using:
-    solc: 0.5.13-develop.2020.1.2+commit.9ff23752.mod.Emscripten.clang
-```
 
 ## 部署HelloWorld合约
 
-**step1.** 在HelloWorld/migrations/下添加部署HelloWorld合约辅助脚本2_initial_helloword.js，内容如下所示：
+**step1.** 新增合约部署脚本文件
 
+```bash
+cd migrations/ && touch 2_initial_helloword.js
 ```
-const HelloWorld = artifacts.require("HelloWorld"); 
-module.exports = function(deployer) {
-  	deployer.deploy(HelloWorld);
-};
-```
+部署脚本文件名建议使用合约名称便于后面维护,如HelloWorld合约对应的部署脚本文件为:2_initial_helloword.js，内容如下所示：
+- const helloWorld = artifacts.require("HelloWorld"); //artifacts.require告诉platon-truffle需要部署哪个合约，HelloWorld即之前写的合约类名
 
+- module.exports = function(deployer) {
+
+- ​         deployer.deploy(helloWorld); //helloWorld即之前定义的合约抽象
+
+- };
+
+  
 
 **step2.** 修改truffle-config.js中链的配制信息
 
 ```
-networks: {
-     development: {
-      host: "10.1.1.6",     // 区块链所在服务器主机
-      port: 8806,            // 链端口号
-      network_id: "*",       // Any network (default: none)
-      from: "0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e", //部署合约账号的钱包地址
-      gas: 90000000,
-      gasPrice: 50000000004,
-     },
-}
+vim truffle-config.js
+```
+将truffle-config.js中的区块链相关配制修改成您真实连接的链配制
+- networks: {
+
+- development: {
+
+- ​        host: "10.1.1.6",     // 区块链所在服务器主机
+
+- ​        port: 8806,            // 链端口号
+
+- ​        network_id: "*",       // Any network (default: none)
+
+- ​       from: "0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e", //部署合约账号的钱包地址
+
+- ​       gas: 90000000,
+
+- ​       gasPrice: 50000000004,
+
+- },
+
+- }
+
+  
+
+
+**step3.**  部署合约
+
+```
+truffle migrate
 ```
 
-**step3.**  执行truffle migrate 部署合约
+部署成功后，将看到类似如下信息：
+- 2_initial_helloword.js
 
-```
-guest@guest:~/HelloWorld$ truffle migrate
+- Deploying 'HelloWorld'
 
-Compiling your contracts...
+- transaction hash:    0x2bb5c7f6202225554a823db410fb16cf0c8328a51391f24fb9052a6a8f3033e3 //部署合约对应的交易hash
 
- Everything is up to date, there is nothing to compile.
+- Blocks: 0            Seconds: 0
 
-Migrations dry-run (simulation)
+- contract address:    0x714E74eEc4b63D9DB72cbB5F78CDD5b5bb60F9dc  //合约地址（后面合约部署将会使用到）
 
-Network name:    'development-fork'
-Network id:      1
-Block gas limit: 0x5f5e100
-2_initial_helloword.js
+- block number:        142522  //交易对应的块号
 
-   Deploying 'HelloWorld'
-   
-    transaction hash:    0x2bb5c7f6202225554a823db410fb16cf0c8328a51391f24fb9052a6a8f3033e3
-    Blocks: 0            Seconds: 0
-    contract address:    0x714E74eEc4b63D9DB72cbB5F78CDD5b5bb60F9dc
-    block number:        142522
-    block timestamp:     1581667696206
-    account:             0xF644CfC3b0Dc588116D6621211a82C1Ef9c62E9e
-    balance:             90000000.867724449997417956
-    gas used:            149247
-    gas price:           50.000000004 gVON
-    value sent:          0 LAT
-    total cost:          0.007462350000596988 LAT
+- block timestamp:     1581667696206
 
+- account:             0xF644CfC3b0Dc588116D6621211a82C1Ef9c62E9e //部署合约所使用的账号
 
-    Saving migration to chain.
-    Saving artifacts
-   
-    Total cost:     0.007462350000596988 LAT
-```
+- balance:             90000000.867724449997417956  //部署合约账户对应的余额
+
+- gas used:            149247 //本次部署gas消息
+
+- gas price:           50.000000004 gVON
+
+- value sent:          0 LAT
+
+- total cost:          0.007462350000596988 LAT
+
+- 
+
+- Saving migration to chain.
+
+- Saving artifacts
+
+- 
+
+- Total cost:     0.007462350000596988 LAT
+
+  
+
 
 ## 调用HelloWorld合约
 
-**step1.**  构建合约对象
+**step1.**  进入platon-truffle控制台
+```
+truffle console
+```
+- 以下调用查询将在truffle控制台中进行
+
+  
+
+**step2.**  构建合约对象
+
+```json
+var abi = [{"constant":false,"inputs":[{"internalType":"string","name":"_name","type":"string"}],"name":"setName","outputs":[{"internalType":"string","name":"","type":"string"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getName","outputs":[{"internalType":"string","name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"}]; //可以从build/contracts/HelloWorld.json文件中获取到
+
+var contractAddr = '0x9A5015F9A3728ff64f401b9B93E98078BdD48FD1';//部署合约时的获取的地址
+var helloWorld = new web3.eth.Contract(abi,contractAddr); 
+```
+
+说明： 
+- `abi` 是合约提供给外部调用时的接口，每个合约对应的abi在编译后的文件中，如：build/contracts/HelloWorld.json中可以找到
+
+- `contractAddr` 在部署合约成功后有一个contract address
+
+- `helloWorld` 就是构建出来与链上合约交互的合约对象抽象
+
+  
+
+
+**step3.**  调用合约函数
+```javascript
+helloWorld.methods.setName("hello world").send({
+	from: '0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e'
+ }).on('receipt', function(receipt) {
+ 	console.log(receipt);
+ }).on('error', console.error);
 
 ```
-guest@guest:~/HelloWorld$ truffle console
-truffle(development)> var abi = [{"constant":false,"inputs":[{"internalType":"string","name":"_name","type":"string"}],"name":"setName","outputs":[{"internalType":"string","name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"}]'; 
-truffle(development)> var helloWorld = new web3.eth.Contract(abi,'0x9A5015F9A3728ff64f401b9B93E98078BdD48FD1');  
-```
+调用合约命令说明：
+- `helloWorld` 是之前构建的合约对象
+- `methods` 固定语法,指量后面紧跟合约的方法名
+- `setName` 是我们HelloWorld合约中的一个方法，有一个String类型的入参，此处入参为`hello world`
+- `from` 调用者的合约地址 
+- `on` 是监听合约处理结果事件，此处如果成功将打印回执，失败输出错误日志
 
-**step2.**  调用合约
-```
-truffle(development)>helloWorld.methods.setName("hello world").send({from:'0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e'}).on('transactionHash',function(hash){}).on('confirmation', function(confirmationNumber, receipt){}).on('receipt', function(receipt){ console.log(receipt);}).on('error', console.error);
-交易回执如下:
+函数调用成功，将会看到如下信息：
 
-{ blockHash:
-   '0x3ae287d1e745e30d0d6c95d5220cc7816cda955e7b2f013c6a531ed95028a794',
-  blockNumber: 159726,
+```
+{ 
+  blockHash:'0x3ae287d1e745e30d0d6c95d5220cc7816cda955e7b2f013c6a531ed95028a794', //交易所在的区块hash
+  blockNumber: 159726, //交易所在的块号
   contractAddress: null,
   cumulativeGasUsed: 44820,
-  from: '0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e',
-  gasUsed: 44820,
-  logsBloom:
-  '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
-  status: true,
-  to: '0x9a5015f9a3728ff64f401b9b93e98078bdd48fd1',
-  transactionHash:
-   '0xb7a41f72d555d4a2d9f2954fbdc5bbbb4c5ce89c836f8704276419ed416b3866',
-  transactionIndex: 0,
-  events: {} }
-{ blockHash:
-   '0x3ae287d1e745e30d0d6c95d5220cc7816cda955e7b2f013c6a531ed95028a794',
-  blockNumber: 159726,
-  contractAddress: null,
-  cumulativeGasUsed: 44820,
-  from: '0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e',
-  gasUsed: 44820,
+  from: '0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e', //调用者地址
+  gasUsed: 44820, //gas消耗
   logsBloom:
    '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
   status: true,
-  to: '0x9a5015f9a3728ff64f401b9b93e98078bdd48fd1',
-  transactionHash:
-   '0xb7a41f72d555d4a2d9f2954fbdc5bbbb4c5ce89c836f8704276419ed416b3866',
+  to: '0x9a5015f9a3728ff64f401b9b93e98078bdd48fd1', //交易调用的合约地址
+  transactionHash:'0xb7a41f72d555d4a2d9f2954fbdc5bbbb4c5ce89c836f8704276419ed416b3866', //交易hash
   transactionIndex: 0,
-  events: {} }
+  events: {} 
+}
 ```
 
-**step3.**  查询合约
+**step4.**  查询合约
+
+```javascript
+helloWorld.methods.getName().call(null,function(error,result){console.log("name is:" + result);})  
 ```
-truffle(development)>helloWorld.methods.getName().call(null,function(error,result){console.log("name is:" + result);})  
-查询结果如下：
- name is:
- 'hello world'
-```
+查询合约命令说明：
+- `helloWorld` 是之前构建的合约对象
+
+- `methods` 指定将获取合约中的方法
+
+- `getName` 是我们HelloWorld合约中的一个方法，该方法没有入参，故入参为空
+
+- `call` 指明是查询方法
+
+- `function` 是一个回调函数，将处理调用后的结果，此处我们通过console.log打印出执行结果
+
+  
+
 
 ## FAQ 
 
@@ -266,13 +330,8 @@ truffle(development)>helloWorld.methods.getName().call(null,function(error,resul
 
 > 问:  platon-truffle执行truffle compile 失败?
 
-> 答:  1.确认编译的合约文件中的版本号与truffle-config.js中指定的版本号是否一致。
->           2.可能语法有误（如下所示），可以根据命令行提示修复后再进行编译
->               Error: CompileError: /home/guest/hudenian/solidityDoc/contracts/HelloWorld.sol7 22 TypeError:Data location must be "memory" for parameter in function, but none was given.
->               function setName(string  _name) public returns(string memory){
->                                                  ^-----------^ 
->               Compilation failed. See above.at Object.compile (/home/guest/platon-truffle/build/webpack:/packages/workflow-compile/legacy/index.js72:1)
->               at process._tickCallback (internal/process/next_tick.js68:7)
+> 答:  1.确认编译的合约文件中的版本号与truffle-config.js中指定的版本号是否一致
+>           2.可能语法有误，可以根据命令行提示修复后再进行编译
 
 
 
@@ -294,9 +353,13 @@ truffle(development)>helloWorld.methods.getName().call(null,function(error,resul
 > 
 > const A = artifacts.require("A");  
 > module.exports = function(deployer) {
->   deployer.deploy(ERC200513Token,100,'PLA','PLAT');//需要传入对应构造函数参数
+>         deployer.deploy(ERC200513Token,100,'PLA','PLAT');//需要传入对应构造函数参数
 > };
 
 
 
 
+
+```
+
+```
