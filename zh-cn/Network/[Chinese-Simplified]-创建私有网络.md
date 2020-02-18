@@ -200,12 +200,12 @@ echo {node1-nodeblskey} > ./data1/nodeblskey
 
 **4.初始化和启动**
 
-分别为节点0和节点1初始化创世块信息
+分别为节点0和节点1初始化创世块信息：
 ```
 ./platon --datadir ./data0 init platon.json && ./platon --datadir ./data1 init platon.json
 ```
 
-初始化成功后，分别用nohup方式启动节点0和节点1
+初始化成功后，分别用nohup方式启动节点0和节点1：
 
 ```
 nohup ./platon --identity "platon" --datadir ./data0 --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data0/nodekey --cbft.blskey ./data0/nodeblskey &
