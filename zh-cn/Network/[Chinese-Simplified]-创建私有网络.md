@@ -12,7 +12,7 @@
 
 **1.生成创世块配置文件`platon.json`**
 
-在工作目录下创建创世区块文件，拷贝以下内容，修改 `your-node-pubkey` 为[之前](/zh-cn/Node/[Chinese-Simplified]-环境准备.md#节点公私钥)生成的 ***节点ID*** ，`your-node-blspubkey` 为[之前](/zh-cn/Node/[Chinese-Simplified]-环境准备.md#节点BLS公私钥)生成的 ***节点bls公钥*** ，使本地节点成为共识节点参与共识。修改 `your-account-address` 为[之前](/zh-cn/Node/[Chinese-Simplified]-环境准备.md#钱包文件)生成的 ***Address***。`platon.json`内容如下：
+在工作目录下创建创世区块文件，拷贝以下内容，修改 `your-node-pubkey` 为[环境准备](/zh-cn/Node/[Chinese-Simplified]-环境准备.md#节点公私钥)生成的 ***节点ID*** ，`your-node-blspubkey` 为[环境准备](/zh-cn/Node/[Chinese-Simplified]-环境准备.md#节点BLS公私钥)生成的 ***节点bls公钥*** ，使本地节点成为共识节点参与共识。修改 `your-account-address` 为[环境准备](/zh-cn/Node/[Chinese-Simplified]-环境准备.md#钱包文件)生成的 ***Address***。`platon.json`内容如下：
 
 ```
 {
