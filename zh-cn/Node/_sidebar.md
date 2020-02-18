@@ -1,10 +1,9 @@
-
-- [安装节点](/zh-cn/Node/[Chinese-Simplified]-安装节点.md)
 - [验证节点介绍](/zh-cn/Node/[Chinese-Simplified]-PlatON验证节点介绍.md)
+- [安装节点](/zh-cn/Node/[Chinese-Simplified]-安装节点.md)
+- [环境准备](/zh-cn/Node/[Chinese-Simplified]-环境准备.md)
 - [成为验证节点](/zh-cn/Node/[Chinese-Simplified]-成为验证节点.md)
 - [成为归档节点](/zh-cn/Node/[Chinese-Simplified]-成为归档节点.md)
 - [节点升级](/zh-cn/Node/[Chinese-Simplified]-节点升级.md)
 - [节点数据备份和回滚](/zh-cn/Node/[Chinese-Simplified]-节点数据备份和回滚.md)
-- [时钟同步](/zh-cn/Node/[Chinese-Simplified]-时钟同步.md)
 
 
