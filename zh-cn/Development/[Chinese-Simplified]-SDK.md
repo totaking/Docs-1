@@ -17,6 +17,6 @@ PlatON SDK 是应用程序访问PlatON网络的桥梁，包含与节点进行RPC
 * 加密签名接口
 * 钱包的管理
 
-PlatON SDK 使用前，如果需要搭建节点连接到PlatON网络请参考：
+PlatON SDK 使用前，如果需要搭建节点连接到PlatON网络或者创建私有网络请参考：
 
-[PlatON 网络](/zh-cn/Network/)
+[连接 PlatON 网络](/zh-cn/Network/)
