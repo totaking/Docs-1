@@ -8,7 +8,6 @@
 2. 已经按照[节点秘钥](/zh-cn/Network/[Chinese-Simplified]-环境准备.md#节点秘钥)章节在'~/platon-node/data'目录下生成了节点私钥和节点BLS私钥。
 
 
-
 ## 单节点
 
 **1.生成创世块配置文件`platon.json`**
