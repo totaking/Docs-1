@@ -7,14 +7,12 @@
 ## 创建钱包
 
 <div>
-    <div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton2.png" width="500" /></div> <div><br>1. 点击【创建钱包】。<br>2. 设置符合规则的钱包名称和钱包密码。<br>3. 点击【创建钱包】按钮则可创建钱包。<br>4. 钱包创建成功后可以点击【钱包备份】开始备份，或者点击【跳过】后续进行备份。<br> 
-
->[!NOTE|style:flat|label:注意]
->
->1.钱包密码是您操作此钱包的凭证，服务器不会存储您的钱包密码，请务必牢记。
->2.强烈建议您在创建钱包时即时备份。
+    <div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton2.png" width="500" /></div> <div><br>1. 点击【创建钱包】。<br>2. 设置符合规则的钱包名称和钱包密码。<br>3. 点击【创建钱包】按钮则可创建钱包。<br>4. 钱包创建成功后可以点击【钱包备份】开始备份，或者点击【跳过】后续进行备份。<br> <br><b>注意</b><br>1.钱包密码是您操作此钱包的凭证，服务器不会存储您的钱包密码，请务必牢记。<br>2.强烈建议您在创建钱包时即时备份。
+</div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
+</div>
+
 ## 钱包备份
 
 <div>
@@ -35,7 +33,7 @@
 <div style="margin-top:40px;"></div>
 </div>
 
-### 助记词导入
+### 使用助记词导入
 
 <div>
 <div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton8.png" width="500"/></div>  <div><br>1. 点击【导入钱包-助记词】。<br>2. 正确填写助记词且顺序正确。<br>3. 设置钱包名称和钱包密码。<br>4. 点击【开始导入】按钮，助记词验证通过后钱包则导入成功。<br><br><b>注意</b><br>1. 钱包密码是您操作此钱包的凭证，服务器不会存储您的钱包密码，请务必牢记。<br>2. 拥有助记词即可恢复您的钱包并控制您的资产，请务必将其备份存储至安全地方。<br>3. 支持后续在钱包页面，点击由上角“+”按钮继续导入钱包。
@@ -44,7 +42,7 @@
 <div style="margin-top:40px;"></div>
 </div>
 
-### 私钥导入
+### 使用私钥导入
 
 <div>
 <div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton10.png" width="500"/></div><div><br>1. 点击【导入钱包-私钥】。<br>2. 输入文件内容，或者通过扫一扫扫描获取私钥。<br>3. 设置钱包名称和钱包密码。<br>4. 点击【开始导入】按钮，验证通过后钱包则导入成功。<br><br><b>注意</b><br>1. 钱包密码是您操作此钱包的凭证，服务器不会存储您的钱包密码，请务必牢记。<br>2. 拥有私钥即可恢复您的钱包并控制您的资产，请务必将其备份存储至安全地方。<br>3. 支持后续在钱包页面，点击由上角“+”按钮继续导入钱包。
@@ -56,19 +54,10 @@
 ### 导入观察钱包详见“设置观察钱包和冷钱包”说明
 
 <div style="margin-top:40px;"></div>
-## 钱包查看
+## 查看钱包信息
 
 <div>
 <div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton12.png" width="300"/></div> <div><br>1. 点击【钱包】模块，可以看到所有钱包。<br>2. ①显示所有钱包的LAT总和。<br>3. ②点击不同钱包可切换钱包。<br>4. ③当前显示钱包的LAT余额，如果有锁仓余额，则会显示锁仓金额。<br>5. ④如果钱包暂未备份，则可点击【备份】按钮进行备份。<br>6. ⑤显示当前钱包的所有交易记录。<br>7. ⑥可转账LAT至其他账户。<br>8. ⑦展示当前账户地址及地址二维码，可供转入LAT。<br>9. ⑧点击【+】可创建或者导入钱包，点击扫一扫可扫描二维码。
-</div>
-<div style="clear:both"></div>
-<div style="margin-top:40px;"></div>
-</div>
-
-## 查看历史交易记录
-
-<div>
-<div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton13.png" width="500"/></div> <div><br>1. 点击某个具体钱包，即可看到所有交易记录。<br>2. 点击【我的-交易记录】，可查看所有钱包的交易记录。可通过点击【全部钱包】筛选钱包，以查看某个钱包具体的交易记录。<br>3. 主要的交易类型有：<br>- 发送<br>- 接收<br>- 委托<br>- 赎回委托<br>- 其他收入<br>- 其他支出
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -114,6 +103,8 @@
 
 ## 委托
 
+### 参与委托
+
 <div>
 <div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton45.jpg" width="300" /></div><div><br>1. 可点击【委托-验证节点】，选择某个节点进行委托。如果已委托过，可点击【委托-我的委托-委托节点详情】，选择某个节点继续进行委托。<br>2. 进入页面，选择需要委托的钱包。<br>3. 如果钱包有锁仓金额，可点击委托钱包余额选项栏进行切换，使用锁仓金额进行委托（注意钱包余额需足够支付委托交易手续费）。<br>4. 输入委托的金额，每次委托不得小于10LAT。<br>5. 输入正确的密码即可完成委托。<br>6. 已委托过的节点，可再次进行委托，无次数限制。<br><br><b>注意</b><br>1. 委托人将LAT委托给节点，当委托的节点产生收益时，委托人将会获得基于节点配置的委托奖励比例分享的节点。<br>2. 收益节点关联的钱包地址，不可参与委托。<br>3. 委托的LAT在下个结算周期才开始生效。
 </div>
@@ -121,7 +112,7 @@
 <div style="margin-top:40px;"></div>
 </div>
 
-## 我的委托
+### 查看我的委托
 
 <div>
 <div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton40.jpg" width="250"/><img src="zh-cn/Tool/ATON-manual-cn.assets/aton46.jpg" width="250"/></div> <div><br>1. 点击【委托-我的委托】可查看当前客户端钱包总的委托金额、待领取奖励和累计奖励。<br>2.可点击某个具体钱包查看总委托金额、累计奖励金额和待领取奖励，也可进行赎回和赎回委托操作。<br>3. 点击【领取】可领取该钱包的所有待领取奖励，输入正确的钱包密码，交易完成奖励即可到账。<br>
@@ -130,9 +121,7 @@
 <div style="margin-top:40px;"></div>
 </div>
 
-
-
-## .赎回
+### 赎回委托
 
 <div>
 <div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton47.jpg" width="300"/></div><div><br>1. 点击【委托-我的委托-详情-赎回委托】可进行赎回。<br>2. 可点击【已委托】下拉框选择不同类别的委托进行赎回。<br>3. 输入想要赎回的数量，数量需大于等于10LAT，输入正确的密码即可完成赎回委托操作。<br><br><b>注意</b><br>1. 赎回委托，将立即到账。<br>2. 操作全部赎回时，将自动领取委托奖励。
@@ -141,7 +130,7 @@
 <div style="margin-top:40px;"></div>
 </div>
 
-## 13. 设置观察钱包与冷钱包
+## 设置观察钱包与冷钱包
 
 准备工作：
 1. 准备2台手机，安装最新版的ATON钱包。
@@ -187,19 +176,6 @@
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
 </div>
-
-
-
-
-## 钱包管理
-
-<div>
-<div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton37.png" width="500"/></div><div><br>1. 点击【我的-钱包管理】可查看所有钱包及进行相关操作。<br>2. 如果钱包为冷钱包，则会显示【冷钱包】字样。<br>3. 如果钱包为观察钱包，则会显示【观察钱包】字样。<br>4. 如果钱包暂未备份，则会显示【备份】字样，您可点击进行备份。<br>- 点击①可修改钱包名称，名称不得超过12位，不得与本地钱包名重复<br>- 点击②可导出私钥<br>- 点击③可导出钱包文件<br>5. 点击【删除钱包】，可输入钱包密码后删除该钱包。如钱包没有备份，则不可删除。
-</div>
-<div style="clear:both"></div>
-<div style="margin-top:40px;"></div>
-</div>
-
 ## 设置/帮助与反馈
 
 <div>
@@ -208,23 +184,3 @@
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
 </div>
-
-## 官方网址&社区
-
-**以下为PlatON官方网址和社区，欢迎访问和加入。**
-
-官网：[www.platon.network](www.platon.network)
-
-微信公众号：PlatON_network
-
-Twitter账号：https://twitter.com/PlatON_Network
-
-Facebook：https://facebook.com/PlatONNetwork/
-
-Telegram：https://t.me/PlatONHK
-
-GitHub账号：https://github.com/PlatONnetwork
-
-
-
-
