@@ -360,7 +360,10 @@ PlatON采取在小规模的备选节点中随机选取节点参与BFT共识，�
 
   ![退出冻结锁定期](PlatON%E7%BB%8F%E6%B5%8E%E6%96%B9%E6%A1%88.assets/%E9%80%80%E5%87%BA%E5%86%BB%E7%BB%93%E9%94%81%E5%AE%9A%E6%9C%9F.png)
 
-  注意，如果当前节点参与了升级提案投票，且提案没有投票结束，则需要判断解冻区块是否大于投票截止区块，如果大于，则继续按照默认的解冻区块进行质押Energon释放。如果小于，则按照投票截止区块进行质押Energon释放。退回的质押Energon原路返回。
+
+>[!NOTE|style:flat|label:注意]
+>
+>如果当前节点参与了升级提案投票，且提案没有投票结束，则需要判断解冻区块是否大于投票截止区块，如果大于，则继续按照默认的解冻区块进行质押<font color=red>Energon</font>释放。如果小于，则按照投票截止区块进行质押<font color=red>Energon</font>释放。退回的质押<font color=red>Energon</font>原路返回。
 
 （4）备选节点候选人退出，委托的Energon处理说明：
 
