@@ -74,18 +74,18 @@ MTool对质押等交易提供两种签名方式：在线签名和离线签名。
 #### 在线MTool操作流程
   按照以下流程安装在线MTool并发起质押成为质押节点:
 - [安装MTool](zh-cn/Tool/[Chinese-Simplified]-在线MTool使用手册#安装在线MTool)
-- [配置MTool](zh-cn/Tool/[Chinese-Simplified]-在线MTool使用手册.md '配置在线MTool')
-- [创建钱包](zh-cn/Tool/[Chinese-Simplified]-在线MTool使用手册.md '创建钱包')
-- [配置验证节点信息](zh-cn/Tool/[Chinese-Simplified]-在线MTool使用手册.md '配置验证节点信息')
-- [发起质押操作](zh-cn/Tool/[Chinese-Simplified]-在线MTool使用手册.md '发起质押操作')
+- [配置MTool](zh-cn/Tool/[Chinese-Simplified]-在线MTool使用手册#配置在线MTool)
+- [创建钱包](zh-cn/Tool/[Chinese-Simplified]-在线MTool使用手册#创建钱包)
+- [配置验证节点信息](zh-cn/Tool/[Chinese-Simplified]-在线MTool使用手册#配置验证节点信息)
+- [发起质押操作](zh-cn/Tool/[Chinese-Simplified]-在线MTool使用手册#发起质押操作)
 
 #### 离线MTool操作流程
 按照以下流程安装离线MTool并发起质押成为质押节点:
-- [安装MTool](zh-cn/Tool/[Chinese-Simplified]-离线MTool使用手册.md '安装MTool')
-- [配置MTool](zh-cn/Tool/[Chinese-Simplified]-离线MTool使用手册.md '配置')
-- [钱包配置](zh-cn/Tool/[Chinese-Simplified]-离线MTool使用手册.md '钱包配置')
-- [连接到验证节点](zh-cn/Tool/[Chinese-Simplified]-离线MTool使用手册.md '连接到验证节点')
-- [发起质押操作](zh-cn/Tool/[Chinese-Simplified]-离线MTool使用手册.md '发起质押操作')
+- [安装MTool](zh-cn/Tool/[Chinese-Simplified]-离线MTool使用手册#安装MTool)
+- [配置MTool](zh-cn/Tool/[Chinese-Simplified]-离线MTool使用手册#配置)
+- [钱包配置](zh-cn/Tool/[Chinese-Simplified]-离线MTool使用手册#钱包配置)
+- [连接到验证节点](zh-cn/Tool/[Chinese-Simplified]-离线MTool使用手册#连接到验证节点)
+- [发起质押操作](zh-cn/Tool/[Chinese-Simplified]-离线MTool使用手册#发起质押操作)
 
 
 > 注：离线交易的签名须离线完成，操作流程参考[文档](zh-cn/Tool/[Chinese-Simplified]-离线MTool使用手册.md '基本操作流程')。
