@@ -1,5 +1,3 @@
-# 安装节点
-
 `PlatON`支持以下不同的安装方式和不同的运行环境，请根据以下链接找到对应平台以及对应安装源的安装指南：
 
 - 源码编译安装
@@ -10,11 +8,11 @@
 
 当节点安装完成后，需要启动节点加入网络，请参考[网络章节](/zh-cn/Network/[Chinese-Simplified]-连接公有网络)。
 
-#### Ubuntu源码编译安装
+## Ubuntu源码编译安装
 
 Ubuntu编译环境要求：
 
-- 系统版本：`Ubuntu 16.04.1 及以上`，
+- 系统版本：`Ubuntu 16.04.1 及以上`
 - git：`2.19.1及以上`
 - 编译器：`gcc(4.9.2+)`、`g++(5.0+)`
 - go语言开发包：`go(1.7+)`
@@ -38,7 +36,7 @@ make all;
 
 
 
-#### Windows源码编译安装
+## Windows源码编译安装
 
 Windows编译环境需要符合以下条件：
 
@@ -118,7 +116,7 @@ go run build/ci.go install ./cmd/ctool
 
 
 
-#### Ubuntu下PPA源安装
+## Ubuntu下PPA源安装
 
 添加`PPA`源，然后安装`PlatON`客户端，注意，在ubuntu18.04和ubuntu16.04上的安装方式有些差别：
 
