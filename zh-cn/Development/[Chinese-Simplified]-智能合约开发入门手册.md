@@ -1,6 +1,6 @@
 # 智能合约开发入门手册
 
-## 智能合约简介
+## 简介
 
 合约，就是一段程序，并且是一段能在区块链上运行的程序。把合约部署到区块链网络后，用户就能通过platon-truffle来调用这个合约，完成业务逻辑。本教程主要是指导用户在PlatON上创建，编译，部署简单的HelloWorld合约并与其交互。PlatON提供了platon-truffle来辅助用户与链进行交互。如果您想使用更加丰富的API可以参考[Java SDK开发指南](/zh-cn/Development/[Chinese-Simplified]-Java-SDK.md) 或者 [JS SDK开发指南](/zh-cn/Development/[Chinese-Simplified]-JS-SDK.md)
 
