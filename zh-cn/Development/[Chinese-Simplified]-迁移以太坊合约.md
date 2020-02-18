@@ -205,14 +205,14 @@ truffle init
 
 - truffle-config.js: platon-truffle 配置文件
 
-**step3.** 将以太坊合约文件如ERC200513Token.sol放至example/contracts目录下
+**step3.** 将以太坊合约文件ERC200513Token.sol放至example/contracts目录下
 
 ```
 ls contracts/
 ```
 
 - 将看到 ERC200513Token.sol
-- PlatON智能合约中的货币单位为LAT和VON。要将以太坊智能合约迁移至PlatON，请将以太币面额更改为PlatON面额。同时注意以太/LAT市场汇率（此合约占不考虑市场汇率，将uint256 public totalSupply = 10000000000000000000 ether; 修改成uint256 public totalSupply = 10000000000000000000 LAT; ）
+- PlatON智能合约中的货币单位为LAT和VON。要将以太坊智能合约迁移至PlatON，请将以太币面额更改为PlatON面额。同时注意以太/LAT市场汇率（此合约我们假设市场汇率1:1，将uint256 public totalSupply = 10000000000000000000 ether; 修改成uint256 public totalSupply = 10000000000000000000 LAT; ）
 
 **step4.** 修改truffle-config.js中的编译版本号及链相关配制
 
