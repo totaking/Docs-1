@@ -256,6 +256,7 @@ truffle migrate
 
 
 **众筹者查询众筹情况：**
+
 ```
 truffle console
 >var abi = [...]; //众筹合约的ABI，从编译后的文件获取
