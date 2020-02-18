@@ -14,7 +14,6 @@ platon-truffle是一款能够在本地编译、部署、调用智能合约的工
 - platon-truffle开发工具[安装参考](https://github.com/PlatONnetwork/platon-truffle/tree/feature/evm)
 - platon-truffle开发工具[使用手册](https://platon-truffle.readthedocs.io/en/v0.1.0/index.html)
 
-
 ## 创建HelloWorld合约
 
 ```
