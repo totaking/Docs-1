@@ -6,7 +6,6 @@
 
 - solidity智能合约语法请参考[Solidity官方文档](https://solidity.readthedocs.io/en/develop/)
 - solidity智能合约在线IDE[Remix](https://remix.ethereum.org/)
-- platon-truffle开发工具[源码地址](https://github.com/PlatONnetwork/platon-truffle.git)
 
 ## platon-truffle开发工具介绍
 
