@@ -7,7 +7,7 @@ PlatON目前有2个公有网络，一个是PlatON正式上线的、独立运行�
 在加入PlatON公有网络前请确保服务器本地具备以下条件：
 
 1. 已经按照[PlatON安装指南](/zh-cn/Node/[Chinese-Simplified]-安装节点.md)安装好PlatON环境。
-2. 已经按照[节点秘钥](/zh-cn/Network/[Chinese-Simplified]-环境准备.md?id=节点秘钥)章节在'~/platon-node/data'目录下生成了节点私钥和节点BLS私钥。
+2. 已经按照[节点秘钥](/zh-cn/Network/[Chinese-Simplified]-环境准备.md#节点秘钥)章节在'~/platon-node/data'目录下生成了节点私钥和节点BLS私钥。
 
 ## 加入主网
 
@@ -15,7 +15,7 @@ PlatON目前有2个公有网络，一个是PlatON正式上线的、独立运行�
 执行以下命令即可加入PlatON主网：
 
 ```
-$ ./platon --identity platon --datadir ./data --port 16789 --main --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/nodeblskey --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full"
+./platon --identity platon --datadir ./data --port 16789 --main --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/nodeblskey --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full"
 ```
 
 ***提示：***
@@ -39,7 +39,7 @@ $ ./platon --identity platon --datadir ./data --port 16789 --main --rpcport 6789
 **1.通过`http`方式进入`platon`控制台**
 
 ```
-$ ./platon attach http://localhost:6789
+./platon attach http://localhost:6789
 ```
 
 **2.查看节点列表**
@@ -93,11 +93,11 @@ $ ./platon attach http://localhost:6789
 执行以下命令即可加入PlatON主网：
 
 ```
-$ ./platon --identity platon --datadir ./data --port 16789 --testnet --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/nodeblskey --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full"
+./platon --identity platon --datadir ./data --port 16789 --testnet --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/nodeblskey --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full"
 ```
 
 与加入主网不同的是，加入贝莱世界的启动参数中将'--main'替换为'--testnet’， 同样，用上述主网同样的方式可以验证加入测试网络是否成功。
 
-使用[之前](/zh-cn/Network/[Chinese-Simplified]-环境准备.md?id=钱包文件)生成的账户地址在[PlatON官网](https://developer.platon.network/#/energon?lang=zh)申请测试Energon。
+使用[之前](/zh-cn/Network/[Chinese-Simplified]-环境准备.md#包文件)生成的账户地址在[PlatON官网](https://developer.platon.network/#/energon?lang=zh)申请测试Energon。
 
 ***注意：测试Energon没有任何价值，仅限于体验测试网络功能。如仅仅只是连接测试网络，无需申请！***
