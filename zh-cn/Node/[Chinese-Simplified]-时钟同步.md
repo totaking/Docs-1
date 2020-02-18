@@ -15,6 +15,7 @@ apt-get -y install ntp  &&  systemctl enable ntp
 ntpq -p
 ```
 返回
+
 ![ntpq返回](时钟同步.assets/ntpq.png)
 
 
