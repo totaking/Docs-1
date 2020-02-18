@@ -146,15 +146,18 @@ contract CrowdFunding {
 **编译众筹合约：**
 
 **step1.** 为众筹合约创建新目录
-```
-mkdir myCrowdFunding
-cd myCrowdFunding
-```
 
-**step2.** 使用platon-truffle初始化一个空工程
+```
+mkdir myCrowdFunding && cd myCrowdFunding
+```
+- 以下命令如果没有特殊说明都在myCrowdFunding目录下进行
+
+**step2.** 使用platon-truffle初始化一个工程
+
 ```
 truffle init
 ```
+
 在操作完成之后，就有这样的一个项目结构：
 
 - contracts/: Solidity合约目录
@@ -162,13 +165,12 @@ truffle init
 - test/: 测试脚本目录
 - truffle-config.js: platon-truffle 配置文件
 
-
 **step3.** 将编写好的众筹合约放至myCrowdFunding/contracts/目录下
+
 ```
-cd myCrowdFunding/contracts/
-ls
-CrowdFunding.sol
+ls myCrowdFunding/contracts/
 ```
+- 将看到 CrowdFunding.sol
 
 **step4.** 修改platon-truffle 配置文件truffle-config.js，将编译器版本修改对应的solidity合约中的版本号
 
@@ -176,19 +178,21 @@ CrowdFunding.sol
 vim truffle-config.js
 ```
 
-truffle-config.js 修改部分内容如下：
-
-- compilers: {
--     ​      solc: {
--        ​            version: "^0.5.13",    // 此版本号与CrowdFunding.sol中声明的版本号保持一致
--        ​      }
--     }
+truffle-config.js 修改部分内容如下
+```
+compilers: {
+     solc: {
+        version: "^0.5.13",    // 此版本号与CrowdFunding.sol中声明的版本号保持一致
+    }
+}
+```
 
 **step5.** 编译合约
 
 ```
 truffle compile
 ```
+
 在操作完成之后，就有这样的一个目录结构：
 
 - build/: Solidity合约编译后的目录
@@ -197,80 +201,100 @@ truffle compile
 **部署众筹合约：**
 
 **step1.** 添加部署脚本文件
+
 ```
-cd migrations/
-touch 2_initial_CrowdFunding.js
+cd migrations/ && touch 2_initial_CrowdFunding.js
 ```
+
 部署脚本文件为:2_initial_crowdFunding.js，内容如下所示：
-- const CrowdFunding = artifacts.require("CrowdFunding"); //需要部署的合约名称 
-- module.exports = function(deployer) {
--   ​         deployer.deploy(CrowdFunding);
-- };
+
+```
+const CrowdFunding = artifacts.require("CrowdFunding"); //需要部署的合约名称 
+module.exports = function(deployer) {
+  ​    deployer.deploy(CrowdFunding);
+};
+```
 
 **step2.** 修改truffle-config.js中链的配制信息
 
 ```
 vim truffle-config.js
 ```
-将truffle-config.js中的区块链相关配制修改成您真实连接的链配制
-- networks: {
--          development: {
--       ​        host: "10.1.1.6",     // 区块链所在服务器主机
--       ​        port: 8806,            // 链端口号
--       ​        network_id: "*",       // Any network (default: none)
--       ​       from: "0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e", //部署合约账号的钱包地址
--       ​       gas: 90000000,
--       ​       gasPrice: 50000000004,
--          },
-- }
 
+将truffle-config.js中的区块链相关配制修改成您真实连接的链配制
+
+```
+networks: {
+	development: {
+       host: "10.1.1.6",     // 区块链所在服务器主机
+       port: 8806,            // 链端口号
+       network_id: "*",       // Any network (default: none)
+       from: "0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e", //部署合约账号的钱包地址
+       gas: 90000000,
+       gasPrice: 50000000004,
+	},
+}
+```
 
 **step3.**  部署合约
 
 ```
-cd myCrowdFunding
 truffle migrate
 ```
-部署成功将输出如下信息：
-- Compiling your contracts...
--  Everything is up to date, there is nothing to compile.
--  3_initial_CrowdFunding.js
--  
--     Deploying 'CrowdFunding'
--      transaction hash:    0x3a6419cd4169d7cfb430a1fc5632239ac4a01845827f20df9b3229a334c5488b
--      Blocks: 0            Seconds: 0
--      contract address:    0x02D04C6fD2b0C07c43AA1a329D667f1F1Fc7a907 //部署后的合约地址
--      block number:        280532
--      block timestamp:     1581751224032
--      account:             0xF644CfC3b0Dc588116D6621211a82C1Ef9c62E9e
--      balance:             90000000.806077629992489796
--      gas used:            379154
--      gas price:           50.000000004 gVON
--      value sent:          0 LAT
--      total cost:          0.018957700001516616 LAT
--  
--      Saving migration to chain.
--      Saving artifacts
--      Total cost:     0.018957700001516616 LAT
 
+部署成功将输出如下信息：
+```
+Compiling your contracts...
+ Everything is up to date, there is nothing to compile.
+ 3_initial_CrowdFunding.js
+ 
+    Deploying 'CrowdFunding'
+     transaction hash:    0x3a6419cd4169d7cfb430a1fc5632239ac4a01845827f20df9b3229a334c5488b
+     Blocks: 0            Seconds: 0
+     contract address:    0x02D04C6fD2b0C07c43AA1a329D667f1F1Fc7a907 //部署后的合约地址
+     block number:        280532
+     block timestamp:     1581751224032
+     account:             0xF644CfC3b0Dc588116D6621211a82C1Ef9c62E9e
+     balance:             90000000.806077629992489796
+     gas used:            379154
+     gas price:           50.000000004 gVON
+     value sent:          0 LAT
+     total cost:          0.018957700001516616 LAT
+ 
+     Saving migration to chain.
+     Saving artifacts
+     Total cost:     0.018957700001516616 LAT
+```
 
 
 **众筹者查询众筹情况：**
+
+**step1.**  进入platon-truffle控制台
+
 ```
 truffle console
->var abi = [...]; //众筹合约的ABI，从编译后的文件获取
->var contractAddr = '0x02D04C6fD2b0C07c43AA1a329D667f1F1Fc7a907'; //众筹合约地址
->var crowdFunding = new web3.eth.Contract(abi,contractAddr); 
->crowdFunding.methods.amountRaised().call(null,function(error,result){console.log("result:" + result);}); //查询已筹集金额
+```
+- 以下调用查询将在truffle控制台中进行
+
+**step2.**  构建的众筹合约对象
+```
+var abi = [...]; //众筹合约的ABI，从编译后的文件获取
+var contractAddr = '0x02D04C6fD2b0C07c43AA1a329D667f1F1Fc7a907'; //众筹合约地址
+var crowdFunding = new web3.eth.Contract(abi,contractAddr); 
 ```
 
-
-**众筹者判断众筹是否成功：**
+**step3.**  查询已筹集金额
 ```
->crowdFunding.methods.safeWithdrawal().send({from:'0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e'}).on('data', function(event){ console.log(event);}).on('error', console.error); 
+crowdFunding.methods.amountRaised().call(null,function(error,result){console.log("result:" + result);}); //查询已筹集金额
+```
+
+**step4.**  众筹者判断众筹是否成功
+```
+crowdFunding.methods.safeWithdrawal().send({from:'0xf644cfc3b0dc588116d6621211a82c1ef9c62e9e'}).on('data', function(event){ console.log(event);}).on('error', console.error); 
 ```
 
 调用合约命令说明：
+
 - `crowdFunding` 是我们之前构建的合约对象
 - `methods` 固定语法，指定将获取合约中的方法
 - `safeWithdrawal` 是我们众筹合约中的一个方法，用于收回资金
