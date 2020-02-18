@@ -7,17 +7,14 @@
 ## 创建钱包
 
 <div>
-    <div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton2.png" width="500" /></div> <div><br>1. 点击【创建钱包】。<br>2. 设置符合规则的钱包名称和钱包密码。<br>3. 点击【创建钱包】按钮则可创建钱包。<br>4. 钱包创建成功后可以点击【钱包备份】开始备份，或者点击【跳过】后续进行备份。<br> </div>
-
+    <div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton2.png" width="500" /></div> <div><br>1. 点击【创建钱包】。<br>2. 设置符合规则的钱包名称和钱包密码。<br>3. 点击【创建钱包】按钮则可创建钱包。<br>4. 钱包创建成功后可以点击【钱包备份】开始备份，或者点击【跳过】后续进行备份。<br> 
 
 >[!NOTE|style:flat|label:注意]
 >
 >1.钱包密码是您操作此钱包的凭证，服务器不会存储您的钱包密码，请务必牢记。
 >2.强烈建议您在创建钱包时即时备份。
-
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
-
 ## 钱包备份
 
 <div>
