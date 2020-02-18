@@ -108,11 +108,11 @@
 ```bash
 cd $node_dir/data && ls -t | awk -F '[_.]' -v t=10000 'BEGIN {min=65535} {d=t-$6; if(d>=0 && min>d){min=d;minfile=$0;}} END {print minfile}'
 ```
-注：`$node_dir`为实际节点数据目录，**t=10000**中的10000为回滚的区块高度，以公告中的实际区块高度为准，参考：[2.3 回滚备份数据](#23-回滚备份数据)。此命令返回符合条件的备份文件名，如：data_backup_2019_11_05_9900.tar.gz。
+注：`$node_dir`为实际节点数据目录，**t=10000**中的10000为回滚的区块高度，以公告中的实际区块高度为准，参考：[回滚备份数据](#回滚备份数据)。此命令返回符合条件的备份文件名，如：data_backup_2019_11_05_9900.tar.gz。
 
 * **拷贝备份文件**
 
-将筛选出来的备份文件从**备份节点**拷贝到**验证节点**的**$node_dir/data**目录下。
+将筛选出来的备份文件从**备份节点**拷贝到**验证节点**的`$node_dir/data`目录下。
 
 * **回滚数据**
 
@@ -125,7 +125,7 @@ cd $node_dir/data && tar -xzvf data_backup_2019_11_05_9900.tar.gz
 
 #### 回滚社区下载的数据
 
-从社区公告中获取备份文件的下载路径，参考：[2.3 回滚备份数据](#23-回滚备份数据) 发布公告中的下载地址，如：https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/backup/data_backup_2019_11_05_10000.tar.gz。
+从社区公告中获取备份文件的下载路径，参考：[回滚备份数据](#回滚备份数据) 发布公告中的下载地址，如：https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/backup/data_backup_2019_11_05_10000.tar.gz。
 
 * **获取备份文件**
 
