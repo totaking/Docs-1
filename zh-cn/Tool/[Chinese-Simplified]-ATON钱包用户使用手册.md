@@ -176,7 +176,9 @@
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
 </div>
+
 ## 设置/帮助与反馈
+
 
 <div>
 <div style="float:left;"><img src="zh-cn/Tool/ATON-manual-cn.assets/aton49.jpg" width="250"/><img src="zh-cn/Tool/ATON-manual-cn.assets/aton48.jpg" width="250"/></div><div><br>1. 选择【我的-设置】，可进行相关设置：<br>- 节点设置：选择需要连接的网络<br>- 大额提醒：转账数量超过设置的金额时进行提醒<br>- 防重发提醒：最近2小时同样的交易进行提醒<br>- 指纹/面纹解锁：开启后，则每次进入APP需要指纹或者面部解锁<br>- 语言：可选择中文、英文进行切换<br>2. 选择【我的-帮助与反馈】，可查看APP使用帮助和常见问题。如果得不到您想要的回答，您可提交反馈，我们将尽快予以回复。
