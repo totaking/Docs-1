@@ -73,7 +73,7 @@ MTool对质押等交易提供两种签名方式：在线签名和离线签名。
 
 #### 在线MTool操作流程
   按照以下流程安装在线MTool并发起质押成为质押节点:
-- [安装MTool](zh-cn/Tool/[Chinese-Simplified]-在线MTool使用手册.md '安装在线MTool')
+- [安装MTool](zh-cn/Tool/[Chinese-Simplified]-在线MTool使用手册.md/#安装在线MTool)
 - [配置MTool](zh-cn/Tool/[Chinese-Simplified]-在线MTool使用手册.md '配置在线MTool')
 - [创建钱包](zh-cn/Tool/[Chinese-Simplified]-在线MTool使用手册.md '创建钱包')
 - [配置验证节点信息](zh-cn/Tool/[Chinese-Simplified]-在线MTool使用手册.md '配置验证节点信息')
