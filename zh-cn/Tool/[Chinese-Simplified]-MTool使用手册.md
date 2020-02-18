@@ -9,6 +9,6 @@
 
 ### 应用场景
 
-- 如果用户只有一台在线机器直接发送交易,则可以参考[在线MTool使用手册](zh-cn/Tool/[Chinese-Simplified]-在线MTool使用手册.md)。
-- 如果用户条件允许的话,出于安全考虑,可以在离线的机器上签名交易,由在线机器发送签名后的交易,则可参考[离线MTool使用手册](zh-cn/Tool/[Chinese-Simplified]-离线MTool使用手册.md)。
+- 如果用户只有一台在线机器直接发送交易，则可以参考[在线MTool使用手册](zh-cn/Tool/[Chinese-Simplified]-在线MTool使用手册.md)。
+- 如果用户条件允许的话，出于安全考虑，可以在离线的机器上签名交易，由在线机器发送签名后的交易，则可参考[离线MTool使用手册](zh-cn/Tool/[Chinese-Simplified]-离线MTool使用手册.md)。
 
