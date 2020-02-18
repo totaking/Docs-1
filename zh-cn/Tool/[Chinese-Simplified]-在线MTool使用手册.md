@@ -1,14 +1,3 @@
-# 在线MTool使用手册
-
-## 简介
-
-为了便于节点进行质押，委托以及治理等相关的操作，PlatON提供了MTool来辅助用户。
-
-- MTool可支持Ubuntu 18.04和Windows 10，本文档分别描述Windows和Ubuntu环境下的安装和使用。
-- MTool需要通过RPC接口连接到验证节点。
-- 为保证节点安全，建议节点RPC端口通过Nginx代理访问，Nginx使用Https和用户认证加强安全防护。
-- MTool对质押等交易提供两种签名方式：在线签名和离线签名。此文档描述在线签名操作，离线签名请参考[离线MTool使用手册.md](zh-cn/Tool/[Chinese-Simplified]-离线MTool使用手册.md)。
-
 ## 安装在线MTool
 
 如果已经安装在线MTool，可以忽略此步骤。
@@ -138,6 +127,7 @@ PlatON中，参与验证节点进行出块要创建两个钱包。如果已经�
 >
 > - 提示 <font color=red> Please enter the platon node IP address: </font>时，请输入 PlatON 节点服务器 ip 地址。
 > - 提示 <font color=red> Please enter the platon chain id: </font>时，请输入链ID。
+> - 提示 <font color=red> Please enter the delegatedRewardRate(0~10000):</font>时，请输入比例分红，范围从0到10000。
 > - 提示 <font color=red> Enter your name: </font> 时，请输入配置 PlatON节点 nginx 时输入的用户名。
 > - 提示 <font color=red> Enter your password: </font>时，请输入配置 PlatON节点 nginx 时输入的密码。
 > - 提示<font color=red> Enter your platon node name:</font>时，请输入 PlatON 节点的名称。
@@ -171,6 +161,7 @@ chmod +x validator_conf.sh && ./validator_conf.sh
 >
 > - 提示 <font color=red> Please enter the platon node IP address: </font>时，请输入 PlatON 节点服务器 ip 地址。
 > - 提示 <font color=red> Please enter the platon chain id: </font>时，请输入链ID。
+> - 提示 <font color=red> Please enter the delegatedRewardRate(0~10000):</font>时，请输入比例分红，范围从0到10000。
 > - 提示 <font color=red> Enter your name: </font> 时，请输入配置 PlatON节点 nginx 时输入的用户名。
 > - 提示 <font color=red> Enter your password: </font>时，请输入配置 PlatON节点 nginx 时输入的密码。
 > - 提示<font color=red> Enter your platon node name:</font>时，请输入 PlatON 节点的名称。

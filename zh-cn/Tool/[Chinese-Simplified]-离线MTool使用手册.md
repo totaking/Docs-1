@@ -1,14 +1,3 @@
-# 离线MTool使用手册 
-
-## 简介
-
-为了便于节点进行质押，委托以及治理等相关的操作，PlatON提供了MTool来辅助用户。
-
-- MTool可支持Ubuntu 18.04和Windows 10，本文档分别描述Windows和Ubuntu环境下的安装和使用
-- MTool需要通过RPC接口连接到验证节点，验证节点的安装部署可参考[成为验证节点.md](zh-cn/Node/[Chinese-Simplified]-成为验证节点.md)
-- 为保证节点安全，建议节点RPC端口通过Nginx代理访问，Nginx使用Https和用户认证加强安全防护
-- MTool对质押等交易提供两种签名方式：在线签名和离线签名。此文档描述离线签名操作，在线签名请参考[在线MTool使用手册.md](zh-cn/Tool/[Chinese-Simplified]-在线MTool使用手册.md)
-
 ## 安装MTool
 
 ### 在线MTool
@@ -57,7 +46,7 @@ unzip mtool-client.zip && cd mtool-client
 
 >[!NOTE|style:flat|label:注意]
 >
->脚本下载到<font color=red>mtool-client</font> 目录下，否则脚本无法找到新版本mtool的路径；
+>脚本下载到<font color=red>mtool-client</font> 目录下，否则脚本无法找到新版本mtool的路径。
 
 ``` bash
 wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/mtool_install.sh
@@ -84,7 +73,7 @@ chmod +x mtool_install.sh && ./mtool_install.sh
 
 安全考虑，离线MTool应该安装在离线机器（不连接任何网络和WIFI）上。
 
-另外，本文档分别介绍Windows和Ubuntu环境下的MTool操作，用户可根据自己的资源进行选择；
+另外，本文档分别介绍Windows和Ubuntu环境下的MTool操作，用户可根据自己的资源进行选择。
 
 #### Windows下安装离线MTool
 
@@ -92,9 +81,9 @@ chmod +x mtool_install.sh && ./mtool_install.sh
 
 - 下载MTool安装包
 
-  在有网络的机器上，复制链接<https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/mtool/mtool-setup/0.8.0.0/mtool-setup.exe>或者 <http://47.91.153.183/mtool/mtool-setup/0.8.0.0/mtool-setup.exe> 到浏览器下载MTool安装包。其中
+  在有网络的机器上，复制链接<https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/mtool/mtool-setup/0.8.0.0/mtool-setup.exe>或者 <http://47.91.153.183/mtool/mtool-setup/0.8.0.0/mtool-setup.exe> 到浏览器下载MTool安装包。
 
-- 通过安全存储介质（移动U盘或者移动硬盘）将安装文件mtool-setup.exe转到**离线机器**下
+- 通过安全存储介质（移动U盘或者移动硬盘）将安装文件mtool-setup.exe转到**离线机器**下。
 
 - 在**离线机器**上安装MTool
 
@@ -126,7 +115,7 @@ java -version
 
 >[!NOTE|style:flat|label:注意]
 >
->- 如果返回 <font color=red>Command 'java' not found</font>，表示没有安装jdk，需要下载jdk；
+>- 如果返回 <font color=red>Command 'java' not found</font>，表示没有安装jdk，需要下载jdk。
 >- 如果返回版本号相关信息，表示已经安装jdk，不需要下载jdk。
 
 - 在有网络的机器上下载jdk
@@ -279,6 +268,7 @@ wallet created at: keystore/reward_observed.json
 >
 > - 提示 <font color=red> Please enter the platon node IP address: </font>时，请输入 PlatON 节点服务器 ip 地址。
 > - 提示 <font color=red> Please enter the platon chain id: </font>时，请输入链ID。
+> - 提示 <font color=red> Please enter the delegatedRewardRate(0~10000):</font>时，请输入比例分红，范围从0到10000。
 > - 提示 <font color=red> Enter your name: </font> 时，请输入配置 PlatON节点 nginx 时输入的用户名。
 > - 提示 <font color=red> Enter your password: </font>时，请输入配置 PlatON节点 nginx 时输入的密码。
 > - 提示<font color=red> Enter your platon node name:</font>时，请输入 PlatON 节点的名称。
@@ -312,6 +302,7 @@ chmod +x validator_conf.sh && ./validator_conf.sh
 >
 > - 提示 <font color=red> Please enter the platon node IP address: </font>时，请输入 PlatON 节点服务器 ip 地址。
 > - 提示 <font color=red> Please enter the platon chain id: </font>时，请输入链ID。
+> - 提示 <font color=red> Please enter the delegatedRewardRate(0~10000):</font>时，请输入比例分红，范围从0到10000。
 > - 提示 <font color=red> Enter your name: </font> 时，请输入配置 PlatON节点 nginx 时输入的用户名。
 > - 提示 <font color=red> Enter your password: </font>时，请输入配置 PlatON节点 nginx 时输入的密码。
 > - 提示<font color=red> Enter your platon node name:</font>时，请输入 PlatON 节点的名称。
