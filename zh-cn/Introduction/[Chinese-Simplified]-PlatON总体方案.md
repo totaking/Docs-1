@@ -307,9 +307,13 @@ VRF将从全部备选节点中，选出一定数量的验证节点，验证节�
 
 ### 智能合约
 
-从技术角度看，PlatON计算网络本质上是一个去中心化的FaaS(Functions as a Service)平台，相应地，智能合约可以认为就是FaaS上的function。PlatON中的智能合约分为三类。
+从技术角度看，PlatON计算网络本质上是一个去中心化的FaaS(Functions as a Service)平台，相应地，智能合约可以认为就是FaaS上的function。PlatON中的智能合约分为四类。
 
-![智能合约](PlatON%E6%80%BB%E4%BD%93%E6%96%B9%E6%A1%88.assets/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6.png)
+![智能合约](PlatON%E6%80%BB%E4%BD%93%E6%96%B9%E6%A1%88.assets/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6.jpg)
+
+#### Solidity合约（Solidity Contract）
+
+**Solidity合约**支持使用solidity语言开发，编译成solc bin执行。触发Solidity合约的交易由共识节点打包，全网节点重复执行验证。Solidity合约的状态保存在公共账本中。
 
 #### WASM合约（WASM Contract）
 
@@ -317,17 +321,13 @@ VRF将从全部备选节点中，选出一定数量的验证节点，验证节�
 
 ##### WASM虚拟机
 
-PlatON 采用[life](https://github.com/perlin-network/life)作为PlatON虚拟机，life是Wasm虚拟机的Go版本实现，继承自[wagon](https://github.com/go-interpreter/wagon)。life相比较wagon在标准规范上面支持的较为全面。同时在引入外部函数时也较为灵活。作为PlatON的虚拟机，需要进行改造。实现链上的外部函数以及GAS的计算方式。
+PlatON 采用[wagon](https://github.com/go-interpreter/wagon)作为PlatON虚拟机。作为PlatON的虚拟机，需要进行改造。实现链上的外部函数以及GAS的计算方式。
 
 ##### 工具链
 
-PlatON 首先支持C++作为智能合约的编写语言，后续逐步提供Java、Python等主流高级开发语言，针对C++提供以下工具链：
+PlatON 首先支持C++作为智能合约的编写语言，后续逐步提供Rust、Go等主流高级开发语言，针对C++提供以下工具链：
 
-- clang : C/C++的前端编译器，负责生成LLVM中间字节码，生成后为.bc文件
-- llvm-link : llvm链接器， 负责将.bc文件进行链接。主要是C/C++标准库的.bc文件与目标代码的.bc文件进行链接
-- llc : 负责将.bc文件编译到汇编文件.s
-- platon-s2wasm(binaryen的s2wasm) : 负责将汇编代码生成为wast格式
-- platon-wast2wasm(binaryen的wasm-dis) : 负责将wast(文本格式)生成为wasm(二进制格式)
+- platon-cpp : C++的编译器，负责生成WASM目标码和ABI文件。
 
 ##### WASM合约执行流程
 
