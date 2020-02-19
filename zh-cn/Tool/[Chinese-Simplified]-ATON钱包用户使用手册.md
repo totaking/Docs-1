@@ -1,9 +1,13 @@
 ## ATON下载
 
-<div><br>请从官方渠道下载ATON，Google Play、APP Store待上架，敬请期待！
-</div>
+<div><br>请从官方渠道下载ATON，Google Play、APP Store待上架，敬请期待！</div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
+
+
+
+
+
 ## 创建钱包
 
 <div>
