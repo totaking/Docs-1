@@ -105,25 +105,25 @@
 在**备份节点**上执行命令：
 
 ```bash
-cd $node_dir/data && ls -t | awk -F '[_.]' -v t=10000 'BEGIN {min=65535} {d=t-$6; if(d>=0 && min>d){min=d;minfile=$0;}} END {print minfile}'
+cd ~/platon-node/data && ls -t | awk -F '[_.]' -v t=10000 'BEGIN {min=65535} {d=t-$6; if(d>=0 && min>d){min=d;minfile=$0;}} END {print minfile}'
 ```
 > [!NOTE|style:flat|label:注意]
 >
->  `$node_dir`为实际节点数据目录，**t=10000**中的10000为回滚的区块高度，以公告中的实际区块高度为准，参考：[回滚备份数据](#回滚备份数据)。此命令返回符合条件的备份文件名，如：data_backup_2019_11_05_9900.tar.gz。
+>  `~/platon-node`为默认节点数据目录，**t=10000**中的10000为回滚的区块高度，以公告中的实际区块高度为准，参考：[回滚备份数据](#回滚备份数据)。此命令返回符合条件的备份文件名，如：data_backup_2019_11_05_9900.tar.gz。
 
 * **拷贝备份文件**
 
-将筛选出来的备份文件从**备份节点**拷贝到**验证节点**的`$node_dir/data`目录下。
+将筛选出来的备份文件从**备份节点**拷贝到**验证节点**的`~/platon-node/data`目录下。
 
 * **回滚数据**
 
 在**验证节点**上执行命令：
 ```bash
-cd $node_dir/data && tar -xzvf data_backup_2019_11_05_9900.tar.gz
+cd ~/platon-node/data && tar -xzvf data_backup_2019_11_05_9900.tar.gz
 ```
 > [!NOTE|style:flat|label:注意]
 >
-> $node_dir为实际节点数据目录，data_backup_2019_11_05_9900.tar.gz需修改为**筛选备份文件**命令返回的备份文件名。
+> ~/platon-node为默认节点数据目录，data_backup_2019_11_05_9900.tar.gz需修改为**筛选备份文件**命令返回的备份文件名。
 
 #### 回滚社区下载的数据
 
@@ -132,11 +132,11 @@ cd $node_dir/data && tar -xzvf data_backup_2019_11_05_9900.tar.gz
 * **获取备份文件**
 
 ```bash
-cd $node_dir/data && wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/backup/data_backup_2019_11_05_10000.tar.gz
+cd ~/platon-node/data && wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/backup/data_backup_2019_11_05_10000.tar.gz
 ```
 > [!NOTE|style:flat|label:注意]
 >
-> `$node_dir`为实际节点数据目录，下载地址需修改为公告中实际的备份文件下载地址。
+> `~/platon-node`为默认节点数据目录，下载地址需修改为公告中实际的备份文件下载地址。
 
 * **回滚数据**
 
@@ -151,7 +151,7 @@ tar -xzvf data_backup_2019_11_05_10000.tar.gz
 ### 重启节点
 
 ```shell
-cd $node_dir && nohup platon --identity "platon"  --datadir ./data --port 16789 --rpc --rpcaddr 127.0.0.1 --maxpeers 25 --rpcport 6789 --rpcapi "platon,debug,personal,admin,net,web3" --nodekey "./data/nodekey" --cbft.blskey ./data/blskey &
+cd ~/platon-node && nohup platon --identity "platon"  --datadir ./data --port 16789 --rpc --rpcaddr 127.0.0.1 --maxpeers 25 --rpcport 6789 --rpcapi "platon,debug,personal,admin,net,web3" --nodekey "./data/nodekey" --cbft.blskey ./data/blskey &
 ```
 
 ### 验证回滚情况
@@ -159,7 +159,7 @@ cd $node_dir && nohup platon --identity "platon"  --datadir ./data --port 16789 
 执行命令：
 
 ```bash
-cd $node_dir/data && platon attach ipc:platon.ipc -exec platon.blockNumber
+cd ~/platon-node/data && platon attach ipc:platon.ipc -exec platon.blockNumber
 ```
 
 执行上面的命令多次，观察执行命令返回的区块高度值，会经历如下三个阶段：
