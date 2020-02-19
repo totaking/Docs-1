@@ -2,7 +2,7 @@
 
 如果已经安装在线MTool，可以忽略此步骤。
 
-另外，本文档分别介绍Windows和Ubuntu环境下的MTool操作，用户可根据自己的资源进行选择；如果下载脚本失败，请设置DNS 服务器为8.8.8.8。
+另外，本文档分别介绍Windows和Ubuntu环境下MTool的操作，用户可根据自己的资源进行选择。
 
 ### Windows下安装MTool
 
@@ -14,13 +14,13 @@
 
 - 安装MTool
 
-  双击mtool-setup.exe进行安装。默认安装目录为 C:\tools , 建议不要更改此安装目录。弹出界面显示**Completing the mtool Setup Wizard**信息表示安装成功，点击**Finish**即可。
+  双击mtool-setup.exe进行安装。默认安装目录为 C:\tools，建议不要更改此安装目录。弹出界面显示**Completing the mtool Setup Wizard**信息表示安装成功，点击**Finish**即可。
 
 ### Ubuntu下安装MTool
 
 步骤如下：
 
-**step1.** 下载mtool工具包：(实际mtool版本的链接地址需从公告获取)
+**step1.** 下载mtool工具包
 
 ``` bash
 wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/mtool/0.8.0.0/mtool-client.zip
@@ -42,7 +42,7 @@ unzip mtool-client.zip && cd mtool-client
 
 >[!NOTE|style:flat|label:注意]
 >
->脚本下载到<font color=red>mtool-client</font> 目录下，否则脚本无法找到新版本mtool的路径；
+>脚本下载到<font color=red>mtool-client</font> 目录下，否则脚本无法找到新版本mtool的路径。
 
 ``` bash
 wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/mtool_install.sh
@@ -113,15 +113,15 @@ PlatON中，参与验证节点进行出块要创建两个钱包。如果已经�
 
 ### 配置验证节点信息
 
-根据用户在Windows或Ubuntu上安装的MTool，选择对应系统上的验证节点信息配置：
+根据用户在Windows或Ubuntu上安装的MTool，选择对应系统上的验证节点信息配置。
 
 #### Windows下配置验证节点信息
 
 操作步骤如下：
 
-**step1.** 浏览器复制链接 <https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/validator_conf.bat> 或者 <http://47.91.153.183/opensource/scripts/validator_conf.bat> 下载脚本
+**step1.** 浏览器复制链接 <https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/validator_conf.bat> 或者 <http://47.91.153.183/opensource/scripts/validator_conf.bat> 下载脚本。
 
-**step2.** 鼠标右键点击 validator_conf.bat， 选择以管理员身份运行
+**step2.** 鼠标右键点击 validator_conf.bat， 选择以管理员身份运行:
 
 > [!NOTE|style:flat|label:注意]
 >
