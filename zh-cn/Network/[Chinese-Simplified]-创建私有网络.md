@@ -12,7 +12,7 @@
 
 **1.生成创世块配置文件`platon.json`**
 
-在工作目录下创建创世区块文件，拷贝以下内容，修改 `your-node-pubkey` 为[环境准备](/zh-cn/Node/_[Chinese-Simplified]-环境准备.md#节点公私钥)生成的 ***节点ID*** ，`your-node-blspubkey` 为[环境准备](/zh-cn/Node/_[Chinese-Simplified]-环境准备.md#节点BLS公私钥)生成的 ***节点bls公钥*** ，使本地节点成为共识节点参与共识。修改 `your-account-address` 为[环境准备](/zh-cn/Node/_[Chinese-Simplified]-环境准备.md#钱包文件)生成的 ***Address***。`platon.json`内容如下：
+在工作目录下创建创世区块文件，拷贝以下内容，修改 `your-node-pubkey` 为[环境准备](/zh-cn/Node/_[Chinese-Simplified]-环境准备.md#节点公私钥)生成的 ***节点公钥*** ，`your-node-blspubkey` 为[环境准备](/zh-cn/Node/_[Chinese-Simplified]-环境准备.md#节点BLS公私钥)生成的 ***节点bls公钥*** ，使本地节点成为共识节点参与共识。修改 `your-account-address` 为[环境准备](/zh-cn/Node/_[Chinese-Simplified]-环境准备.md#钱包文件)生成的 ***Address***。`platon.json`内容如下：
 
 ```
 {
@@ -125,13 +125,13 @@ Ubuntu下可以以nohup方式启动程序：
 nohup ./platon --identity "platon" --datadir ./data --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodiscover --nodekey ./data/nodekey --cbft.blskey ./data/blskey &
 ```
 
-当shell中提示nohup成功后再按下一次回车，确保不会因为误关闭终端引起的进程退出。
+当shell中提示nohup成功后再按下一次回车，确保不会因为误关闭终端引起进程退出。
 
 **Windows不支持后台运行。**
 
 ## PlatON 集群环境
 
-`PlatON集群`是有多节点参与的网络环境，这里我们假设你已经可以构建一个PlatON单节点。并且，我们将在一台服务器构建的是两个节点组成的网络。更多的节点在操作流程上类似。
+`PlatON集群`是有多节点参与的网络环境，这里我们假设你已经可以构建PlatON单节点。并且，我们将在一台服务器构建两个节点组成的网络。更多的节点在操作流程上类似。
 
 为了在本地运行PlatON多节点，你要确保：
 
@@ -172,7 +172,7 @@ echo {node1-nodeblskey} > ./data1/nodeblskey
 
 将两个节点的节点信息加入 **initialNodes** 数组中，因为我们生成的是两个节点组成的集群环境，所以数组长度为2。
 需要修改`platon.json`文件：
-请将以下文件内容'node0-nodekey'、'node1-nodekey'、'node0-blspubkey'和'node1-blspubkey'分别替换为上一步生成的节点公钥和节点bls私钥。
+请将以下文件内容'node0-nodekey'、'node1-nodekey'、'node0-blspubkey'和'node1-blspubkey'分别替换为上一步生成的节点公钥和节点bls公钥。
 'your-account-address'替换为[钱包文件](/zh-cn/Node/_[Chinese-Simplified]-环境准备.md#钱包文件)章节生成的钱包地址。
 
 
