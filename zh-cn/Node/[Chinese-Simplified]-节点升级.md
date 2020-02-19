@@ -16,7 +16,7 @@ PlatON网络在运行期间为保证网络能够不断迭代完善，需要所�
 ```bash
 提案详情：
   PIPID：100
-  提案地址：https://platscan.platon.network/proposal-detail?proposalHash=0xad330d8a5fddf3526a8622dab22454f8861fee968b6482eebbd360c8d15691c3
+  提案地址：https://platscan.test.platon.network/proposal-detail?proposalHash=0xad330d8a5fddf3526a8622dab22454f8861fee968b6482eebbd360c8d15691c3
 
   ProposalID：0xad330d8a5fddf3526a8622dab22454f8861fee968b6482eebbd360c8d15691c3
 
@@ -32,7 +32,7 @@ PlatON网络在运行期间为保证网络能够不断迭代完善，需要所�
 
 ### 直接从链上查询
 
-升级提案也可以直接在区块链浏览器 [PlatScan](https://platscan.platon.network/proposal) 中查询 。
+升级提案也可以直接在区块链浏览器 [PlatScan](https://platscan.test.platon.network/proposal) 中查询 。
 
 ## 升级操作过程
 
