@@ -4,7 +4,7 @@
 
 如果已经安装在线MTool，可以忽略此步骤。
 
-另外，本文档分别介绍Windows和Ubuntu环境下的MTool操作，用户可根据自己的资源进行选择；如果下载脚本失败，请设置DNS 服务器为8.8.8.8。
+另外，本文档分别介绍Windows和Ubuntu环境下MTool的操作，用户可根据自己的资源进行选择。
 
 #### Windows下安装在线MTool
 
@@ -12,19 +12,17 @@
 
 - 下载MTool安装包
 
-  在在线机器上，复制链接<https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/mtool/mtool-setup/0.8.0.0/mtool-setup.exe>或者 <http://47.91.153.183/mtool/mtool-setup/0.8.0.0/mtool-setup.exe> 到浏览器下载MTool安装包。其中
+  在在线机器上，复制链接<https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/mtool/mtool-setup/0.8.0.0/mtool-setup.exe>或者 <http://47.91.153.183/mtool/mtool-setup/0.8.0.0/mtool-setup.exe> 到浏览器下载MTool安装包。
 
 - 安装MTool
 
-  双击mtool-setup.exe进行安装。默认安装目录为 C:\tools , 建议不要更改此安装目录。弹出界面显示**Completing the mtool Setup Wizard**信息表示安装成功，点击**Finish**即可。
-
-
+  双击mtool-setup.exe进行安装。默认安装目录为 C:\tools，建议不要更改此安装目录。弹出界面显示**Completing the mtool Setup Wizard**信息表示安装成功，点击**Finish**即可。
 
 #### Ubuntu下安装在线MTool
 
 步骤如下：
 
-**step1.** 下载mtool工具包：(实际mtool版本的链接地址需从公告获取)
+**step1.** 下载mtool工具包
 
 ``` bash
 wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/mtool/0.8.0.0/mtool-client.zip
@@ -95,7 +93,7 @@ chmod +x mtool_install.sh && ./mtool_install.sh
 
 - 下载MTool安装包
 
-  在有网络的机器上，下载mtool安装包，执行命令(实际mtool版本的链接地址需从公告获取)：
+  在有网络的机器上，下载mtool安装包，执行命令：
 
 ``` bash
 wget https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/mtool/0.8.0.0/mtool-client.zip
@@ -193,9 +191,9 @@ Windows和Ubuntu下MTool的命令及目录有所区别：
 
 #### 基本概念
 
-* 冷钱包：存储在离线机器上的钱包，不能暴露在互联网
-* 观察钱包：包含冷钱包地址的钱包，无法做交易，只能查看数据
-* 热钱包：暴露在互联网的钱包
+* 冷钱包：存储在离线机器上的钱包，不能暴露在互联网。
+* 观察钱包：包含冷钱包地址的钱包，无法做交易，只能查看数据。
+* 热钱包：暴露在互联网的钱包。
 
 #### 创建冷钱包
 
