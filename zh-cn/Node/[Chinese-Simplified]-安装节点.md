@@ -42,7 +42,7 @@ Windows编译环境需要符合以下条件：
 
 - git：`2.19.1以上`
 - go语言开发包：`go(1.7+)`
-- mingw：`mingw（V6.0.0）`
+- mingw：`mingw（V8.1.0）`
 - cmake: `3.0+`
 
 可自行安装以上编译环境，在编译`PlatON`源码之前请确保以上环境可正常运行。
@@ -90,19 +90,19 @@ git clone https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 
 > 以下编译命令均需在`Git-bash`环境运行， 且步骤1中编译环境都已经成功安装！
 
-进入源码目录`PlatON-GO`：
+进入源码目录`PlatON-Go`：
 
 ```
-cd PlatON-GO
+cd PlatON-Go
 ```
 
-在编译源码目录之前在源码目录`PlatON-GO`下执行以下脚本编译所需依赖库：
+在编译源码目录之前在源码目录`PlatON-Go`下执行以下脚本编译所需依赖库：
 
 ```
 ./build/build_deps.sh
 ```
 
-在源码目录`PlatON-GO`下执行以下编译命令可生成`platon`、`keytool`、`ctool`可执行文件，如下：
+在源码目录`PlatON-Go`下执行以下编译命令可生成`platon`、`keytool`、`ctool`可执行文件，如下：
 
 ```
 go run build/ci.go install ./cmd/platon
