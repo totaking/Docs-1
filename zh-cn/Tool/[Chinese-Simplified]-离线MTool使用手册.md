@@ -275,13 +275,9 @@ Set-ExecutionPolicy -ExecutionPolicy Bypass
 
 请输入：y，并按回车键结束。
 
-**step2.** 浏览器复制链接 <https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/choco_install.bat> 或者 <http://47.91.153.183/opensource/scripts/choco_install.bat> 下载脚本。
+**step2.** 浏览器复制链接 <https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/validator_conf.bat> 或者 <http://47.91.153.183/opensource/scripts/validator_conf.bat> 下载脚本。
 
-**step3.** 鼠标右键点击 choco_install.bat， 选择以管理员身份运行。
-
-**step4.** 浏览器复制链接 <https://7w6qnuo9se.s3.eu-central-1.amazonaws.com/opensource/scripts/validator_conf.bat> 或者 <http://47.91.153.183/opensource/scripts/validator_conf.bat> 下载脚本。
-
-**step5.** 鼠标右键点击 validator_conf.bat， 选择以管理员身份运行:
+**step3.** 鼠标右键点击 validator_conf.bat， 选择以管理员身份运行:
 
 > [!NOTE|style:flat|label:注意]
 >
@@ -518,6 +514,8 @@ $mtool-client account balance -a $address --config $MTOOLDIR/validator/validator
 
 ​		如果共识节点部署完成，并且已经同步区块成功，您就可以使用MTool进行质押操作。质押资金申请完成后，确保质押账户余额足够，根据用户情况替换{质押金额}，质押最低门槛为100万LAT。
 
+注意：请保持质押账户里面有足够LATs，以备后续发起节点管理的交易有足够的交易手续费，比如升级提案的投票，解质押等交易。
+
 - 执行命令
 
 ```bash
@@ -536,7 +534,7 @@ $mtool-client staking --amount 1000000 --address $MTOOLDIR/keystore/staking_obse
 - 执行命令
 
 ```bash
-$mtool-client update_validator --name VerifierName --url "www.platon.com" --identity IdentifyID --delegated-reward-rate 100 --reward 0x33d253386582f38c66cb5819bfbdaad0910339b3 --introduction "Modify the verifier information operation" --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json --a
+$mtool-client update_validator --name VerifierName --url "www.platon.com" --identity IdentifyID --delegated-reward-rate 100 --reward 0x33d253386582f38c66cb5819bfbdaad0910339b3 --introduction "Modify the verifier information operation" --address $MTOOLDIR/keystore/staking_observed.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明

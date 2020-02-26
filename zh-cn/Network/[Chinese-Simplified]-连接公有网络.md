@@ -8,8 +8,8 @@ PlatON目前有2个公有网络，一个是还未正式上线的、独立运行�
 
 在加入PlatON公有网络前请确保服务器本地具备以下条件：
 
-1. 已经按照[PlatON安装指南](/zh-cn/Node/[Chinese-Simplified]-安装节点.md)安装好PlatON环境或编译好PlatON可执行文件'platon'和'keytool'。
-2. 已经按照[节点秘钥](/zh-cn/Node/_[Chinese-Simplified]-环境准备.md#节点秘钥)章节在'~/platon-node/data'目录下生成了节点私钥和节点BLS私钥。
+1. 已经按照[PlatON安装指南](/zh-cn/Node/_[Chinese-Simplified]-安装节点.md)安装好PlatON环境或编译好PlatON可执行文件'platon'和'keytool'。
+2. 已经按照[节点密钥](/zh-cn/Node/_[Chinese-Simplified]-钱包文件与节点密钥.md#节点密钥)章节在'~/platon-node/data'目录下生成了节点私钥和节点BLS私钥。
 
 
 本章节假设服务器为Ubuntu18.04，可执行文件所在工作目录为 `~/platon-node`，注意后续所有命令行操作均在工作目录下进行。
@@ -22,10 +22,14 @@ PlatON目前有2个公有网络，一个是还未正式上线的、独立运行�
 
 任何人、任何组织都可以加入PlatON测试网络贝莱世界。
 
-执行以下命令即可加入贝莱世界：
+执行以下命令即可启动验证节点加入贝莱世界：
 
 ```bash
-./platon --identity platon --datadir ./data --port 16789 --testnet --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/nodeblskey --verbosity 3 --rpcaddr 127.0.0.1 --syncmode "full"
+./platon --identity platon --datadir ./data --port 16789 --testnet --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 3 --rpcaddr 127.0.0.1 --syncmode "full"
+```
+如果要启动归档节点加入贝莱世界，请执行以下命令：
+```bash
+./platon --identity platon --datadir ./data --port 16789 --db.nogc --testnet --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 3 --rpcaddr 127.0.0.1 --syncmode "full"
 ```
 
 ***提示：***
@@ -102,8 +106,6 @@ PlatON目前有2个公有网络，一个是还未正式上线的、独立运行�
 ```
 
 节点列表中出现一系列测试网络节点并且块高在不断增长，则表示连接成功！
-
-使用[钱包文件](/zh-cn/Node/_[Chinese-Simplified]-环境准备.md#钱包文件)生成的账户地址在[PlatON官网](https://developer.platon.network/#/energon?lang=zh)申请测试Energon。
 
 
 >[!NOTE|style:flat|label:注意]
