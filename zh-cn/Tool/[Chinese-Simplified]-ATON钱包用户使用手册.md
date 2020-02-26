@@ -5,11 +5,10 @@
 <div style="margin-top:40px;"></div>
 
 
-
 ## 创建钱包
 
 <div>
-    <div style="float:left;"><img src="https://platonnetwork.github.io/Docs/zh-cn/Tool/ATON-manual-cn.assets/aton4.png" width="500" /></div> <div><br>1. 点击【创建钱包】。<br>2. 设置符合规则的钱包名称和钱包密码。<br>3. 点击【创建钱包】按钮则可创建钱包。<br>4. 钱包创建成功后可以点击【钱包备份】开始备份，或者点击【跳过】后续进行备份。<br> <br><b>注意</b><br>1.钱包密码是您操作此钱包的凭证，服务器不会存储您的钱包密码，请务必牢记。<br>2.强烈建议您在创建钱包时即时备份。
+    <div style="float:left;"><img src="https://platonnetwork.github.io/Docs/zh-cn/Tool/ATON-manual-cn.assets/aton2.png" width="500" /></div> <div><br>1. 点击【创建钱包】。<br>2. 设置符合规则的钱包名称和钱包密码。<br>3. 点击【创建钱包】按钮则可创建钱包。<br>4. 钱包创建成功后可以点击【钱包备份】开始备份，或者点击【跳过】后续进行备份。<br> <br><b>注意</b><br>1.钱包密码是您操作此钱包的凭证，服务器不会存储您的钱包密码，请务必牢记。<br>2.强烈建议您在创建钱包时即时备份。
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -53,7 +52,9 @@
 <div style="margin-top:40px;"></div>
 </div>
 
-### 导入观察钱包详见“设置观察钱包和冷钱包”说明
+### 导入观察钱包
+
+详见“设置观察钱包和冷钱包”说明
 
 <div style="margin-top:40px;"></div>
 ## 查看钱包信息
@@ -164,7 +165,6 @@
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
 </div>
-
 （1）点击右上角的扫一扫，或者点击指定钱包的【离线签名】按钮，扫描观察钱包页面展示的二维码信息。<br>
 （2）页面展示交易的详细信息，如确认无误则可以点击【授权签名】，输入钱包密码。<br/>
 （3）钱包密码输入正确后，页面会展示已签名的交易二维码信息，供观察钱包扫描。
