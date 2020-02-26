@@ -6,4 +6,6 @@
 <li><a href="#/en-us/Development/">Development</a></li>
 <ul>
 
-
+* Language
+  * [中文](zh-cn/)
+  * [English](en-us/)
