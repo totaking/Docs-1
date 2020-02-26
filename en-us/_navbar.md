@@ -1,9 +1,9 @@
 <ul>
-<li><a href="#/zh-cn/Introduction/">Introduction</a></li>
-<li><a href="#/zh-cn/Node/">Node</a></li>
-<li><a href="#/zh-cn/Network/">Network</a></li>
-<li><a href="#/zh-cn/Tool/">Tool</a></li>
-<li><a href="#/zh-cn/Development/">Development</a></li>
+<li><a href="#/en-us/Introduction/">Introduction</a></li>
+<li><a href="#/en-us/Node/">Node</a></li>
+<li><a href="#/en-us/Network/">Network</a></li>
+<li><a href="#/en-us/Tool/">Tool</a></li>
+<li><a href="#/en-us/Development/">Development</a></li>
 <ul>
 
 
