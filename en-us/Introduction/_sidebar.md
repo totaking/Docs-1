@@ -1,0 +1,4 @@
+- [Overall plan](/zh-cn/Introduction/[English]-PlatON总体方案.md)
+- [Consensus scheme](/zh-cn/Introduction/[Chinese-Simplified]-PlatON共识方案.md)
+- [economic model](/zh-cn/Introduction/[Chinese-Simplified]-PlatON经济方案.md)
+- [Treatment plan](/zh-cn/Introduction/[Chinese-Simplified]-PlatON治理方案.md)
