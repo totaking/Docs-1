@@ -1,4 +1,4 @@
 - [General Introduction](/en-us/Introduction/[English]-PlatON-General-Introduction.md)
 - [Consensus scheme](/en-us/Introduction/[Chinese-Simplified]-PlatON共识方案.md)
-- [economic model](/en-us/Introduction/[Chinese-Simplified]-PlatON经济方案.md)
+- [economic model](/en-us/Introduction/[English]-economic_model.md)
 - [Treatment plan](/en-us/Introduction/[Chinese-Simplified]-PlatON治理方案.md)
