@@ -8,6 +8,7 @@
 </div>
 <div style = "clear: both"> </div>
 <div style = "margin-top: 40px;"> </div>
+
 ## Create Wallet
 
 <div>
@@ -62,6 +63,7 @@
 For details about importing observation wallets, please refer to the instructions of “Set observed wallet and cold wallet”
 
 <div style = "margin-top: 40px;"> </div>
+
 ## My Wallet
 
 <div>
@@ -155,8 +157,8 @@ For details about importing observation wallets, please refer to the instruction
 ## Set observed wallet and cold wallet
 
 Preparation:
-    1. Prepare two mobile phones and install the latest ATON wallet version.
-        2. Make sure that one phone is never connected to the Internet. It is recommended to turn on the airplane mode and turn off WiFi to serve as a cold wallet device. The other one is connected to the network as an observation wallet device.
+1. Prepare two mobile phones and install the latest ATON wallet version.
+2. Make sure that one phone is never connected to the Internet. It is recommended to turn on the airplane mode and turn off WiFi to serve as a cold wallet device. The other one is connected to the network as an observation wallet device.
 
 <div>
 <div style = "float: left;"> <img src = "https://platonnetwork.github.io/Docs/en-us/Tool/ATON-user-manual.assets/aton28.png "width =" 500 "/> </div> <div> <br> 1. Create a wallet in offline environment, click [ Receive] to display the QR code. And this wallet is a cold wallet. <br> 2. Click [Import Wallet-Observe Wallet] for the mobile phone connected to the network, scan the QR code of the mobile phone not connected to the Internet or enter the wallet address, and click [Finish]. Then the wallet is set successfully. <br> <br> <b> Note </b> <br> 1. Observation wallet: Connected to network, but there is not the private purse. If you need to conduct transactions, you need to cooperate with the cold wallet operation. <br> 2. Cold wallet: Not connected to the Internet but has a private key, which needs to be kept in a safe place.
@@ -183,7 +185,7 @@ If you have set up observed wallets and cold wallets, you can initiate transfers
 **2. Cold wallet operation**
 
 <div>
-<div style = "float: left;"> <img src = "ATON-user-manual.assets/aton32.png "width =" 800 "/> </div>
+<div style = "float: left;"> <img src = "https://platonnetwork.github.io/Docs/en-us/Tool/ATON-user-manual.assets/aton32.png "width =" 800 "/> </div>
 
 
 (1) Click Scan in the upper right corner, or click the [Offline Signature] button of the specified wallet to scan and observe the QR code information displayed on the wallet page. <br>
@@ -208,7 +210,7 @@ If you have set up observed wallets and cold wallets, you can initiate transfers
 ## Settings / Help and Feedback
 
 <div>
-<div style = "float: left;"> <img src = "https://platonnetwork.github.io/Docs/en-us/Tool/ATON-user-manual.assets/aton48.jpg "width =" 250 "/><img src = "ATON-user-manual.assets/aton49.jpg "width =" 250 "/> </div> <div> <br> 1. You can make related settings <br>-Node Settings: Select the network to be connected. <br>-Reminder Threshold:Remind when the amount of transfer exceeds the set amount.<br>-Resend Reminder:Remind when the transaction are the same as the one in last 2 housrs.<br>-Fingerprint / Face Unlocking: After opening, fingerprint or face unlock is required every time you enter the app. <br>-Language: Chinese and English can be selected to switch <br> 2. Select [My-Help and Feedback] You can view APP usage help and frequently asked questions. If you don't get the answer you want, you can submit feedback and we will respond as soon as possible.
+<div style = "float: left;"> <img src = "https://platonnetwork.github.io/Docs/en-us/Tool/ATON-user-manual.assets/aton48.jpg "width =" 250 "/><img src = "https://platonnetwork.github.io/Docs/en-us/Tool/ATON-user-manual.assets/aton49.jpg "width =" 250 "/> </div> <div> <br> 1. You can make related settings <br>-Node Settings: Select the network to be connected. <br>-Reminder Threshold:Remind when the amount of transfer exceeds the set amount.<br>-Resend Reminder:Remind when the transaction are the same as the one in last 2 housrs.<br>-Fingerprint / Face Unlocking: After opening, fingerprint or face unlock is required every time you enter the app. <br>-Language: Chinese and English can be selected to switch <br> 2. Select [My-Help and Feedback] You can view APP usage help and frequently asked questions. If you don't get the answer you want, you can submit feedback and we will respond as soon as possible.
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
