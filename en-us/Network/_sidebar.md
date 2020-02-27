@@ -1,4 +1,4 @@
 
-- [Connect to public network](/en-us/Network/[Chinese-Simplified]-连接公有网络.md)
-- [Create a private network](/en-us/Network/[Chinese-Simplified]-创建私有网络.md)
+- [MainNet and TestNet](/en-us/Node/[English]-MainNet-and-TestNet.md)
+- [SettingUp Private Chain](/en-us/Node/[English]-SettingUp-Private-Chain.md)
 
