@@ -67,12 +67,7 @@ chmod +x mtool_install.sh && ./mtool_install.sh
 
 ## 配置在线MTool
 
-Windows和Ubuntu下MTool的命令及目录有所区别：
-
-- MTool命令
-
-  - Windows：mtool-client.bat
-  - Ubuntu：mtool-client
+Windows和Ubuntu下MTool目录使用环境变量有所区别：
 
 - MTool目录
 
@@ -82,7 +77,6 @@ Windows和Ubuntu下MTool的命令及目录有所区别：
 
 >  说明：
 >
->   - MTool命令用变量`$mtool-client`代替；
 >   - MTool目录用变量`$MTOOLDIR`代替；
 >
 >  **`用户根据自己安装的系统进行选择。`**
@@ -96,7 +90,7 @@ PlatON中，参与验证节点进行出块要创建两个钱包。如果已经�
   运行以下命令创建质押钱包：
 
   ``` shell
-  $mtool-client account new staking
+  mtool-client account new staking
   ```
 
   输入一次密码，再输入一次确认密码，即可创建钱包文件，创建成功后会在目录`$MTOOLDIR/keystore`下生成质押钱包文件`staking.json`。
@@ -106,7 +100,7 @@ PlatON中，参与验证节点进行出块要创建两个钱包。如果已经�
   运行以下命令创建收益钱包：
 
   ``` shell
-  $mtool-client account new reward
+  mtool-client account new reward
   ```
 
   输入一次密码，再输入一次确认密码，即可创建钱包文件，创建成功后会在目录`$MTOOLDIR/keystore`下生成质押钱包文件`reward.json`。
@@ -143,7 +137,7 @@ Set-ExecutionPolicy -ExecutionPolicy Bypass
 > [!NOTE|style:flat|label:注意]
 >
 > - 提示 <font color=red> Please enter the platon node IP address: </font>时，请输入 PlatON 节点服务器 ip 地址。
-> - 提示 <font color=red> Please enter the platon chain id: </font>时，请输入链ID。
+> - 提示 <font color=red> Please enter the platon chain id: </font>时，请输入链ID，根据节点所连网络是主网还是测试网选择输入(测试网:101)。
 > - 提示 <font color=red> Please enter the delegatedRewardRate(0~10000):</font>时，请输入比例分红，范围从0到10000。
 > - 提示 <font color=red> Enter your name: </font> 时，请输入配置 PlatON节点 nginx 时输入的用户名。
 > - 提示 <font color=red> Enter your password: </font>时，请输入配置 PlatON节点 nginx 时输入的密码。
@@ -177,7 +171,7 @@ chmod +x validator_conf.sh && ./validator_conf.sh
 > [!NOTE|style:flat|label:注意]
 >
 > - 提示 <font color=red> Please enter the platon node IP address: </font>时，请输入 PlatON 节点服务器 ip 地址。
-> - 提示 <font color=red> Please enter the platon chain id: </font>时，请输入链ID。
+> - 提示 <font color=red> Please enter the platon chain id: </font>时，请输入链ID，根据所连网络是主网还是测试网选择输入(测试网:101)。
 > - 提示 <font color=red> Please enter the delegatedRewardRate(0~10000):</font>时，请输入比例分红，范围从0到10000。
 > - 提示 <font color=red> Enter your name: </font> 时，请输入配置 PlatON节点 nginx 时输入的用户名。
 > - 提示 <font color=red> Enter your password: </font>时，请输入配置 PlatON节点 nginx 时输入的密码。
@@ -187,32 +181,12 @@ chmod +x validator_conf.sh && ./validator_conf.sh
 
 ##  在线MTool操作详解
 
-Windows和Ubuntu下MTool的命令及目录有所区别：
-
-- MTool命令
-
-  - Windows：mtool-client.bat
-  - Ubuntu：mtool-client
-
-- MTool目录
-
-  - Windows：`%MTOOLDIR%`
-
-  - Ubuntu：`$MTOOLDIR`
-
->  说明：
->
->   - MTool命令用变量`$mtool-client`代替；
->   - MTool目录用变量`$MTOOLDIR`代替；
->
->  **`用户根据自己安装的系统进行选择。`**
-
 ### 普通转账操作
 
 - 执行命令
 
 ```bash
-$mtool-client tx transfer --keystore $MTOOLDIR/keystore/staking.json --amount "1" --recipient $to_address --config $MTOOLDIR/validator/validator_config.json
+mtool-client tx transfer --keystore $MTOOLDIR/keystore/staking.json --amount "1" --recipient $to_address --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -228,7 +202,7 @@ $mtool-client tx transfer --keystore $MTOOLDIR/keystore/staking.json --amount "1
 - 执行命令
 
 ```bash
-$mtool-client account list
+mtool-client account list
 ```
 
 ### 根据钱包名称查询余额
@@ -236,7 +210,7 @@ $mtool-client account list
 - 执行命令
 
 ```bash
-$mtool-client account balance $keystorename --config $MTOOLDIR/validator/validator_config.json
+mtool-client account balance $keystorename --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 变量说明
@@ -248,7 +222,7 @@ $mtool-client account balance $keystorename --config $MTOOLDIR/validator/validat
 - 执行命令
 
 ```bash
-$mtool-client account balance -a $address --config $MTOOLDIR/validator/validator_config.json
+mtool-client account balance -a $address --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数
@@ -257,14 +231,14 @@ $mtool-client account balance -a $address --config $MTOOLDIR/validator/validator
 
 ### 发起质押操作
 
-​		如果共识节点部署完成，并且已经同步区块成功，您就可以使用MTool进行质押操作。质押资金申请完成后，确保质押账户余额足够，根据用户情况替换{质押金额}，质押最低门槛为100万LAT。
+如果共识节点部署完成，并且已经同步区块成功，您就可以使用MTool进行质押操作。质押资金申请完成后，确保质押账户余额足够，根据用户情况替换质押金额，质押最低门槛为100万LAT。
 
-注意：请保持质押账户里面有足够LATs，以备后续发起节点管理的交易有足够的交易手续费，比如升级提案的投票，解质押等交易。
+注意：请保持质押账户里面有足够LAT，以备后续发起节点管理的交易有足够的交易手续费，比如升级提案的投票，解质押等交易。
 
 - 执行命令
 
 ```bash
-$mtool-client staking --amount 1000000 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+mtool-client staking --amount 1000000 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 提示：**please input keystore password:** 输入质押钱包的密码，然后回车，如果显示如下信息则代表质押成功：
 
@@ -286,7 +260,7 @@ SUCCESS
 - 执行命令
 
 ```bash
-$mtool-client update_validator --name VerifierName --url "www.platon.com" --identity IdentifyID --delegated-reward-rate 100 --reward 0x33d253386582f38c66cb5819bfbdaad0910339b3 --introduction "Modify the verifier information operation" --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+mtool-client update_validator --name VerifierName --url "www.platon.com" --identity IdentifyID --delegated-reward-rate 100 --reward 0x33d253386582f38c66cb5819bfbdaad0910339b3 --introduction "Modify the verifier information operation" --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -310,7 +284,7 @@ $mtool-client update_validator --name VerifierName --url "www.platon.com" --iden
 - 执行命令
 
 ```bash
-$mtool-client unstaking --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+mtool-client unstaking --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -322,7 +296,7 @@ $mtool-client unstaking --keystore $MTOOLDIR/keystore/staking.json --config $MTO
 - 执行命令
 
 ```bash
-$mtool-client increasestaking --amount 5000000 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+mtool-client increasestaking --amount 5000000 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -336,7 +310,7 @@ $mtool-client increasestaking --amount 5000000 --keystore $MTOOLDIR/keystore/sta
 - 执行命令
 
 ```bash
-$mtool-client submit_textproposal --pid_id 100 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+mtool-client submit_textproposal --pid_id 100 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -348,7 +322,7 @@ $mtool-client submit_textproposal --pid_id 100 --keystore $MTOOLDIR/keystore/sta
 - 执行命令
 
 ```bash
-$mtool-client submit_versionproposal --newversion 0.8.0 --end_voting_rounds 345 --pid_id 100 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+mtool-client submit_versionproposal --newversion 0.8.0 --end_voting_rounds 345 --pid_id 100 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -364,7 +338,7 @@ $mtool-client submit_versionproposal --newversion 0.8.0 --end_voting_rounds 345 
 - 执行命令
 
 ```bash
-$mtool-client submit_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --end_voting_rounds 12 --pid_id 100 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+mtool-client submit_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --end_voting_rounds 12 --pid_id 100 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -380,7 +354,7 @@ $mtool-client submit_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514
 - 执行命令
 
 ```bash
-$mtool-client vote_textproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+mtool-client vote_textproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -394,7 +368,7 @@ $mtool-client vote_textproposal --proposalid 0x444c3df404bc1ce4d869166623514b370
 - 执行命令
 
 ```bash
-$mtool-client vote_versionproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+mtool-client vote_versionproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -406,7 +380,7 @@ $mtool-client vote_versionproposal --proposalid 0x444c3df404bc1ce4d869166623514b
 - 执行命令
 
 ```bash
-$mtool-client vote_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+mtool-client vote_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -420,7 +394,7 @@ $mtool-client vote_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b3
 - 执行命令
 
 ```bash
-$mtool-client submit_paramproposal --pid_id 200 --module $module --paramname $paramname --paramvalue $paramvalue --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+mtool-client submit_paramproposal --pid_id 200 --module $module --paramname $paramname --paramvalue $paramvalue --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -438,7 +412,7 @@ $mtool-client submit_paramproposal --pid_id 200 --module $module --paramname $pa
 - 执行命令
 
 ``` bash
-$mtool-client  vote_paramproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+mtool-client  vote_paramproposal --proposalid 0x444c3df404bc1ce4d869166623514b370046cd37cdfa6e932971bc2f98afd1a6 --opinion yes --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -452,7 +426,7 @@ $mtool-client  vote_paramproposal --proposalid 0x444c3df404bc1ce4d869166623514b3
 - 执行命令
 
 ```bash
-$mtool-client declare_version --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
+mtool-client declare_version --keystore $MTOOLDIR/keystore/staking.json --config $MTOOLDIR/validator/validator_config.json
 ```
 
 - 参数说明
@@ -464,7 +438,7 @@ $mtool-client declare_version --keystore $MTOOLDIR/keystore/staking.json --confi
 - 执行命令
 
 ```bash
-$mtool-client -h
+mtool-client -h
 ```
 
 - 参数说明
