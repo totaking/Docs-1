@@ -43,7 +43,7 @@ unzip mtool-client.zip && cd mtool-client
 
 **step3.** Download script
 
-> [! NOTE | style: flat | label: note]
+> [!NOTE|style:flat|label:Note]
 >
 > The script is downloaded to the <font color=red> mtool-client </font> directory, otherwise the script cannot find the path of the new version of mtool.
 
@@ -63,7 +63,7 @@ wget http://47.91.153.183/opensource/scripts/mtool_install.sh
 chmod + x mtool_install.sh && ./mtool_install.sh
 ```
 
-> [! NOTE | style: flat | label: note]
+> [!NOTE|style:flat|label:Note]
 >
 > - When the message <font color=red> Install mtool succeed. </font> is displayed, MTool is successfully installed. If it is not successfully installed, please contact our official customer service to provide feedback on specific issues.
 > - After installation is complete, you need to <font color=red> restart the terminal </font> for the newly added environment variables to take effect.
@@ -112,9 +112,9 @@ wget http://47.91.153.183/mtool/0.8.0.0/mtool-client.zip
 java -version
 ```
 
-> [! NOTE | style: flat | label: note]
+> [!NOTE|style:flat|label:Note]
 >
-> - If you return <font color=red> Command 'java' not found </font>, it means that jdk is not installed and you need to download jdk.
+> - If you return <font color=red> Command 'java' not found </font>it means that jdk is not installed and you need to download jdk.
 > - If the version number related information is returned, it means that the jdk is already installed, there is no need to download the jdk.
 
 - Download jdk on a machine with network
@@ -160,7 +160,7 @@ Perform the installation steps:
 unzip mtool-client.zip && chmod + x install_off_line_mtool.sh && ./install_off_line_mtool.sh
 ```
 
-> [! NOTE | style: flat | label: note]
+> [!NOTE|style:flat|label:Note]
 >
 > - Unzip needs to be installed in advance on offline machines.
 > - When the prompt <font color=red> Install off line mtool succeed. </font> is displayed, the offline MTool installation is successful. If the installation is not successful, please contact our official customer service to provide feedback on specific issues.
@@ -272,17 +272,17 @@ Please enter: y and press Enter to end.
 
 **step3.** Right-click validator_conf.bat and select Run as administrator:
 
-> [! NOTE | style: flat | label: note]
+> [!NOTE|style:flat|label:Note]
 >
-> - When prompted <font color=red> Please enter the platon node IP address: </font>, please enter the PlatON node server IP address.
-> - When prompting <font color=red> Please enter the platon chain id: </font>, please enter the chain ID, and choose to input according to whether the network connected to the node is the main network or the test network (test network: 101).
-> - When prompting<font color=red> Please enter the delegatedRewardRate (0 ~ 10000): </font>, please enter a proportional dividend, ranging from 0 to 10000.
-> - When prompted <font color=red> Enter your name: </font>, please enter the username you entered when configuring PlatON node nginx.
-> - When prompted <font color=red> Enter your password: </font>, please enter the password you entered when configuring PlatON node nginx.
-> - When prompted <font color=red> Enter your platon node name: </font>, enter the name of the PlatON node.
-> - When prompted <font color=red> Enter your platon node description: </font>, please enter a PlatON node description.
+> - When prompted <font color=red> Please enter the platon node IP address: </font>please enter the PlatON node server IP address.
+> - When prompting <font color=red> Please enter the platon chain id: </font>please enter the chain ID, and choose to input according to whether the network connected to the node is the main network or the test network (test network: 101).
+> - When prompting<font color=red> Please enter the delegatedRewardRate (0 ~ 10000): </font>please enter a proportional dividend, ranging from 0 to 10000.
+> - When prompted <font color=red> Enter your name: </font>please enter the username you entered when configuring PlatON node nginx.
+> - When prompted <font color=red> Enter your password: </font>please enter the password you entered when configuring PlatON node nginx.
+> - When prompted <font color=red> Enter your platon node name: </font>enter the name of the PlatON node.
+> - When prompted <font color=red> Enter your platon node description: </font>please enter a PlatON node description.
 > - When the prompt <font color=red> validator conf success </font> is displayed, the script is successfully executed. If the script is not successfully executed, please contact our official customer service to provide feedback.
-> - Prompt <font color=red> Please press any key to continue .... </font>, please press Enter to close the current cmd window.
+> - Prompt <font color=red> Please press any key to continue .... </font>please press Enter to close the current cmd window.
 
 #### Configure verification node information under Ubuntu
 
@@ -306,15 +306,15 @@ wget http://47.91.153.183/opensource/scripts/validator_conf.sh
 chmod + x validator_conf.sh && ./validator_conf.sh
 ```
 
-> [! NOTE | style: flat | label: note]
+> [!NOTE|style:flat|label:Note]
 >
-> - When prompted <font color=red> Please enter the platon node IP address: </font>, please enter the PlatON node server IP address.
-> - When prompting <font color=red> Please enter the platon chain id: </font>, please enter the chain ID, and choose to input according to whether the network connected to the node is the main network or the test network (test network: 101).
-> - When prompting<font color=red> Please enter the delegatedRewardRate (0 ~ 10000): </font>, please enter a proportional dividend, ranging from 0 to 10000.
-> - When prompted <font color=red> Enter your name: </font>, please enter the username you entered when configuring PlatON node nginx.
-> - When prompted <font color=red> Enter your password: </font>, please enter the password you entered when configuring PlatON node nginx.
-> - When prompted <font color=red> Enter your platon node name: </font>, enter the name of the PlatON node.
-> - When prompted <font color=red> Enter your platon node description: </font>, please enter a PlatON node description.
+> - When prompted <font color=red> Please enter the platon node IP address: </font>please enter the PlatON node server IP address.
+> - When prompting <font color=red> Please enter the platon chain id: </font>please enter the chain ID, and choose to input according to whether the network connected to the node is the main network or the test network (test network: 101).
+> - When prompting<font color=red> Please enter the delegatedRewardRate (0 ~ 10000): </font>please enter a proportional dividend, ranging from 0 to 10000.
+> - When prompted <font color=red> Enter your name: </font>please enter the username you entered when configuring PlatON node nginx.
+> - When prompted <font color=red> Enter your password: </font>please enter the password you entered when configuring PlatON node nginx.
+> - When prompted <font color=red> Enter your platon node name: </font>enter the name of the PlatON node.
+> - When prompted <font color=red> Enter your platon node description: </font>please enter a PlatON node description.
 > - When the prompt <font color=red> validator conf success </font> is displayed, and the validator_config.json content printed at the end is normal, it means that the script is executed successfully. If the script is not executed successfully, please contact us through our official customer service contact .
 
 
