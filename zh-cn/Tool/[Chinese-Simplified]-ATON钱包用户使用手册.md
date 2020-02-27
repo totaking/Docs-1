@@ -3,7 +3,6 @@
 <div><br>请从官方渠道下载ATON，Google Play、APP Store待上架，敬请期待！</div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
-
 ## 创建钱包
 
 <div>
@@ -51,11 +50,14 @@
 <div style="margin-top:40px;"></div>
 </div>
 
+
 ### 导入观察钱包
 
 详见“设置观察钱包和冷钱包”说明
-
+<div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
+
+
 ## 查看钱包信息
 
 <div>
