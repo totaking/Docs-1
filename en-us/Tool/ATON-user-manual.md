@@ -9,7 +9,6 @@
 <div style = "clear: both"> </div>
 <div style = "margin-top: 40px;"> </div>
 
-
 ## Create Wallet
 
 <div>
@@ -64,7 +63,6 @@
 For details about importing observation wallets, please refer to the instructions of “Set observed wallet and cold wallet”
 
 <div style = "margin-top: 40px;"> </div>
-
 
 ## My Wallet
 
@@ -212,7 +210,7 @@ If you have set up observed wallets and cold wallets, you can initiate transfers
 ## Settings / Help and Feedback
 
 <div>
-<div style = "float: left;"> <img src = "https://platonnetwork.github.io/Docs/en-us/Tool/ATON-user-manual.assets/aton48.jpg "width =" 250 "/><img src = "ATON-user-manual.assets/aton49.jpg "width =" 250 "/> </div> <div> <br> 1. You can make related settings <br>-Node Settings: Select the network to be connected. <br>-Reminder Threshold:Remind when the amount of transfer exceeds the set amount.<br>-Resend Reminder:Remind when the transaction are the same as the one in last 2 housrs.<br>-Fingerprint / Face Unlocking: After opening, fingerprint or face unlock is required every time you enter the app. <br>-Language: Chinese and English can be selected to switch <br> 2. Select [My-Help and Feedback] You can view APP usage help and frequently asked questions. If you don't get the answer you want, you can submit feedback and we will respond as soon as possible.
+<div style = "float: left;"> <img src = "https://platonnetwork.github.io/Docs/en-us/Tool/ATON-user-manual.assets/aton48.jpg "width =" 250 "/><img src = "https://platonnetwork.github.io/Docs/en-us/Tool/ATON-user-manual.assets/aton49.jpg "width =" 250 "/> </div> <div> <br> 1. You can make related settings <br>-Node Settings: Select the network to be connected. <br>-Reminder Threshold:Remind when the amount of transfer exceeds the set amount.<br>-Resend Reminder:Remind when the transaction are the same as the one in last 2 housrs.<br>-Fingerprint / Face Unlocking: After opening, fingerprint or face unlock is required every time you enter the app. <br>-Language: Chinese and English can be selected to switch <br> 2. Select [My-Help and Feedback] You can view APP usage help and frequently asked questions. If you don't get the answer you want, you can submit feedback and we will respond as soon as possible.
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
