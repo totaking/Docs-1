@@ -37,7 +37,7 @@ It is recommended to use Ubuntu 18.04.
 
 ### How to become a verification node
 
-![成为验证节点](PlatON验证节点介绍.assets/成为验证节点.png)
+![become_a_verification_node](PlatON_verification_node_introduction.assets/become_a_verification_node.png)
 
 - Alternative node candidate
 
@@ -63,7 +63,7 @@ It is recommended to use Ubuntu 18.04.
 
 The role relationship diagram is as follows. **For ease of description and understanding, alternative node candidates include candidate nodes and verification nodes. Candidate nodes include validation nodes.**
 
-![角色说明](PlatON验证节点介绍.assets/角色说明.png)
+![角色说明](PlatON_verification_node_introduction.assets/角色说明.png)
 
 ### How to participate in governance
 
@@ -87,7 +87,7 @@ The basic process of proposal governance is as follows:
 
 ### What rewards can I get
 
-![验证节点奖励](PlatON验证节点介绍.assets/验证节点奖励.png)
+![verification_node_reward](PlatON_verification_node_introduction.assets/verification_node_reward.png)
 
 #### Reward pool
 
