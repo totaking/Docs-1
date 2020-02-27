@@ -9,8 +9,6 @@
 <div style = "clear: both"> </div>
 <div style = "margin-top: 40px;"> </div>
 
-
-
 ## Create Wallet
 
 <div>
@@ -65,7 +63,6 @@
 For details about importing observation wallets, please refer to the instructions of “Set observed wallet and cold wallet”
 
 <div style = "margin-top: 40px;"> </div>
-
 ## My Wallet
 
 <div>
@@ -188,14 +185,12 @@ If you have set up observed wallets and cold wallets, you can initiate transfers
 
 <div>
 <div style = "float: left;"> <img src = "https://platonnetwork.github.io/Docs/en-us/Tool/ATON-user-manual.assets/aton32.png "width =" 800 "/> </div>
-
-
-(1) Click Scan in the upper right corner, or click the [Offline Signature] button of the specified wallet to scan and observe the QR code information displayed on the wallet page. <br>
-(2) The page displays the detailed information of the transaction. If the confirmation is correct, you can click [Authorized Signature] and enter the wallet password. <br/>
-(3) After the wallet password is entered correctly, the signed transaction QR code information will be displayed on the page for the observed wallet to scan. <br/>
-
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
+</div>
+(1) Click Scan in the upper right corner, or click the [Offline Signature] button of the specified wallet to scan and observe the QR code information displayed on the wallet page. <br>
+(2) The page displays the detailed information of the transaction. If the confirmation is correct, you can click [Authorized Signature] and enter the wallet password. <br/>
+(3) After the wallet password is entered correctly, the signed transaction QR code information will be displayed on the page for the observed wallet to scan. 
 
 
 
