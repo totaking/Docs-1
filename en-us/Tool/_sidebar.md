@@ -1,5 +1,5 @@
 
-- [MTOOL user manual](/en-us/Tool/[English]-MTOOL-user-manual.md)
+- [MTOOL user manual](/en-us/Tool/[English]-MTooL-user-manual.md)
 	- [Online MTOOL user manual](/en-us/Tool/[English]-Online-MTool-user-manual.md)
 	- [Offline MTOOL user manual](/en-us/Tool/[English]-Offline-MTool-user-manual.md)
 - [User manual of Aton Wallet](/en-us/Tool/ATON-user-manual.md)
