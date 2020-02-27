@@ -63,7 +63,7 @@ It is recommended to use Ubuntu 18.04.
 
 The role relationship diagram is as follows. **For ease of description and understanding, alternative node candidates include candidate nodes and verification nodes. Candidate nodes include validation nodes.**
 
-![角色说明](PlatON_verification_node_introduction.assets/角色说明.png)
+![role_description](PlatON_verification_node_introduction.assets/role_description.png)
 
 ### How to participate in governance
 
