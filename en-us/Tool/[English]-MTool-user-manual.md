@@ -10,5 +10,5 @@ In order to facilitate node pledge, commission, and governance related operation
 
 ### Application scenario
 
-- If the user has only one online machine to send transactions directly, you can refer to the [online MTool manual](en-us/Tool/[English]-Online-MTOOl-user-manual.md).
-- If the user conditions allow, for security reasons, you can sign transactions on offline machines, and send signed transactions by online machines, you can refer to the [offline MTool user manual](en-us/Tool/[English]-Offline-MTOOl-user-manual.md).
+- If the user has only one online machine to send transactions directly, you can refer to the [online MTool manual](en-us/Tool/[English]-Online-MTool-user-manual.md).
+- If the user conditions allow, for security reasons, you can sign transactions on offline machines, and send signed transactions by online machines, you can refer to the [offline MTool user manual](en-us/Tool/[English]-Offline-MTool-user-manual.md).
