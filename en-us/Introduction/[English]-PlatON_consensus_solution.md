@@ -75,7 +75,7 @@ How to reduce the communication complexity of $O(n^3)$ to $O(n)$ and improve the
 
 #### Aggregate signature
 
-E. Kokoris-Kogias et al. Proposed a method of using aggregate signatures in the consensus mechanism in their paper. The ** ByzCoin ** [4] mentioned in the paper replaced the original MAC used by PBFT with a digital signature to reduce the communication delay from $O(n^2)$ to $O(n)$. Using the aggregate signature method can The communication complexity is further reduced to $O(logn)$. But ByzCoin still has limitations in terms of master node evil or 33% fault tolerance.
+E. Kokoris-Kogias et al. Proposed a method of using aggregate signatures in the consensus mechanism in their paper. The **ByzCoin** [4] mentioned in the paper replaced the original MAC used by PBFT with a digital signature to reduce the communication delay from $O(n^2)$ to $O(n)$. Using the aggregate signature method can The communication complexity is further reduced to $O(logn)$. But ByzCoin still has limitations in terms of master node evil or 33% fault tolerance.
 
 After that, some public chain projects, such as **Zilliqa** [5], etc., based on this idea, adopted the EC-Schnorr multi-sign algorithm to improve the efficiency of message passing during the Prepare and Commit stages in the PBFT process.
 
