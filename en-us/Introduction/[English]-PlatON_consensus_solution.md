@@ -380,17 +380,20 @@ As A's View ends, it's B's turn to produce blocks. B will encounter the followin
 
 - **B-1:** B received QC of ViewChange earlier
 
-  
-
   Suppose B receives C.ViewChange <A8>, D.ViewChange <D7> before QC of A9, then B will produce B9 and B10 based on A8. 
 
   The actions of each node after receiving B9 are as follows:
+
+  
 
   | A           | B           | C           | D           |
   | ----------- | ----------- | ----------- | ----------- |
   | Verified B9 | Verified B9 | Verified B9 | Verified B9 |
 
   Because B9's PrepareBlock message carries A8‘s prepareQC, D can confirm A8 locally. The block state of each node is as follows:
+
+  
+
   | A            | B          | C          | D      |
   | ------------ | ---------- | ---------- | ------ |
   | D7(QC)commit | D7(QC)lock | D7(QC)lock | D7(QC) |
