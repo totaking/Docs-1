@@ -575,15 +575,19 @@ The state of the last block of the four nodes is as follows:
   | -------------- | -------------- | --------- | -------------- |
     | nil(Byzantine) | ViewChange<D7> | nil(down) | ViewChange<D7> |
 
-    The ViewChange cannot reaches QC. And the view can only switch to B normally after C failure recovers.
+    
   
-  - A does send ViewChange
+    The ViewChange cannot reaches QC. And the view can only switch to B normally after C failure recovers.
 
+  - A does send ViewChange
+  
     
     
     | A              | B              | C         | D              |
   | -------------- | -------------- | --------- | -------------- |
     | ViewChange<D7> | ViewChange<D7> | nil(down) | ViewChange<D7> |
+    
+    
     
     At this time, ViewChange can reach QC, and B can rotate normally and produce blocks based on D7.
 
@@ -671,6 +675,8 @@ After consensus, there are three possible outcomes:
     | -------------- | -------------- | -------------- | ---- |
     | ViewChange<A9> | ViewChange<A8> | ViewChange<A9> | nil  |
   
+    
+  
     In this case, C will produce blocks based on A9.
   
   - B does send ViewChange message
@@ -680,6 +686,8 @@ After consensus, there are three possible outcomes:
     | A             | B    | C             | D    |
     | ------------- | ---- | ------------- | ---- |
     | ViewChange<9> | nil  | ViewChange<9> | nil  |
+    
+    
     
     The ViewChange cannot reaches QC. And the view can only switch to C normally after D failure recovers.
 
