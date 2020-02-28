@@ -319,7 +319,7 @@ chmod +x validator_conf.sh && ./validator_conf.sh
 > - 提示<font color=red> validator conf success</font>，并最后打印出的validator_config.json内容正常时，表示脚本执行成功，未执行成功时，请通过我们的官方客服联系方式反馈具体问题。
 
 #### 验证节点信息配置文件说明
-配置完成验证节点信息后，会在MTool的安装目录的validator子目录下，生成验证节点信息文件validator_config.json，文件内容如下：
+完成配置验证节点信息后，会在MTool的安装目录的validator子目录下，生成验证节点信息文件validator_config.json，文件内容如下：
 
 ```json
 {
@@ -343,8 +343,8 @@ chmod +x validator_conf.sh && ./validator_conf.sh
 >
 > - chainId: 贝莱世界的链为101。
 > - delegatedRewardRate: 用来设置给委托人分红的比例。
-> - nodePublicKey: 节点ID。
-> - blsPubKey: BLS公钥。
+> - nodePublicKey: 节点ID，可通过节点数据目录data下的nodeid文件查看。
+> - blsPubKey: BLS公钥，可通过节点数据目录data下的blspub文件查看。
 > - benefitAddress: 收益钱包地址。
 > - nodeAddress: 节点地址，分使用Nginx和不使用Nginx两种情况:
 >   - 如果使用Nginx，需要用**https**协议，格式为：`https://test:test@domain3`。

@@ -182,6 +182,48 @@ chmod + x validator_conf.sh && ./validator_conf.sh
 > - When prompted <font color=red>Enter your platon node description: </font> please enter a PlatON node description.
 > - When the prompt <font color=red>validator conf success</font> is displayed, and the validator_config.json content printed at the end is normal, it means that the script is executed successfully. If the script is not executed successfully, please contact us through our official customer service contact .
 
+#### Verify node information configuration file description
+
+After the configuration of the verification node information is completed, the verification node information file validator_config.json is generated in the validator subdirectory of the MTool installation directory.
+
+```json
+{
+  "chainId": "101",
+  "delegatedRewardRate": "5000",
+  "nodePublicKey": "79ca603ef75d5954ec270802fa4e7b9bf045842bb7f3e95b849173f61d8a7cfef82b8687abef67f29645e068ff371da514f32b009b05f48062daa84f0b58ab6d",
+  "blsPubKey": "a2e1c2e60eb8bb2af05fff4d07c8fce7c408fbe944be1a58194d9e9c9078cb7bb55b63311c8af107453ac182eef22a04cb9ff28cc3367f1e8459f8dcbe9f5c965a6f377f9ff9bb39a78e4e04fd27876137bb0a9aa4066d0277464f018e989e94",
+  "benefitAddress": "0x32bec384344c2dc1ea794a4e149c1b74dd8467ef",
+  "nodeAddress": "https://test:test@domain3",
+  "nodePort": "16789",
+  "nodeRpcPort": "443",
+  "nodeName": "water-node",
+  "details": "this is water-node",
+  "externalId": "MyKeyBaseId",
+  "webSite": "http://www.mycompany.com",
+  "certificate": "C:/tools/mtool/current/ca.crt"
+}
+```
+
+> [!NOTE|style:flat|label:Parameter Description] 
+>
+> - chainId: The chain of Belle World is 101.
+> - delegatedRewardRate: It is used to set the proportion of dividends to the delegate.
+> - nodePublicKey: Node ID, Can be viewed through the **nodeid** file under the node data directory **data**.
+> - blsPubKey: BLS public key, Can be view it through the **blspub** file under the node data directory **data**.
+> - benefitAddress: benefit wallet address.
+> - nodeAddress: The node address, There are two cases of using Nginx and not using Nginx: 
+>   - If you use Nginx, you need to use the **https** protocol, the format is: `https://test:test@domain3`.
+>   - If you do not use Nginx, you need to use the **http** protocol. If MTool and the node are on the same machine or in the same local area network, you can use the intranet IP, otherwise use the public IP, the format is: `http://18.238.183.12`.
+> - nodePort: The P2P port of the node. The default is 16789.
+> - nodeRpcPort: There are two cases of using Nginx and not using Nginx:
+>   - If Nginx is used, the port defaults to 443.
+>   - If Nginx is not used, the port defaults to 6789.
+> - nodeName: the name of the node.
+> - details: node description information.
+> - externalId: Corresponds to the avatar displayed by the browser. It can be registered on the official website of [keybase.io](https://keybase.io/). The corresponding value is: Register an account and generate a 16-bit public key.
+> - webSite: company website.
+> - certificate: ca certificate address. This parameter can be deleted if Nginx reverse proxy is not used.
+
 ## Detailed Online MTool Operation
 
 ### Ordinary transfer operation
