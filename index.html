@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="assets/styles.css">
   <link rel="stylesheet" href="./my-theme.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
+  <link rel="stylesheet" href="//unpkg.com/mermaid/dist/mermaid.min.css">
 </head>
 <body>
   <div id="app">  </div>
@@ -36,6 +37,29 @@
           readyTransition : true, // default
           responsiveTables: true  // default
       },
+	  
+	  plugins: [
+		function(hook, vm) {
+		  hook.ready(function () {
+			mermaid.initialize({startOnLoad: false});
+		  });
+		  hook.doneEach(function () {
+			mermaid.init(undefined,'.mermaid');
+		  });
+		}
+	  ],
+	  markdown: {
+		renderer: {
+		  code: function(code, lang) {
+			var html = '';
+			if(code.match(/^sequenceDiagram/) || code.match(/^graph/) || code.match(/^gantt/)){
+			  html = '<div class="mermaid">' + code + '</div>';
+			}
+			var hl = Prism.highlight(code, Prism.languages[lang] || Prism.languages.markup)
+			return html + '<pre v-pre data-lang="' + lang + '"><code class="lang-' + lang + '">' + hl + '</code></pre>'
+		  }
+		}
+	  },
     
 	  alias: {
 	  '/_navbar.md': '/en-us/_navbar.md',
@@ -122,5 +146,6 @@
   <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
   <script src="//unpkg.com/docsify-plugin-flexible-alerts"></script>
   <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script type="text/javascript" src="//unpkg.com/mermaid/dist/mermaid.min.js"></script>
 </body>
 </html>
