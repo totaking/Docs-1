@@ -14,38 +14,37 @@ WEB3 is a serverless Internet and a decentralized network. In this Internet, use
 
  
 
-- Any single entity can always grasp only a part of the data set, and no arbitrary entity can get all the global data. Each participant is "blind", and the data they possess is not sufficient to reflect the characteristics of the entire data-"elephant".
+- Any single entity can always grasp only a part of the data set, and no arbitrary entity can get all the global data. Every participant of the digitalized world is partially blind, blocked in a certain angle towards the full picture.
 
-- Participants are weakly trusted or even untrusted, and they cannot use “trusted third parties” to aggregate computing data and verify the validity of the data to share value, information and assets. The emerging cloud computing platform is now a typical "trusted third party".
-
- 
-
-PlatON is committed to building the next generation of private computing and data exchange networks in the WEB3 era. Based on modern cryptography and blockchain technology, PlatON creates a new computing paradigm to ensure user data privacy without the need to rely on third parties for collaborative computing and Verify the integrity of the results.
-
- 
-![WEB3 Computing Technology Stack](GeneralIntroduction.assets/web3%E8%AE%A1%E7%AE%97%E6%8A%80%E6%9C%AF%E6%A0%88.png)
- 
-
-### Scalable privacy computing solution
+- Participants are weakly trusted or even untrusted, and they cannot use “trusted third party” to collect the data and verify its validity to share value, information and assets. The emerging cloud computing platform is now a typical "trusted third party".
 
  
 
-#### Blockchain: Consensus-Based Computing
+PlatON is committed to building the next generation of Privacy-Preserving Computing and data exchange networks in the WEB3 era. Based on modern cryptography and blockchain technology, PlatON creates a new computing paradigm to maintain privacy of the client’s data without the need to rely on third parties for collaborative computing and Verify the integrity of the results.
 
  
-![Consensus-based computation](GeneralIntroduction.assets/%E5%9F%BA%E4%BA%8E%E5%85%B1%E8%AF%86%E7%9A%84%E8%AE%A1%E7%AE%97.png)
+![WEB3 Computing Technology Stack](PlatON_overall_solution.assets/web3%E8%AE%A1%E7%AE%97%E6%8A%80%E6%9C%AF%E6%A0%88.png)
+ 
+
+### Scalable Privacy-Preserving Computing
 
  
 
-In a broad sense, the existing blockchain architecture is a consensus-based computation, which also implements a simple computation (smart contract form) protocol: In order to ensure the correctness of the computation, each computation operation requires absolute The repeated processing of most nodes to verify the correctness of the computation has led to the inherent contradiction between efficiency and trust in the blockchain system.
+#### Blockchain: Consensus-based Strategy
 
  
+![Consensus-based computation](PlatON_overall_solution.assets/%E5%9F%BA%E4%BA%8E%E5%85%B1%E8%AF%86%E7%9A%84%E8%AE%A1%E7%AE%97.png)
+
+ 
+
+In a broad sense, the existing blockchain architecture is a consensus-based strategy, which also implements a simple computation (smart contract) protocol: In order to ensure the correctness of the computation, each computation operation requires absolute The repeated processing of most nodes to verify the correctness of the computation has led to the inherent contradiction between efficiency and trust in the blockchain system.
+
 
 From a practical point of view, the core of the industry is still concerned about two issues: scalability and privacy.
 
  
 
-**Scalability** has been recognized as the biggest problem of blockchain. The current mainstream blockchain is not high in processing transactions per second, which is several orders of magnitude different from the processing power required to run mainstream financial markets. Although the industry is actively implementing various solutions, it is limited to the "impossible triangle", which is premised on sacrificing decentralization or security. Blockchain's consensus-based computing method also limits smart contracts' ability to support complex computing logic.
+**Scalability** is a huge challenge for the blockchain. The current mainstream blockchain is not high in processing transactions per second, which is several orders of magnitude different from the processing power required to run mainstream financial markets. Although the industry is actively implementing various solutions, it is limited to the "impossible triangle", which is premised on sacrificing decentralization or security. Blockchain's consensus-based strategy method also limits smart contracts' ability to support complex computing logic.
 
  
 
@@ -53,35 +52,34 @@ From a practical point of view, the core of the industry is still concerned abou
 
  
 
-#### PlatON: Non-Interactive Proof Privacy Computation
+#### PlatON: Non-interactive Proof Privacy-Preserving Computing
 
- 
 
-PlatON uses modern cryptographic algorithms including, but not limited to, Zero Knowledge Proof (ZKP), Verifiable Computing (VC), Homomorphic Encryption (HE), Secure Multiparty Computing (MPC), Secret Sharing (SS), etc. to implement non-interactive proof computation Expansion plan.
+PlatON uses modern cryptographic algorithms including, but not limited to, Zero-Knowledge Proof (ZKP), Verifiable Computation (VC), Homomorphic Encryption (HE), Secure Multi-Party Computation (MPC), Secret Sharing (SS), etc. to implement non-interactive proof computation Expansion plan.
 
- 
+
+
 
 ##### Scalability
 
  
 
-The problems with the existing blockchain architecture stem from two very important parts: consensus and computation are too tightly coupled. PlatON proposes a verifiable computing solution that can fundamentally separate the two, divide and conquer these two problems, and weaken their endogenous binding relationship through mathematically provable cryptographic algorithms.
+The problems with the existing blockchain architecture stem from two very important parts: consensus and computation are too tightly coupled. PlatON proposes a verifiable computation solution that can fundamentally separate the two, divide and conquer these two problems, and weaken their endogenous binding relationship through mathematically provable cryptographic algorithms.
 
 
  
-![Layer2 computation](GeneralIntroduction.assets/Layer2%E8%AE%A1%E7%AE%97.png)
+![Layer2 computation](PlatON_overall_solution.assets/Layer2%E8%AE%A1%E7%AE%97.png)
 
  
 
-In view of the existing limitations of consensus on the chain, the function on the chain should be "verification" rather than "computation". Although on-chain has been recognized as an environment without trust, the implementation of off-chain solutions has introduced new factors of distrust. PlatON's Verifiable Computing (VC) cryptography algorithm passes trust off-chain. Through verifiable computation, the contract only needs to be calculated off-chain once, and all nodes can quickly verify the correctness of the computation, on the one hand, it improves the transaction processing performance, and on the other hand, it makes PlatON support Trustless computation of complex contracts.
+In view of the existing limitations of consensus on the chain, the function on the chain should be "verification" rather than "computation". Although on-chain has been recognized as an environment without trust, the implementation of off-chain solutions has introduced new factors of distrust. PlatON's Verifiable Computation (VC) cryptography algorithm passes trust off-chain. Through verifiable computation, the contract only needs to be calculated off-chain once, and all nodes can quickly verify the correctness of the computation, on the one hand, it improves the transaction processing performance, and on the other hand, it makes PlatON support Trustless computation of complex contracts.
 
  
 
 ##### Privacy
 
  
-
-PlatON implements true privacy computation by superimposing homomorphic encryption (HE) and secure multiparty computing (MPC), ensuring the privacy of input data and the computation logic itself. Compared to trusted computing that relies on trusted hardware or TEE (such as SGX) provided by a third-party manufacturer for computational integrity, Trustless computing on PlatON relies only on falsifiable cryptographic assumptions, and thus during its life Provide unprecedented private data security without trust boundaries.
+On PlatON, secure MPC and HE are combined to achieve complete privacy-preserving computing, ensuring the privacy of input data and the computation logic itself. Compared to trusted computing that relies on trusted hardware or TEE (such as SGX) provided by a third-party manufacturer for computational integrity, Trustless computing on PlatON relies only on falsifiable cryptographic assumptions, and thus during its life Provide unprecedented private data security without trust boundaries.
 
  
 
@@ -93,7 +91,7 @@ PlatON implements true privacy computation by superimposing homomorphic encrypti
 
  
 
-![Overall logical structure](GeneralIntroduction.assets/%E6%80%BB%E4%BD%93%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84.png)
+![Overall logical structure](PlatON_overall_solution.assets/%E6%80%BB%E4%BD%93%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84.png)
 
  
 
@@ -113,7 +111,7 @@ In addition to providing the underlying chain, PlatON also provides open source 
 
  
 
-![Logical structure](GeneralIntroduction.assets/%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84.png)
+![Logical structure](PlatON_overall_solution.assets/%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84.png)
  
 
 the Layer1 consensus network was modified on the technical framework of Ethereum, the core components were rewritten, and some new components were extended:
@@ -134,11 +132,11 @@ the Layer1 consensus network was modified on the technical framework of Ethereum
 
  
 
-Layer2 extends complex computing to off-chain and implements private computing protocols through off-chain secure multiparty computing.
+Layer2 extends complex computing to off-chain and implements Privacy-Preserving Computing protocols through off-chain Secure Multi-Party Computation.
 
  
 
-- Cryptographic algorithm: Verifiable Computing (VC) algorithm can implement non-interactive proof of off-chain computing capacity expansion scheme. Secure Multiparty Computing (MPC) combines secret sharing (SS) and homomorphic encryption (HE) to implement a privacy computing protocol.
+- Cryptographic algorithm: Verifiable Computation (VC) algorithm can implement non-interactive proof of off-chain computing capacity expansion scheme. Secure Multi-Party Computation (MPC) combines secret sharing (SS) and homomorphic encryption (HE) to implement a privacy computing protocol.
 
 - MPC virtual machine: The privacy contract is compiled into LLVM IR by the LLVM compiler. The MPC VM is implemented based on the LLVM JIT and can execute LLVM IR code. The MPC VM has built-in privacy computing protocols such as MPC, SS, and HE to reduce the LLVM IR after the privacy contract is compiled. Code size.
 
@@ -146,7 +144,7 @@ Layer2 extends complex computing to off-chain and implements private computing p
 
 - Privacy computing and data exchange protocol: A computing protocol that enables collaborative computing and results verification without revealing the original data.
 
-- Private Computing Framework: A development framework that encapsulates private computing and data exchange protocols, including a privacy AI development framework based on a private computing protocol.
+- Privacy-Preserving Computing Framework: A development framework that encapsulates Privacy-Preserving Computing and data exchange protocols, including a privacy AI development framework based on a Privacy-Preserving Computing protocol.
 
  
 
@@ -154,7 +152,7 @@ Layer2 extends complex computing to off-chain and implements private computing p
 
  
 
-![Network Structure](GeneralIntroduction.assets/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84.png)
+![Network Structure](PlatON_overall_solution.assets/%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84.png)
 
  
 
@@ -290,7 +288,7 @@ ATON is a mobile wallet. The private key is managed on the client. The client is
 
  
 
-![Node deployment structure](GeneralIntroduction.assets/%E8%8A%82%E7%82%B9%E9%83%A8%E7%BD%B2%E7%BB%93%E6%9E%84.png)
+![Node deployment structure](PlatON_overall_solution.assets/%E8%8A%82%E7%82%B9%E9%83%A8%E7%BD%B2%E7%BB%93%E6%9E%84.png)
 
  
 
@@ -314,146 +312,124 @@ In order to protect the normal communication and operation of the verification n
 
 ### P2P Network
 
- 
 
-PlatON fully implements the P2P basic protocol and Kademlia protocol of the RELOAD (REsource LOcation And Discovery) standard [RFC6940]. The figure below shows the overall hierarchical structure of the PlatON network.
+The basic implementation of PlatON network is a decentralized structured topology completely based on RELOAD (Resource LOcation And Discovery) based protocol and the Kademlia protocol [Kademlia]. Shown in are the layers of the overall PlatON network structure.
 
- 
-
-![P2P protocol stack](GeneralIntroduction.assets/P2P%E5%8D%8F%E8%AE%AE%E6%A0%88.png)
+![P2P protocol stack](PlatON_overall_solution.assets/P2P%E5%8D%8F%E8%AE%AE%E6%A0%88.png)
 
  
 
-#### Link layer
+#### Link Layer
+
+The Link Layer ensures the secure transfer of data. A variety of transmission protocols are employed to prevent eavesdropping, tampering and spoofing; to provide secure and authenticated connections; and to verify the source of messages and ensure the integrity of the data.
+Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS) are implemented on this layer.
+
+
+
+#### Forwarding and Connection Management
+
+
+The Forwarding and Connection Management layer stores and implements the Routing Table by providing packet forwarding services between nodes. It also handles establishing new links between nodes, setting up connections for overlay links across NATs using ICE.
+
+
+
+#### Topology Plug-in
+
+
+RELOAD is a P2P network framework that supports the development of different topology algorithms for implementing a fully-distributed non-structured topological or fully-distributed structured topological network.
+
+The Topology Plug-in is responsible for implementing the specific overlay algorithm being used. It uses the Message Transport component to send and receive overlay management messages, the Storage component to manage data replication, and the forwarding and connection management layer to control hop-by-hop message forwarding.
+
+The Topology Plug-in allows RELOAD to support a variety of overlay algorithms. PlatON implements a DHT based on Kademlia algorithm.
 
  
 
-The link layer is positioned to realize the secure transmission of data, provide multiple transmission protocols to prevent eavesdropping, tampering, and message forgery; provide a secure, authenticated connection; and ensure the authentication of message sources and the integrity of message data. This layer implements the Secure Transport Layer Protocol (TLS) and the Packet Transport Layer Security Protocol (DTLS).
+#### Data Storage
 
+
+The Data Storage Layer is responsible for processing messages relating to the storage and retrieval of data. It talks directly to the Topology Plug-in to manage data replication and migration, and it talks to the Message Transport component to send and receive messages.
+
+The base RELOAD protocol currently defines three data models: single value, array and dictionary.
  
 
-#### Packet forwarding and connection management
 
+#### Message Transport
+
+
+The Message Transport layer is responsible for handling end-to-end reliability.
+
+PlatON uses RELOAD as the basis for developing a Regional Flooding algorithm that broadcasts messages quickly throughout the entire network.
  
 
-Responsible for providing packet forwarding services to implement storage routing tables, and is responsible for establishing point-to-point connections, including nodes behind NAT devices and firewalls. RELOAD uses the ICE method [RFC5245] to implement NAT traversal.
+#### Application Layer
 
+
+The communication and storage capabilities of the RELOAD base layer are used to provide service discovery and scaling as well as routing, computing, data, storage and blockchain services based on service discovery.
  
-
-#### Topology plugin
-
  
-
-RELOAD is a P2P network framework that supports the extension of different topology algorithms to implement a fully distributed unstructured topology or a fully distributed structured topology network.
-
  
-
-The topology algorithm can use the message transmission component to manage the sending and receiving of messages, and the storage component to manage the storage of data.
-
- 
-
-The topology algorithm works closely with the packet forwarding and link management layers to provide multiple routing functions to meet different needs. The PlatON network uses Kademlia algorithm to implement a fully distributed structured topology network.
-
- 
-
-#### data storage
-
- 
-
-Responsible for data storage. Cooperate with topology plug-ins to complete data replication, migration, and other actions, and cooperate with message transmission components to complete the sending and receiving of data messages. RELOAD supports string, array, and dictionary data storage.
-
- 
-
-#### Message transmission
-
- 
-
-Responsible for providing reliable point-to-point messaging services to applications. PlatON has extended the partition flooding algorithm based on RELOAD for fast network-wide broadcast of messages.
-
- 
-
-#### Application layer
-
- 
-
-Use the underlying communication and storage capabilities of RELOAD to build service discovery extensions, as well as TURN services, computing services, data services, storage services, and blockchain services based on service discovery.
-
- 
-
 ### Service Discovery
 
  
 
 PlatON uses ReDiR (Recursive Distributed Rendezvous) [RFC7374] to implement the service discovery mechanism. ReDiR can support tens of thousands of service provider nodes and service query nodes.
 
- 
 
-#### ReDiR tree
 
- 
+#### ReDiR Tree
+
 
 ReDiR uses a tree structure to implement the P2P service discovery mechanism. At the same time, the storage capacity of the RELOAD overlay network is used to save the data. Each type of service is stored as a ReDiR tree, and the tree nodes save the information of the service providing nodes. When a node requests to find a specified service provider, a limited number of searches in the ReDiR tree can find the service provider node that best matches the requesting node.
 
-        ReDiR tree nodes use RELOAD's dictionary structure to store service provider nodes. Each ReDiR tree node belongs to a certain level of the ReDiR tree. The root node of the ReDiR tree is layer 0, and the children of the root node are located at layer 1. The children of one layer are located on the second layer, and so on.
 
- 
+Each tree node in the ReDiR tree contains a dictionary of entries of peers providing a particular service. Each tree node in the ReDiR tree also belongs to some level in the tree. The root node of the ReDiR tree is located at level 0. The child nodes of the root node are located at level 1 of the ReDiR tree. The children of the tree nodes at level 1 are located at level 2, and so forth.
 
-The number of nodes in each layer of the ReDiR tree depends on the branching factor b. Each layer can hold up to $b^{level}$ nodes. Each node is uniquely identified by $ (level, j)$ , where $level$ is the node location The number of layers, $j$ means that the node is the $j$ node in the corresponding layer. In each layer, $b^{level}$ tree nodes divide the $level $ layer into $b^{level}$ KEY spaces.
+The number of nodes in each layer of the ReDiR tree depends on the branching factor b. Each layer can hold up to $b^{level}$ nodes. Each node is uniquely identified by $(level, j)$, where $level$ is the node location The number of layers, $j$ means that the node is the $j$ node in the corresponding layer. In each layer, $b^{level}$ tree nodes divide the $level$ layer into $b^{level}$ KEY spaces.
 
- 
 
-All service node maps are stored in the corresponding KEY space. Each KEY space is stored by a tree node. The tree node $(level, j) $ contains a range of KEYs.
-
+All services providers are mapped into corresponding key space. A tree node is responsible for the storage of each key space. Tree node contains key space
 
 $(2^{BitsInKEY}b^{-level}(j+\frac{b'}{b}), 2^{BitsInKEY}b^{-level}(j+\frac{b'+1}{b}))$
  
-
-Where $0 ≤ b′ < b$, and the resource ID stored in the tree node $ (level, j) $ is $ID = hash(service, level, j)$.
+for $0 ≤ b′ < b$, and the resource ID stored in the tree node $ (level, j) $ is $ID = hash(service, level, j)$.  
  
 
-#### Service release
+#### Service Registration
+
+
+A node n with key k use the following procedure to register as a service provider in the RELOAD Overlay Instance:
+
+
+- Step 1: Starting at some level $ l = l_{start}$. This is generally 2.
+
+- Step 2: Node $n$ sends a RELOAD Fetch request to fetch the contents of the tree node responsible for key space $I(l, k)$.and obtains the list of service nodes that the tree node stores.
+
+- Step 3: Node $n$ sends a RELOAD Store request add its entry to the dictionary stored in the tree node responsible for key space $I(l, k)$.
+
+- Step 4: If node n’s key is the lowest or highest key stored in the tree node responsible for key space, node n MUST reduce the current level by one, repeating steps 2 and 3 above. Node n continue in this way until it reaches either the root of the tree or a level at which k is not the lowest or highest key in the key space.
+
+In the same way, node $n$ also performs a downward walk from level $l = l_{start}$ recursively until the following condition is satisfied:
+node n is the only service provider in the tree node responsible for key space $I(l, k)$.
+
+
+#### Service Refresh
 
  
-
-In the RELOAD overlay network, the steps to publish services for node $n$ with KEY $k$ are as follows:
-
- 
-
-- Step 1: Select an initial layer $ l = l_{start}$, usually 2.
-
-- Step 2: The node $n$ sends a query request to the tree node responsible for the KEY space $I(l, k)$, and obtains the list of service nodes that the tree node stores.
-
-- Step 3: The node $n$ sends a storage request to store its own information in the tree node responsible for the KEY space $I(l, k)$.
-
-- Step 4: Check the result returned in the first step. If the KEY value $k$ of the node $n$ is the largest or the smallest, decrease the current level by 1 and repeat steps 2-3 until the node $n$ The KEY value is not the maximum or minimum, or reaches the root node.
-
- 
-
-Similarly, the node $n$ is traversed from the layer $l = l_{start}$ to the next layer until the following conditions are met: Among the tree nodes responsible for the KEY space $I(l, k)$, the node $n$ is unique A service node.
-
-
-
-#### Service Update
-
- 
-
-The service status registered in ReDiR is dynamic, and service nodes need to repeat the service publishing process periodically to update the service status. If the timeout is not updated, the tree node responsible for storage needs to delete it from storage.
+All state in the ReDiR tree is soft. Therefore, a service provider needs to periodically repeat the registration process to refresh its Resource Record. If a record expires, it must be dropped from the dictionary by the peer storing the tree node.
 
  
 
-#### Service lookup
+####  Service Lookup
 
- 
 
-The service lookup process is similar to service publishing, but it also starts from an initial layer $l = l_{start}$. Each step gets the list of service nodes in the current KEY space $I(l, k)$, and it is processed as follows:
+A service lookup is similar to service registration. It also starts from an initial layer $l = l_{start}$. At each step gets the list of service nodes in the current KEY space $I(l, k)$, and it is processed as follows:
 
- 
 
-- Step 1: If no service node is returned, it indicates that the service node corresponding to KEY($k$) has a larger KEY space. Decrease the number of layers by 1 and repeat the query. If the current $level$ is 0, the query fails.
+- Step 1: If there is no service provider stored in the tree node associated with, then service provider corresponding to KEY($k$) must occur in a larger range of the keyspace, so we decrease the number of layers by 1 and repeat the query, or fail if $level$ is equal to 0.
 
-- Step 2: If $k$ is not the largest or smallest among the returned service nodes, it indicates that the corresponding service node must exist in the subspace, increase the number of layers by 1, and then repeat the query.
+- Step 2: If k is sandwiched between two client entries in, then the service provider must lie somewhere in a sub-space of . We set and repeat.
 
-- Step 3: Otherwise, the returned result is the service node closest to KEY($k$), and the query is successful.
+- Step 3: Otherwise, the returned result must be the service provider closest to key($k$) and the lookup is done.
 
 
 
@@ -507,14 +483,14 @@ PlatON's storage is divided into account data storage (statedb) and snapshot sto
 
 PlatON's account data storage references Ethereum's MPT tree storage model, as shown below:
 
-![Block and transaction storage structure](GeneralIntroduction.assets/%E5%8C%BA%E5%9D%97%E5%92%8C%E4%BA%A4%E6%98%93%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84.png)
+![Block and transaction storage structure](PlatON_overall_solution.assets/%E5%8C%BA%E5%9D%97%E5%92%8C%E4%BA%A4%E6%98%93%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84.png)
 
 
 In PlatON, all account-related state information is stored and retrieved through StateDB. To support fast data query and block rollback operations, StateDB uses the MPT structure as its underlying storage method. All nodes in the MPT will eventually be stored in the disk database as key-value.
 
  
 
-![statedb](GeneralIntroduction.assets/StateDB.png)
+![statedb](PlatON_overall_solution.assets/StateDB.png)
  
 
 The top layer is StateDB. StateDB is responsible for making the most preliminary records of the data. The next layer is the Trie layer. Trie is responsible for structuring all data and subsequent operations such as rollback of storage queries. There are two types of Trie, State Trie and Storage Trie. The former is a status tree that records basic information such as the balance nonce of all accounts. The latter is used to record various contract storage data. There is only one state tree and many storage trees, because each contract has its own storage tree. Trie is TrieDB. TrieDB stores the order of the nodes in Trie in memory. TrieDB's main function is to act as a cache layer before finally inserting data into the hard disk. The last link in the entire structure is the database leveldb on the final hard disk.
@@ -529,7 +505,7 @@ Considering storage cost and read performance, part of the data in PlatON only r
 
  
 
-![snapshotdb](GeneralIntroduction.assets/snapshotdb.jpg)
+![snapshotdb](PlatON_overall_solution.assets/snapshotdb.jpg)
  
 
 among them:
@@ -554,7 +530,7 @@ In the "impossible triangle", the decentralized quantitative index is the number
 
  
 
-![Consensus mechanism](GeneralIntroduction.assets/%E5%85%B1%E8%AF%86%E6%9C%BA%E5%88%B6.png)
+![Consensus mechanism](PlatON_overall_solution.assets/%E5%85%B1%E8%AF%86%E6%9C%BA%E5%88%B6.png)
  
 
 PlatON consensus runs in three stages: 1. candidate node elections; 2. using VRF to select validating nodes from candidate nodes; 3. validating nodes take out blocks and run the Byzantine protocol CBFT.
@@ -609,7 +585,7 @@ From a technical perspective, the PlatON computing network is essentially a dece
 
  
 
-![Smart contract](GeneralIntroduction.assets/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6.jpg)
+![Smart contract](PlatON_overall_solution.assets/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6.jpg)
  
 
 #### Solidity Contract
@@ -652,7 +628,7 @@ PlatON first supports C ++ as a smart contract writing language, and gradually p
 
  
 
-![wasm_compile_pub_tx](GeneralIntroduction.assets/wasm_compile_pub_tx.jpg)
+![wasm_compile_pub_tx](PlatON_overall_solution.assets/wasm_compile_pub_tx.jpg)
  
 
 ##### GAS Billing for WASM Contracts
@@ -675,14 +651,14 @@ The privacy contract also supports high-level language development, which is com
 
  
 
-![Privacy Contract](GeneralIntroduction.assets/%E9%9A%90%E7%A7%81%E5%90%88%E7%BA%A6.png)
+![Privacy Contract](PlatON_overall_solution.assets/%E9%9A%90%E7%A7%81%E5%90%88%E7%BA%A6.png)
  
 
 ##### Privacy contract execution process
 
  
 
-![Privacy contract process](GeneralIntroduction.assets/%E9%9A%90%E7%A7%81%E5%90%88%E7%BA%A6%E6%B5%81%E7%A8%8B.png)
+![Privacy contract process](PlatON_overall_solution.assets/%E9%9A%90%E7%A7%81%E5%90%88%E7%BA%A6%E6%B5%81%E7%A8%8B.png)
 
  
 
@@ -702,7 +678,7 @@ PlatON's verifiable solution is temporarily based on the zk-SNARK algorithm, and
 
  
 
-![Verifiable Contract](GeneralIntroduction.assets/%E5%8F%AF%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A6.png)
+![Verifiable Contract](PlatON_overall_solution.assets/%E5%8F%AF%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A6.png)
  
 
 - vc-contract template: The user compiles a vc contract according to the provided template, and can enter any computation model. It mainly implements three interfaces:
@@ -741,7 +717,7 @@ PlatON's verifiable solution is temporarily based on the zk-SNARK algorithm, and
 
  
 
-![Verifiable contract process](GeneralIntroduction.assets/%E5%8F%AF%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A6%E6%B5%81%E7%A8%8B.jpg)
+![Verifiable contract process](PlatON_overall_solution.assets/%E5%8F%AF%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A6%E6%B5%81%E7%A8%8B.jpg)
 
  
 
