@@ -12,7 +12,7 @@ According to the distributed system theory, the network model of the distributed
 
 - **Partial synchronous network model:** messages sent by nodes, although delayed, will eventually reach the target node
 
-The synchronous network model is a very ideal situation, and the asynchronous network model is closer to the actual model, but according to the principle of **FLP Impossibility [1] **, under the assumption of the asynchronous network model, the consensus algorithm cannot simultaneously satisfy the **security safety ** and **liveness **, most current BFT consensus algorithms are based on the assumption of a partially synchronous network model. We also discuss based on the assumption of a partially synchronous network model.
+The synchronous network model is a very ideal situation, and the asynchronous network model is closer to the actual model, but according to the principle of **FLP Impossibility [1]**, under the assumption of the asynchronous network model, the consensus algorithm cannot simultaneously satisfy the **security safety** and **liveness**, most current BFT consensus algorithms are based on the assumption of a partially synchronous network model. We also discuss based on the assumption of a partially synchronous network model.
 
 ## BFT consensus protocol
 
@@ -42,7 +42,8 @@ The BFT consensus protocols currently used in blockchains can be considered as a
 The normal PBFT process is shown below (C is the client in Figure 1, the system has four nodes numbered 0 to 3, and node 3 is a Byzantine node):
 ![PBFT_Normal_case_operation](PlatON_consensus_solution.assets/PBFT_Normal_case_operation.png)
 
-<center> Figure 1 PBFT normal process </ center>
+<center> Figure 1 PBFT normal process </center>
+
 
 The normal PBFT process is a three-phase protocol:
 -  pre-prepare: The primary node broadcasts a pre-prepare message to each replica node.
@@ -56,11 +57,12 @@ view-change is the most critical design of PBFT. When the master node hangs (no 
 During the view-change process, we need to ensure that the sequence number of the submitted message is also consistent throughout the view-change. In simple terms, when a message is sequenced n and 2f + 1 prepare messages are received, it will still be assigned a sequence number n in the next view and restart the normal process.
 
 ![pbft-view-change](PlatON_consensus_solution.assets/pbft-viewchange.png)
-<center> Figure 2 PBFT view-change process </ center>
+<center> Figure 2 PBFT view-change process </center>
+
 
 As shown in Figure 2, view-change will have three phases, namely view-change, view-change-ack and new-view phases. When the slave node thinks there is a problem with the master node, it will send a view-change message to other nodes. The node with the lowest surviving node number will become the new master node. When the new master node receives 2f view-change messages from other nodes, it proves that there are enough people that the node thinks there is a problem with the master node, and it will broadcast to other nodes.
 
-#### 2.2.3 Communication complexity
+#### Communication complexity
 
 PBFT is an agreement based on a three-phase voting process. In the prepare and commit phases, each node needs to broadcast its own prepare or commit message, so the communication complexity is $ O(n^2) $.
 
@@ -68,17 +70,17 @@ During the view-change process, all replica nodes are required to time out first
 
 The communication complexity of up to $O(n^3)$ undoubtedly has a serious impact on the consensus efficiency of PBFT, which greatly limits the scalability of PBFT.
 
-### 2.3 Optimization of BFT protocol
+### Optimization of BFT protocol
 
 How to reduce the communication complexity of $O(n^3)$ to $O(n)$ and improve the efficiency of consensus is the challenge that the blockchain BFT consensus protocol faces. There are several approaches to optimize BFT consensus efficiency:
 
-#### 2.3.1 Aggregation signature
+#### Aggregation signature
 
 E. Kokoris-Kogias et al. proposed in their paper the method of using aggregate signatures in the consensus mechanism. The **ByzCoin** [4] mentioned in the paper replaced the original MAC used by PBFT with a digital signature to reduce the communication delay from $O(n^2)$ to $O(n)$. The communication complexity is further reduced to $O(logn)$. But ByzCoin still has limitations in terms of malicious master node or 33% fault tolerance.
 
 After that, some public chain projects, such as **Zilliqa** [5], etc., based on this idea, adopted the EC-Schnorr multi-signature algorithm to improve the message passing efficiency in the Prepare and Commit stages of the PBFT process.
 
-#### 2.3.2 Communication mechanism optimization
+#### Communication mechanism optimization
 
 PBFT uses all-to-all messages that creates $O(n^2)$ communication complexity.
 
@@ -86,7 +88,7 @@ SBFT (Scale optimized PBFT) [6] proposed a linear communication mode using a col
 
 Tendermint [7] uses a gossip all-to-all mechanism, so $O(nlogn)$ messages and $O(n^2)$ words under optimistic conditions.
 
-#### 2.3.3 view-change process optimization
+#### view-change process optimization
 
 All BFT protocols change the master node through view-change. Protocols such as PBFT and SBFT have independent view-change processes, which are triggered when there is a problem with the master node. In Tendermint, HostStuff [8] and other protocols, there is no explicit view-change process. The view-change process is integrated into the normal process, so the efficiency of view-change is improved, and the communication complexity of view-change is reduced.
 
@@ -172,7 +174,8 @@ One of the most direct defenses against this attack is that everyone participati
 #### Normal process
 
 ![prepareqc](PlatON_consensus_solution.assets/prepareqc.png)
-<center> Figure 3 CBFT normal process </ center>
+<center> Figure 3 CBFT normal process </center>
+
 
 1. After the proposer successfully enters the new View, it will product multiple blocks in sequence and broadcast messages PrepareBlock <ViewNumber, ProposalIndex, Block> to the validators.
 
@@ -195,15 +198,18 @@ In order to vote more securely, voting must comply with the following rules:
 #### view-change Process
 
 ![view-change_normal](PlatON_consensus_solution.assets/viewchange_normal.jpg)
-<center> Figure 4 Automatically switch view</ center>
+<center> Figure 4 Automatically switch view</center>
+
 
 
 ![view-change_timeout](PlatON_consensus_solution.assets/viewchange_timeout.jpg)
-<center> Figure 5 View-change switch view </ center>
+<center> Figure 5 View-change switch view </center>
+
 
 
 ![view-change_timeout_seq](PlatON_consensus_solution.assets/viewchange_timeout_seq.jpg)
-<center> Figure 6 view-change process </ center>
+<center> Figure 6 view-change process </center>
+
 
 
 Assuming that each time window allows a maximum of $n$ blocks, the view-change process is as follows:
@@ -219,14 +225,15 @@ Assuming that each time window allows a maximum of $n$ blocks, the view-change p
 
 In traditional BFT (PBFT, Tendermint), each block usually needs to go through a clear Pre-Commit and Commit phase before final confirmation:
 
-- **Pre-Commit: ** When a node receives N-f Prepare votes, it will broadcast Pre-Commit. Pre-Commit can be considered as confirmation of the Prepare phase.
+- **Pre-Commit:** When a node receives N-f Prepare votes, it will broadcast Pre-Commit. Pre-Commit can be considered as confirmation of the Prepare phase.
 
-- **Commit: ** When N-f Pre-Commit votes are received, it indicates that all nodes agree on the specified message and submit it to the local disk.
+- **Commit:** When N-f Pre-Commit votes are received, it indicates that all nodes agree on the specified message and submit it to the local disk.
 
 In contrast, CBFT also has the two phases, Prepare and ViewChange. Each block has only Prepare vote, and has no clear Pre-Commit and Commit phase. So how to achieve block confirmation? The CBFT can be regarded as the pipeline BFT, and each prepareQC is a further confirmation of the previous block.
 
 ![three_phrase](PlatON_consensus_solution.assets/three_phrase.jpg)
-<center> Figure 7 CBFT confirmation process </ center>
+<center> Figure 7 CBFT confirmation process </center>
+
 
 As shown in FIG. 7, prepareQC (2) is used as the Pre-Commit stage of Block (1), prepareQC (3) is used as the Commit stage of Block (1), and Pre-Commit stage of Block (2).
 
