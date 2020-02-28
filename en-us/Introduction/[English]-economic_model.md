@@ -497,8 +497,6 @@ The sources of PlatON network incentives include the following:
 
 ![reward distribution](PlatON_economic_plan.assets/reward_distribution.png)
 
-在PlatON中，对验证节点有以下三类激励方式：
-
 In PlatON, there are three types of incentive methods for the validator:
 
 - Block reward
