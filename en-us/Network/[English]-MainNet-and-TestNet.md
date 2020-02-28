@@ -114,7 +114,7 @@ View the block number of the current node.
 A series of test network nodes appear in the node list and the block number is increasing, which means that the connection is successful!
 
 
-> [!NOTE|style:flat|label:注意]
+> [!NOTE|style:flat|label:Note]
 >
 > Testing <font color=red>Energon</font> has no value and is limited to experience testing network functions. If you just connect to the test network, you don't need to apply!
 
