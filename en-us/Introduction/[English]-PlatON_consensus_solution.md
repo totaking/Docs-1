@@ -565,33 +565,33 @@ The state of the last block of the four nodes is as follows:
 
   when timeout, view-change is triggered. At this time A may take two actions.
 
-  - A does not send ViewChange message
+  1. A does not send ViewChange message
 
-    
   
-    As honest nodes, B and D send ViewChange message  according to the rules. C is down and cannot send ViewChange message.
+  
+  As honest nodes, B and D send ViewChange message  according to the rules. C is down and cannot send ViewChange message.
 
-    
+  
 
-    | A              | B              | C         | D              |
+  | A              | B              | C         | D              |
+| -------------- | -------------- | --------- | -------------- |
+  | nil(Byzantine) | ViewChange<D7> | nil(down) | ViewChange<D7> |
+  
+  
+
+  The ViewChange cannot reaches QC. And the view can only switch to B normally after C failure recovers.
+  
+  2. A does send ViewChange
+  
+  
+  
+  | A              | B              | C         | D              |
   | -------------- | -------------- | --------- | -------------- |
-    | nil(Byzantine) | ViewChange<D7> | nil(down) | ViewChange<D7> |
+  | ViewChange<D7> | ViewChange<D7> | nil(down) | ViewChange<D7> |
   
-    
-
-    The ViewChange cannot reaches QC. And the view can only switch to B normally after C failure recovers.
   
-  - A does send ViewChange
   
-    
-    
-    | A              | B              | C         | D              |
-  | -------------- | -------------- | --------- | -------------- |
-    | ViewChange<D7> | ViewChange<D7> | nil(down) | ViewChange<D7> |
-    
-    
-    
-    At this time, ViewChange can reach QC, and B can rotate normally and produce blocks based on D7.
+  At this time, ViewChange can reach QC, and B can rotate normally and produce blocks based on D7.
 
 ### View-change exception
 
