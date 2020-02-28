@@ -206,13 +206,13 @@ This command returns the current block height, which can be used to determine wh
     **Note:**  where 0x776d5be7363451540b7113771cf4263de6a18973ed8904796a561acf37e58ff2 is the transaction hash returned by the version declaration operation, please modify it according to the actual return value.
 
   
-  After executing the script, if the following message appears, the version declaration was successful, otherwise the version declaration failed.
+    After executing the script, if the following message appears, the version declaration was successful, otherwise the version declaration failed.
   
-  ```bash
-  获取交易回执成功==========
-  解析交易回执中==========
-  交易成功！！！·
-  ```
+    ```bash
+    获取交易回执成功==========
+    解析交易回执中==========
+    交易成功！！！·
+    ```
 
 ## Verify node upgrade results
 
