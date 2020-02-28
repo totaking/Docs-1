@@ -44,7 +44,6 @@ The normal PBFT process is shown below (C is the client in Figure 1, the system 
 
 <center> Figure 1 PBFT normal process </center>
 
-
 The normal PBFT process is a three-phase protocol:
 -  pre-prepare: The primary node broadcasts a pre-prepare message to each replica node.
 - prepare: In this stage, each node tells other nodes that I already know this message. Once a node receives n-f prepare messages (we call it QC (Quorum Certificate)), it enters the prepared state.
@@ -58,7 +57,6 @@ During the view-change process, we need to ensure that the sequence number of th
 
 ![pbft-view-change](PlatON_consensus_solution.assets/pbft-viewchange.png)
 <center> Figure 2 PBFT view-change process </center>
-
 
 As shown in Figure 2, view-change will have three phases, namely view-change, view-change-ack and new-view phases. When the slave node thinks there is a problem with the master node, it will send a view-change message to other nodes. The node with the lowest surviving node number will become the new master node. When the new master node receives 2f view-change messages from other nodes, it proves that there are enough people that the node thinks there is a problem with the master node, and it will broadcast to other nodes.
 
@@ -176,7 +174,6 @@ One of the most direct defenses against this attack is that everyone participati
 ![prepareqc](PlatON_consensus_solution.assets/prepareqc.png)
 <center> Figure 3 CBFT normal process </center>
 
-
 1. After the proposer successfully enters the new View, it will product multiple blocks in sequence and broadcast messages PrepareBlock <ViewNumber, ProposalIndex, Block> to the validators.
 
 2. Verify blocks one by one: The validators verify the signature and time window, executes the block, and generates PrepareVote <ViewNumber, BlockHash, BlockNumber> after success. When N-f PrepareVote is collected by the parent block corresponding to PrepareVote, the individual signatures of N-f PrepareVote are aggregated into one aggregate signature using BLS, and broadcast the current PrepareVote. We simplify N-f PrepareVote(s) to one prepareQC (quorum certificate).
@@ -201,15 +198,12 @@ In order to vote more securely, voting must comply with the following rules:
 <center> Figure 4 Automatically switch view</center>
 
 
-
 ![view-change_timeout](PlatON_consensus_solution.assets/viewchange_timeout.jpg)
 <center> Figure 5 View-change switch view </center>
 
 
-
 ![view-change_timeout_seq](PlatON_consensus_solution.assets/viewchange_timeout_seq.jpg)
 <center> Figure 6 view-change process </center>
-
 
 
 Assuming that each time window allows a maximum of $n$ blocks, the view-change process is as follows:
@@ -233,7 +227,6 @@ In contrast, CBFT also has the two phases, Prepare and ViewChange. Each block ha
 
 ![three_phrase](PlatON_consensus_solution.assets/three_phrase.jpg)
 <center> Figure 7 CBFT confirmation process </center>
-
 
 As shown in FIG. 7, prepareQC (2) is used as the Pre-Commit stage of Block (1), prepareQC (3) is used as the Commit stage of Block (1), and Pre-Commit stage of Block (2).
 
@@ -318,19 +311,19 @@ When block n receives 3 prepareQCs after block n, block n is Commit. It can be o
 
 **1) ** There is no two blocks of the same height in the same View can receive enough votes
 
-**Proof: ** Assuming N = 3f + 1 is the total number of nodes and f is the maximum number of Byzantine nodes, then when 2f + 1 votes are received, they are enough votes. Since both blocks received at least 2f + 1, the total number of votes was at least 2 (2f + 1) = N + f + 1. You can see that at least f + 1 voted for two blocks, which is contradict to f Byzantine nodes assumption.
+**Proof:** Assuming N = 3f + 1 is the total number of nodes and f is the maximum number of Byzantine nodes, then when 2f + 1 votes are received, they are enough votes. Since both blocks received at least 2f + 1, the total number of votes was at least 2 (2f + 1) = N + f + 1. You can see that at least f + 1 voted for two blocks, which is contradict to f Byzantine nodes assumption.
 
 **2) ** For 3-Chain, B0 <-C0 <-B1 <-C1 <-B2 <-C2, ViewNumber (B2)> = ViewNumber (B0). Then Block (B) exists. When ViewNumber (B)> ViewNumber (B2), Previous_Block (B)> B0.
 
-**Proof: ** For a normal honest node (voted for block B2 and B), then the node can at least see B0 <-C0 <-B1 <-C1 <-B2, which is the minimum Lock-Block It is Lock-Block (B0). Because ViewNumber (B)> ViewNumber (B2), according to the view-change confirmation rule, the first block of ViewNumber (B) is not less than B1, then Previous_Block (B)> B0
+**Proof:** For a normal honest node (voted for block B2 and B), then the node can at least see B0 <-C0 <-B1 <-C1 <-B2, which is the minimum Lock-Block It is Lock-Block (B0). Because ViewNumber (B)> ViewNumber (B2), according to the view-change confirmation rule, the first block of ViewNumber (B) is not less than B1, then Previous_Block (B)> B0
 
 **3) ** Assume Lock-Block (n) = B for node n and Lock-Block (m) = B 'for node m. If Number (B) = Number (B'), then Hash (B) = Hash (B ')
 
-**Proof: ** From the Lock-Block rules above, we know that there are two types of Lock-Block scenarios. In the first case, two QCs are in the same view. From 1), we know that B 'and B cannot receive enough votes at the same time . In the second case, B and B 'belong to different views, and both receive prepareQC (B), prepareQC (B'). Assuming ViewNumber (B ')> ViewNumber (B), then according to conclusion 2), Previous_Block (B')> B, contradicts to the assumption.
+**Proof:** From the Lock-Block rules above, we know that there are two types of Lock-Block scenarios. In the first case, two QCs are in the same view. From 1), we know that B 'and B cannot receive enough votes at the same time . In the second case, B and B 'belong to different views, and both receive prepareQC (B), prepareQC (B'). Assuming ViewNumber (B ')> ViewNumber (B), then according to conclusion 2), Previous_Block (B')> B, contradicts to the assumption.
 
 **4) ** During the Commit phase, there will not be two Hashes of the same height and different blocks being Committed.
 
-**Proof: ** From 3), if Number (B) = Number (B '), there is no B and B' as Lock-Block at the same time. It can be deduced that there is no Commit (B), and Commit (B ') are both submitted.
+**Proof:** From 3), if Number (B) = Number (B '), there is no B and B' as Lock-Block at the same time. It can be deduced that there is no Commit (B), and Commit (B ') are both submitted.
 
 ### Proof of Liveness
 
@@ -338,15 +331,15 @@ Assume that the maximum network delay between nodes is T and the execution time 
 
 **1) ** Time window of a view cannot be always less than time (prepareQC) * 2
 
-**Proof: ** Reasonably adjust the actual window length according to the actual network conditions to ensure that QC is reached at least 2 times in the time window, and the time window is at least 2 * S + 4 * T
+**Proof:** Reasonably adjust the actual window length according to the actual network conditions to ensure that QC is reached at least 2 times in the time window, and the time window is at least 2 * S + 4 * T
 
 **2) ** ViewNumber can reach an agreement and increase
 
-**Proof: ** ViewChange requires at least T to reach agreement. Conclusion 1) can guarantee that ViewChange can reach agreement, and then ViewNumber can be incremented.
+**Proof:** ViewChange requires at least T to reach agreement. Conclusion 1) can guarantee that ViewChange can reach agreement, and then ViewNumber can be incremented.
 
 **3) ** Lock-Block height always increases
 
-**Proof: ** Assuming ViewNumber is n, n + 1, the proof of safety 2) can guarantee that the first block of ViewNumber (n + 1)'s' Previous-Block is at least Lock-Block (View (n)). And because of the proof of liveness 1), there are at least two prepareQCs, and the relationship between the lock heights of the two Views can be obtained. Lock-Block (View (n + 1))> = Lock-Block (View (n)) + 1
+**Proof:** Assuming ViewNumber is n, n + 1, the proof of safety 2) can guarantee that the first block of ViewNumber (n + 1)'s' Previous-Block is at least Lock-Block (View (n)). And because of the proof of liveness 1), there are at least two prepareQCs, and the relationship between the lock heights of the two Views can be obtained. Lock-Block (View (n + 1))> = Lock-Block (View (n)) + 1
 
 ### Communication complexity analysis
 
