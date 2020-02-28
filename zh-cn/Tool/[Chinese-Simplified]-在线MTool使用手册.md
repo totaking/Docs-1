@@ -179,6 +179,46 @@ chmod +x validator_conf.sh && ./validator_conf.sh
 > - 提示<font color=red> Enter your platon node description:</font>时，请输入 PlatON 节点描述。
 > - 提示<font color=red> validator conf success</font>，并最后打印出的validator_config.json内容正常时，表示脚本执行成功，未执行成功时，请通过我们的官方客服联系方式反馈具体问题。
 
+#### 验证节点信息配置文件说明
+完成配置验证节点信息后，会在MTool的安装目录的validator子目录下，生成验证节点信息文件validator_config.json，文件内容如下：
+```json
+{
+  "chainId": "101",
+  "delegatedRewardRate": "5000",
+  "nodePublicKey": "79ca603ef75d5954ec270802fa4e7b9bf045842bb7f3e95b849173f61d8a7cfef82b8687abef67f29645e068ff371da514f32b009b05f48062daa84f0b58ab6d",
+  "blsPubKey": "a2e1c2e60eb8bb2af05fff4d07c8fce7c408fbe944be1a58194d9e9c9078cb7bb55b63311c8af107453ac182eef22a04cb9ff28cc3367f1e8459f8dcbe9f5c965a6f377f9ff9bb39a78e4e04fd27876137bb0a9aa4066d0277464f018e989e94",
+  "benefitAddress": "0x32bec384344c2dc1ea794a4e149c1b74dd8467ef",
+  "nodeAddress": "https://test:test@domain3",
+  "nodePort": "16789",
+  "nodeRpcPort": "443",
+  "nodeName": "water-node",
+  "details": "this is water-node",
+  "externalId": "MyKeyBaseId",
+  "webSite": "http://www.mycompany.com",
+  "certificate": "C:/tools/mtool/current/ca.crt"
+}
+```
+
+> [!NOTE|style:flat|label:参数说明] 
+>
+> - chainId: 贝莱世界的链为101。
+> - delegatedRewardRate: 用来设置给委托人分红的比例。
+> - nodePublicKey: 节点ID，可通过节点数据目录data下的nodeid文件查看。
+> - blsPubKey: BLS公钥，可通过节点数据目录data下的blspub文件查看。
+> - benefitAddress: 收益钱包地址。
+> - nodeAddress: 节点地址，分使用Nginx和不使用Nginx两种情况:
+>   - 如果使用Nginx，需要用**https**协议，格式为：`https://test:test@domain3`。
+>   - 如果不使用Nginx，需要用**http**协议，如果MTool和节点在同一台机器或同一个局域网内，可以使用内网IP，否则使用公网IP，格式为：`http://18.238.183.12`。
+> - nodePort: 节点P2P端口，默认为16789。
+> - nodeRpcPort: 分使用Nginx和不使用Nginx两种情况:
+>   - 如果使用了Nginx，端口默认为443。
+>   - 如果不使用Nginx，端口默认为6789。
+> - nodeName: 节点名称。
+> - details: 节点描述信息。
+> - externalId: 对应为浏览器显示的头像，可在[keybase.io](https://keybase.io)官网进行注册，对应的值为：注册账户，生成16位的公钥 。
+> - webSite: 公司网址。
+> - certificate: ca证书地址，如果不使用Nginx反向代理，可删除此参数。
+
 ##  在线MTool操作详解
 
 ### 普通转账操作
@@ -329,7 +369,7 @@ mtool-client submit_versionproposal --newversion 0.8.0 --end_voting_rounds 345 -
 
 > newversion：目标升级版本，x.x.x，数字加标点
 >
-> end_voting_rounds：投票共识轮数，投票共识轮数N，必须满足0 < N <= 2419（约为2周）
+> end_voting_rounds：投票共识轮数，投票共识轮数N，必须满足0 < N <= 4838（约为2周）
 >
 > pid_id：GitHub ID
 
@@ -345,7 +385,7 @@ mtool-client submit_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b
 
 > proposalid：需要被取消的提案ID，即发起提案交易的hash，66字符，字母数字组成
 >
-> end_voting_rounds：投票共识轮数，投票共识轮数N，必须满足0 < N <=2419（约为2周）
+> end_voting_rounds：投票共识轮数，投票共识轮数N，必须满足0 < N <= 4838（约为2周）
 >
 > pid_id：GitHub ID
 
