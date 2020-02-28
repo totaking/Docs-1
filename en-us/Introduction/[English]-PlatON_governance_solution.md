@@ -18,9 +18,13 @@ In our opinion, decision-making power should belong to "stakeholders", that is, 
 
 - **Alternative node**
   Nodes become candidates by stake certain amount of tokens. Other users can delegate their own tokens to candidates, and the system ranks according to the total staking amount of each candidates. The top 101 candidates are elected as validators.
-- **Token holder **
+  
+- **Token holder**
   All Energon token holders.
+  
 - **Developers** 
+
+  Co-construct core developers of the PlatON public chain and community.
 
 ### Rights Assignment
 - **Alternative node**
@@ -28,7 +32,7 @@ In our opinion, decision-making power should belong to "stakeholders", that is, 
   - Vote on the referendum proposal
   - Vote on non-referendum proposals
   - Seconding the proposal
-- **Currency holder **
+- **Currency holder**
   - Initiate a proposal
   - Vote on the referendum proposal
   - Seconding the proposal
@@ -39,12 +43,12 @@ In our opinion, decision-making power should belong to "stakeholders", that is, 
 
 ### Proposal Classification
 
-- **Referendum proposal **
+- **Referendum proposal**
   The referendum proposal occurs in a highly controversial scenario. Any currency holder can initiate a referendum proposal, and a referendum is required to produce results. The scenario is as follows:
   - Amendment of the Basic Law
   - Make a major fork, similar to The Dao's fork
   - Terminate the running of the chain
-- **Non-referendum proposal **
+- **Non-referendum proposal**
   Non-referendum proposals are ordinary proposals that are produced by validator votes. The types of proposals can be divided into the following types:
   - Text proposals: Text proposals can be used for decisions that need not be implemented.
   - Software upgrade proposal: used to initiate an upgrade vote on the chain to achieve the purpose of smooth upgrade.
@@ -57,13 +61,13 @@ In our opinion, decision-making power should belong to "stakeholders", that is, 
 
 ![governace-flow](PlatON_governance_solution.assets/governace-flow.png)
 
-**1) ** **Initiate Proposal **
+**1) ** **Initiate Proposal**
 
 Referendum proposals can be initiated by anyone, and non-referendum proposals are initiated by validators. Each proposal should have a corresponding text description, which is stored in the PIP repository on github and managed by the core developer, similar to EIP.
 
 To control spam proposals, the initiation of all types of proposals requires a proposal fee as the cost of the proposal. For the referendum proposal, a token is required to be pledged as the deposit of the proposal. Other holders can also attach the proposal by increasing the deposit of the proposal to increase the chance of the proposal entering the voting period. The proposal deposit is returned to the original account when the proposal enters the voting period.
 
-**2) ** **Proposal Screening **
+**2) ** **Proposal Screening**
 
 - **Referendum Proposal**: Since the referendum proposal is not the norm, multiple referendum proposals can be initiated on the chain at the same time. These proposals will be sorted according to the highest margin, and the proposal with the highest margin will be selected each month to enter the voting stage .
 
@@ -79,7 +83,7 @@ To control spam proposals, the initiation of all types of proposals requires a p
 
 - **Non-referendum proposal**
 
-  The core of voting on non-referendum proposals is validator voting. Any node that is elected as a validator within the voting period of the proposal can vote. The voting cycle is generally two weeks, and the voting cycle of a software upgrade proposal can be determined by the proposal initiator according to the situation. The voting method adopts a system of one person and one vote for validators. After voting, the validator's own pledged tokens will be locked until the end of voting. In addition to software upgrade proposals, there are three voting options for other types of voting: "Yes", "No", and "Abstain". In order to simplify the voting process, there are no explicit options for the **software upgrade proposal **. Each validator can indicate his or her voting position by whether to upgrade the local node. 
+  The core of voting on non-referendum proposals is validator voting. Any node that is elected as a validator within the voting period of the proposal can vote. The voting cycle is generally two weeks, and the voting cycle of a software upgrade proposal can be determined by the proposal initiator according to the situation. The voting method adopts a system of one person and one vote for validators. After voting, the validator's own pledged tokens will be locked until the end of voting. In addition to software upgrade proposals, there are three voting options for other types of voting: "Yes", "No", and "Abstain". In order to simplify the voting process, there are no explicit options for the **software upgrade proposal**. Each validator can indicate his or her voting position by whether to upgrade the local node. 
 
 **4) ** **Voting results calculation**
 
@@ -91,12 +95,13 @@ To control spam proposals, the initiation of all types of proposals requires a p
 
   When both: validator support rate> P%, Token support rate> Q%, and Token participation rate> K%, the proposal is approved, otherwise the proposal is not approved.
 
-- **Non-referendum proposal **: There are two calculation dimensions for non-referendum proposals:
+- **Non-referendum proposal**: There are two calculation dimensions for non-referendum proposals:
+  
   - Verifier support rate: the ratio of the number of validators who vote for support to the total number of validators who can vote;
-  - Validator participation rate: the ratio of the number of voting validators to the total number of voteable validators;
-
-  When both: Validator support rate> M% and validator participation rate> N%, the proposal is voted through, otherwise the proposal fails to vote.
-
+- Validator participation rate: the ratio of the number of voting validators to the total number of voteable validators;
+  
+When both: Validator support rate> M% and validator participation rate> N%, the proposal is voted through, otherwise the proposal fails to vote.
+  
    > **Note **: In the software upgrade proposal, the default validator participation rate is 100%.
 
 | Type               | Participation Rate | Support ratio |
@@ -120,7 +125,7 @@ The upgrade mechanism is a guarantee that the network can continue to iterate an
 
 - Snapshot upgrade: When the blockchain system encounters a major anomaly, which prevents the entire chain from producing blocks properly, a snapshot can be generated based on the previous normal network state, and then the network can be restored based on the snapshot.
 
-Below we will focus on the **on-chain voting upgrade mechanism **.
+Below we will focus on the **on-chain voting upgrade mechanism**.
 
 #### On-chain voting upgrade
 
