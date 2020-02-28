@@ -11,20 +11,20 @@ Before joining the PlatON public network, please ensure that the server has the 
 
 1. You have installed the PlatON environment or compiled the PlatON executable files `platon` and `platon` according to [PlatON Installation Guide](/en-us/Node/_[English]-Install-Node.md).
 
-2. According to [Node KeyPair](/en-us/Node/_[English]-WalletFile-and-KeyPair.md#Node-key) chapter in the '~/platon-node/data' directory Node private key and node BLS private key are generated.
+2. According to [NodeKey](/en-us/Node/_[English]-WalletFile-and-KeyPair.md#Node-key) chapter in the '~/platon-node/data' directory Node private key and node BLS private key are generated.
  
 This section assumes that the server is Ubuntu 18.04 and the working directory where the executable file is located is `~/platon-node`. Note that all subsequent command line operations are performed in the working directory.
 
 
-## Main Net
+## Mainnet
 
-Stay tuned ...
+Coming soon ...
 
-## Test Net
+## Testnet
 
-Anyone can join the Test Net.
+Anyone can join the testnet.
 
-Execute the following command to start the PlatON node to join the Test Net:
+Execute the following command to start the PlatON node to join the testnet:
 
 ```bash
 ./platon --identity platon --datadir ./data --port 16789 --testnet --rpcport 6789 --rpcapi "db,platon,net,web3,admin,personal" --rpc --nodekey ./data/nodekey --cbft.blskey ./data/blskey --verbosity 3 --rpcaddr 127.0.0.1 --syncmode "full"

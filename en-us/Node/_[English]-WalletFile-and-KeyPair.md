@@ -102,10 +102,8 @@ PublicKey :  064a22d0bbf537125f1beeab0efcf77b0a62680d44f5b66a2d12574b159601e662e
 
 At the same time, two files will be generated in the subdirectory `data` under the working directory of the node:
 
-- nodeid
-  Node public key (ID) file, which holds the public key of the node.
-- nodekey
-  Node private key file, which holds the private key of the node.
+- nodeid  Node public key (ID) file, which holds the public key of the node.
+- nodekey  Node private key file, which holds the private key of the node.
 
  
 
@@ -137,7 +135,5 @@ PublicKey :  4bf873a66df92ada50a8c6bacb132ffd63437bcde7fd338d2d8696170034a6332e4
 
 At the same time, two files will be generated in the subdirectory `data` under the working directory of the node:
 
-- blspub
-  Node BLS public key file, which holds the node's BLS public key.
-- blskey
-  The node BLS private key file holds the node's BLS private key.
+- blspub  Node BLS public key file, which holds the node's BLS public key.
+- blskey  The node BLS private key file holds the node's BLS private key.
