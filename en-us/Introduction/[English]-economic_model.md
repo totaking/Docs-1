@@ -72,7 +72,7 @@ In PoS, although the various systems in PoS can improve the efficiency of group 
 Each consensus algorithm relies on technology-based trust and institution-based trust to varying degrees, and therefore incurs technical and institutional costs, respectively. Consensus cost is the sum of technical and institutional costs. The greater the dependence on technology-based trust, the higher the cost of technology, and vice versa. This relationship is also true of institutional-based trust and institutional costs. Relying entirely on technology-based trust, or relying entirely on system-based trust, will result in relatively high consensus costs. We believe that **there is an optimal ratio between the two trust bases that minimizes the cost of consensus** (Figure 1).
 
 
-![Consensus cost](PlatON_economic_plan.assets/共识成本.png)
+![consensus cost](PlatON_economic_plan.assets/consensus_cost.png)
 
 <center>Figure 1 Consensus cost</center>
 
@@ -199,7 +199,7 @@ PlatON adopts randomly selected nodes among the small-scale candidate nodes to p
 
 The role relationship diagram is as follows. **To facilitate the subsequent description,  alternative validator candidates include alternative validators and validators.alternative validators include validator.**
 
-![角色说明](PlatON_economic_plan.assets/%E8%A7%92%E8%89%B2%E8%AF%B4%E6%98%8E.png)
+![role description](PlatON_economic_plan.assets/role_description.png)
 
 
 
@@ -423,11 +423,9 @@ Based on the PPoS consensus, the client entrusts Energon to the alternative vali
 
       (1) There is no valid delegation under the node name during a settlement period.
 
-   
-
      (2) Within a certain settlement period, the node is punished and forced to withdraw from the  alternative validator candidate list.
 
-     (3) After the node applies to withdraw from the alternative validator candidate, it will not share the delegated reward in the next epoch of the current epoch.
+      (3) After the node applies to withdraw from the alternative validator candidate, it will not share the delegated reward in the next epoch of the current epoch.
 
 ##### Receive delegated award
 
