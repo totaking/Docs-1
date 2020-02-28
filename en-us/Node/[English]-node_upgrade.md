@@ -68,7 +68,6 @@ According to the new version number (assuming 0.9.0) in the upgrade proposal obt
   
     0.9.0 is the specified version number that needs to be upgraded (the version number can be obtained from the relevant announcement issued by the community or from the chain through the blockchain browser).
 
-  
     ​--xxxnet specifies a certain network. If you leave this field blank, it will default to the main network.
   
     When the prompt **”[sudo] password for platon:“** appears, you need to enter the user password of the currently logged in machine.
@@ -78,13 +77,13 @@ According to the new version number (assuming 0.9.0) in the upgrade proposal obt
     When the execution result is as follows, the version upgrade is successful:
   
     ```
-  当前已安装版本：0.8.0==========
-  开始安装：0.9.0版本==========
-  节点暂停成功==========
-  Do you want to continue? [Y/n] y
-  卸载当前版本：platon0.8.0成功==========
-  安装版本：platon0.9.0成功==========
-  重启节点成功============ 
+     当前已安装版本：0.8.0==========
+     开始安装：0.9.0版本==========
+     节点暂停成功==========
+     Do you want to continue? [Y/n] y
+     卸载当前版本：platon0.8.0成功==========
+     安装版本：platon0.9.0成功==========
+     重启节点成功============ 
     ```
   
     >When the following situations occur, no version upgrade is performed, and the node will continue to run with the previously installed version：
