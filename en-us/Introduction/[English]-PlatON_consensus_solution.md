@@ -142,24 +142,24 @@ Next, the related concepts and meanings involved in the CBFT consensus will be g
 
 #### CBFT related terms
 
-  * **Proposer: ** The node responsible for generating blocks in the CBFT consensus
-  * **T: ** Time window, each proposer can only make blocks in his own time window
-  * **N: ** Total number of consensus nodes
-  * **f: ** maximum number of Byzantine nodes
-  * **Sufficient enough votes: ** indicates that at least N-f votes have been received
-  * **Validator: ** Non-proposer node in consensus node
-  * **View: ** The time range of the current proposal's time window can generate blocks
-  * **ViewNumber: ** The serial number of each time window, increasing with time window
-  * **HighestQCBlock: ** Local highest N-f PrepareVote block
-  * **ProposalIndex: ** The index number of the proposer
-  * **ValidatorIndex: ** Validator's index number
-  * **PrepareBlock: ** Proposed block message, which mainly includes Block, the index number of the proposer
-  * **PrepareVote: ** Validators vote for the Prepare of the proposed block, and each validator needs to execute the block before sending PrepareVote. Mainly include ViewNumber, block hash, block height, validator index number (ValidatorIndex)
-  * **view-change: ** When the time window expires and the proposer's blocks have not all collected N-f PrepareVote, then the next proposer will send view-change. view-change contains the index number of the proposer (ValidatorIndex), the highest confirmation block (HighestQCBlock)
-  * **Lock: ** Lock the specified block height
-  * **Timeout: ** Timeout (time window expiration can be considered as the timeout time of the proposer)
-  * **Legal: ** Maximum allowed
-  * **One View: ** The ViewNumbers of two Views are equal and can be the same View
+  * **Proposer:** The node responsible for generating blocks in the CBFT consensus
+  * **T:** Time window, each proposer can only make blocks in his own time window
+  * **N:** Total number of consensus nodes
+  * **f:** maximum number of Byzantine nodes
+  * **Sufficient enough votes:** indicates that at least N-f votes have been received
+  * **Validator:** Non-proposer node in consensus node
+  * **View:** The time range of the current proposal's time window can generate blocks
+  * **ViewNumber:** The serial number of each time window, increasing with time window
+  * **HighestQCBlock:** Local highest N-f PrepareVote block
+  * **ProposalIndex:** The index number of the proposer
+  * **ValidatorIndex:** Validator's index number
+  * **PrepareBlock:** Proposed block message, which mainly includes Block, the index number of the proposer
+  * **PrepareVote:** Validators vote for the Prepare of the proposed block, and each validator needs to execute the block before sending PrepareVote. Mainly include ViewNumber, block hash, block height, validator index number (ValidatorIndex)
+  * **view-change:** When the time window expires and the proposer's blocks have not all collected N-f PrepareVote, then the next proposer will send view-change. view-change contains the index number of the proposer (ValidatorIndex), the highest confirmation block (HighestQCBlock)
+  * **Lock:** Lock the specified block height
+  * **Timeout:** Timeout (time window expiration can be considered as the timeout time of the proposer)
+  * **Legal:** Maximum allowed
+  * **One View:** The ViewNumbers of two Views are equal and can be the same View
 
 #### BLS Signature
 
