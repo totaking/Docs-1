@@ -8,7 +8,6 @@
 </div>
 <div style = "clear: both"> </div>
 <div style = "margin-top: 40px;"> </div>
-
 ## Create Wallet
 
 <div>
@@ -41,7 +40,7 @@
 ### Import Using Mnemonics
 
 <div>
-<div style = "float: left;"> <img src = "https://platonnetwork.github.io/Docs/en-us/Tool/ATON-user-manual.assets/aton8.png "width =" 500 "/> </div> <div> <br> 1. Click [Import Wallet-Mnemonic] . <br> 2. Fill in the mnemonics correctly and in the correct order. <br> 3. Set the wallet name and wallet password. <br> 4. Click the [Start Import] button. After the mnemonic verification is passed, the wallet is successfully imported. <br> <br> <b> Note </b> <br> 1. Password is your credentials to operate the wallet.  PlatON does not store your password, make sure you keep it in mind. <br> 2. Store your mnemonics in a safe place. <br> 3. You can also click the "+" button on  the top corner to import wallet.
+<div style = "float: left;"> <img src = "https://platonnetwork.github.io/Docs/en-us/Tool/ATON-user-manual.assets/aton8.png "width =" 500 "/> </div> <div> <br> 1. Click [Import Wallet-Mnemonic]. <br> 2. Fill in the mnemonics correctly and in the correct order. <br> 3. Set the wallet name and wallet password. <br> 4. Click the [Start Import] button. After the mnemonic verification is passed, the wallet is successfully imported. <br> <br> <b> Note </b> <br> 1. Password is your credentials to operate the wallet.  PlatON does not store your password, make sure you keep it in mind. <br> 2. Store your mnemonics in a safe place. <br> 3. You can also click the "+" button on  the top corner to import wallet.
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -109,7 +108,7 @@ For details about importing observation wallets, please refer to the instruction
 
 <div>
 <div style="float:left;"><img src = "https://platonnetwork.github.io/Docs/en-us/Tool/ATON-user-manual.assets/aton42.jpg "width =" 300 "/> </div><div><br>1. Select a validator, you can check the reward related informaiton, like expected delegation annualized yield, reward ratio and total reward.
-<br>2. Also you can check node basic information- delegators, blocks related,etc
+<br>2. Also you can check node basic information-delegators, blocks related,etc.
 <br>3. If you want to delegate to this node, you can click the [Delegate] button to operate. <br><br><b>Note:</b><br>1. Foundation funded nodes do not accept delegations.
 </div>
 <div style="clear:both"></div>
@@ -125,7 +124,7 @@ For details about importing observation wallets, please refer to the instruction
 ### Submit Delegation
 
 <div>
-<div style = "float: left;"> <img src = "https://platonnetwork.github.io/Docs/en-us/Tool/ATON-user-manual.assets/aton43.jpg "width =" 300 "/> </div> <div> <br> 1. Select a node to delegate.<br> 2. Select the wallet. <br> 3. You can select locked balance to delegate if there is. <br> 4. Enter the amount, and  it must not be less than 10LAT. <br> 5. Enter the correct password <br> 6. You can delegate to the same nodes without limit. <br> <br> <b> Note </b> <br> 1. The wallet associated with nodes is not allowed for delegation.
+<div style = "float: left;"> <img src = "https://platonnetwork.github.io/Docs/en-us/Tool/ATON-user-manual.assets/aton43.jpg "width =" 300 "/> </div> <div> <br> 1. Select a node to delegate.<br> 2. Select the wallet. <br> 3. You can select locked balance to delegate if there is. <br> 4. Enter the amount, and  it must not be less than 10LAT. <br> 5. Enter the correct password.<br> 6. You can delegate to the same nodes without limit. <br> <br> <b> Note </b> <br> 1. The wallet associated with nodes is not allowed for delegation.
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -134,7 +133,7 @@ For details about importing observation wallets, please refer to the instruction
 ### My Delegations
 
 <div>
-<div style = "float: left;"> <img src = "https://platonnetwork.github.io/Docs/en-us/Tool/ATON-user-manual.assets/aton45.jpg "width =" 250 "/> <img src = "https://platonnetwork.github.io/Docs/en-us/Tool/ATON-user-manual.assets/aton46.jpg "width =" 250 "/></div> <div> <br> 1. Click [My Delegation] to check your uncalmied reward, total reward and claim records. <br> 2.Select specific wallet to check the details<br> 3.Click the [Claim] button to get your rewards.
+<div style = "float: left;"> <img src = "https://platonnetwork.github.io/Docs/en-us/Tool/ATON-user-manual.assets/aton45.jpg "width =" 250 "/> <img src = "https://platonnetwork.github.io/Docs/en-us/Tool/ATON-user-manual.assets/aton46.jpg "width =" 250 "/></div> <div> <br> 1. Click [My Delegation] to check your uncalmied reward, total reward and claim records. <br> 2.Select specific wallet to check the details.<br> 3.Click the [Claim] button to get your rewards.
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
@@ -210,7 +209,7 @@ If you have set up observed wallets and cold wallets, you can initiate transfers
 ## Settings / Help and Feedback
 
 <div>
-<div style = "float: left;"> <img src = "https://platonnetwork.github.io/Docs/en-us/Tool/ATON-user-manual.assets/aton48.jpg "width =" 250 "/><img src = "https://platonnetwork.github.io/Docs/en-us/Tool/ATON-user-manual.assets/aton49.jpg "width =" 250 "/> </div> <div> <br> 1. You can make related settings <br>-Node Settings: Select the network to be connected. <br>-Reminder Threshold:Remind when the amount of transfer exceeds the set amount.<br>-Resend Reminder:Remind when the transaction are the same as the one in last 2 housrs.<br>-Fingerprint / Face Unlocking: After opening, fingerprint or face unlock is required every time you enter the app. <br>-Language: Chinese and English can be selected to switch <br> 2. Select [My-Help and Feedback] You can view APP usage help and frequently asked questions. If you don't get the answer you want, you can submit feedback and we will respond as soon as possible.
+<div style = "float: left;"> <img src = "https://platonnetwork.github.io/Docs/en-us/Tool/ATON-user-manual.assets/aton48.jpg "width =" 250 "/><img src = "https://platonnetwork.github.io/Docs/en-us/Tool/ATON-user-manual.assets/aton49.jpg "width =" 250 "/> </div> <div> <br> 1. You can make related settings <br>-Node Settings: Select the network to be connected. <br>-Reminder Threshold:Remind when the amount of transfer exceeds the set amount.<br>-Resend Reminder:Remind when the transaction are the same as the one in last 2 housrs.<br>-Fingerprint / Face Unlocking: After opening, fingerprint or face unlock is required every time you enter the app. <br>-Language: Chinese and English can be selected to switch.<br> 2. Select [My-Help and Feedback] You can view APP usage help and frequently asked questions. If you don't get the answer you want, you can submit feedback and we will respond as soon as possible.
 </div>
 <div style="clear:both"></div>
 <div style="margin-top:40px;"></div>
