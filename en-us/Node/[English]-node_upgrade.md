@@ -22,7 +22,7 @@ Proposal details：
   ProposalID：0xad330d8a5fddf3526a8622dab22454f8861fee968b6482eebbd360c8d15691c3
 
   Target version ：0.9.0
-  Voting cycle：起始区块高度533681, 截止区块高度619980
+  Voting epoch：Start block height 533681, cut-off block height 619980
 
    Code address：
   Code&Branch：https://github.com/PlatONnetwork/PlatON-Go/tree/pip_v0.7.3
@@ -64,20 +64,20 @@ According to the new version number (assuming 0.9.0) in the upgrade proposal obt
   chmod u+x update_platon.sh && ./update_platon.sh 0.9.0 --xxxnet
   ```
   
-  **Notice：**
+    **Notice：**
   
-  0.9.0 is the specified version number that needs to be upgraded (the version number can be obtained from the relevant announcement issued by the community or from the chain through the blockchain browser).
+    0.9.0 is the specified version number that needs to be upgraded (the version number can be obtained from the relevant announcement issued by the community or from the chain through the blockchain browser).
 
   
-  ​--xxxnet specifies a certain network. If you leave this field blank, it will default to the main network.
+    ​--xxxnet specifies a certain network. If you leave this field blank, it will default to the main network.
   
-  When the prompt **”[sudo] password for platon:“** appears, you need to enter the user password of the currently logged in machine.
+    When the prompt **”[sudo] password for platon:“** appears, you need to enter the user password of the currently logged in machine.
 
-  When the prompt **”Do you want to continue?“** Appears, enter:  **y**  (to continue execution, otherwise vice versa).
+    When the prompt **”Do you want to continue?“** Appears, enter:  **y**  (to continue execution, otherwise vice versa).
 
-  When the execution result is as follows, the version upgrade is successful:
+    When the execution result is as follows, the version upgrade is successful:
   
-  ```
+    ```
   当前已安装版本：0.8.0==========
   开始安装：0.9.0版本==========
   节点暂停成功==========
@@ -85,13 +85,13 @@ According to the new version number (assuming 0.9.0) in the upgrade proposal obt
   卸载当前版本：platon0.8.0成功==========
   安装版本：platon0.9.0成功==========
   重启节点成功============ 
-  ```
+    ```
   
-  >When the following situations occur, no version upgrade is performed, and the node will continue to run with the previously installed version：
-  >
-  >- The specified version does not exist。
-  >- Specifies that the version to be upgraded is not higher than the installed version。
-  >
+    >When the following situations occur, no version upgrade is performed, and the node will continue to run with the previously installed version：
+    >
+    >- The specified version does not exist。
+    >- Specifies that the version to be upgraded is not higher than the installed version。
+    >
 
 ### Vote
 
