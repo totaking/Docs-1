@@ -113,7 +113,7 @@ Successfully wrote genesis state
 Logging of increasing blockNumber in standard output. **indicates that the private chain with one node was successfully started, and the block was successfully generated**.
 
 
-> [!NOTE|style:flat|label:注意]
+> [!NOTE|style:flat|label:Note]
 >
 >Be sure to specify <font color=red>--datadir</font> otherwise the node will initialize the main net by default and connect to the main net.
 

@@ -34,7 +34,7 @@ Output result:
 
 
 
-> [!NOTE|style:flat|label:注意]
+> [!NOTE|style:flat|label:Note]
 >
 > Enabling archive mode will increase the disk usage by about 3 times.
 
@@ -72,26 +72,6 @@ ntpq -p
 Output result
 
 ![ntpq返回](ntpq.assets/ntpq.png)
- 
-
-Property description:
-
-- remote - remote node or server for synchronization
-- refid - a remote server that synchronizes to a higher level server
-- st - Stratum of remote node or server (level, NTP time synchronization is hierarchical)
-- t - type u: unicast or manycast client, b: broadcast or multicast client, l: local clock, s: symmetric node (for backup), A : Anycast server, B: Broadcast server, M: Multicast server,
-- when - time since last request (seconds)
-- poll - how often the local and remote server are synchronized (seconds)
-- reach - is used to test whether it can connect to the server, and its value will increase every time it connects successfully,
-- offset - The time offset between the host and the remote node or server time source. The closer the offset is to 0, the closer the time between the host and the NTP server (milliseconds).
-- delay – round-trip time (ms) from local to remote node or server communication
-
-
-Explanation of the symbol in front of remote:
-
-(+) Good and preferred remote node or server (included in combination algorithm)
-
-(*) The remote node or server that is currently the priority master synchronization object
   
   
 
@@ -107,7 +87,7 @@ When the node is started, the node's public and private keys and BLS public and 
 Refer to [Node KeyPair](/en-us/Node/_[English]-WalletFile-and-KeyPair.md#Node-key) for the key generation method, and save the generated key to the directory where the node is located.
 
  
-> [!NOTE|style:flat|label:注意]
+> [!NOTE|style:flat|label:Note]
 >
 > If the key is not generated in advance, the node is automatically generated in the node's data directory at startup.
 
@@ -120,6 +100,6 @@ According to your needs, start the node to join the public network or set up the
 - [Join the Public Network](/en-us/Network/[English]-MainNet-and-TestNet.md)
 
 
-> [!NOTE|style:flat|label:注意]
+> [!NOTE|style:flat|label:Note]
 >
 > Add --db.nogc to the command line when starting a node to join the network
