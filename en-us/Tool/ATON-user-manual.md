@@ -8,6 +8,9 @@
 </div>
 <div style = "clear: both"> </div>
 <div style = "margin-top: 40px;"> </div>
+
+
+
 ## Create Wallet
 
 <div>
@@ -62,6 +65,9 @@
 For details about importing observation wallets, please refer to the instructions of “Set observed wallet and cold wallet”
 
 <div style = "margin-top: 40px;"> </div>
+
+
+
 ## My Wallet
 
 <div>
