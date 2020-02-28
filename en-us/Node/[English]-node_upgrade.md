@@ -77,13 +77,13 @@ According to the new version number (assuming 0.9.0) in the upgrade proposal obt
     When the execution result is as follows, the version upgrade is successful:
   
     ```
-     当前已安装版本：0.8.0==========
-     开始安装：0.9.0版本==========
-     节点暂停成功==========
+     Currently installed version: 0.8.0==========
+     Begin to install platon version: 0.9.0==========
+     Node paused successfully==========
      Do you want to continue? [Y/n] y
-     卸载当前版本：platon0.8.0成功==========
-     安装版本：platon0.9.0成功==========
-     重启节点成功============ 
+     Uninstall current platon version: 0.8.0 successfully==========
+     Install platon version: platon0.9.0 successfully==========
+     Restart node succeeded============ 
     ```
   
     >When the following situations occur, no version upgrade is performed, and the node will continue to run with the previously installed version：
@@ -161,9 +161,9 @@ This command returns the current block height, which can be used to determine wh
   After the script is executed, if the following message appears, it means that the upgrade proposal vote was successful, otherwise the upgrade proposal vote failed.
   
   ```bash
-  获取交易回执成功==========
-  解析交易回执中==========
-  交易成功！！！
+  Transaction receipt obtained successfully==========
+  Analyzing transaction receipt==========
+  Transaction succeed.
   ```
 
 #### Version declaration
@@ -208,9 +208,9 @@ This command returns the current block height, which can be used to determine wh
   After executing the script, if the following message appears, the version declaration was successful, otherwise the version declaration failed.
   
   ```bash
-  获取交易回执成功==========
-  解析交易回执中==========
-  交易成功！！！·
+   Transaction receipt obtained successfully==========
+   Analyzing transaction receipt==========
+   Transaction succeed.
   ```
 
 ## Verify node upgrade results
@@ -259,16 +259,16 @@ After performing all the operations above, you need to verify whether the operat
   
   ```bash
   获取提案成功==========
-  提案生效块高为：620980
-  当前块高为：621010
-  区块高度已到达提案生效区块高度，开始验证==========
-  开始验证升级提案投票结果==========
-  升级提案投票结果验证成功==========
-  开始验证提案版本号==二进制的版本号==链上生效版本号==========
-  升级提案版本验证成功==============
-  开始验证节点的质押状态=============
-  获取节点质押信息成功==========
-  节点未退出验证人列表，升级版本成功，当前链生效版本为：2304
+  The effective block of the proposal is: 620980
+  Current block height is:621010
+  The height of the block has reached the height of the effective block of the proposal, and the verification begins==========
+  Start to verify upgrade proposal voting results==========
+  Upgrade proposal voting result verified successfully==========
+  Start to verify that the proposal version number equals the binary version number equals the effective version number on the chain==========
+  Upgrade proposal version Verification succeeded==============
+  Start to verify the pledge status of the nod=============
+  Node pledge information obtained successfully==========
+  The node did not exit the verifier list. The upgrade version succeeded. The effective version of the current chain is: 2304
   ```
   
   > The verification script does the following checks：
