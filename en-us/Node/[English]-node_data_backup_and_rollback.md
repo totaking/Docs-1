@@ -62,11 +62,11 @@ If the download script fails, set the DNS server to 8.8.8.8.
   Note: xxx is the version number of the designated upgrade. For the actual version number, please refer to the relevant announcement issued by the community. **nostart** means that the node will not start (the default start). The password of the current user; when the Do you want to continue? Prompt appears, enter: **y**; the execution result is as follows: the version upgrade was successful:
 
   ```
-  当前已安装版本：0.9.0==========
-  开始安装：0.10.0版本==========
+  Currently installed version：0.9.0==========
+  Begin to install platon version：0.10.0==========
   Do you want to continue? [Y/n] y
-  卸载当前版本：platon0.9.0成功==========
-  安装版本：platon0.10.0成功==========
+  Uninstall current platon version：platon0.9.0 successfully==========
+  Install platon version：platon0.10.0 successfully==========
   ```
   
   > [!NOTE|style:flat|label:Note]
@@ -83,15 +83,15 @@ If the download script fails, set the DNS server to 8.8.8.8.
 When the data needs to be rolled back, the community will post the relevant off-chain data rollback announcement in the **Off-chain data rollback upgrade announcement** link in the announcement area. The announcement will notify the user to roll back to the specified block height and backup data address. Taking the rollback block height **10000** as an example, the announcement template is as follows:
 
 ```bash
-本次数据回滚的区块高度为：【10000】
-本次数据回滚的区块HASH为：0xf0be4fe085ad98f355a9797b7d2a3927cc53f2e8354567f6142ab8b954572b3c
+The block height for data rollback this time is：【10000】
+The block hash of the data rollback is：0xf0be4fe085ad98f355a9797b7d2a3927cc53f2e8354567f6142ab8b954572b3c
 
-1、数据回滚方案请参考：【链下数据回滚升级指南.md】
-2、需要回滚的数据下载地址：【...】
-3、本次链下升级的代码分支为：
-【代码分支：https://github.com/PlatONnetwork/PlatON-Go/tree/pip_v0.7.2】
+1、Please refer to the data rollback scheme：【node_data_backup_and_rollback.md】
+2、Download address of the data that needs to be rolled back：【...】
+3、The code branch for this off-chain upgrade is：
+【code branch：https://github.com/PlatONnetwork/PlatON-Go/tree/pip_v0.7.2】
 【commit ID: 5696a3b458099a58f4308949a977f5f1ec9922d5】
-4.目标版本号：0.10.0
+4.Target version number：0.10.0
 ```
 
 If you see this announcement, you can choose the following two methods for data rollback operation.
