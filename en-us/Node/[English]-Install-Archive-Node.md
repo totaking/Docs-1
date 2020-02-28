@@ -84,7 +84,7 @@ The node server must be Ubuntu 18.04, please follow the part of Ubuntu in [Insta
 
 When the node is started, the node's public and private keys and BLS public and private keys are required. The BLS public and private keys will be used in the consensus protocol.
 
-Refer to [Node KeyPair](/en-us/Node/_[English]-WalletFile-and-KeyPair.md#Node-key) for the key generation method, and save the generated key to the directory where the node is located.
+Refer to [NodeKey](/en-us/Node/_[English]-WalletFile-and-KeyPair.md#Node-key) for the key generation method, and save the generated key to the directory where the node is located.
 
  
 > [!NOTE|style:flat|label:Note]
@@ -97,7 +97,7 @@ Refer to [Node KeyPair](/en-us/Node/_[English]-WalletFile-and-KeyPair.md#Node-ke
 According to your needs, start the node to join the public network or set up the private network. Refer to the following:
 
 - [Join Private Network](/en-us/Network/[English]-SettingUp-Private-Chain.md)
-- [Join the Public Network](/en-us/Network/[English]-MainNet-and-TestNet.md)
+- [Join the Public Network](/en-us/Network/[English]-Mainnet-and-Testnet.md)
 
 
 > [!NOTE|style:flat|label:Note]
