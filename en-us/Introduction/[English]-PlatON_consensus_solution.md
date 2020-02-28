@@ -669,29 +669,29 @@ After consensus, there are three possible outcomes:
 - B9:A8 and B10:A9 have not reached QC
   It may be caused by D network abnormality or D host downtime.
   At this point, the view-change is triggered. If B is a Byzantine node, B may or may not send a ViewChange message.
-  - B does not send ViewChange message
+  1. B does not send ViewChange message
   
-    
   
-    | A              | B              | C              | D    |
-    | -------------- | -------------- | -------------- | ---- |
-    | ViewChange<A9> | ViewChange<A8> | ViewChange<A9> | nil  |
   
-    
+  | A              | B              | C              | D    |
+  | -------------- | -------------- | -------------- | ---- |
+  | ViewChange<A9> | ViewChange<A8> | ViewChange<A9> | nil  |
   
-    In this case, C will produce blocks based on A9.
   
-  - B does send ViewChange message
-    
-    
-    
-    | A             | B    | C             | D    |
-    | ------------- | ---- | ------------- | ---- |
-    | ViewChange<9> | nil  | ViewChange<9> | nil  |
-    
-    
-    
-    The ViewChange cannot reaches QC. And the view can only switch to C normally after D failure recovers.
+  
+  In this case, C will produce blocks based on A9.
+  
+  2. B does send ViewChange message
+  
+  
+  
+  | A             | B    | C             | D    |
+  | ------------- | ---- | ------------- | ---- |
+  | ViewChange<9> | nil  | ViewChange<9> | nil  |
+  
+  
+  
+  The ViewChange cannot reaches QC. And the view can only switch to C normally after D failure recovers.
 
 ## Review and Summary
 
