@@ -567,18 +567,20 @@ The state of the last block of the four nodes is as follows:
 
   - A does not send ViewChange message
 
-    As honest nodes, B and D send ViewChange message  according to the rules. C is down and cannot send ViewChange message.
+    
   
+    As honest nodes, B and D send ViewChange message  according to the rules. C is down and cannot send ViewChange message.
+
     
 
     | A              | B              | C         | D              |
   | -------------- | -------------- | --------- | -------------- |
     | nil(Byzantine) | ViewChange<D7> | nil(down) | ViewChange<D7> |
-
-    
   
-    The ViewChange cannot reaches QC. And the view can only switch to B normally after C failure recovers.
+    
 
+    The ViewChange cannot reaches QC. And the view can only switch to B normally after C failure recovers.
+  
   - A does send ViewChange
   
     
