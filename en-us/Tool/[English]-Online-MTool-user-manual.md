@@ -332,7 +332,7 @@ mtool-client submit_versionproposal --newversion 0.8.0 --end_voting_rounds 345 -
 
 > newversion: target upgrade version, x.x.x, number punctuation
 >
-> end_voting_rounds: the number of voting consensus rounds, the number of voting consensus rounds N, must satisfy 0 <N <= 2419 (about 2 weeks)
+> end_voting_rounds: the number of voting consensus rounds, the number of voting consensus rounds N, must satisfy 0 < N <= 4838 (about 2 weeks)
 >
 > pid_id: GitHub ID
 
@@ -348,7 +348,7 @@ mtool-client submit_cancelproposal --proposalid 0x444c3df404bc1ce4d869166623514b
 
 > proposalid: the ID of the proposal that needs to be cancelled
 >
-> end_voting_rounds: the number of voting consensus rounds, the number of voting consensus rounds N, must satisfy 0 <N <= 2419 (about 2 weeks)
+> end_voting_rounds: the number of voting consensus rounds, the number of voting consensus rounds N, must satisfy 0 < N <= 4838 (about 2 weeks)
 >
 > pid_id: GitHub ID
 
