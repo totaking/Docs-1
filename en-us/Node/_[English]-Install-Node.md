@@ -98,7 +98,7 @@ You can install the above compilation environment yourself. Please make sure the
 
  
 
-Create `src/github.com/PlatONnetwork/` and `bin` directories under the current`% GOPATH% `directory, and clone the source code of` PlatON-GO` under the `PlatONnetwork` directory:
+Create `src/github.com/PlatONnetwork/` and `bin` directories under the current`%GOPATH% `directory, and clone the source code of` PlatON-GO` under the `PlatONnetwork` directory:
 
 
 ```
@@ -151,7 +151,7 @@ go run build/ci.go install ./cmd/keytool
 
  
 
-After compiling, `platon`,` keytool` executable files will be generated in the` PlatON-Go/build/bin` directory. Copy these three executable files to your working directory and run.
+After compiling, `platon`,` keytool` executable files will be generated in the` PlatON-Go/build/bin` directory. Copy these executable files to your working directory and run.
 
  
 

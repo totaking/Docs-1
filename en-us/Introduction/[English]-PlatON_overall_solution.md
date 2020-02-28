@@ -6,7 +6,7 @@
 
  
 
-With the rapid development of the Internet, Internet giants represented by FAANG and BAT have borrowed their monopoly status to store a large amount of user data, and based on this, they can use big data and AI calculations to mine and enjoy the value of data. Users not only fail to obtain data dividends, but also bear the risk of personal privacy being violated and personal data being abused.
+With the rapid development of the Internet, Internet giants represented by FAANG and BAT have borrowed their monopoly status to store a large amount of user data, and based on this, they can use big data and AI computations to mine and enjoy the value of data. Users not only fail to obtain data dividends, but also bear the risk of personal privacy being violated and personal data being abused.
 
  
 
@@ -33,11 +33,11 @@ PlatON is committed to building the next generation of private computing and dat
 #### Blockchain: Consensus-Based Computing
 
  
-![Consensus-based calculation](GeneralIntroduction.assets/%E5%9F%BA%E4%BA%8E%E5%85%B1%E8%AF%86%E7%9A%84%E8%AE%A1%E7%AE%97.png)
+![Consensus-based computation](GeneralIntroduction.assets/%E5%9F%BA%E4%BA%8E%E5%85%B1%E8%AF%86%E7%9A%84%E8%AE%A1%E7%AE%97.png)
 
  
 
-In a broad sense, the existing blockchain architecture is a consensus-based calculation, which also implements a simple calculation (smart contract form) protocol: In order to ensure the correctness of the calculation, each calculation operation requires absolute The repeated processing of most nodes to verify the correctness of the calculation has led to the inherent contradiction between efficiency and trust in the blockchain system.
+In a broad sense, the existing blockchain architecture is a consensus-based computation, which also implements a simple computation (smart contract form) protocol: In order to ensure the correctness of the computation, each computation operation requires absolute The repeated processing of most nodes to verify the correctness of the computation has led to the inherent contradiction between efficiency and trust in the blockchain system.
 
  
 
@@ -53,11 +53,11 @@ From a practical point of view, the core of the industry is still concerned abou
 
  
 
-#### PlatON: Non-Interactive Proof Privacy Calculation
+#### PlatON: Non-Interactive Proof Privacy Computation
 
  
 
-PlatON uses modern cryptographic algorithms including, but not limited to, Zero Knowledge Proof (ZKP), Verifiable Computing (VC), Homomorphic Encryption (HE), Secure Multiparty Computing (MPC), Secret Sharing (SS), etc. to implement non-interactive proof calculation Expansion plan.
+PlatON uses modern cryptographic algorithms including, but not limited to, Zero Knowledge Proof (ZKP), Verifiable Computing (VC), Homomorphic Encryption (HE), Secure Multiparty Computing (MPC), Secret Sharing (SS), etc. to implement non-interactive proof computation Expansion plan.
 
  
 
@@ -69,11 +69,11 @@ The problems with the existing blockchain architecture stem from two very import
 
 
  
-![Layer2 calculation](GeneralIntroduction.assets/Layer2%E8%AE%A1%E7%AE%97.png)
+![Layer2 computation](GeneralIntroduction.assets/Layer2%E8%AE%A1%E7%AE%97.png)
 
  
 
-In view of the existing limitations of consensus on the chain, the function on the chain should be "verification" rather than "calculation". Although on-chain has been recognized as an environment without trust, the implementation of off-chain solutions has introduced new factors of distrust. PlatON's Verifiable Computing (VC) cryptography algorithm passes trust off-chain. Through verifiable calculation, the contract only needs to be calculated off-chain once, and all nodes can quickly verify the correctness of the calculation, on the one hand, it improves the transaction processing performance, and on the other hand, it makes PlatON support Trustless calculation of complex contracts.
+In view of the existing limitations of consensus on the chain, the function on the chain should be "verification" rather than "computation". Although on-chain has been recognized as an environment without trust, the implementation of off-chain solutions has introduced new factors of distrust. PlatON's Verifiable Computing (VC) cryptography algorithm passes trust off-chain. Through verifiable computation, the contract only needs to be calculated off-chain once, and all nodes can quickly verify the correctness of the computation, on the one hand, it improves the transaction processing performance, and on the other hand, it makes PlatON support Trustless computation of complex contracts.
 
  
 
@@ -81,7 +81,7 @@ In view of the existing limitations of consensus on the chain, the function on t
 
  
 
-PlatON implements true privacy calculation by superimposing homomorphic encryption (HE) and secure multiparty computing (MPC), ensuring the privacy of input data and the calculation logic itself. Compared to trusted computing that relies on trusted hardware or TEE (such as SGX) provided by a third-party manufacturer for computational integrity, Trustless computing on PlatON relies only on falsifiable cryptographic assumptions, and thus during its life Provide unprecedented private data security without trust boundaries.
+PlatON implements true privacy computation by superimposing homomorphic encryption (HE) and secure multiparty computing (MPC), ensuring the privacy of input data and the computation logic itself. Compared to trusted computing that relies on trusted hardware or TEE (such as SGX) provided by a third-party manufacturer for computational integrity, Trustless computing on PlatON relies only on falsifiable cryptographic assumptions, and thus during its life Provide unprecedented private data security without trust boundaries.
 
  
 
@@ -671,7 +671,7 @@ The execution of the WASM contract is performed in accordance with the called WA
 
  
 
-The privacy contract also supports high-level language development, which is compiled into llvm ir intermediate language for execution. The input data of the privacy contract is stored locally in the data node, and the data node is secretly shared to multiple random computing nodes. The computing node performs privacy calculations in a secure multi-party computing manner off-chain, and submits the calculation results to the chain.
+The privacy contract also supports high-level language development, which is compiled into llvm ir intermediate language for execution. The input data of the privacy contract is stored locally in the data node, and the data node is secretly shared to multiple random computing nodes. The computing node performs privacy computations in a secure multi-party computing manner off-chain, and submits the computation results to the chain.
 
  
 
@@ -690,7 +690,7 @@ The privacy contract also supports high-level language development, which is com
 
  
 
-The development and release of a verifiable contract is no different from a Wasm contract, and it is eventually compiled into a wasm implementation. The state transition of the verifiable contract is performed asynchronously by the computing nodes off-chain. After the calculation is completed, new states and state transition certificates are submitted to the chain. The nodes on the entire network can quickly verify the correctness and update the new state to the public ledger. Verifiable contracts can support complex and heavy calculation logic without affecting the performance of the entire chain.
+The development and release of a verifiable contract is no different from a Wasm contract, and it is eventually compiled into a wasm implementation. The state transition of the verifiable contract is performed asynchronously by the computing nodes off-chain. After the computation is completed, new states and state transition certificates are submitted to the chain. The nodes on the entire network can quickly verify the correctness and update the new state to the public ledger. Verifiable contracts can support complex and heavy computation logic without affecting the performance of the entire chain.
 
  
 
@@ -705,7 +705,7 @@ PlatON's verifiable solution is temporarily based on the zk-SNARK algorithm, and
 ![Verifiable Contract](GeneralIntroduction.assets/%E5%8F%AF%E9%AA%8C%E8%AF%81%E5%90%88%E7%BA%A6.png)
  
 
-- vc-contract template: The user compiles a vc contract according to the provided template, and can enter any calculation model. It mainly implements three interfaces:
+- vc-contract template: The user compiles a vc contract according to the provided template, and can enter any computation model. It mainly implements three interfaces:
 
  
 
@@ -713,15 +713,15 @@ PlatON's verifiable solution is temporarily based on the zk-SNARK algorithm, and
 
  
 
-  - real_compute (): Generate calculation results and proofs
+  - real_compute (): Generate computation results and proofs
 
  
 
-  - set_result (): verify calculation result and proof
+  - set_result (): verify computation result and proof
 
  
 
-- vclang: compile the vc contract written by the user to generate an executable file supported by wasm vm. Contract developers do not need to care about the specific use of libsnark api, they only need to write their own calculation model code.
+- vclang: compile the vc contract written by the user to generate an executable file supported by wasm vm. Contract developers do not need to care about the specific use of libsnark api, they only need to write their own computation model code.
 
  
 
@@ -733,7 +733,7 @@ PlatON's verifiable solution is temporarily based on the zk-SNARK algorithm, and
 
  
 
-- vc_pool: responsible for vc's transaction processing, distributing vc calculation tasks, and uploading the calculation results and proofs to the chain
+- vc_pool: responsible for vc's transaction processing, distributing vc computation tasks, and uploading the computation results and proofs to the chain
 
  
 
@@ -751,9 +751,9 @@ PlatON's verifiable solution is temporarily based on the zk-SNARK algorithm, and
 
 - After the compute transaction is written into the block, it will trigger the vc_pool to resolve the transaction event, so as to decide whether to add the task to the vc_pool queue
 
-- After the block is confirmed, real_compute can be executed. Because it is off-chain calculation, no transaction fees will be incurred. The process of real_compute is to first generate s (witness) according to the gadget sequence operation that was previously compiled and generated. Once s is calculated, you can calculate the proof based on pk
+- After the block is confirmed, real_compute can be executed. Because it is off-chain computation, no transaction fees will be incurred. The process of real_compute is to first generate s (witness) according to the gadget sequence operation that was previously compiled and generated. Once s is calculated, you can calculate the proof based on pk
 
-- set_result (proof, result) is to upload the calculation result and proof to the chain. This process is mainly verify (vk, proof, input). Once the verification is passed, the transaction initiator can get the calculation reward. The verification time of zk-SNARK is relatively short compared to the stage of generating proof, but it is also related to the length of the input parameter. Therefore, it is necessary to pay attention to limit the length of the input parameter to prevent the gas cost of the transaction from being too high and increase the cost of the verifier.
+- set_result (proof, result) is to upload the computation result and proof to the chain. This process is mainly verify (vk, proof, input). Once the verification is passed, the transaction initiator can get the computation reward. The verification time of zk-SNARK is relatively short compared to the stage of generating proof, but it is also related to the length of the input parameter. Therefore, it is necessary to pay attention to limit the length of the input parameter to prevent the gas cost of the transaction from being too high and increase the cost of the verifier.
 
  
 
@@ -761,4 +761,4 @@ PlatON's verifiable solution is temporarily based on the zk-SNARK algorithm, and
 
  
 
-Users who need computing outsourcing need to mortgage the appropriate fees to the contract account first, and each computing node can compete for the computing task by itself (the order-changing model will be changed to the random ordering model later). Once the calculation is successful, the result and proof are generated, and set_result is initiated For a transaction request, the computing node needs to pay the miner fee for the transaction first. The node receives the request and executes set_result. Once the proof and result parameters carried in the transaction are verified, the transaction requester successfully calculates the result and the contract account will be mortgaged. Fees are transferred to the requester's account, failure will not be rewarded.
+Users who need computing outsourcing need to mortgage the appropriate fees to the contract account first, and each computing node can compete for the computing task by itself (the order-changing model will be changed to the random ordering model later). Once the computation is successful, the result and proof are generated, and set_result is initiated For a transaction request, the computing node needs to pay the miner fee for the transaction first. The node receives the request and executes set_result. Once the proof and result parameters carried in the transaction are verified, the transaction requester successfully calculates the result and the contract account will be mortgaged. Fees are transferred to the requester's account, failure will not be rewarded.

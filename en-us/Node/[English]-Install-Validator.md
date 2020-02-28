@@ -35,25 +35,7 @@ Output result
 
 ![ntpq返回](ntpq.assets/ntpq.png)
  
-
-Property description:
-
-- remote - remote node or server for synchronization
-- refid - a remote server that synchronizes to a higher level server
-- st - Stratum of remote node or server (level, NTP time synchronization is hierarchical)
-- t - type u: unicast or manycast client, b: broadcast or multicast client, l: local clock, s: symmetric node (for backup), A : Anycast server, B: Broadcast server, M: Multicast server,
-- when - time since last request (seconds)
-- poll - how often the local and remote server are synchronized (seconds)
-- reach - is used to test whether it can connect to the server, and its value will increase every time it connects successfully,
-- offset - The time offset between the host and the remote node or server time source. The closer the offset is to 0, the closer the time between the host and the NTP server (milliseconds).
-- delay – round-trip time (ms) from local to remote node or server communication
-
-
-Explanation of the symbol in front of remote:
-
-(+) Good and preferred remote node or server (included in combination algorithm)
-(*) The remote node or server that is currently the priority master synchronization object
-  
+ 
   
 
 ### Install node
@@ -65,10 +47,10 @@ The node server must be Ubuntu 18.04, please follow the part of Ubuntu in [Insta
 
 When the node is started, the node's public and private keys and BLS public and private keys are required. The BLS public and private keys will be used in the consensus protocol.
 
-Refer to [Node KeyPair](/en-us/Node/_[English]-WalletFile-and-KeyPair.md#Node-key) for the key generation method, and save the generated key to the directory where the node is located.
+Refer to [NodeKey](/en-us/Node/_[English]-WalletFile-and-KeyPair.md#Node-key) for the key generation method, and save the generated key to the directory where the node is located.
 
  
-> [!NOTE|style:flat|label:注意]
+> [!NOTE|style:flat|label:Note]
 >
 > If the key is not generated in advance, the node is automatically generated in the node's data directory at startup.
 
@@ -78,7 +60,7 @@ Refer to [Node KeyPair](/en-us/Node/_[English]-WalletFile-and-KeyPair.md#Node-ke
 According to your needs, start the node to join the public network or set up the private network. Refer to the following:
 
 - [Join Private Network](/en-us/Network/[English]-SettingUp-Private-Chain.md)
-- [Join the Public Network](/en-us/Network/[English]-MainNet-and-TestNet.md)
+- [Join the Public Network](/en-us/Network/[English]-Mainnet-and-Testnet.md)
 
 
 ### Configure nginx
@@ -107,7 +89,7 @@ chmod +x nginx_conf.sh && ./nginx_conf.sh
 ```
 
 
-> [!NOTE|style:flat|label:注意]
+> [!NOTE|style:flat|label:Note]
 >
 > - When prompted for [sudo] password for`, enter the current account password.
 > - When you are prompted for `Enter your name:`, enter your username.
@@ -125,28 +107,28 @@ MTool provides two signature methods for transactions: online signature and offl
 #### Online MTool
 
   Follow the procedure below to install online MTool:
-- [Install MTool](/en-us/Tool/[Chinese-Simplified]-Online MTool User Manual#Install Online MTool)
-- [Configure MTool](/en-us/Tool/[Chinese-Simplified]-Online MTool User Manual#Configure Online MTool)
-- [Create Wallet](/en-us/Tool/[Chinese-Simplified]-Online MTool User Manual#Create Wallet)
-- [Configure validator node information](/en-us/Tool/[Chinese-Simplified]-Online MTool User Manual#Configure validator node information)
-- [Initiate pledge operation](/en-us/Tool/[Chinese-Simplified]-Online MTool User Manual#Initiate pledge operation)
+- [Install MTool](/en-us/Tool/[English]-Online-MTool-user-manual.md#Install-Online-MTool)
+- [Configure MTool](/en-us/Tool/[English]-Online-MTool-user-manual.md#Configure-Online-MTool)
+- [Create Wallet](/en-us/Tool/[English]-Online-MTool-user-manual.md#Create-Wallet)
+- [Configure validator node information](/en-us/Tool/[English]-Online-MTool-user-manual.md#Configure-verification-node-information)
+- [Initiate pledge operation](/en-us/Tool/[English]-Online-MTool-user-manual.md#Initiate-a-pledge-operation)
 
 #### Offline MTool
 
   Follow the procedure below to install offline MTool:
-- [Install MTool](/en-us/Tool/[Chinese-Simplified]-Offline MTool User Manual#Install MTool)
-- [Configure MTool](/en-us/Tool/[Chinese-Simplified]-Offline MTool User Manual#Configure)
-- [Wallet Configuration](/en-us/Tool/[Chinese-Simplified]-Offline MTool User Manual#Wallet Configuration)
-- [Connect to validator node](/en-us/Tool/[Chinese-Simplified]-Offline MTool User Manual#Connect to validator node)
-- [Initiate pledge operation](/en-us/Tool/[Chinese-Simplified]-Offline MTool User Manual#Initiate pledge operation)
+- [Install MTool](/en-us/Tool/[English]-Offline-MTool-user-manual.md#Install-MTool)
+- [Configure MTool](/en-us/Tool/[English]-Offline-MTool-user-manual.md#Configuration)
+- [Wallet Configuration](/en-us/Tool/[English]-Offline-MTool-user-manual.md#Wallet-configuration)
+- [Connect to validator node](/en-us/Tool/[English]-Offline-MTool-user-manual.md#Connect-to-validation-node)
+- [Initiate pledge operation](/en-us/Tool/[English]-Offline-MTool-user-manual.md#Initiate-a-pledge-operation)
 
 
-> [!NOTE|style:flat|label:注意]
+> [!NOTE|style:flat|label:Note]
 >
-> The offline transaction signature must be completed offline. For the operation process, refer to [Offline MTool User Manual](/en-us/Tool/[Chinese-Simplified]-Offline MTool User Manual#Basic Operation Process)
+> The offline transaction signature must be completed offline. For the operation process, refer to [Offline MTool User Manual](/en-us/Tool/[English]-Offline-MTool-user-manual.md#Basic-operation-flow)
 > For capable developers, you can develop your own node tools based on the Java SDK and Javascript SDK. Please refer to the documentation for SDK.
-> - [Java-SDK](zh-cn/Development/[Chinese-Simplified]-Java-SDK.md)
-> - [JavaScript-API](zh-cn/Development/[Chinese-Simplified]-JS-SDK.md)
+> - [Java-SDK](en-us/Development/[English]-Java-SDK.md)
+> - [JavaScript-API](en-us/Development/[English]-JS-SDK.md)
 
 
 ## Validator node confirmation
