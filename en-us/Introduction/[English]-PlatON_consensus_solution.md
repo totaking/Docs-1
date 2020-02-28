@@ -407,12 +407,16 @@ As A's View ends, it's B's turn to produce blocks. B will encounter the followin
 
   Because B10‘s PrepareBlock message carries A9’s prepareQC, C can confirm A9 locally. The actions of each node after receiving B10 are as follows:
 
+  
+  
   | A            | B            | C            | D    |
-  | ------------ | ------------ | ------------ | ---- |
+| ------------ | ------------ | ------------ | ---- |
   | Verified B10 | Verified B10 | Verified B10 | nil  |
 
   The block state of each node is as follows:
-
+  
+  
+  
   | A            | B            | C            | D          |
   | ------------ | ------------ | ------------ | ---------- |
   | D7(QC)commit | D7(QC)commit | D7(QC)commit | D7(QC)     |
@@ -428,11 +432,16 @@ Assuming that B9 is not reached QC, there may be two cases of HighestQCBlock for
 
 The HighestQCBlock for each node is as follows:
 
+
+
 | A    | B    | C    | D    |
 | ---- | ---- | ---- | ---- |
 | A9   | A8   | A8   | A8   |
 
 The view-change actions of each node are as follows:
+
+
+
 | A              | B              | C              | D              |
 | -------------- | -------------- | -------------- | -------------- |
 | ViewChange<A9> | ViewChange<A8> | ViewChange<A8> | ViewChange<A8> |
@@ -442,11 +451,16 @@ C will produce different blocks based on the received ViewChange message.
   Suppose C receives B.ViewChange <A8>, C.ViewChange <A8>, D.ViewChange <A8>, then C will generate C9 and C10 based on A8. 
   The actions of each node after receiving C10 are as follows:
   
+  
+  
   | A           | B           | C           | D           |
   | ----------- | ----------- | ----------- | ----------- |
   | Verified C9 | Verified C9 | Verified C9 | Verified C9 |
   
   The block state of each node is as follows:
+  
+  
+  
   | A              | B          | C          | D        |
   | -------------- | ---------- | ---------- | -------- |
   | D7(QC)commit   | D7(QC)lock | D7(QC)lock | D7(QC)   |
@@ -455,6 +469,9 @@ C will produce different blocks based on the received ViewChange message.
   | B10   C10      | B10  C10   | B10    C10 | B10      |
   
   If C9 reaches QC, the block state of each node is as follows:
+  
+  
+  
   | A                   | B             | C             | D             |
   | ------------------- | ------------- | ------------- | ------------- |
   | D7(QC)commit        | D7(QC)commit  | D7(QC)commit  | D7(QC)commit  |
@@ -466,11 +483,16 @@ C will produce different blocks based on the received ViewChange message.
   Suppose C receives A.ViewChange <A9>, B.ViewChange <A8>, C.ViewChange <A8>, then C will produce C10 and C11 based on A9. 
   The actions of each node after receiving C10 are as follows:
   
+  
+  
   | A            | B            | C            | D                                                |
   | ------------ | ------------ | ------------ | ------------------------------------------------ |
   | Verified C10 | Verified C10 | Verified C10 | nil: C10 was not received due to network reasons |
   
   The block state of each node is as follows:
+  
+  
+  
   | A            | B           | C           | D          |
   | ------------ | ----------- | ----------- | ---------- |
   | D7(QC)commit | D7(QC)lock  | D7(QC)lock  | D7(QC)lock |
@@ -480,6 +502,9 @@ C will produce different blocks based on the received ViewChange message.
   | C11          | C11         | C11         | C11        |
   
   If C10 reaches QC, the block state of each node is as follows:
+  
+  
+  
   | A             | B            | C              | D          |
   | ------------- | ------------ | -------------- | ---------- |
   | D7(QC)commit  | D7(QC)commit | D7(QC)commit   | D7(QC)lock |
@@ -530,10 +555,12 @@ The state of the last block of the four nodes is as follows:
 
   Due to network reasons, different nodes receive different blocks, and C cannot receive any blocks. The state of the last block of the four nodes is as follows:
 
+  
+  
   | A            | B             | C      | D             |
   | ------------ | ------------- | ------ | ------------- |
   | D7(QC)       | D7(QC)        | D7(QC) | D7(QC)        |
-  | A8(B, A8'(D) | A8(B), A8'(D) |        | A8(B), A8'(D) |
+| A8(B, A8'(D) | A8(B), A8'(D) |        | A8(B), A8'(D) |
   | A9           | A9            |        | A9            |
 
   when timeout, view-change is triggered. At this time A may take two actions.
@@ -541,19 +568,23 @@ The state of the last block of the four nodes is as follows:
   - A does not send ViewChange message
 
     As honest nodes, B and D send ViewChange message  according to the rules. C is down and cannot send ViewChange message.
+  
+    
 
     | A              | B              | C         | D              |
-    | -------------- | -------------- | --------- | -------------- |
+  | -------------- | -------------- | --------- | -------------- |
     | nil(Byzantine) | ViewChange<D7> | nil(down) | ViewChange<D7> |
 
     The ViewChange cannot reaches QC. And the view can only switch to B normally after C failure recovers.
-
+  
   - A does send ViewChange
 
+    
+    
     | A              | B              | C         | D              |
-    | -------------- | -------------- | --------- | -------------- |
+  | -------------- | -------------- | --------- | -------------- |
     | ViewChange<D7> | ViewChange<D7> | nil(down) | ViewChange<D7> |
-
+    
     At this time, ViewChange can reach QC, and B can rotate normally and produce blocks based on D7.
 
 ### View-change exception
@@ -603,17 +634,22 @@ After consensus, there are three possible outcomes:
 
 - B8:A8 reaches QC
 
+  
+  
   | A                 | B                  | C                 | D                |
   | ----------------- | ------------------ | ----------------- | ---------------- |
   | D7(QC) commit     | D7(QC)commit       | D7(QC)commit      | D7(QC)commit     |
   | A8(QC)lock        | A8(QC)lock         | A8(QC)lock        | A8(QC)lock       |
   | A9(QC)  B9:A8(QC) | A9(QC)   B9:A8(QC) | A9(QC)  B9:A8(QC) | A9(QC) B9:A8(QC) |
-  | B10:A8  B10:A9    | B10:A8  B10:A9     | B10:A8  B10:A9    | B10:A8  B10:A9   |
+| B10:A8  B10:A9    | B10:A8  B10:A9     | B10:A8  B10:A9    | B10:A8  B10:A9   |
   | B11:A9            | B11:A9             | B11:A9            | B11:A9           |
-
+  
   At 9th height, the blocks A9 and B9: A8 only reached QC, and are not finalized, so the chain is not forked. When it is C's turn, C can produce new blocks based on A9 or B9: A8.
   
 - B10:A9 reaches QC
+  
+  
+  
   | A                  | B                  | C                  | D                  |
   | ------------------ | ------------------ | ------------------ | ------------------ |
   | D7(QC) commit      | D7(QC)commit       | D7(QC)commit       | D7(QC)commit       |
@@ -629,13 +665,18 @@ After consensus, there are three possible outcomes:
   At this point, the view-change is triggered. If B is a Byzantine node, B may or may not send a ViewChange message.
   - B does not send ViewChange message
   
+    
+  
     | A              | B              | C              | D    |
     | -------------- | -------------- | -------------- | ---- |
     | ViewChange<A9> | ViewChange<A8> | ViewChange<A9> | nil  |
-    
+  
     In this case, C will produce blocks based on A9.
   
   - B does send ViewChange message
+    
+    
+    
     | A             | B    | C             | D    |
     | ------------- | ---- | ------------- | ---- |
     | ViewChange<9> | nil  | ViewChange<9> | nil  |
