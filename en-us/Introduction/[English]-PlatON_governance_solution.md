@@ -61,19 +61,19 @@ In our opinion, decision-making power should belong to "stakeholders", that is, 
 
 ![governace-flow](PlatON_governance_solution.assets/governace-flow.png)
 
-**1) ** **Initiate Proposal**
+**1)** **Initiate Proposal**
 
 Referendum proposals can be initiated by anyone, and non-referendum proposals are initiated by validators. Each proposal should have a corresponding text description, which is stored in the PIP repository on github and managed by the core developer, similar to EIP.
 
 To control spam proposals, the initiation of all types of proposals requires a proposal fee as the cost of the proposal. For the referendum proposal, a token is required to be pledged as the deposit of the proposal. Other holders can also attach the proposal by increasing the deposit of the proposal to increase the chance of the proposal entering the voting period. The proposal deposit is returned to the original account when the proposal enters the voting period.
 
-**2) ** **Proposal Screening**
+**2)** **Proposal Screening**
 
 - **Referendum Proposal**: Since the referendum proposal is not the norm, multiple referendum proposals can be initiated on the chain at the same time. These proposals will be sorted according to the highest margin, and the proposal with the highest margin will be selected each month to enter the voting stage .
 
 - **Non-referendum proposal**: The successful launch of the proposal will enter the voting period, and multiple proposals can be voted in parallel.
 
-**3) ** **Vote for Proposal**
+**3)** **Vote for Proposal**
 
 - **Referendum proposal**
 
@@ -85,7 +85,7 @@ To control spam proposals, the initiation of all types of proposals requires a p
 
   The core of voting on non-referendum proposals is validator voting. Any node that is elected as a validator within the voting period of the proposal can vote. The voting cycle is generally two weeks, and the voting cycle of a software upgrade proposal can be determined by the proposal initiator according to the situation. The voting method adopts a system of one person and one vote for validators. After voting, the validator's own pledged tokens will be locked until the end of voting. In addition to software upgrade proposals, there are three voting options for other types of voting: "Yes", "No", and "Abstain". In order to simplify the voting process, there are no explicit options for the **software upgrade proposal**. Each validator can indicate his or her voting position by whether to upgrade the local node. 
 
-**4) ** **Voting results calculation**
+**4)** **Voting results calculation**
 
 - **Referendum Proposal**: There are three dimensions for calculating the results of referendum proposals:
   - Validator support rate: the ratio of the number of validators who vote for support to the total number of validators who can vote;
@@ -102,7 +102,7 @@ To control spam proposals, the initiation of all types of proposals requires a p
   
 When both: Validator support rate> M% and validator participation rate> N%, the proposal is voted through, otherwise the proposal fails to vote.
   
-   > **Note **: In the software upgrade proposal, the default validator participation rate is 100%.
+   > **Note**: In the software upgrade proposal, the default validator participation rate is 100%.
 
 | Type               | Participation Rate | Support ratio |
 | :----------------- | :----------------- | :------------ |
