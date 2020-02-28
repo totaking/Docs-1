@@ -16,6 +16,7 @@ Before joining the PlatON public network, please ensure that the server has the 
 This section assumes that the server is Ubuntu 18.04 and the working directory where the executable file is located is `~/platon-node`. Note that all subsequent command line operations are performed in the working directory.
 
 
+
 ## Mainnet
 
 Coming soon ...
